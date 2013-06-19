@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'birdyShmup' target in the 'birdyShmup' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif

@@ -11,3 +11,10 @@
 *.lai
 *.la
 *.a
+
+
+#mac crap
+.DS_Store
+xcode/birdyShmup.xcodeproj/xcuserdata
+xcode/birdyShmup.xcodeproj/project.xcworkspace/xcuserdata
+xcode/Release/*.dmg

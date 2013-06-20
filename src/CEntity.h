@@ -5,37 +5,93 @@
 
 #include "CAnimation.h"
 #include "CSurface.h"
+#include "CArea.h"
+#include "CCamera.h"
+#include "CFPS.h"
+
+enum {ENTITY_TYPE_GENERIC = 0, ENTITY_TYPE_PLAYER};
+enum {ENTITY_FLAG_NONE = 0, ENTITY_FLAG_GRAVITY = 0x00000001,
+        ENTITY_FLAG_GHOST = 0x00000002, ENTITY_FLAG_MAPONLY = 0x00000004};
 
 class CEntity {
 public:
     CEntity();
     virtual ~CEntity();
 
+    void OnMove(const float moveX_, const float moveY_);
+    void stopMove();
+    bool collides(const int oX, const int oY, const int oW, const int oH);
+
+    virtual bool OnLoad(const char* file, const int width, const int height, const int maxFrames);
+    virtual void OnLoop();
+    virtual void OnRender(SDL_Surface* Surf_Display);
+    virtual void OnCleanup();
+    virtual void OnAnimate();
+    virtual void OnCollision(CEntity* entity);
+
+    static std::vector<CEntity*> entityList;
+
     void setX(const float x);
     void setY(const float y);
     void setWidth(const int width);
     void setHeight(const int height);
     void setAnimeState(const int state);
+    void setMoveLeft(const bool move);
+    void setMoveRight(const bool move);
 
-
-    virtual bool OnLoad(const char* file, int width, int height, int maxFrames);
-    virtual void OnLoop();
-    virtual void OnRender(SDL_Surface* Surf_Display);
-    virtual void OnCleanup();
-
-    static std::vector<CEntity*> entityList;
+    float x_;
+    float y_;
 
 protected:
     CAnimation Anim_Control;
     SDL_Surface* Surf_Entity;
 
+    float speedX;
+    float speedY;
+    float accelX;
+    float accelY;
+
+    int currentFrameCol;
+    int currentFrameRow;
+
+    int colX;
+    int colY;
+    int colWidth;
+    int colHeight;
+
 private:
-    // TODO: Rendre ces parametres private?
-    float x_;
-    float y_;
+
+    bool posValid(const int newX, const int newY);
+    bool posValidTile(CTile* tile);
+    bool posValidEntity(CEntity* entity, const int newX, const int newY);
+
+
     int width_;
     int height_;
     int animeState_;
+
+    bool moveLeft_;
+    bool moveRight_;
+
+    int type_;
+    bool dead_;
+    int flags_;
+
+    float maxSpeedX_;
+    float maxSpeedY_;
+
+
+};
+
+class CEntityCol {
+public:
+    CEntityCol();
+    ~CEntityCol();
+
+    CEntity* entityA;
+    CEntity* entityB;
+
+    static std::vector<CEntityCol> EntityColList;
 
 };
 

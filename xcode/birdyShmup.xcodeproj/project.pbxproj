@@ -28,6 +28,8 @@
 		2B272595176FE2E20094AC8F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2B272593176FE2E20094AC8F /* InfoPlist.strings */; };
 		2B27259B176FE2E20094AC8F /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2B272599176FE2E20094AC8F /* Credits.rtf */; };
 		2B2725A1176FE2E20094AC8F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B27259F176FE2E20094AC8F /* MainMenu.xib */; };
+		2B3327A41773CCBC0030F2D4 /* CPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B3327A01773CCBC0030F2D4 /* CPlayer.cpp */; };
+		2B3327A51773CCBC0030F2D4 /* CFPS.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B3327A21773CCBC0030F2D4 /* CFPS.cpp */; };
 		2B734397177178A700FCC983 /* SDL_image.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2B0688AA176FE5CE0026C1AB /* SDL_image.framework */; };
 		2B734398177178A700FCC983 /* SDL.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2B0688A8176FE5C10026C1AB /* SDL.framework */; };
 		2B84554617711ACF005DC982 /* img in Resources */ = {isa = PBXBuildFile; fileRef = 2B84554317711ACF005DC982 /* img */; };
@@ -88,6 +90,10 @@
 		2B272598176FE2E20094AC8F /* birdyShmup-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "birdyShmup-Prefix.pch"; sourceTree = "<group>"; };
 		2B27259A176FE2E20094AC8F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		2B2725A0176FE2E20094AC8F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		2B3327A01773CCBC0030F2D4 /* CPlayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CPlayer.cpp; path = ../../src/CPlayer.cpp; sourceTree = "<group>"; };
+		2B3327A11773CCBC0030F2D4 /* CPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPlayer.h; path = ../../src/CPlayer.h; sourceTree = "<group>"; };
+		2B3327A21773CCBC0030F2D4 /* CFPS.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CFPS.cpp; path = ../../src/CFPS.cpp; sourceTree = "<group>"; };
+		2B3327A31773CCBC0030F2D4 /* CFPS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CFPS.h; path = ../../src/CFPS.h; sourceTree = "<group>"; };
 		2B84554317711ACF005DC982 /* img */ = {isa = PBXFileReference; lastKnownFileType = folder; name = img; path = ../../img; sourceTree = "<group>"; };
 		2B84554417711ACF005DC982 /* maps */ = {isa = PBXFileReference; lastKnownFileType = folder; name = maps; path = ../../maps; sourceTree = "<group>"; };
 		2B84554517711ACF005DC982 /* tilesets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = tilesets; path = ../../tilesets; sourceTree = "<group>"; };
@@ -148,6 +154,10 @@
 		2B272590176FE2E20094AC8F /* birdyShmup */ = {
 			isa = PBXGroup;
 			children = (
+				2B3327A01773CCBC0030F2D4 /* CPlayer.cpp */,
+				2B3327A11773CCBC0030F2D4 /* CPlayer.h */,
+				2B3327A21773CCBC0030F2D4 /* CFPS.cpp */,
+				2B3327A31773CCBC0030F2D4 /* CFPS.h */,
 				2B84554317711ACF005DC982 /* img */,
 				2B84554417711ACF005DC982 /* maps */,
 				2B84554517711ACF005DC982 /* tilesets */,
@@ -277,6 +287,8 @@
 				2B0688A5176FE5870026C1AB /* CSurface.cpp in Sources */,
 				2B0688A6176FE5870026C1AB /* CTile.cpp in Sources */,
 				2B0688A7176FE5870026C1AB /* SDLMain.m in Sources */,
+				2B3327A41773CCBC0030F2D4 /* CPlayer.cpp in Sources */,
+				2B3327A51773CCBC0030F2D4 /* CFPS.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,6 +10,31 @@ CArea::CArea()
 CArea::~CArea()
 {}
 
+CMap* CArea::getMap(const int x, const int y)
+{
+    int mapWidth = MAP_WIDTH * TILE_SIZE;
+    int mapHeight = MAP_HEIGHT * TILE_SIZE;
+
+    int ID = x / mapWidth;
+    ID = ID + ((y / mapHeight) * areaSize_);
+
+    if (ID < 0 || ID >= mapList.size()) return NULL;
+
+    return &mapList[ID];
+}
+
+CTile* CArea::getTile(const int x, const int y)
+{
+    int mapWidth = MAP_WIDTH * TILE_SIZE;
+    int mapHeight = MAP_HEIGHT * TILE_SIZE;
+
+    CMap* map_ = getMap(x, y);
+
+    if (map_ == NULL) return NULL;
+
+    return map_->getTile(x % mapWidth, y % mapHeight);
+}
+
 bool CArea::OnLoad(const char* file)
 {
     mapList.clear();
@@ -23,7 +48,7 @@ bool CArea::OnLoad(const char* file)
 
     // Creer un string, et prepend un path pour different systems
     std::string TilesetFile = std::string(TilesetFileChar);
-    
+
 #ifdef MACTERMINAL
 #elif __APPLE__
     TilesetFile.insert(2, "birdyShmup.app/Contents/Resources/");
@@ -47,7 +72,7 @@ bool CArea::OnLoad(const char* file)
 
             // Creer un string, et prepend un path pour different systems
             std::string MapFile = std::string(MapFileChar);
-            
+
 #ifdef MACTERMINAL
 #elif __APPLE__
             MapFile.insert(2, "birdyShmup.app/Contents/Resources/");

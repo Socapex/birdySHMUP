@@ -1,0 +1,1175 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"SDL_Get",
+				"SDL_GetTicks()	Uint32"
+			],
+			[
+				"SDL_DE",
+				"SDL_DEFAULT_REPEAT_INTERVAL	macro"
+			],
+			[
+				"SDL_Ena",
+				"SDL_EnableKeyRepeat(int delay, int interval)	int"
+			],
+			[
+				"g",
+				"getY() const	int"
+			],
+			[
+				"O",
+				"OnRender(SDL_Surface *Surf_Display, int cameraX, int cameraY)	void"
+			],
+			[
+				"CA",
+				"CArea	class"
+			],
+			[
+				"tar",
+				"targetY_	int *"
+			],
+			[
+				"TA",
+				"TARGET_MODE_CENTER	enum <anonymous>"
+			],
+			[
+				"targ",
+				"targetY_	int *"
+			],
+			[
+				"mo",
+				"moveY	const int"
+			],
+			[
+				"ta",
+				"targetY_	int *"
+			],
+			[
+				"y",
+				"y_	int"
+			],
+			[
+				"map",
+				"mapList	std::vector<CMap>"
+			],
+			[
+				"file",
+				"fileHandle	FILE*"
+			],
+			[
+				"ma",
+				"mapList	std::vector<CMap>"
+			],
+			[
+				"til",
+				"tileSetY	int"
+			],
+			[
+				"tile",
+				"tileSetWidth	int"
+			],
+			[
+				"TY",
+				"TILE_TYPE_NONE	enum <anonymous>"
+			],
+			[
+				"MA",
+				"MAP_WIDTH	macro"
+			],
+			[
+				"su",
+				"surfTileset_	SDL_Surface *"
+			],
+			[
+				"t",
+				"typeID	int"
+			],
+			[
+				"fil",
+				"fileHandle	FILE*"
+			],
+			[
+				"T",
+				"TILE_TYPE_NONE	enum <anonymous>"
+			],
+			[
+				"CTI",
+				"CTile	class"
+			],
+			[
+				"en",
+				"entity1_	CEntity"
+			],
+			[
+				"se",
+				"setX(const float x)	void"
+			],
+			[
+				"OnL",
+				"OnLoad(char *file, int width, int height, int maxFrames)	bool"
+			],
+			[
+				"enti",
+				"entity2_	CEntity"
+			],
+			[
+				"Surf",
+				"Surf_Entity	SDL_Surface *"
+			],
+			[
+				"On",
+				"OnDraw(SDL_Surface *surfDest, SDL_Surface *surfSource, int x, int y, int x2, int y2, int w, int h)	bool"
+			],
+			[
+				"he",
+				"height	const int"
+			],
+			[
+				"wid",
+				"width	const int"
+			],
+			[
+				"An",
+				"animeState	int"
+			],
+			[
+				"osc",
+				"oscillate_	bool"
+			],
+			[
+				"max",
+				"maxFrames_	int"
+			],
+			[
+				"fram",
+				"frame	const int"
+			],
+			[
+				"fra",
+				"frameInc_	int"
+			],
+			[
+				"mat",
+				"matchingPlays	std::vector<int>"
+			],
+			[
+				"v",
+				"vector<typename _Tp>	class"
+			],
+			[
+				"matc",
+				"matchingPlays	std::vector<int>"
+			],
+			[
+				"save",
+				"savedPlays	std::vector<std::vector<int> >"
+			],
+			[
+				"saved",
+				"savedPlays	std::vector<std::vector<int> >"
+			],
+			[
+				"sa",
+				"savedPlays	std::vector<std::vector<int> >"
+			],
+			[
+				"op",
+				"opponent_	AI"
+			],
+			[
+				"o",
+				"ostream	typedef"
+			],
+			[
+				"lo",
+				"loadFile()	void"
+			],
+			[
+				"p",
+				"push_back(const value_type &__x)	void"
+			],
+			[
+				"line",
+				"lineNumber	int"
+			],
+			[
+				"lin",
+				"lineNumber	int"
+			],
+			[
+				"sstream",
+				"stringstream	typedef"
+			],
+			[
+				"GRI",
+				"GRID_TYPE_X	enum <anonymous>"
+			],
+			[
+				"GR",
+				"GRID_TYPE_X	enum <anonymous>"
+			],
+			[
+				"chec",
+				"checkIfFinished()	bool"
+			],
+			[
+				"GRID",
+				"GRID_TYPE_O	enum <anonymous>"
+			],
+			[
+				"sur",
+				"surfDraw_	SDL_Surface *"
+			],
+			[
+				"surf",
+				"surfDisplay_	SDL_Surface *"
+			],
+			[
+				"w",
+				"winner_	int"
+			],
+			[
+				"gr",
+				"grid_	uint8_t [9]"
+			],
+			[
+				"surfD",
+				"surfDraw_	SDL_Surface *"
+			],
+			[
+				"game",
+				"gaemFinished_	bool"
+			],
+			[
+				"res",
+				"resetBoard()	void"
+			],
+			[
+				"OnD",
+				"OnDraw(SDL_Surface *surfDest, SDL_Surface *surfSource, int x, int y)	bool"
+			],
+			[
+				"uint",
+				"uint8_t	typedef"
+			],
+			[
+				"uin",
+				"uint8_t	typedef"
+			],
+			[
+				"SDL_SRC",
+				"SDL_SRCCOLORKEY	macro"
+			],
+			[
+				"CSU",
+				"CSurface	class"
+			],
+			[
+				"OnRes",
+				"OnResize(int w, int h)	void"
+			],
+			[
+				"OnJoy",
+				"OnJoyButtonUp(Uint8 which, Uint8 button)	void"
+			],
+			[
+				"SDL_JOY",
+				"SDL_JOYBUTTONUP	SDL_EventType"
+			],
+			[
+				"j",
+				"jbutton	SDL_JoyButtonEvent"
+			],
+			[
+				"OnJoyB",
+				"OnJoyButtonDown(Uint8 which, Uint8 button)	void"
+			],
+			[
+				"SDL_JOYB",
+				"SDL_JOYBUTTONDOWN	SDL_EventType"
+			],
+			[
+				"SDL_JOYHA",
+				"SDL_JOYHATMOTION	SDL_EventType"
+			],
+			[
+				"SDL_JOYBA",
+				"SDL_JOYBALLMOTION	SDL_EventType"
+			],
+			[
+				"OnMB",
+				"OnMButtonUp(int mX, int mY)	void"
+			],
+			[
+				"SDL_BUT",
+				"SDL_BUTTON_MIDDLE	macro"
+			],
+			[
+				"OnRB",
+				"OnRButtonUp(int mX, int mY)	void"
+			],
+			[
+				"SDL_BUTTON",
+				"SDL_BUTTON_RIGHT	macro"
+			],
+			[
+				"SDL_BUTT",
+				"SDL_BUTTON_LEFT	macro"
+			],
+			[
+				"SDL_MOU",
+				"SDL_MOUSEBUTTONUP	SDL_EventType"
+			],
+			[
+				"SDL_BU",
+				"SDL_BUTTON_LEFT	macro"
+			],
+			[
+				"OnMou",
+				"OnMouseMove(int mX, int mY, int relX, int relY, bool Left, bool Right, bool Middle)	void"
+			],
+			[
+				"OnK",
+				"OnKeyUp(SDLKey sym, SDLMod mod, Uint16 unicode)	void"
+			],
+			[
+				"SDL_K",
+				"SDL_KEYUP	SDL_EventType"
+			],
+			[
+				"s",
+				"sym	SDLKey"
+			],
+			[
+				"OnKe",
+				"OnKeyDown(SDLKey sym, SDLMod mod, Uint16 unicode)	void"
+			],
+			[
+				"SDL_A",
+				"SDL_APPMOUSEFOCUS	macro"
+			],
+			[
+				"OnIn",
+				"OnInputFocus()	void"
+			],
+			[
+				"SDL_APP",
+				"SDL_APPINPUTFOCUS	macro"
+			],
+			[
+				"OnM",
+				"OnMouseFocus()	void"
+			],
+			[
+				"x",
+				"x2	int"
+			],
+			[
+				"de",
+				"destRect	SDL_Rect"
+			],
+			[
+				"SDL_QU",
+				"SDL_QUIT	SDL_EventType"
+			],
+			[
+				"SDL_HW",
+				"SDL_HWSURFACE	macro"
+			],
+			[
+				"SDL_INIT",
+				"SDL_INIT_EVERYTHING	macro"
+			],
+			[
+				"OnE",
+				"OnEvent(SDL_Event *event)	void"
+			],
+			[
+				"SDL_Q",
+				"SDL_QUIT	SDL_EventType"
+			],
+			[
+				"SCR",
+				"SCREEN_BPP	const int"
+			],
+			[
+				"SDL_Free",
+				"SDL_FreeSurface(SDL_Surface *surface)	void"
+			],
+			[
+				"c",
+				"c_str() const	const _CharT *"
+			],
+			[
+				"get",
+				"getLastPosition() const	std::pair<int, int>"
+			],
+			[
+				"pa",
+				"pair_	std::pair<int, int>"
+			],
+			[
+				"tes",
+				"test	bool"
+			],
+			[
+				"test",
+				"testGetTurn()	void"
+			],
+			[
+				"lsd",
+				"lSDL_image"
+			],
+			[
+				"padd",
+				"padding-top"
+			],
+			[
+				"border-co",
+				"border-color"
+			],
+			[
+				"pad",
+				"padding-top"
+			],
+			[
+				"ba",
+				"background"
+			],
+			[
+				"back",
+				"background"
+			],
+			[
+				"marg",
+				"margin-left"
+			],
+			[
+				"margin",
+				"margin-bottom"
+			],
+			[
+				"min",
+				"min-width"
+			],
+			[
+				"background",
+				"background-image"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"text",
+				"text-decoration"
+			],
+			[
+				"m",
+				"margin"
+			],
+			[
+				"mar",
+				"margin-right"
+			],
+			[
+				"te",
+				"text-decoration"
+			],
+			[
+				"border",
+				"border"
+			],
+			[
+				"backl",
+				"background-color"
+			],
+			[
+				"pus",
+				"pusherHeight"
+			],
+			[
+				"righ",
+				"rightTopHeight"
+			],
+			[
+				"matr",
+				"matrice2	Matrice<int>"
+			],
+			[
+				"ge",
+				"getPriorite() const	int"
+			],
+			[
+				"pri",
+				"priorite_	int"
+			],
+			[
+				"des",
+				"destinataire_	string"
+			],
+			[
+				"ex",
+				"expediteur_	string"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "src/CEntity.h",
+			"settings":
+			{
+				"buffer_size": 814,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/CEntity.cpp",
+			"settings":
+			{
+				"buffer_size": 1328,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/C++/C++.sublime-build",
+	"command_palette":
+	{
+		"height": 67.0,
+		"selected_items":
+		[
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"reindent",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"pa",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"subl",
+				"Preferences: SublimeClang Settings – Default"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Volumes/User/philippe_groarke/Documents/XCode/birdyShmup/src/CApp_OnEvent.cpp",
+		"/Volumes/User/philippe_groarke/Documents/XCode/socapexs-manaplus/.gitignore",
+		"/Volumes/User/philippe_groarke/Documents/XCode/birdyShmup/.gitignore",
+		"/Volumes/User/philippe_groarke/Documents/XCode/SDLTutorialAnimation/CApp.h",
+		"/Volumes/User/philippe_groarke/Documents/XCode/SDLTutorialAnimation/CMap.cpp",
+		"/Volumes/User/philippe_groarke/Documents/XCode/SDLTutorialAnimation/CArea.cpp",
+		"/Volumes/User/philippe_groarke/Documents/XCode/SDLTutorialAnimation/CCamera.h",
+		"/Volumes/User/philippe_groarke/Documents/XCode/SDLTutorialAnimation/CCamera.cpp",
+		"/Volumes/User/philippe_groarke/Documents/XCode/SDLTutorialAnimation/CApp_OnRender.cpp",
+		"/Volumes/User/philippe_groarke/Documents/XCode/SDLTutorialAnimation/src/Makefile",
+		"/Volumes/User/philippe_groarke/Documents/XCode/SDLTutorialAnimation/CApp_OnEvent.cpp",
+		"/Volumes/User/philippe_groarke/Documents/XCode/birdyShmup/README.md",
+		"/Volumes/User/philippe_groarke/Documents/XCode/SDLTutorialAnimation/CTile.cpp",
+		"/Volumes/User/philippe_groarke/Documents/XCode/SDLTutorialAnimation/CTile.h",
+		"/Volumes/User/philippe_groarke/Downloads/sdl_maps/CEvent.h",
+		"/Volumes/User/philippe_groarke/Downloads/sdl_maps/CEvent.cpp",
+		"/Volumes/User/philippe_groarke/Downloads/sdl_maps/CEntity.h",
+		"/Volumes/User/philippe_groarke/Downloads/sdl-collision/CEvent.cpp",
+		"/Volumes/User/philippe_groarke/Downloads/sdl-collision/CEntity.cpp",
+		"/Volumes/User/philippe_groarke/Documents/XCode/SDLTutorialAnimation/CEvent.cpp",
+		"/Volumes/User/philippe_groarke/Documents/XCode/SDLTutorialAnimation/Defines.h",
+		"/Volumes/User/philippe_groarke/Documents/XCode/SDLTutorialAnimation/CSurface.h",
+		"/Volumes/User/philippe_groarke/Documents/XCode/SDLTutorialAnimation/CApp_OnInit.cpp",
+		"/Volumes/User/philippe_groarke/Documents/XCode/SDLTutorialAnimation/CApp_OnCleanup.cpp",
+		"/Volumes/User/philippe_groarke/Downloads/sdl-collision/CCamera.cpp",
+		"/Volumes/User/philippe_groarke/Documents/XCode/SDLTutorialAnimation/CMap.h",
+		"/Volumes/User/philippe_groarke/Documents/XCode/SDLTutorialAnimation/CArea.h",
+		"/Volumes/User/philippe_groarke/Documents/XCode/SDLTutorialAnimation/CApp_OnLoop.cpp",
+		"/Volumes/User/philippe_groarke/Documents/XCode/SDLTutorialAnimation/CApp.cpp",
+		"/Volumes/User/philippe_groarke/Documents/XCode/SDLTutorialAnimation/CEntity.h",
+		"/Volumes/User/philippe_groarke/Documents/XCode/SDLTutorialAnimation/CEntity.cpp",
+		"/Volumes/User/philippe_groarke/Documents/XCode/SDLTutorialAnimation/CSurface.cpp",
+		"/Volumes/User/philippe_groarke/Documents/XCode/SDLTemplate/CSurface.h",
+		"/Volumes/User/philippe_groarke/Documents/XCode/SDLTemplate/CSurface.cpp",
+		"/Volumes/User/philippe_groarke/Documents/XCode/GamePrototype/CSurface.h",
+		"/Volumes/User/philippe_groarke/Documents/XCode/GamePrototype/CSurface.cpp",
+		"/Volumes/User/philippe_groarke/Documents/XCode/SDLTutorialAnimation/CAnimation.cpp",
+		"/Volumes/User/philippe_groarke/Documents/XCode/SDLTutorialAnimation/CAnimation.h",
+		"/Volumes/User/philippe_groarke/Documents/XCode/SDLTutorialAnimation/Makefile",
+		"/Volumes/User/philippe_groarke/Documents/XCode/GamePrototype/CApp_OnCleanup.cpp",
+		"/Volumes/User/philippe_groarke/Documents/XCode/GamePrototype/CApp_OnInit.cpp",
+		"/Volumes/User/philippe_groarke/Documents/Poly/Session1/INF1005C/TD4/TD4/exo1.cpp",
+		"/Volumes/User/philippe_groarke/Documents/Poly/Session1/INF1005C/TD3/TP3/exo2.cpp",
+		"/Volumes/User/philippe_groarke/Documents/Poly/Session1/INF1005C/TD3/exo5.cpp",
+		"/Volumes/User/philippe_groarke/Documents/Poly/Session1/INF1005C/TD3/exo6.cpp",
+		"/Volumes/User/philippe_groarke/Documents/Poly/Session1/INF1005C/TD6/td6.cpp",
+		"/Volumes/User/philippe_groarke/Documents/XCode/GamePrototype/CApp_OnRender.cpp",
+		"/Volumes/User/philippe_groarke/Documents/XCode/GamePrototype/CApp_OnEvent.cpp",
+		"/Volumes/User/philippe_groarke/Documents/XCode/GamePrototype/CApp_OnLoop.cpp",
+		"/Volumes/User/philippe_groarke/Dropbox/Ming_Poly/INF1010/TP 1/main.cpp",
+		"/Volumes/User/philippe_groarke/Dropbox/Ming_Poly/INF1010/TP5/main.cpp",
+		"/Volumes/User/philippe_groarke/Dropbox/Ming_Poly/INF1010/TP4/main.cpp",
+		"/Volumes/User/philippe_groarke/Documents/XCode/GamePrototype/AI.h",
+		"/Volumes/User/philippe_groarke/Documents/ValyriaTear_2013-04-24-185824_Philippes-MacBook-Pro.crash",
+		"/Volumes/User/philippe_groarke/Documents/XCode/GamePrototype/CEvent.h",
+		"/Volumes/User/philippe_groarke/Documents/XCode/GamePrototype/CEvent.cpp",
+		"/Volumes/User/philippe_groarke/Dropbox/Ming_Poly/log1000-13/TP6/sdl_t.h",
+		"/Volumes/User/philippe_groarke/Documents/XCode/GamePrototype/main.cpp",
+		"/Volumes/User/philippe_groarke/Dropbox/Ming_Poly/log1000-13/TP6/Game.h",
+		"/Volumes/User/philippe_groarke/Desktop/test1010.txt",
+		"/Volumes/User/philippe_groarke/Desktop/h11.txt",
+		"/Volumes/User/philippe_groarke/Desktop/h10.txt",
+		"/opt/local/include/libintl.h",
+		"/opt/local/share/gettext/intl/lock.h",
+		"/opt/local/include/glib-2.0/glib/ggettext.h",
+		"/Volumes/User/philippe_groarke/Documents/XCode/ValyriaTear/.gitignore",
+		"/Volumes/User/philippe_groarke/Downloads/ExempleTest/ExempleTest\\CompteTest.cpp",
+		"/Volumes/User/philippe_groarke/Downloads/ExempleTest/ExempleTest\\CompteTest.h",
+		"/Volumes/User/philippe_groarke/Dropbox/Ming_Poly/log1000-13/TP6/Game.cpp",
+		"/Volumes/User/philippe_groarke/Dropbox/Ming_Poly/LOG1000/TP6/tictactoe.cpp",
+		"/Volumes/User/philippe_groarke/Dropbox/Ming_Poly/INF1010/TP3_Headers/etudiant.h",
+		"/Volumes/User/philippe_groarke/Dropbox/Ming_Poly/INF1010/TP3_Headers/etudiant.cpp",
+		"/Volumes/User/philippe_groarke/Dropbox/Ming_Poly/INF1010/TP3_Headers/entreprise.h",
+		"/Volumes/User/philippe_groarke/Dropbox/Ming_Poly/INF1010/TP5/Message.cpp",
+		"/Volumes/User/philippe_groarke/Dropbox/Ming_Poly/INF1010/TP5/Matrice.h",
+		"/Volumes/User/philippe_groarke/Dropbox/Ming_Poly/INF1010/TP5/Message.h",
+		"/Volumes/User/philippe_groarke/Dropbox/Ming_Poly/INF1010/TP5/FoncteursOrdinateurs.h",
+		"/Volumes/User/philippe_groarke/Dropbox/Ming_Poly/log1000-13/TP6/tictactoe.cpp",
+		"/Volumes/User/philippe_groarke/Downloads/ExempleTest/ExempleTest\\Compte.h",
+		"/Volumes/User/philippe_groarke/Downloads/ExempleTest/ExempleTest\\EmployeBidon.h",
+		"/Volumes/User/philippe_groarke/Downloads/ExempleTest/ExempleTest\\mainTest.cpp",
+		"/Volumes/User/philippe_groarke/Dropbox/Ming_Poly/LOG1000/TP6/Makefile",
+		"/Volumes/User/philippe_groarke/Documents/XCode/manasource/sourceoftales/scripts/npcs/village/rebelphilip.lua",
+		"/Volumes/User/philippe_groarke/.bash_profile",
+		"/Volumes/User/philippe_groarke/.bashrc",
+		"/Volumes/User/philippe_groarke/.bash_rc",
+		"/Volumes/User/philippe_groarke/.profile",
+		"/Applications/MAMP/htdocs/Joomla_3/configuration.php",
+		"/Applications/MAMP/htdocs/Joomla_3/templates/evolonline/OldWebsite/css/page.css",
+		"/Applications/MAMP/htdocs/Joomla_3/components/com_kunena/template/blue_eagle/initialize.php",
+		"/Applications/MAMP/htdocs/Joomla_3/configuration 2.php",
+		"/Applications/MAMP/logs/php_error.log",
+		"/Applications/MAMP/htdocs/Joomla_3/administrator/components/index.html",
+		"/Applications/MAMP/htdocs/Joomla_3/administrator/components/com_kunena/kunena.php",
+		"/Applications/MAMP/htdocs/etest.evolonline.org-web/htdocs/configuration.php",
+		"/Applications/MAMP/htdocs/Joomla_3/bin/keychain.php",
+		"/Applications/MAMP/htdocs/Joomla_3/administrator/components/com_chronoforums/chronoforums.php",
+		"/Applications/MAMP/htdocs/Joomla_3/templates/evolonline/css/template.css",
+		"/Applications/MAMP/htdocs/Joomla_3/administrator/components/com_chronoforums/extensions/chronoforums/styles/prosilver/theme/forums.css",
+		"/Applications/MAMP/htdocs/Joomla_3/templates/evolonline/js/main.js",
+		"/Applications/MAMP/htdocs/Joomla_3/administrator/components/com_chronoforums/config.php",
+		"/Applications/MAMP/htdocs/Joomla_3/components/com_chronoforums/chronoforums.php",
+		"/Applications/MAMP/htdocs/Joomla_3/components/com_chronoforums/views/board/metadata.xml",
+		"/Applications/MAMP/htdocs/Joomla_3/components/com_chronoforums/views/board/tmpl/default.xml",
+		"/Applications/MAMP/htdocs/Joomla_3/modules/mod_coalawebsociallinks/mod_coalawebsociallinks.xml",
+		"/Applications/MAMP/htdocs/Joomla_3/modules/mod_coalawebsociallinks/tmpl/default.php",
+		"/Volumes/User/philippe_groarke/Dropbox/Ming_Poly/INF1010/TP5/Ordinateur.cpp",
+		"/Volumes/User/philippe_groarke/Dropbox/Ming_Poly/INF1010/TP5/Reseau.h",
+		"/Volumes/BOOTCAMP/Users/Philippe/Documents/Visual Studio 2010/Orchestra/Orchestra/include/vlcVideoPlayer.h",
+		"/Volumes/BOOTCAMP/Users/Philippe/Documents/Visual Studio 2010/Orchestra/Orchestra/include/videoInterface.h",
+		"/Volumes/User/philippe_groarke/Dropbox/Ming_Poly/INF1010/TP4/individu.cpp",
+		"/Volumes/User/philippe_groarke/Dropbox/Ming_Poly/INF1010/TP4/individu.h",
+		"/Volumes/User/philippe_groarke/Dropbox/Ming_Poly/INF1010/test.cpp",
+		"/Volumes/User/philippe_groarke/Dropbox/Ming_Poly/INF1010/TP2/FichiersTP2/Triangle.h",
+		"/Volumes/User/philippe_groarke/Dropbox/Ming_Poly/INF1010/TP3/vinsetfromages (Philippe G's conflicted copy 2013-02-14).h",
+		"/Volumes/User/philippe_groarke/Downloads/libpololu-avr/src/PololuQTRSensors/PololuQTRSensors.cpp",
+		"/Volumes/User/philippe_groarke/Dropbox/Ming_Poly/LOG1000/TP5/Makefile",
+		"/Volumes/User/philippe_groarke/Documents/Poly/inf1995-1418/codeCommun/tp/projet/libs/Makefile",
+		"/Volumes/User/philippe_groarke/Documents/Poly/inf1995-1418/codeCommun/tp/projet/Makefile",
+		"/Volumes/User/philippe_groarke/Documents/Poly/inf1995-1418/codeCommun/tp/projet/main.cpp",
+		"/Volumes/User/philippe_groarke/Documents/XCode/Combini/main.cpp",
+		"/Volumes/User/philippe_groarke/Documents/Poly/inf1995-1418/codeCommun/tp/projet/libs/libPwm/libPwm.h",
+		"/Volumes/User/philippe_groarke/Documents/Poly/inf1995-1418/codeCommun/tp/projet/libs/libPwm/libPwm.cpp",
+		"/Volumes/User/philippe_groarke/Documents/Poly/inf1995-1418/codeCommun/tp/projet/libs/include.h",
+		"/Volumes/User/philippe_groarke/Documents/Poly/inf1995-1418/codeCommun/tp/projet/libs/libRoues/Makefile",
+		"/Applications/MAMP/htdocs/Joomla_3/templates/evolonline/language/en-GB/en-GB.tpl_evolonline.ini",
+		"/Applications/MAMP/htdocs/Joomla_3/templates/evolonline/html/modules.php",
+		"/Applications/MAMP/htdocs/Joomla_3/templates/evolonline/index.php"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"ManaPlus",
+			"\n",
+			"virtual ",
+			"maxFrames",
+			"oscillate",
+			"fstream",
+			"getli",
+			"int",
+			"virtual",
+			"image",
+			"recursive",
+			"mutex",
+			"switch_turn",
+			"get_turn",
+			"last",
+			"process",
+			"clean",
+			"full",
+			"clean",
+			"full",
+			"prendreUneCase",
+			"take",
+			"/*",
+			"first",
+			"hover",
+			"transparent",
+			"p",
+			"color",
+			"kheader",
+			"size",
+			"span",
+			"shadow",
+			";\n",
+			"webkit",
+			"box-shadow",
+			"clearfix",
+			"93",
+			"685542",
+			"93",
+			"ba9d55",
+			"hover",
+			"2F2727",
+			"1a82f7",
+			"li",
+			"kunena",
+			"content",
+			"min-he",
+			"weight",
+			"hr",
+			"topics",
+			"header",
+			"moz-box",
+			"forabg",
+			"inner",
+			"footer",
+			"nav",
+			"button",
+			"well",
+			"tempTracker",
+			"last_proportional",
+			"proportional",
+			"calculerCounterContinuer",
+			"()();",
+			"calculerCounter",
+			"(roueDroite)",
+			"(roueGauche)",
+			"roueGauche",
+			"const",
+			"CONST",
+			"const",
+			"CONST",
+			"roueGauche",
+			"accelere",
+			"void",
+			"uint8_t",
+			"void",
+			"uint16_t",
+			"CONSTANT",
+			"DECELERE",
+			"ACCELERE",
+			"DernierEtat",
+			"uint16_t& gauche, uint16_t& droite",
+			"addScript",
+			"</div>",
+			"<div class=\"liste\">",
+			"breadcr",
+			"a",
+			"color: #d3b378",
+			"color: #d3b378;",
+			"current",
+			"hover",
+			"li",
+			"text",
+			"&",
+			"page-hea",
+			"image",
+			"transp",
+			"nav",
+			"sidebar",
+			"well",
+			"menu",
+			"nav",
+			"sidebar",
+			"well",
+			"downloads/",
+			"guides/",
+			"links/",
+			"menu",
+			"main",
+			"mainmenu",
+			"shadow",
+			"navigation",
+			"header",
+			"color",
+			"top-navigation",
+			"p-n",
+			"top",
+			"top-navigation",
+			"bread",
+			"h4",
+			"page-header",
+			"padding-bottom: 8",
+			"padding-bottom: ",
+			"padding-bottom: 8px",
+			"padding-bottom\npadding-bottom",
+			"padding-bottom: 8px;\npadding-bottom",
+			"  padding-bottom: 8px;\npadding-bottom",
+			"  padding-bottom: 8px;\npadding-bottom:"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"vitesseLentRoueVite",
+			"vitesseLentDefaut",
+			"",
+			"H",
+			"F",
+			"X",
+			"G",
+			"M",
+			"Z",
+			"V",
+			"D",
+			"R",
+			"L",
+			"O",
+			"L",
+			"U",
+			"N",
+			"P",
+			"I",
+			"T",
+			"S",
+			"E",
+			"L",
+			"C",
+			"B",
+			"A",
+			"C",
+			"S",
+			"E",
+			"B",
+			"A",
+			"c",
+			"s",
+			"t",
+			"e",
+			"b",
+			"a",
+			"z",
+			"y",
+			"notes",
+			"vector",
+			"map[\"storage_daggers_soldier_guy\"]",
+			"start_quest_mole",
+			"finish_quest_daggers",
+			"start_quest_daggers"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "src/CEntity.h",
+					"settings":
+					{
+						"buffer_size": 814,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/CEntity.cpp",
+					"settings":
+					{
+						"buffer_size": 1328,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.clang":
+	{
+		"height": 142.0
+	},
+	"output.clang_static_analyzer":
+	{
+		"height": 0.0
+	},
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"ruby",
+				"ruby/ruby_impl.cpp"
+			],
+			[
+				"eva",
+				"scripts/npcs/village/eva.lua"
+			],
+			[
+				"globa",
+				"scripts/global_events.lua"
+			],
+			[
+				"soldier",
+				"scripts/functions/soldierpatrol.lua"
+			],
+			[
+				"bor",
+				"scripts/npcs/pub/borin.lua"
+			],
+			[
+				"soldi",
+				"scripts/monsters/soldier.lua"
+			],
+			[
+				"scu",
+				"scripts/npcs/pub/scullionjohn.lua"
+			],
+			[
+				"casern_st",
+				"scripts/maps/casern_storage.lua"
+			],
+			[
+				"pries",
+				"scripts/npcs/village/priestesslinota.lua"
+			],
+			[
+				"inn",
+				"scripts/npcs/pub/innkeepernorman.lua"
+			],
+			[
+				"casern",
+				"scripts/maps/casern_cellar.lua"
+			],
+			[
+				"scull",
+				"scripts/npcs/casern_north/scullionjohn.lua"
+			],
+			[
+				"rel",
+				"scripts/functions/religion.lua"
+			],
+			[
+				"npch",
+				"scripts/functions/npchelper.lua"
+			],
+			[
+				"items",
+				"items.xml"
+			],
+			[
+				"monste",
+				"monsters.xml"
+			],
+			[
+				"bori",
+				"scripts/npcs/pub/borin.lua"
+			],
+			[
+				"ite",
+				"items.xml"
+			],
+			[
+				"monst",
+				"monsters.xml"
+			],
+			[
+				"monk",
+				"scripts/npcs/village/monkmartin.lua"
+			],
+			[
+				"soldie",
+				"scripts/monsters/soldier.lua"
+			],
+			[
+				"patrol",
+				"scripts/functions/patrol.lua"
+			],
+			[
+				"guar",
+				"scripts/functions/guardpatrol.lua"
+			],
+			[
+				"global",
+				"scripts/global_events.lua"
+			],
+			[
+				"villa",
+				"scripts/maps/village.lua"
+			],
+			[
+				"mont",
+				"monsters.xml"
+			],
+			[
+				"monster",
+				"monsters.xml"
+			],
+			[
+				"skele",
+				"scripts/monsters/skeleton_boss.lua"
+			],
+			[
+				"cave",
+				"scripts/maps/cave.lua"
+			],
+			[
+				"caser_s",
+				"scripts/maps/casern_storage.lua"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 132.0,
+	"status_bar_visible": true
+}

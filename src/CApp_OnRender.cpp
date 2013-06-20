@@ -3,8 +3,8 @@
 void CApp::OnRender()
 {
 
-    CArea::AreaControl.OnRender(surfDisplay_, CCamera::CameraControl.getX(),
-                                    CCamera::CameraControl.getY());
+    CArea::AreaControl.OnRender(surfDisplay_, -CCamera::CameraControl.getX(),
+                                    -CCamera::CameraControl.getY());
 
     for (int i = 0; i < CEntity::entityList.size(); ++i)
     {

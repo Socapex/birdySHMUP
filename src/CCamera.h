@@ -1,7 +1,7 @@
 #ifndef CCAMERA_H
 #define CCAMERA_H
 
-#include <SDL.h>
+#include "SDL/SDL.h"
 
 #include "Defines.h"
 
@@ -14,7 +14,7 @@ public:
 
     // SETTERS
     void setPos(const int x, const int y);
-    void setTarget(int* x, int* y);
+    void setTarget(float* x, float* y);
 
     // GETTERS
     int getX() const;
@@ -28,8 +28,8 @@ public:
 private:
     int x_;
     int y_;
-    int* targetX_;
-    int* targetY_;
+    float* targetX_;
+    float* targetY_;
 
 };
 

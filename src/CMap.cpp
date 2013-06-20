@@ -8,6 +8,18 @@ CMap::CMap()
 CMap::~CMap()
 {}
 
+CTile* CMap::getTile(const int x, const int y)
+{
+    int ID = 0;
+
+    ID = x / TILE_SIZE;
+    ID = ID + (MAP_WIDTH * (y / TILE_SIZE));
+
+    if (ID < 0 || ID >= tileList_.size()) return NULL;
+
+    return &tileList_[ID];
+}
+
 bool CMap::OnLoad(const char* file)
 {
     tileList_.clear();

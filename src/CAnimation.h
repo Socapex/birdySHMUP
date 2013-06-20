@@ -1,7 +1,7 @@
 #ifndef CANIMATION_H
 #define CANIMATION_H
 
-#include <SDL.h>
+#include "SDL/SDL.h"
 
 class CAnimation {
 public:

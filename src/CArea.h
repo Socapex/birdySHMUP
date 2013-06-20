@@ -10,6 +10,9 @@ public:
     CArea();
     ~CArea();
 
+    CMap* getMap(const int x, const int y);
+    CTile* getTile(const int x, const int y);
+
     bool    OnLoad(const char* file);
     void    OnRender(SDL_Surface* Surf_Display, int cameraX, int cameraY);
     void    OnCleanup();

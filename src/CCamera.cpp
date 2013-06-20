@@ -19,7 +19,7 @@ void CCamera::setPos(const int x, const int y)
     y_ = y;
 }
 
-void CCamera::setTarget(int* x, int* y)
+void CCamera::setTarget(float* x, float* y)
 {
     targetX_ = x;
     targetY_ = y;

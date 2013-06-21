@@ -2,8 +2,6 @@
 
 std::vector<CEntity*> CEntity::entityList;
 
-std::vector<CEntityCol> CEntityCol::EntityColList;
-
 CEntity::CEntity()
 {
     Surf_Entity = NULL;
@@ -25,8 +23,8 @@ CEntity::CEntity()
     accelX = 0;
     accelY = 0;
 
-    maxSpeedX_ = 5;
-    maxSpeedY_ = 5;
+    maxSpeedX_ = 10;
+    maxSpeedY_ = 10;
 
     currentFrameCol = 0;
     currentFrameRow = 0;
@@ -35,6 +33,8 @@ CEntity::CEntity()
     colY = 0;
     colWidth = 0;
     colHeight = 0;
+
+    canJump = false;
 }
 
 CEntity::~CEntity()
@@ -47,6 +47,8 @@ CEntity::~CEntity()
 void CEntity::OnMove(const float moveX_, const float moveY_)
 {
     if (moveX_ == 0 && moveY_ == 0) return;
+
+    canJump = false;
 
     double newX = 0;
     double newY = 0;
@@ -86,6 +88,7 @@ void CEntity::OnMove(const float moveX_, const float moveY_)
             else speedX = 0;
 
             if (posValid((int)x_, (int)(y_ + newY))) y_ += newY;
+            else if (moveY_ > 0) canJump = true;
             else speedY = 0;
         }
 
@@ -141,6 +144,15 @@ bool CEntity::collides(const int oX, const int oY, const int oW, const int oH)
     if (top1 > bottom2) return false;
     if (right1 < left2) return false;
     if (left1 > right2) return false;
+
+    return true;
+}
+
+bool CEntity::jump()
+{
+    if (canJump == false) return false;
+
+    speedY = -maxSpeedY_;
 
     return true;
 }
@@ -204,7 +216,7 @@ void CEntity::OnAnimate()
     Anim_Control.OnAnimate();
 }
 
-void CEntity::OnCollision(CEntity* entity)
+bool CEntity::OnCollision(CEntity* entity)
 {}
 
 
@@ -326,12 +338,3 @@ void CEntity::setMoveRight(const bool move)
 
 
 
-
-CEntityCol::CEntityCol()
-{
-    entityA = NULL;
-    entityB = NULL;
-}
-
-CEntityCol::~CEntityCol()
-{}

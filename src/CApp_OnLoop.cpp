@@ -10,6 +10,19 @@ void CApp::OnLoop()
         CEntity::entityList[i]->OnLoop();
     }
 
+    // COLLISIONS
+    for (int i = 0; i < CEntityCol::EntityColList.size(); ++i)
+    {
+        CEntity* entityA = CEntityCol::EntityColList[i].entityA;
+        CEntity* entityB = CEntityCol::EntityColList[i].entityB;
+
+        if (entityA == NULL || entityB == NULL) continue;
+
+        if (entityA->OnCollision(entityB)) entityB->OnCollision(entityA);
+    }
+
+    CEntityCol::EntityColList.clear();
+
     CFPS::FPSControl.OnLoop();
 
     // EXEMPLES

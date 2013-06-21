@@ -21,6 +21,12 @@ void CApp::OnKeyDown(SDLKey sym, SDLMod mod, Uint16 unicode)
                 break;
             }
 
+        case SDLK_SPACE:
+            {
+                player1_.jump();
+                break;
+            }
+
         // Exemples
         // case SDLK_UP:       CCamera::CameraControl.OnMove(0, 5); break;
         // case SDLK_DOWN:     CCamera::CameraControl.OnMove(0, -5); break;

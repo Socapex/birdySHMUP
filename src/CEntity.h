@@ -21,13 +21,14 @@ public:
     void OnMove(const float moveX_, const float moveY_);
     void stopMove();
     bool collides(const int oX, const int oY, const int oW, const int oH);
+    bool jump();
 
     virtual bool OnLoad(const char* file, const int width, const int height, const int maxFrames);
     virtual void OnLoop();
     virtual void OnRender(SDL_Surface* Surf_Display);
     virtual void OnCleanup();
     virtual void OnAnimate();
-    virtual void OnCollision(CEntity* entity);
+    virtual bool OnCollision(CEntity* entity);
 
     static std::vector<CEntity*> entityList;
 
@@ -58,6 +59,8 @@ protected:
     int colY;
     int colWidth;
     int colHeight;
+
+    bool canJump;
 
 private:
 

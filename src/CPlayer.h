@@ -14,7 +14,7 @@ public:
     void OnRender(SDL_Surface* Surf_Display);
     void OnCleanup();
     void OnAnimate();
-    void OnCollision(CEntity* Entity);
+    bool OnCollision(CEntity* Entity);
 };
 
 #endif // CPLAYER_H

@@ -9,7 +9,6 @@
 #include "CSurface.h"
 #include "CEvent.h"
 #include "CEntity.h"
-#include "CArea.h"
 #include "CCamera.h"
 #include "CPlayer.h"
 #include "CFPS.h"
@@ -34,13 +33,14 @@ public:
 private:
     SDL_Surface* surfDisplay_;
 
-    CPlayer player1_;
-    CPlayer player2_;
+    CPlayer Player;
 
     CEntity entity1_;
     CEntity entity2_;
 
     CAnimation Anim_Yoshi_;
+
+    SDL_Surface* surfBackground_;
 
     bool running_;
 

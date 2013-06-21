@@ -9,15 +9,14 @@ bool CApp::OnInit()
 
     // PATHS:
     // JOUEUR
-    std::string player1Path = "img/yoshi.png";
-    std::string player2Path = "img/yoshi.png";
+    std::string player1Path = "img/cube.png";
 
     // ENEMIES
     std::string entity1Path = "img/yoshi.bmp";
     std::string entity2Path = "img/yoshi.bmp";
 
-    // MAP & MISC
-    std::string areaPath = "maps/1.area";
+    // BACKGROUND & MISC
+    std::string backgroundPath = "img/cloud-1.jpg";
 
     // Platform specific:
 #ifdef MACTERMINAL
@@ -25,29 +24,26 @@ bool CApp::OnInit()
     // terminal sur mac.
 #elif __APPLE__
     player1Path.insert(0, "birdyShmup.app/Contents/Resources/");
-    player2Path.insert(0, "birdyShmup.app/Contents/Resources/");
     entity1Path.insert(0, "birdyShmup.app/Contents/Resources/");
     entity2Path.insert(0, "birdyShmup.app/Contents/Resources/");
-    areaPath.insert(0, "birdyShmup.app/Contents/Resources/");
+    backgroundPath.insert(0, "birdyShmup.app/Contents/Resources/");
 
 #endif
 
     // Load tous nos entites
     // JOUEUR
-    if (player1_.OnLoad(player1Path.c_str(), 64, 64, 8) == false) return false;
-    if (player2_.OnLoad(player2Path.c_str(), 64, 64, 8) == false) return false;
+    if (Player.OnLoad(player1Path.c_str(), 64, 64, 0) == false) return false;
 
     // Params initiales
-    player1_.setX(300);
-    player2_.setX(100);
+    Player.setX(300);
+    Player.setY(400);
 
     // Rajouter a notre vector d'entites
-    CEntity::entityList.push_back(&player1_);
-    CEntity::entityList.push_back(&player2_);
+    CEntity::entityList.push_back(&Player);
 
     // Centrer la camera sur le player (seulement pour le tutoriel)
-    CCamera::CameraControl.targetMode = TARGET_MODE_CENTER;
-    CCamera::CameraControl.setTarget(&player1_.x_, &player1_.y_);
+    CCamera::CameraControl.targetMode = TARGET_MODE_NORMAL;
+    //CCamera::CameraControl.setTarget(&Player.x_, &Player.y_);
 
     // ENEMIES
     // if (entity1_.OnLoad(entity1Path.c_str(), 64, 64, 8) == false) return false;
@@ -58,9 +54,9 @@ bool CApp::OnInit()
     // CEntity::entityList.push_back(&entity1_);
     // CEntity::entityList.push_back(&entity2_);
 
-
-    // Map
-    if (CArea::AreaControl.OnLoad(areaPath.c_str()) == false) return false;
+    // BACKGROUND
+    if ((surfBackground_ = CSurface::OnLoad(backgroundPath.c_str())) == NULL)
+        return false;
 
     SDL_EnableKeyRepeat(1, SDL_DEFAULT_REPEAT_INTERVAL / 3);
 

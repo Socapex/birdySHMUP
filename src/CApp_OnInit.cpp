@@ -46,13 +46,6 @@ bool CApp::OnInit()
     //CCamera::CameraControl.setTarget(&Player.x_, &Player.y_);
 
     // ENEMIES
-    // if (entity1_.OnLoad(entity1Path.c_str(), 64, 64, 8) == false) return false;
-    // if (entity2_.OnLoad(entity2Path.c_str(), 64, 64, 8) == false) return false;
-
-    // entity2_.setX(100);
-
-    // CEntity::entityList.push_back(&entity1_);
-    // CEntity::entityList.push_back(&entity2_);
 
     // BACKGROUND
     if ((surfBackground_ = CSurface::OnLoad(backgroundPath.c_str())) == NULL)
@@ -63,8 +56,20 @@ bool CApp::OnInit()
     return true;
 
 
+}
+
+
+
     // EXEMPLES
     //if((surfTest_ = CSurface::OnLoad("img/yoshi.bmp")) == NULL) return false;
     //Anim_Yoshi_.setMaxFrames(8);
     //Anim_Yoshi_.setOscillate(true);
-}
+
+
+    // if (entity1_.OnLoad(entity1Path.c_str(), 64, 64, 8) == false) return false;
+    // if (entity2_.OnLoad(entity2Path.c_str(), 64, 64, 8) == false) return false;
+
+    // entity2_.setX(100);
+
+    // CEntity::entityList.push_back(&entity1_);
+    // CEntity::entityList.push_back(&entity2_);

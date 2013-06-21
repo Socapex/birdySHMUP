@@ -30,6 +30,7 @@ void CApp::OnKeyDown(SDLKey sym, SDLMod mod, Uint16 unicode)
         case SDLK_DOWN:
             {
                 Player.setMoveDown(true);
+                break;
             }
 
         case SDLK_SPACE:
@@ -72,6 +73,7 @@ void CApp::OnKeyUp(SDLKey sym, SDLMod mod, Uint16 unicode)
         case SDLK_DOWN:
             {
                 Player.setMoveDown(false);
+                break;
             }
 
         default: {}

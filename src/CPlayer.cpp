@@ -127,22 +127,33 @@ void CPlayer::OnLoop()
     if (moveLeft_ == false && moveRight_ == false
         && moveUp_ == false && moveDown_ == false) stopMove();
 
-    if (moveLeft_) speedX = -maxSpeedX_; //accelX = -0.5;
-    else if (moveRight_) speedX = maxSpeedX_; //accelX = 0.5;
+    else
+    {
 
-    if (moveUp_) speedY = -maxSpeedY_;
-    else if (moveDown_) speedY = -maxSpeedY_;
+        if (moveLeft_) speedX = -maxSpeedX_; //accelX = -0.5;
+        else if (moveRight_) speedX = maxSpeedX_; //accelX = 0.5;
 
-    if (speedX > maxSpeedX_) speedX = maxSpeedX_;
-    if (speedX < -maxSpeedX_) speedX = -maxSpeedX_;
-    if (speedY > maxSpeedY_) speedY = maxSpeedY_;
-    if (speedY < -maxSpeedY_) speedY = -maxSpeedY_;
+        if (moveUp_) speedY = -maxSpeedY_;
+        else if (moveDown_) speedY = maxSpeedY_;
 
-    speedX += CFPS::FPSControl.getSpeedFactor();
-    speedY += CFPS::FPSControl.getSpeedFactor();
+        // if (speedX > maxSpeedX_) speedX = maxSpeedX_;
+        // if (speedX < -maxSpeedX_) speedX = -maxSpeedX_;
+        // if (speedY > maxSpeedY_) speedY = maxSpeedY_;
+        // if (speedY < -maxSpeedY_) speedY = -maxSpeedY_;
 
+        speedX *= CFPS::FPSControl.getSpeedFactor();
+        speedY *= CFPS::FPSControl.getSpeedFactor();
+
+        x_ += speedX;
+        y_ += speedY;
+
+    }
+
+
+
+    // On verra si on garde cette fonction OnMove
+    //OnMove(speedX, speedY);
     CEntity::OnLoop();
-    OnMove(speedX, speedY);
 }
 
 void CPlayer::OnRender(SDL_Surface* Surf_Display)
@@ -239,10 +250,10 @@ void CPlayer::setMoveRight(const bool move)
 
 void CPlayer::setMoveUp(const bool move)
 {
-    moveUp_ = true;
+    moveUp_ = move;
 }
 
 void CPlayer::setMoveDown(const bool move)
 {
-    moveDown_ = true;
+    moveDown_ = move;
 }

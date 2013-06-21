@@ -35,14 +35,14 @@ bool CApp::OnInit()
     // Load tous nos entites
     // JOUEUR
     if (player1_.OnLoad(player1Path.c_str(), 64, 64, 8) == false) return false;
-    if (player2_.OnLoad(player2Path.c_str(), 64, 64, 8) == false) return false;
+    //if (player2_.OnLoad(player2Path.c_str(), 64, 64, 8) == false) return false;
 
     // Params initiales
-    player2_.setX(100);
+    //player2_.setX(100);
 
     // Rajouter a notre vector d'entites
     CEntity::entityList.push_back(&player1_);
-    CEntity::entityList.push_back(&player2_);
+    //CEntity::entityList.push_back(&player2_);
 
     // Centrer la camera sur le player (seulement pour le tutoriel)
     CCamera::CameraControl.targetMode = TARGET_MODE_CENTER;

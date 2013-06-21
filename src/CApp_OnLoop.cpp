@@ -13,5 +13,5 @@ void CApp::OnLoop()
     CFPS::FPSControl.OnLoop();
 
     // EXEMPLES
-    //Anim_Yoshi_.onAnimate();
+    //Anim_Yoshi_.OnAnimate();
 }

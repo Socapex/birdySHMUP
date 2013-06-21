@@ -140,7 +140,7 @@ bool CEntity::collides(const int oX, const int oY, const int oW, const int oH)
     if (bottom1 < top2) return false;
     if (top1 > bottom2) return false;
     if (right1 < left2) return false;
-    if (left1 > right1) return false;
+    if (left1 > right2) return false;
 
     return true;
 }
@@ -175,7 +175,7 @@ void CEntity::OnLoop()
     if (speedY > maxSpeedY_) speedY = maxSpeedY_;
     if (speedY < -maxSpeedY_) speedY = -maxSpeedY_;
 
-    Anim_Control.onAnimate();
+    OnAnimate();
     OnMove(speedX, speedY);
 }
 
@@ -199,9 +199,9 @@ void CEntity::OnCleanup()
 void CEntity::OnAnimate()
 {
     if (moveLeft_) currentFrameCol = 0;
-    else if (moveRight_) currentFrameRow = 0;
+    else if (moveRight_) currentFrameCol = 1;
 
-    Anim_Control.onAnimate();
+    Anim_Control.OnAnimate();
 }
 
 void CEntity::OnCollision(CEntity* entity)
@@ -217,10 +217,10 @@ bool CEntity::posValid(const int newX, const int newY)
     bool return_ = true;
 
     int startX = (newX + colX) / TILE_SIZE;
-    int startY = (newY + colY) /TILE_SIZE;
+    int startY = (newY + colY) / TILE_SIZE;
 
     int endX = ((newX + colX) + width_ - colWidth - 1) / TILE_SIZE;
-    int endY = ((newY + colY) + height_ - colHeight -1) / TILE_SIZE;
+    int endY = ((newY + colY) + height_ - colHeight - 1) / TILE_SIZE;
 
     for (int iY = startY; iY < endY; ++iY)
     {

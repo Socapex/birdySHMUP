@@ -4,14 +4,15 @@
 #include "SDL/SDL.h"
 #include <string>
 
+#include "Defines.h"
+
 #include "CSurface.h"
 #include "CEvent.h"
-#include "CAnimation.h"
 #include "CEntity.h"
-#include "Defines.h"
 #include "CArea.h"
 #include "CCamera.h"
 #include "CPlayer.h"
+#include "CFPS.h"
 
 class CApp : public CEvent {
 public:

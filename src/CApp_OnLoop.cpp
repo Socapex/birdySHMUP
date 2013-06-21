@@ -10,6 +10,8 @@ void CApp::OnLoop()
         CEntity::entityList[i]->OnLoop();
     }
 
+    CFPS::FPSControl.OnLoop();
+
     // EXEMPLES
     //Anim_Yoshi_.onAnimate();
 }

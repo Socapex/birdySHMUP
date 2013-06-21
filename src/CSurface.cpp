@@ -14,10 +14,10 @@ SDL_Surface* CSurface::OnLoad(const char* file)
     {
         printf("IMG_Load: %s\n", IMG_GetError());
         return NULL;
-    } 
+    }
 
 
-    surfReturn = SDL_DisplayFormat(surfTemp);
+    surfReturn = SDL_DisplayFormatAlpha(surfTemp);
     SDL_FreeSurface(surfTemp);
 
     return surfReturn;

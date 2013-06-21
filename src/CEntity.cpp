@@ -222,9 +222,9 @@ bool CEntity::posValid(const int newX, const int newY)
     int endX = ((newX + colX) + width_ - colWidth - 1) / TILE_SIZE;
     int endY = ((newY + colY) + height_ - colHeight - 1) / TILE_SIZE;
 
-    for (int iY = startY; iY < endY; ++iY)
+    for (int iY = startY; iY <= endY; ++iY)
     {
-        for (int iX = startX; iX < endX; ++iX)
+        for (int iX = startX; iX <= endX; ++iX)
         {
             CTile* tile = CArea::AreaControl.getTile(iX * TILE_SIZE, iY * TILE_SIZE);
             if (posValidTile(tile) == false) return_ = false;

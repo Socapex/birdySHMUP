@@ -36,7 +36,8 @@ bool CSurface::OnDraw(SDL_Surface *surfDest, SDL_Surface *surfSource, int x, int
     return true;
 }
 
-bool CSurface::OnDraw(SDL_Surface *surfDest, SDL_Surface *surfSource, int x, int y, int x2, int y2, int w, int h)
+bool CSurface::OnDraw(SDL_Surface *surfDest, SDL_Surface *surfSource, int x,
+                        int y, int x2, int y2, int w, int h)
 {
     if(surfDest == NULL || surfSource == NULL) return false;
 

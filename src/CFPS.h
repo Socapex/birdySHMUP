@@ -1,7 +1,7 @@
 #ifndef CFPS_H
 #define CFPS_H
 
-#include "SDL/SDL.h"
+#include <SDL.h>
 
 class CFPS {
 public:

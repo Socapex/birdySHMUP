@@ -1,3 +1,4 @@
+
 # Notez bien, j'utilise l'expantion par guillemet et l'outil sdl-config,
 # comme ca les parametres passez au compilateur sont toujours bon
 # peu importe votre configuration.
@@ -16,7 +17,7 @@ ifeq ($(UNAME), Darwin)
 	clang++ `sdl-config --cflags --libs` -lSDL_image -o $(EXEC) src/*.cpp -DMACTERMINAL
 endif
 ifeq ($(UNAME), Linux)
-	g++ `sdl-config --cflags --libs` -lSDL_image -o $(EXEC) src/*.cpp
+	g++  src/*.cpp `sdl-config --cflags --libs` -lSDL_image -o $(EXEC)
 endif
 
 clean:

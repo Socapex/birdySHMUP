@@ -2,9 +2,8 @@
 # Notez bien, j'utilise l'expantion par guillemet et l'outil sdl-config,
 # comme ca les parametres passez au compilateur sont toujours bon
 # peu importe votre configuration.
-
-# TODO: Rajouter un make pour linux, voir si on peu utiliser __APPLE__ etc
-# pour differencier les makes. Sinon make osx et make linux.
+# Linux and OSX are detected automatically and program is compiled
+# accordingly. For windows uname will fail, compile with Visual Studio.
 
 UNAME := $(shell uname)
 EXEC = Game

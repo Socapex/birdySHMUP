@@ -1,7 +1,7 @@
 #ifndef CEVENT_H
 #define CEVENT_H
 
-#include "SDL/SDL.h"
+#include <SDL.h>
 
 class CEvent {
 public:

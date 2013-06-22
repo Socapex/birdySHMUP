@@ -1,8 +1,8 @@
 #ifndef CSURFACE_H
 #define CSURFACE_H
 
-#include "SDL/SDL.h"
-#include "SDL_image/SDL_image.h"
+#include <SDL.h>
+#include <SDL_image.h>
 
 class CSurface {
 public:

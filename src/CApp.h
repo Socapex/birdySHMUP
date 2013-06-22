@@ -1,7 +1,7 @@
 #ifndef CAPP_H
 #define CAPP_H
 
-#include "SDL/SDL.h"
+#include <SDL.h>
 #include <string>
 
 #include "Defines.h"

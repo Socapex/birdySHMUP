@@ -236,7 +236,7 @@ bool CPlayer::posValidEntity(CEntity* entity, const int newX, const int newY)
 
 
 
-
+o
 // GETTERS ET SETTERS
 void CPlayer::setMoveLeft(const bool move)
 {

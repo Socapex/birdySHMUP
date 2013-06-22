@@ -71,6 +71,8 @@ bool CApp::OnInit()
 
 
 
+
+
     // EXEMPLES
     //if((surfTest_ = CSurface::OnLoad("img/yoshi.bmp")) == NULL) return false;
     //Anim_Yoshi_.setMaxFrames(8);

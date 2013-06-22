@@ -5,7 +5,6 @@
 
 #include "CAnimation.h"
 #include "CSurface.h"
-#include "CArea.h"
 #include "CCamera.h"
 #include "CFPS.h"
 
@@ -18,10 +17,7 @@ public:
     CEntity();
     virtual ~CEntity();
 
-    void OnMove(const float moveX_, const float moveY_);
-    void stopMove();
     bool collides(const int oX, const int oY, const int oW, const int oH);
-    bool jump();
 
     virtual bool OnLoad(const char* file, const int width, const int height, const int maxFrames);
     virtual void OnLoop();
@@ -37,20 +33,21 @@ public:
     void setWidth(const int width);
     void setHeight(const int height);
     void setAnimeState(const int state);
-    void setMoveLeft(const bool move);
-    void setMoveRight(const bool move);
 
+    // TODO: make private
     float x_;
     float y_;
+
+    int type_;
+    bool dead_;
+    int flags_;
+
+    int width_;
+    int height_;
 
 protected:
     CAnimation Anim_Control;
     SDL_Surface* Surf_Entity;
-
-    float speedX;
-    float speedY;
-    float accelX;
-    float accelY;
 
     int currentFrameCol;
     int currentFrameRow;
@@ -60,28 +57,12 @@ protected:
     int colWidth;
     int colHeight;
 
-    bool canJump;
-
 private:
 
-    bool posValid(const int newX, const int newY);
-    bool posValidTile(CTile* tile);
-    bool posValidEntity(CEntity* entity, const int newX, const int newY);
 
-
-    int width_;
-    int height_;
     int animeState_;
 
-    bool moveLeft_;
-    bool moveRight_;
 
-    int type_;
-    bool dead_;
-    int flags_;
-
-    float maxSpeedX_;
-    float maxSpeedY_;
 
 
 };

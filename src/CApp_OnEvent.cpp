@@ -11,19 +11,31 @@ void CApp::OnKeyDown(SDLKey sym, SDLMod mod, Uint16 unicode)
     {
         case SDLK_LEFT:
             {
-                player1_.setMoveLeft(true);
+                Player.setMoveLeft(true);
                 break;
             }
 
         case SDLK_RIGHT:
             {
-                player1_.setMoveRight(true);
+                Player.setMoveRight(true);
+                break;
+            }
+
+        case SDLK_UP:
+            {
+                Player.setMoveUp(true);
+                break;
+            }
+
+        case SDLK_DOWN:
+            {
+                Player.setMoveDown(true);
                 break;
             }
 
         case SDLK_SPACE:
             {
-                player1_.jump();
+                // BANG BANG
                 break;
             }
 
@@ -42,13 +54,25 @@ void CApp::OnKeyUp(SDLKey sym, SDLMod mod, Uint16 unicode)
     {
         case SDLK_LEFT:
             {
-                player1_.setMoveLeft(false);
+                Player.setMoveLeft(false);
                 break;
             }
 
         case SDLK_RIGHT:
             {
-                player1_.setMoveRight(false);
+                Player.setMoveRight(false);
+                break;
+            }
+
+        case SDLK_UP:
+            {
+                Player.setMoveUp(false);
+                break;
+            }
+
+        case SDLK_DOWN:
+            {
+                Player.setMoveDown(false);
                 break;
             }
 

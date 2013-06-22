@@ -3,8 +3,7 @@
 void CApp::OnRender()
 {
 
-    CArea::AreaControl.OnRender(surfDisplay_, -CCamera::CameraControl.getX(),
-                                    -CCamera::CameraControl.getY());
+    CSurface::OnDraw(surfDisplay_, surfBackground_, 0, 0);
 
     for (int i = 0; i < CEntity::entityList.size(); ++i)
     {
@@ -12,6 +11,8 @@ void CApp::OnRender()
 
         CEntity::entityList[i]->OnRender(surfDisplay_);
     }
+
+
 
     SDL_Flip(surfDisplay_);
 

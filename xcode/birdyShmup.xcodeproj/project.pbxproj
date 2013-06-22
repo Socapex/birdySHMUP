@@ -14,13 +14,10 @@
 		2B06889D176FE5870026C1AB /* CApp_OnLoop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B068884176FE5870026C1AB /* CApp_OnLoop.cpp */; };
 		2B06889E176FE5870026C1AB /* CApp_OnRender.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B068885176FE5870026C1AB /* CApp_OnRender.cpp */; };
 		2B06889F176FE5870026C1AB /* CApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B068886176FE5870026C1AB /* CApp.cpp */; };
-		2B0688A0176FE5870026C1AB /* CArea.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B068888176FE5870026C1AB /* CArea.cpp */; };
 		2B0688A1176FE5870026C1AB /* CCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B06888A176FE5870026C1AB /* CCamera.cpp */; };
 		2B0688A2176FE5870026C1AB /* CEntity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B06888C176FE5870026C1AB /* CEntity.cpp */; };
 		2B0688A3176FE5870026C1AB /* CEvent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B06888E176FE5870026C1AB /* CEvent.cpp */; };
-		2B0688A4176FE5870026C1AB /* CMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B068890176FE5870026C1AB /* CMap.cpp */; };
 		2B0688A5176FE5870026C1AB /* CSurface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B068892176FE5870026C1AB /* CSurface.cpp */; };
-		2B0688A6176FE5870026C1AB /* CTile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B068894176FE5870026C1AB /* CTile.cpp */; };
 		2B0688A7176FE5870026C1AB /* SDLMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B068898176FE5870026C1AB /* SDLMain.m */; };
 		2B0688A9176FE5C10026C1AB /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B0688A8176FE5C10026C1AB /* SDL.framework */; };
 		2B0688AB176FE5CE0026C1AB /* SDL_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B0688AA176FE5CE0026C1AB /* SDL_image.framework */; };
@@ -33,8 +30,6 @@
 		2B734397177178A700FCC983 /* SDL_image.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2B0688AA176FE5CE0026C1AB /* SDL_image.framework */; };
 		2B734398177178A700FCC983 /* SDL.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2B0688A8176FE5C10026C1AB /* SDL.framework */; };
 		2B84554617711ACF005DC982 /* img in Resources */ = {isa = PBXBuildFile; fileRef = 2B84554317711ACF005DC982 /* img */; };
-		2B84554717711ACF005DC982 /* maps in Resources */ = {isa = PBXBuildFile; fileRef = 2B84554417711ACF005DC982 /* maps */; };
-		2B84554817711ACF005DC982 /* tilesets in Resources */ = {isa = PBXBuildFile; fileRef = 2B84554517711ACF005DC982 /* tilesets */; };
 		2B86970B1773F33600A5A132 /* CEntityCol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B86970A1773F33600A5A132 /* CEntityCol.cpp */; };
 /* End PBXBuildFile section */
 
@@ -62,20 +57,14 @@
 		2B068885176FE5870026C1AB /* CApp_OnRender.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CApp_OnRender.cpp; path = ../../src/CApp_OnRender.cpp; sourceTree = "<group>"; };
 		2B068886176FE5870026C1AB /* CApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CApp.cpp; path = ../../src/CApp.cpp; sourceTree = "<group>"; };
 		2B068887176FE5870026C1AB /* CApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CApp.h; path = ../../src/CApp.h; sourceTree = "<group>"; };
-		2B068888176FE5870026C1AB /* CArea.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CArea.cpp; path = ../../src/CArea.cpp; sourceTree = "<group>"; };
-		2B068889176FE5870026C1AB /* CArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CArea.h; path = ../../src/CArea.h; sourceTree = "<group>"; };
 		2B06888A176FE5870026C1AB /* CCamera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CCamera.cpp; path = ../../src/CCamera.cpp; sourceTree = "<group>"; };
 		2B06888B176FE5870026C1AB /* CCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCamera.h; path = ../../src/CCamera.h; sourceTree = "<group>"; };
 		2B06888C176FE5870026C1AB /* CEntity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CEntity.cpp; path = ../../src/CEntity.cpp; sourceTree = "<group>"; };
 		2B06888D176FE5870026C1AB /* CEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CEntity.h; path = ../../src/CEntity.h; sourceTree = "<group>"; };
 		2B06888E176FE5870026C1AB /* CEvent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CEvent.cpp; path = ../../src/CEvent.cpp; sourceTree = "<group>"; };
 		2B06888F176FE5870026C1AB /* CEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CEvent.h; path = ../../src/CEvent.h; sourceTree = "<group>"; };
-		2B068890176FE5870026C1AB /* CMap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CMap.cpp; path = ../../src/CMap.cpp; sourceTree = "<group>"; };
-		2B068891176FE5870026C1AB /* CMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CMap.h; path = ../../src/CMap.h; sourceTree = "<group>"; };
 		2B068892176FE5870026C1AB /* CSurface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CSurface.cpp; path = ../../src/CSurface.cpp; sourceTree = "<group>"; };
 		2B068893176FE5870026C1AB /* CSurface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSurface.h; path = ../../src/CSurface.h; sourceTree = "<group>"; };
-		2B068894176FE5870026C1AB /* CTile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CTile.cpp; path = ../../src/CTile.cpp; sourceTree = "<group>"; };
-		2B068895176FE5870026C1AB /* CTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTile.h; path = ../../src/CTile.h; sourceTree = "<group>"; };
 		2B068896176FE5870026C1AB /* Defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Defines.h; path = ../../src/Defines.h; sourceTree = "<group>"; };
 		2B068897176FE5870026C1AB /* SDLMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDLMain.h; path = ../../src/SDLMain.h; sourceTree = "<group>"; };
 		2B068898176FE5870026C1AB /* SDLMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SDLMain.m; path = ../../src/SDLMain.m; sourceTree = "<group>"; };
@@ -96,8 +85,6 @@
 		2B3327A21773CCBC0030F2D4 /* CFPS.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CFPS.cpp; path = ../../src/CFPS.cpp; sourceTree = "<group>"; };
 		2B3327A31773CCBC0030F2D4 /* CFPS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CFPS.h; path = ../../src/CFPS.h; sourceTree = "<group>"; };
 		2B84554317711ACF005DC982 /* img */ = {isa = PBXFileReference; lastKnownFileType = folder; name = img; path = ../../img; sourceTree = "<group>"; };
-		2B84554417711ACF005DC982 /* maps */ = {isa = PBXFileReference; lastKnownFileType = folder; name = maps; path = ../../maps; sourceTree = "<group>"; };
-		2B84554517711ACF005DC982 /* tilesets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = tilesets; path = ../../tilesets; sourceTree = "<group>"; };
 		2B86970A1773F33600A5A132 /* CEntityCol.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CEntityCol.cpp; path = ../../src/CEntityCol.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -162,8 +149,6 @@
 				2B3327A21773CCBC0030F2D4 /* CFPS.cpp */,
 				2B3327A31773CCBC0030F2D4 /* CFPS.h */,
 				2B84554317711ACF005DC982 /* img */,
-				2B84554417711ACF005DC982 /* maps */,
-				2B84554517711ACF005DC982 /* tilesets */,
 				2B06887F176FE5870026C1AB /* CAnimation.cpp */,
 				2B068880176FE5870026C1AB /* CAnimation.h */,
 				2B068881176FE5870026C1AB /* CApp_OnCleanup.cpp */,
@@ -173,20 +158,14 @@
 				2B068885176FE5870026C1AB /* CApp_OnRender.cpp */,
 				2B068886176FE5870026C1AB /* CApp.cpp */,
 				2B068887176FE5870026C1AB /* CApp.h */,
-				2B068888176FE5870026C1AB /* CArea.cpp */,
-				2B068889176FE5870026C1AB /* CArea.h */,
 				2B06888A176FE5870026C1AB /* CCamera.cpp */,
 				2B06888B176FE5870026C1AB /* CCamera.h */,
 				2B06888C176FE5870026C1AB /* CEntity.cpp */,
 				2B06888D176FE5870026C1AB /* CEntity.h */,
 				2B06888E176FE5870026C1AB /* CEvent.cpp */,
 				2B06888F176FE5870026C1AB /* CEvent.h */,
-				2B068890176FE5870026C1AB /* CMap.cpp */,
-				2B068891176FE5870026C1AB /* CMap.h */,
 				2B068892176FE5870026C1AB /* CSurface.cpp */,
 				2B068893176FE5870026C1AB /* CSurface.h */,
-				2B068894176FE5870026C1AB /* CTile.cpp */,
-				2B068895176FE5870026C1AB /* CTile.h */,
 				2B068896176FE5870026C1AB /* Defines.h */,
 				2B068897176FE5870026C1AB /* SDLMain.h */,
 				2B068898176FE5870026C1AB /* SDLMain.m */,
@@ -263,8 +242,6 @@
 				2B27259B176FE2E20094AC8F /* Credits.rtf in Resources */,
 				2B2725A1176FE2E20094AC8F /* MainMenu.xib in Resources */,
 				2B84554617711ACF005DC982 /* img in Resources */,
-				2B84554717711ACF005DC982 /* maps in Resources */,
-				2B84554817711ACF005DC982 /* tilesets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,13 +259,10 @@
 				2B06889D176FE5870026C1AB /* CApp_OnLoop.cpp in Sources */,
 				2B06889E176FE5870026C1AB /* CApp_OnRender.cpp in Sources */,
 				2B06889F176FE5870026C1AB /* CApp.cpp in Sources */,
-				2B0688A0176FE5870026C1AB /* CArea.cpp in Sources */,
 				2B0688A1176FE5870026C1AB /* CCamera.cpp in Sources */,
 				2B0688A2176FE5870026C1AB /* CEntity.cpp in Sources */,
 				2B0688A3176FE5870026C1AB /* CEvent.cpp in Sources */,
-				2B0688A4176FE5870026C1AB /* CMap.cpp in Sources */,
 				2B0688A5176FE5870026C1AB /* CSurface.cpp in Sources */,
-				2B0688A6176FE5870026C1AB /* CTile.cpp in Sources */,
 				2B0688A7176FE5870026C1AB /* SDLMain.m in Sources */,
 				2B3327A41773CCBC0030F2D4 /* CPlayer.cpp in Sources */,
 				2B3327A51773CCBC0030F2D4 /* CFPS.cpp in Sources */,

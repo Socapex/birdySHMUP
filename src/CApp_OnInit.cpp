@@ -28,6 +28,9 @@ bool CApp::OnInit()
     entity2Path.insert(0, "birdyShmup.app/Contents/Resources/");
     backgroundPath.insert(0, "birdyShmup.app/Contents/Resources/");
 
+#elif __WIN32__
+
+
 #endif
 
     // Load tous nos entites

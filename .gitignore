@@ -5,12 +5,10 @@
 
 # Compiled Dynamic libraries
 *.so
-*.dylib
 
 # Compiled Static libraries
 *.lai
 *.la
-*.a
 
 #OS junk files
 [Tt]humbs.db
@@ -32,7 +30,6 @@
 *.[Cc]ache
 *.ilk
 *.log
-*.lib
 *.sbr
 *.sdf
 *.opensdf

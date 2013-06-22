@@ -105,7 +105,9 @@ void CEntity::OnAnimate()
 }
 
 bool CEntity::OnCollision(CEntity* entity)
-{}
+{
+	return false;
+}
 
 
 

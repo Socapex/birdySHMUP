@@ -4,7 +4,7 @@ std::vector<CEntity*> CEntity::entityList;
 
 CEntity::CEntity()
 {
-    Surf_Entity = NULL;
+    surfaceEntity_ = NULL;
 
     x_ = y_ = 0.0f;
     width_ = height_ = 0;
@@ -60,11 +60,12 @@ bool CEntity::collides(const int oX, const int oY, const int oW, const int oH)
     return true;
 }
 
-bool CEntity::OnLoad(const char* file, const int width, const int height, const int maxFrames)
+bool CEntity::OnLoad(const char* file, const int width, const int height,
+                     const int maxFrames)
 {
-    if ((Surf_Entity = CSurface::OnLoad(file)) == NULL) return false;
+    if ((surfaceEntity_ = CSurface::OnLoad(file)) == NULL) return false;
 
-    CSurface::Transparent(Surf_Entity, 255, 0, 255);
+    CSurface::Transparent(surfaceEntity_, 255, 0, 255);
 
     this->setWidth(width);
     this->setHeight(height);
@@ -79,19 +80,18 @@ void CEntity::OnLoop()
 
 void CEntity::OnRender(SDL_Surface* Surf_Display)
 {
-    if (Surf_Entity == NULL || Surf_Display == NULL) return;
+    if (surfaceEntity_ == NULL || Surf_Display == NULL) return;
 
-    CSurface::OnDraw(Surf_Display, Surf_Entity, x_ - CCamera::CameraControl.getX(),
-                    y_ - CCamera::CameraControl.getY(), currentFrameCol * width_,
+    CSurface::OnDraw(Surf_Display, surfaceEntity_, x_, y_, currentFrameCol * width_,
                     (currentFrameRow + Anim_Control.getCurrentFrame()) * height_,
                     width_, height_);
 }
 
 void CEntity::OnCleanup()
 {
-    if (Surf_Entity) SDL_FreeSurface(Surf_Entity);
+    if (surfaceEntity_) SDL_FreeSurface(surfaceEntity_);
 
-    Surf_Entity = NULL;
+    surfaceEntity_ = NULL;
 }
 
 void CEntity::OnAnimate()
@@ -106,7 +106,7 @@ void CEntity::OnAnimate()
 
 bool CEntity::OnCollision(CEntity* entity)
 {
-	return false;
+	return true;
 }
 
 
@@ -144,7 +144,18 @@ void CEntity::setAnimeState(const int state)
     animeState_ = state;
 }
 
-
+void CEntity::setType(const int type)
+{
+    type_ = type;
+}
+void CEntity::setDead(const bool dead)
+{
+    dead_ = dead;
+}
+void CEntity::setFlags(const int flags)
+{
+    flags_ = flags;
+}
 
 
 
@@ -153,6 +164,29 @@ void CEntity::setAnimeState(const int state)
 
 // TODO: GETTERS
 
-
+float CEntity::getX() const
+{
+    return x_;
+}
+float CEntity::getY() const
+{
+    return y_;
+}
+int CEntity::getType() const
+{
+    return type_;
+}
+bool CEntity::getDead() const
+{
+    return dead_;
+}
+int CEntity::getFlags() const
+{
+    return flags_;
+}
+float CEntity::getLife() const
+{
+    return life_;
+}
 
 

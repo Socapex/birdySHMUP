@@ -8,7 +8,7 @@
 #include "CCamera.h"
 #include "CFPS.h"
 
-enum {ENTITY_TYPE_GENERIC = 0, ENTITY_TYPE_PLAYER};
+enum {ENTITY_TYPE_GENERIC = 0, ENTITY_TYPE_PLAYER, ENTITY_TYPE_ENEMY1};
 enum {ENTITY_FLAG_NONE = 0, ENTITY_FLAG_GRAVITY = 0x00000001,
         ENTITY_FLAG_GHOST = 0x00000002, ENTITY_FLAG_MAPONLY = 0x00000004};
 
@@ -33,21 +33,29 @@ public:
     void setWidth(const int width);
     void setHeight(const int height);
     void setAnimeState(const int state);
+    void setType(const int type);
+    void setDead(const bool dead);
+    void setFlags(const int flags);
 
-    // TODO: make private
-    float x_;
-    float y_;
+    float getX() const;
+    float getY() const;
+    int getType() const;
+    bool getDead() const;
+    int getFlags() const;
+    float getLife() const;
 
-    int type_;
-    bool dead_;
-    int flags_;
-
-    int width_;
-    int height_;
 
 protected:
     CAnimation Anim_Control;
-    SDL_Surface* Surf_Entity;
+    SDL_Surface* surfaceEntity_;
+
+    float x_;
+    float y_;
+    
+    int width_;
+    int height_;
+
+    float life_;
 
     int currentFrameCol;
     int currentFrameRow;
@@ -59,6 +67,9 @@ protected:
 
 private:
 
+    int type_;
+    bool dead_;
+    int flags_;
 
     int animeState_;
 

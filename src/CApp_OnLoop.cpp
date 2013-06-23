@@ -23,6 +23,9 @@ void CApp::OnLoop()
 
     CEntityCol::EntityColList.clear();
 
+    // GUI
+    CGUI::gUI.onLoop(&Player);
+
     CFPS::FPSControl.OnLoop();
 
     // EXEMPLES

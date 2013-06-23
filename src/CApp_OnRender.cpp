@@ -12,7 +12,7 @@ void CApp::OnRender()
         CEntity::entityList[i]->OnRender(surfDisplay_);
     }
 
-
+    CGUI::gUI.onRender(surfDisplay_);
 
     SDL_Flip(surfDisplay_);
 

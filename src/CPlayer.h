@@ -10,8 +10,8 @@ public:
 
     bool OnLoad(const char* file, const int width, const int height,
                 const int maxFrames);
-    void stopMove();
-    void OnMove(const float moveX_, const float moveY_);
+    void movePlayer();
+    void checkLife();
 
     void OnLoop();
     void OnRender(SDL_Surface* Surf_Display);
@@ -25,6 +25,7 @@ public:
     void setMoveDown(const bool move);
 
 private:
+
     bool posValid(const int newX, const int newY);
     bool posValidEntity(CEntity* entity, const int newX, const int newY);
 

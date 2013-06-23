@@ -9,4 +9,8 @@
 #define WWIDTH      640
 #define WHEIGHT     480
 
+// PLAYER STUFF
+#define PLAYER_LIFE     100
+#define PLAYER_SPEED    10;
+
 #endif // DEFINES_H

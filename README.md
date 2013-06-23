@@ -18,6 +18,8 @@ birdyShmup
 - Particle systeme
     - Different movement presets.
     - Attach x, y to moving player.
+    - Transparency levels
+    - Rotation
 - Enemies
     - Scriptable movement.
     - Scriptable events (bullets)

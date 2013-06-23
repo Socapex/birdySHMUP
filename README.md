@@ -23,6 +23,9 @@ birdyShmup
 - Enemies
     - Scriptable movement.
     - Scriptable events (bullets)
+- Audio
+    - Music
+    - SFX
 
 
 ## Guidelines pour git

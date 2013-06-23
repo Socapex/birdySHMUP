@@ -20,6 +20,9 @@ birdyShmup
     - Attach x, y to moving player.
     - Transparency levels
     - Rotation
+    - Destroy sprite when animation finished
+    - scaling
+    - fade-in fade-out
 - Enemies
     - Scriptable movement.
     - Scriptable events (bullets)

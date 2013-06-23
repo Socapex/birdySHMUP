@@ -7,6 +7,7 @@
 #include "CSurface.h"
 #include "CCamera.h"
 #include "CFPS.h"
+#include "CParticles.h"
 
 enum {ENTITY_TYPE_GENERIC = 0, ENTITY_TYPE_PLAYER, ENTITY_TYPE_ENEMY1};
 enum {ENTITY_FLAG_NONE = 0, ENTITY_FLAG_GRAVITY = 0x00000001,

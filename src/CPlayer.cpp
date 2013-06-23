@@ -116,7 +116,11 @@ void CPlayer::OnAnimate()
 bool CPlayer::OnCollision(CEntity* Entity)
 {
     if (Entity->getType() == ENTITY_TYPE_ENEMY1 && life_ > 0)
+    {
         life_ -= (1 * CFPS::FPSControl.getSpeedFactor());
+        CParticles explody(255, 255, 0, x_, y_, 5, 8, 1, 1000, 100);
+    }
+        
     return true;
 }
 

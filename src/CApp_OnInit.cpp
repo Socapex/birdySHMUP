@@ -54,6 +54,9 @@ bool CApp::OnInit()
     if ((surfBackground_ = CSurface::OnLoad(backgroundPath.c_str())) == NULL)
         return false;
 
+    // TEST
+    CParticles explody(255, 255, 0, 400, 50, 5, 8, 1, 1000, 100);
+
     SDL_EnableKeyRepeat(1, SDL_DEFAULT_REPEAT_INTERVAL / 3);
 
     return true;

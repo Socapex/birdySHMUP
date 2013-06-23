@@ -28,6 +28,7 @@
 		2B3327A41773CCBC0030F2D4 /* CPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B3327A01773CCBC0030F2D4 /* CPlayer.cpp */; };
 		2B3327A51773CCBC0030F2D4 /* CFPS.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B3327A21773CCBC0030F2D4 /* CFPS.cpp */; };
 		2B3D10E01776AAF100D4DF86 /* CGUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B3D10DF1776AAF100D4DF86 /* CGUI.cpp */; };
+		2B3D10E31776C03100D4DF86 /* CParticles.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B3D10E11776C03100D4DF86 /* CParticles.cpp */; };
 		2B734397177178A700FCC983 /* SDL_image.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2B0688AA176FE5CE0026C1AB /* SDL_image.framework */; };
 		2B734398177178A700FCC983 /* SDL.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2B0688A8176FE5C10026C1AB /* SDL.framework */; };
 		2B84554617711ACF005DC982 /* img in Resources */ = {isa = PBXBuildFile; fileRef = 2B84554317711ACF005DC982 /* img */; };
@@ -87,6 +88,8 @@
 		2B3327A31773CCBC0030F2D4 /* CFPS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CFPS.h; path = ../../src/CFPS.h; sourceTree = "<group>"; };
 		2B3D10DE1776A9DB00D4DF86 /* CGUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CGUI.h; path = ../../src/CGUI.h; sourceTree = "<group>"; };
 		2B3D10DF1776AAF100D4DF86 /* CGUI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CGUI.cpp; path = ../../src/CGUI.cpp; sourceTree = "<group>"; };
+		2B3D10E11776C03100D4DF86 /* CParticles.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CParticles.cpp; path = ../../src/CParticles.cpp; sourceTree = "<group>"; };
+		2B3D10E21776C03100D4DF86 /* CParticles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CParticles.h; path = ../../src/CParticles.h; sourceTree = "<group>"; };
 		2B84554317711ACF005DC982 /* img */ = {isa = PBXFileReference; lastKnownFileType = folder; name = img; path = ../../img; sourceTree = "<group>"; };
 		2B86970A1773F33600A5A132 /* CEntityCol.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CEntityCol.cpp; path = ../../src/CEntityCol.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -146,6 +149,8 @@
 		2B272590176FE2E20094AC8F /* birdyShmup */ = {
 			isa = PBXGroup;
 			children = (
+				2B3D10E11776C03100D4DF86 /* CParticles.cpp */,
+				2B3D10E21776C03100D4DF86 /* CParticles.h */,
 				2B86970A1773F33600A5A132 /* CEntityCol.cpp */,
 				2B3327A01773CCBC0030F2D4 /* CPlayer.cpp */,
 				2B3327A11773CCBC0030F2D4 /* CPlayer.h */,
@@ -273,6 +278,7 @@
 				2B3327A51773CCBC0030F2D4 /* CFPS.cpp in Sources */,
 				2B86970B1773F33600A5A132 /* CEntityCol.cpp in Sources */,
 				2B3D10E01776AAF100D4DF86 /* CGUI.cpp in Sources */,
+				2B3D10E31776C03100D4DF86 /* CParticles.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

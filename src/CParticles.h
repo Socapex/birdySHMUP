@@ -32,9 +32,9 @@ public:
 
 private:
     std::vector<SDL_Rect> rectanglesToDraw_;
-    std::vector<std::pair<SDL_Rect, int>> rectanglesDrawing_;
+    std::vector<std::pair<SDL_Rect, int> > rectanglesDrawing_;
     std::vector<CEntity> surfacesToDraw_;
-    std::vector<std::pair<CEntity, uint>> surfacesDrawing_;
+    std::vector<std::pair<CEntity, uint> > surfacesDrawing_;
     int x_, y_, width_, height_, density_, quantity_;
     int startTime;
     int R_, G_, B_;

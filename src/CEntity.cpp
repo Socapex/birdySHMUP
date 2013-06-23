@@ -75,12 +75,14 @@ bool CEntity::OnLoad(const char* file, const int width, const int height,
 
 void CEntity::OnLoop()
 {
-    OnAnimate();
+
 }
 
 void CEntity::OnRender(SDL_Surface* Surf_Display)
 {
     if (surfaceEntity_ == NULL || Surf_Display == NULL) return;
+
+    OnAnimate();
 
     CSurface::OnDraw(Surf_Display, surfaceEntity_, x_, y_, currentFrameCol * width_,
                     (currentFrameRow + Anim_Control.getCurrentFrame()) * height_,

@@ -55,7 +55,8 @@ bool CApp::OnInit()
         return false;
 
     // TEST
-    CParticles explody(255, 255, 0, 400, 50, 5, 8, 1, 1000, 100);
+    CParticles explody(255, 255, 0, 400, 50, 5, 8, 1, 1000, 100, 3);
+    CParticles explody2("explosion4", 400, 200, 1000, 10000, 10, 10);
 
     SDL_EnableKeyRepeat(1, SDL_DEFAULT_REPEAT_INTERVAL / 3);
 

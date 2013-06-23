@@ -21,7 +21,7 @@ birdyShmup
 - Enemies
     - Scriptable movement.
     - Scriptable events (bullets)
-    - 
+
 
 ## Guidelines pour git
 

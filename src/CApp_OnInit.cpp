@@ -27,10 +27,11 @@ bool CApp::OnInit()
     entity1Path.insert(0, "birdyShmup.app/Contents/Resources/");
     entity2Path.insert(0, "birdyShmup.app/Contents/Resources/");
     backgroundPath.insert(0, "birdyShmup.app/Contents/Resources/");
-
 #elif __WIN32__
-
-
+	player1Path.replace(0, std::string::npos, "../Debug/img/cube.png");
+    entity1Path.replace(0, std::string::npos, "../Debug/img/yoshi.bmp");
+    entity2Path.replace(0, std::string::npos, "../Debug/img/yoshi.bmp");
+    backgroundPath.replace(0, std::string::npos, "../Debug/img/cloud-1.jpg");
 #endif
 
     // Load tous nos entites

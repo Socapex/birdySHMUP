@@ -60,7 +60,8 @@ bool CSurface::Transparent(SDL_Surface *surfDest, uint8_t R, uint8_t G, uint8_t 
 {
     if(surfDest == NULL) return false;
 
-    SDL_SetColorKey(surfDest, SDL_SRCCOLORKEY | SDL_RLEACCEL, SDL_MapRGB(surfDest->format, R, G, B));
+    SDL_SetColorKey(surfDest, SDL_SRCCOLORKEY | SDL_RLEACCEL,
+                    SDL_MapRGB(surfDest->format, R, G, B));
 
     return true;
 }

@@ -3,6 +3,33 @@ birdyShmup
 ## Description
 ...
 
+## Todo
+- Player
+    - Nice movement controls *phil*
+    - Death sequence (explosion-->check lives-->3 second invulnerability etc)
+    - Points and multipliers
+    - Upgrades
+    - Pixel perfect collision detection (or close).
+- Background
+    - scrolling *Ju*
+    - parallax
+    - other stuff???
+- Bullets *Antoine*
+- Particle systeme
+    - Different movement presets.
+    - Attach x, y to moving player.
+    - Transparency levels
+    - Rotation
+    - Destroy sprite when animation finished
+    - scaling
+    - fade-in fade-out
+- Enemies
+    - Scriptable movement.
+    - Scriptable events (bullets)
+- Audio
+    - Music
+    - SFX
+
 
 ## Guidelines pour git
 

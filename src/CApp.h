@@ -12,6 +12,8 @@
 #include "CCamera.h"
 #include "CPlayer.h"
 #include "CFPS.h"
+#include "CGUI.h"
+#include "CParticles.h"
 
 class CApp : public CEvent {
 public:

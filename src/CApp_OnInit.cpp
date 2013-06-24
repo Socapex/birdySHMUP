@@ -12,7 +12,7 @@ bool CApp::OnInit()
     std::string player1Path = "img/cube.png";
 
     // ENEMIES
-    std::string entity1Path = "img/yoshi.bmp";
+    std::string entity1Path = "img/yoshi.png";
     std::string entity2Path = "img/yoshi.bmp";
 
     // BACKGROUND & MISC
@@ -37,12 +37,8 @@ bool CApp::OnInit()
     // Load tous nos entites
     // JOUEUR
     if (Player.OnLoad(player1Path.c_str(), 64, 64, 0) == false) return false;
-
-    // Params initiales
     Player.setX(300);
     Player.setY(400);
-
-    // Rajouter a notre vector d'entites
     CEntity::entityList.push_back(&Player);
 
     // Centrer la camera sur le player (seulement pour le tutoriel)
@@ -50,10 +46,18 @@ bool CApp::OnInit()
     //CCamera::CameraControl.setTarget(&Player.x_, &Player.y_);
 
     // ENEMIES
-
+    if (entity1_.OnLoad(entity1Path.c_str(), 64, 64, 8) == false) return false;
+    entity1_.setY(200);
+    entity1_.setType(ENTITY_TYPE_ENEMY1);
+    CEntity::entityList.push_back(&entity1_);
+    
     // BACKGROUND
     if ((surfBackground_ = CSurface::OnLoad(backgroundPath.c_str())) == NULL)
         return false;
+
+    // TEST
+    CParticles explody(255, 255, 0, 400, 50, 5, 8, 1, 1000, 100, 3);
+    CParticles explody2("explosion4", 400, 200, 1000, 10000, 10, 10);
 
     SDL_EnableKeyRepeat(1, SDL_DEFAULT_REPEAT_INTERVAL / 3);
 
@@ -61,6 +65,8 @@ bool CApp::OnInit()
 
 
 }
+
+
 
 
 

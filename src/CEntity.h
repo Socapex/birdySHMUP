@@ -40,6 +40,8 @@ public:
 
     float getX() const;
     float getY() const;
+    int getWidth() const;
+    int getHeight() const;
     int getType() const;
     bool getDead() const;
     int getFlags() const;
@@ -47,7 +49,7 @@ public:
 
 
 protected:
-    CAnimation Anim_Control;
+    CAnimation* animControl;
     SDL_Surface* surfaceEntity_;
 
     float x_;

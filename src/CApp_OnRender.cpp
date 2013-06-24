@@ -16,7 +16,7 @@ void CApp::OnRender()
     // PARTICLES
     for (int i = 0; i < CParticles::particleList.size(); ++i)
     {
-        CParticles::particleList[i].onRender(surfDisplay_);
+        CParticles::particleList[i]->onRender(surfDisplay_);
     }
 
     CGUI::gUI.onRender(surfDisplay_);

@@ -31,9 +31,10 @@ bool CPlayer::OnLoad(const char* file, const int width, const int height,
     if (CEntity::OnLoad(file, width, height, maxFrames) == false) return false;
 
 
-    //feuDuCul_ = CParticles("explosion3", x_ + 32, y_ + 32, 10, 100, 1, 1);
-    feuDuCul_ = CParticles(255, 255, 0, x_ + 32, y_ + 64, 5, 8, 10, 100, 1000,
-                         10, true);
+    feuDuCul_ = new CParticles("explosion3", x_ + 32, y_ + 64, 10, 1, 1000,
+                               10, true);
+    feuDuCul2_ = new CParticles(255, 255, 0, x_ + 32, y_ + 64, 5, 8, 10, 100, 1000,
+                               10, true);
 
     return true;
 }
@@ -94,9 +95,10 @@ void CPlayer::OnLoop()
     checkLife();
     movePlayer();
 
-    feuDuCul_.setX(x_ + 32);
-    feuDuCul_.setY(y_ + 64);
-
+    feuDuCul_->setX(x_ + 32);
+    feuDuCul_->setY(y_ + 96);
+    feuDuCul2_->setX(x_ + 32);
+    feuDuCul2_->setY(y_ + 96);
 
     // On verra si on garde cette fonction OnMove
     CEntity::OnLoop();
@@ -105,7 +107,6 @@ void CPlayer::OnLoop()
 void CPlayer::OnRender(SDL_Surface* Surf_Display)
 {
     CEntity::OnRender(Surf_Display);
-    feuDuCul_.onRender(Surf_Display);
 }
 
 void CPlayer::OnCleanup()
@@ -117,8 +118,8 @@ void CPlayer::OnAnimate()
 {
     // ANIMATIONS DU JOUEUR
     // TODO: setMaxFrames dans OnInit... ou ca A du sens ;)
-    if (speedX != 0) Anim_Control.setMaxFrames(0);
-    else Anim_Control.setMaxFrames(0);
+    if (speedX != 0) animControl->setMaxFrames(0);
+    else animControl->setMaxFrames(0);
 
     CEntity::OnAnimate();
 }
@@ -129,7 +130,7 @@ bool CPlayer::OnCollision(CEntity* Entity)
     {
         life_ -= (1 * CFPS::FPSControl.getSpeedFactor());
         //CParticles explody(255, 255, 0, x_, y_, 5, 8, 1, 10, 100, rand() % 20 + 1);
-        CParticles explody2("explosion3", x_, y_, 100, 1000, 1, 10);
+        CParticles* explody2 = new CParticles("explosion3", x_, y_, 100, 1000, 1, 10);
     }
 
     return true;

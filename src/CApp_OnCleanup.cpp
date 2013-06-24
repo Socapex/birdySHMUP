@@ -12,6 +12,13 @@ void CApp::OnCleanup()
 
     CEntity::entityList.clear();
 
+    for (int i = 0; i < CParticles::particleList.size(); ++i)
+    {
+        delete CParticles::particleList[i];
+    }
+
+    CParticles::particleList.clear();
+
     SDL_FreeSurface(surfBackground_);
     SDL_FreeSurface(surfDisplay_);
     SDL_Quit();

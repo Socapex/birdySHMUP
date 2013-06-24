@@ -33,7 +33,7 @@ public:
     void setX(const int x);
     void setY(const int y);
 
-    static std::vector<CParticles> particleList;
+    static std::vector<CParticles*> particleList;
 
 private:
     std::vector<SDL_Rect> rectanglesToDraw_;

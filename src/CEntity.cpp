@@ -23,6 +23,7 @@ CEntity::CEntity()
     colWidth = 0;
     colHeight = 0;
 
+    animControl = new CAnimation();
 }
 
 CEntity::~CEntity()
@@ -69,7 +70,7 @@ bool CEntity::OnLoad(const char* file, const int width, const int height,
 
     this->setWidth(width);
     this->setHeight(height);
-    Anim_Control.setMaxFrames(maxFrames);
+    animControl->setMaxFrames(maxFrames);
     return true;
 }
 
@@ -85,7 +86,7 @@ void CEntity::OnRender(SDL_Surface* Surf_Display)
     OnAnimate();
 
     CSurface::OnDraw(Surf_Display, surfaceEntity_, x_, y_, currentFrameCol * width_,
-                    (currentFrameRow + Anim_Control.getCurrentFrame()) * height_,
+                    (currentFrameRow + animControl->getCurrentFrame()) * height_,
                     width_, height_);
 }
 
@@ -94,6 +95,8 @@ void CEntity::OnCleanup()
     if (surfaceEntity_) SDL_FreeSurface(surfaceEntity_);
 
     surfaceEntity_ = NULL;
+
+    delete animControl;
 }
 
 void CEntity::OnAnimate()
@@ -103,7 +106,7 @@ void CEntity::OnAnimate()
     //if (moveLeft_) currentFrameCol = 0;
     //else if (moveRight_) currentFrameCol = 1;
 
-    Anim_Control.OnAnimate();
+    animControl->OnAnimate();
 }
 
 bool CEntity::OnCollision(CEntity* entity)
@@ -173,6 +176,14 @@ float CEntity::getX() const
 float CEntity::getY() const
 {
     return y_;
+}
+int CEntity::getWidth() const
+{
+    return width_;
+}
+int CEntity::getHeight() const
+{
+    return height_;
 }
 int CEntity::getType() const
 {

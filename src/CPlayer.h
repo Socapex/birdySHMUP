@@ -25,7 +25,8 @@ public:
     void setMoveDown(const bool move);
 
 private:
-    CParticles feuDuCul_;
+    CParticles* feuDuCul_;
+    CParticles* feuDuCul2_;
 
     bool posValid(const int newX, const int newY);
     bool posValidEntity(CEntity* entity, const int newX, const int newY);

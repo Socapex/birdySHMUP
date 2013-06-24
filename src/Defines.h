@@ -7,10 +7,10 @@
 #define TILE_SIZE   16
 
 #define WWIDTH      640
-#define WHEIGHT     480
+#define WHEIGHT     800
 
 // PLAYER STUFF
 #define PLAYER_LIFE     100
-#define PLAYER_SPEED    10;
+#define PLAYER_SPEED    15;
 
 #endif // DEFINES_H

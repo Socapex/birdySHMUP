@@ -16,6 +16,8 @@ CPlayer::CPlayer()
     maxSpeedY_ = PLAYER_SPEED;
 
     life_ = PLAYER_LIFE;
+
+
 }
 CPlayer::~CPlayer()
 {}
@@ -27,6 +29,12 @@ bool CPlayer::OnLoad(const char* file, const int width, const int height,
                      const int maxFrames)
 {
     if (CEntity::OnLoad(file, width, height, maxFrames) == false) return false;
+
+
+    //feuDuCul_ = CParticles("explosion3", x_ + 32, y_ + 32, 10, 100, 1, 1);
+    feuDuCul_ = CParticles(255, 255, 0, x_ + 32, y_ + 64, 5, 8, 10, 100, 1000,
+                         10, true);
+
     return true;
 }
 
@@ -86,16 +94,18 @@ void CPlayer::OnLoop()
     checkLife();
     movePlayer();
 
+    feuDuCul_.setX(x_ + 32);
+    feuDuCul_.setY(y_ + 64);
 
 
     // On verra si on garde cette fonction OnMove
-    //OnMove(speedX, speedY);
     CEntity::OnLoop();
 }
 
 void CPlayer::OnRender(SDL_Surface* Surf_Display)
 {
     CEntity::OnRender(Surf_Display);
+    feuDuCul_.onRender(Surf_Display);
 }
 
 void CPlayer::OnCleanup()
@@ -118,7 +128,8 @@ bool CPlayer::OnCollision(CEntity* Entity)
     if (Entity->getType() == ENTITY_TYPE_ENEMY1 && life_ > 0)
     {
         life_ -= (1 * CFPS::FPSControl.getSpeedFactor());
-        CParticles explody(255, 255, 0, x_, y_, 5, 8, 1, 10, 100, rand() % 20 + 1);
+        //CParticles explody(255, 255, 0, x_, y_, 5, 8, 1, 10, 100, rand() % 20 + 1);
+        CParticles explody2("explosion3", x_, y_, 100, 1000, 1, 10);
     }
 
     return true;

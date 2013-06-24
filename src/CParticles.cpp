@@ -15,16 +15,44 @@ CParticles::CParticles()
 {
 }
 
-CParticles::CParticles(int R, int G, int B, int x, int y, int width, int height,
-           float emitSpeed, uint lifeTime, uint quantity, uint spread)
+CParticles::CParticles(const CParticles& part)
 {
+    startTime_ = part.startTime_;
+    follow_ = part.follow_;
+    spread_ = part.spread_;
+    R_ = part.R_;
+    G_ = part.G_;
+    B_ = part.B_;
+    lifeTime_ = part.lifeTime_;
+    emitSpeed_ = part.emitSpeed_;
+    x_ = part.x_;
+    y_ = part.y_;
+    width_ = part.width_;
+    height_ = part.height_;
+    density_ = part.density_;
+    quantity_ = part.quantity_;
+
+    rectanglesToDraw_ = part.rectanglesToDraw_;
+    rectanglesDrawing_ = part.rectanglesDrawing_;
+    surfacesToDraw_ = part.surfacesToDraw_;
+    surfacesDrawing_ = part.surfacesDrawing_;
+
+}
+
+CParticles::CParticles(int R, int G, int B, int x, int y, int width, int height,
+                       float emitSpeed, unsigned int lifeTime, unsigned int quantity, unsigned int spread,
+                       bool follow)
+{
+    startTime_ = SDL_GetTicks();
+    follow_ = follow;
     spread_ = spread;
     R_ = R;
     G_ = G;
     B_ = B;
-    startTime = SDL_GetTicks();
     lifeTime_ = lifeTime;
     emitSpeed_ = emitSpeed;
+    x_ = x;
+    y_ = y;
     
     for (int i = 0; i < quantity; ++i)
     {
@@ -40,7 +68,8 @@ CParticles::CParticles(int R, int G, int B, int x, int y, int width, int height,
 }
 
 CParticles::CParticles(std::string type, int x, int y, float emitSpeed,
-                       uint lifeTime, uint quantity, uint spread)
+                       unsigned int lifeTime, unsigned int quantity, unsigned int spread,
+                       bool follow)
 {
     // Image paths, can't really do this in onInit :(
     std::string explosion1Path = "img/particles/explosion1.jpg";
@@ -84,9 +113,10 @@ CParticles::CParticles(std::string type, int x, int y, float emitSpeed,
         entity.OnLoad(explosion4Path.c_str(), 64, 64, 25);
     }
 
+    follow_ = follow;
     emitSpeed_ = emitSpeed;
     spread_ = spread;
-    startTime = SDL_GetTicks();
+    startTime_ = SDL_GetTicks();
     lifeTime_ = lifeTime;
     entity.setX(x);
     entity.setY(y);
@@ -117,10 +147,10 @@ void CParticles::onRender(SDL_Surface* surfDisplay)
     if (!rectanglesToDraw_.empty())
     {
         // Commencer a dessiner une nouvelle particule?
-        if (startTime + emitSpeed_ < SDL_GetTicks())
+        if (startTime_ + emitSpeed_ < SDL_GetTicks())
         {
-            startTime = SDL_GetTicks();
-            std::pair<SDL_Rect, uint> pair_(rectanglesToDraw_.back(), startTime);
+            startTime_ = SDL_GetTicks();
+            std::pair<SDL_Rect, unsigned int> pair_(rectanglesToDraw_.back(), startTime_);
             rectanglesDrawing_.push_back(pair_);
             rectanglesToDraw_.pop_back();
         }
@@ -132,6 +162,11 @@ void CParticles::onRender(SDL_Surface* surfDisplay)
         {
             if (rectanglesDrawing_[i].second + lifeTime_ > SDL_GetTicks())
             {
+                if (follow_)
+                {
+                    rectanglesDrawing_[i].first.x = x_;
+                    rectanglesDrawing_[i].first.y = y_;
+                }
                 // TODO: Implementer des animations cool
                 rectanglesDrawing_[i].first.x += rand() % (spread_ * 2) - spread_;
                 rectanglesDrawing_[i].first.y += rand() % (spread_ * 2) - spread_;
@@ -143,10 +178,10 @@ void CParticles::onRender(SDL_Surface* surfDisplay)
 
     if (!surfacesToDraw_.empty())
     {
-        if (startTime + emitSpeed_ < SDL_GetTicks())
+        if (startTime_ + emitSpeed_ < SDL_GetTicks())
         {
-            startTime = SDL_GetTicks();
-            std::pair<CEntity, uint> pair_(surfacesToDraw_.back(), startTime);
+            startTime_ = SDL_GetTicks();
+            std::pair<CEntity, unsigned int> pair_(surfacesToDraw_.back(), startTime_);
             surfacesDrawing_.push_back(pair_);
             surfacesToDraw_.pop_back();
         }
@@ -171,3 +206,20 @@ void CParticles::onRender(SDL_Surface* surfDisplay)
 
 
 
+
+
+
+
+
+
+
+
+
+void CParticles::setX(const int x)
+{
+    x_ = x;
+}
+void CParticles::setY(const int y)
+{
+    y_ = y;
+}

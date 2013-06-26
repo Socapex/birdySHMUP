@@ -38,8 +38,6 @@ bool CApp::OnInit()
     // Load tous nos entites
     // JOUEUR
     if (Player.OnLoad(player1Path.c_str(), 64, 64, 0) == false) return false;
-    Player.setX(300);
-    Player.setY(400);
     CEntity::entityList.push_back(&Player);
 
     // Centrer la camera sur le player (seulement pour le tutoriel)
@@ -57,10 +55,10 @@ bool CApp::OnInit()
         return false;
 
     // TEST
-    CParticles* explody = new CParticles(255, 255, 0, 400, 50, 5, 8, 1, 1000,
-                                         100, 3);
-    CParticles* explody2 = new CParticles("explosion3", 400, 200, 1000, 10000,
-                                          10, 10);
+    CParticles* explody = new CParticles(255, 255, 0, 400, 50, 5, 8, 0, 1000,
+                                         100, 10, "fireworks");
+//    CParticles* explody2 = new CParticles("explosion3", 400, 200, 1000, 10000,
+//                                          10, 10);
 
     SDL_EnableKeyRepeat(1, SDL_DEFAULT_REPEAT_INTERVAL / 3);
 

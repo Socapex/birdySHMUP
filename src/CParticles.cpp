@@ -41,8 +41,10 @@ CParticles::CParticles(const CParticles& part)
 
 CParticles::CParticles(int R, int G, int B, int x, int y, int width, int height,
                        float emitSpeed, unsigned int lifeTime,
-                       unsigned int quantity, unsigned int spread, bool follow)
+                       unsigned int quantity, unsigned int spread,
+                       std::string animationType, bool follow)
 {
+    quantity_ = quantity;
     startTime_ = SDL_GetTicks();
     follow_ = follow;
     spread_ = spread;
@@ -65,12 +67,15 @@ CParticles::CParticles(int R, int G, int B, int x, int y, int width, int height,
         rectanglesToDraw_.push_back(rect);
     }
 
+    createAnimation(animationType);
+
     particleList.push_back(this);
 }
 
 CParticles::CParticles(std::string type, int x, int y, float emitSpeed,
                        unsigned int lifeTime, unsigned int quantity,
-                       unsigned int spread, bool follow)
+                       unsigned int spread, std::string animationType,
+                       bool follow)
 {
     // Image paths, can't really do this in onInit :(
     std::string explosion1Path = "img/particles/explosion1.jpg";
@@ -114,6 +119,7 @@ CParticles::CParticles(std::string type, int x, int y, float emitSpeed,
         entity.OnLoad(explosion4Path.c_str(), 64, 64, 25);
     }
 
+    quantity_ = quantity;
     follow_ = follow;
     emitSpeed_ = emitSpeed;
     spread_ = spread;
@@ -149,8 +155,21 @@ void CParticles::onRender(SDL_Surface* surfDisplay)
 {
     if (!rectanglesToDraw_.empty())
     {
+        // If emit speed = 0, draw them all at once (insta boom)
+        if (emitSpeed_ == 0)
+        {
+            for (int i = 0; i < rectanglesToDraw_.size(); ++i)
+            {
+                startTime_ = SDL_GetTicks();
+                std::pair<SDL_Rect, unsigned int>
+                pair_(rectanglesToDraw_.back(), startTime_);
+                rectanglesDrawing_.push_back(pair_);
+                rectanglesToDraw_.pop_back();
+            }
+        }
+
         // Commencer a dessiner une nouvelle particule?
-        if (startTime_ + emitSpeed_ < SDL_GetTicks())
+        else if (startTime_ + emitSpeed_ < SDL_GetTicks())
         {
             startTime_ = SDL_GetTicks();
             std::pair<SDL_Rect, unsigned int>
@@ -169,12 +188,22 @@ void CParticles::onRender(SDL_Surface* surfDisplay)
             {
                 if (follow_)
                 {
-                    rectanglesDrawing_[i].first.x = x_;
-                    rectanglesDrawing_[i].first.y = y_;
+                    //Offset movement
+                    int lastX = x_ - rectanglesDrawing_[i].first.x + speedX[i];
+                    int lastY = y_ - rectanglesDrawing_[i].first.y + speedY[i];
+
+                    printf("firstx: %i\n", rectanglesDrawing_[i].first.x);
+                    printf("x: %i\n", x_);
+                    printf("lastx: %i\n", lastX);
+                    
+                    rectanglesDrawing_[i].first.x += lastX;
+                    rectanglesDrawing_[i].first.y += lastY;
+                    printf("addition: %i\n", rectanglesDrawing_[i].first.x);
+                    
                 }
                 // TODO: Implementer des animations cool
-                rectanglesDrawing_[i].first.x += rand() % (spread_ * 2) - spread_;
-                rectanglesDrawing_[i].first.y += rand() % (spread_ * 2) - spread_;
+                rectanglesDrawing_[i].first.x += speedX[i];
+                rectanglesDrawing_[i].first.y += speedY[i];
                 SDL_FillRect(surfDisplay, &rectanglesDrawing_[i].first,
                              SDL_MapRGB(surfDisplay->format, R_, G_, B_));
             }
@@ -216,6 +245,29 @@ void CParticles::onRender(SDL_Surface* surfDisplay)
 }
 
 
+
+
+
+
+
+
+
+// FUNCTIONS PRIVATE
+void CParticles::createAnimation(std::string type)
+{
+    if (type == "fireworks")
+    {
+        for (int i = 0; i < quantity_; ++i)
+        {
+            speedX.push_back((rand() % ((int)spread_ * 2)) - (int)spread_);
+        }
+
+        for (int i = 0; i < quantity_; ++i)
+        {
+            speedY.push_back((rand() % ((int)spread_ * 2)) - (int)spread_);
+        }
+    }
+}
 
 
 

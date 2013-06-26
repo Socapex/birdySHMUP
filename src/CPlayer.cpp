@@ -7,6 +7,9 @@ CPlayer::CPlayer()
     moveUp_ = false;
     moveDown_ = false;
 
+    x_ = PLAYER_START_XPOSITION;
+    y_ = PLAYER_START_YPOSITION;
+
     speedX = 0;
     speedY = 0;
     accelX = 0;
@@ -31,10 +34,10 @@ bool CPlayer::OnLoad(const char* file, const int width, const int height,
     if (CEntity::OnLoad(file, width, height, maxFrames) == false) return false;
 
 
-    feuDuCul_ = new CParticles("explosion3", x_ + 32, y_ + 64, 10, 1, 1000,
-                               10, true);
-    feuDuCul2_ = new CParticles(255, 255, 0, x_ + 32, y_ + 64, 5, 8, 10, 100, 1000,
-                               10, true);
+//    feuDuCul_ = new CParticles("explosion3", x_ + 32, y_ + 64, 10, 1, 1000,
+//                               10, "firefowrks", true);
+    feuDuCul2_ = new CParticles(255, 255, 0, x_ + 32, y_ + 64, 5, 8, 100, 1000, 100,
+                                10, "fireworks", true);
 
     return true;
 }

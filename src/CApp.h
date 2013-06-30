@@ -14,6 +14,7 @@
 #include "CFPS.h"
 #include "CGUI.h"
 #include "CParticles.h"
+#include "CBackground.h"
 
 class CApp : public CEvent {
 public:
@@ -39,6 +40,8 @@ private:
 
     CEntity entity1_;
     CEntity entity2_;
+
+    CBackground background1_;
 
     CAnimation Anim_Yoshi_;
 

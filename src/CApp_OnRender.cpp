@@ -3,7 +3,7 @@
 void CApp::OnRender()
 {
 
-    CSurface::OnDraw(surfDisplay_, surfBackground_, 0, 0);
+    background1_.onRender(surfDisplay_);
 
     // ENTITIES
     for (int i = 0; i < CEntity::entityList.size(); ++i)

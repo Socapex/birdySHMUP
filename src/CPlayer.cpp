@@ -98,8 +98,8 @@ void CPlayer::OnLoop()
     checkLife();
     movePlayer();
 
-    feuDuCul_->setX(x_ + 32);
-    feuDuCul_->setY(y_ + 96);
+    //feuDuCul_->setX(x_ + 32);
+    //feuDuCul_->setY(y_ + 96);
     feuDuCul2_->setX(x_ + 32);
     feuDuCul2_->setY(y_ + 96);
 

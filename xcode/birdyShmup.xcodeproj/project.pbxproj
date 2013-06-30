@@ -33,6 +33,7 @@
 		2B734398177178A700FCC983 /* SDL.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2B0688A8176FE5C10026C1AB /* SDL.framework */; };
 		2B84554617711ACF005DC982 /* img in Resources */ = {isa = PBXBuildFile; fileRef = 2B84554317711ACF005DC982 /* img */; };
 		2B86970B1773F33600A5A132 /* CEntityCol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B86970A1773F33600A5A132 /* CEntityCol.cpp */; };
+		2BCA3DAD1780E00700CF3F22 /* CBackground.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BCA3DAB1780E00700CF3F22 /* CBackground.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -92,6 +93,8 @@
 		2B3D10E21776C03100D4DF86 /* CParticles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CParticles.h; path = ../../src/CParticles.h; sourceTree = "<group>"; };
 		2B84554317711ACF005DC982 /* img */ = {isa = PBXFileReference; lastKnownFileType = folder; name = img; path = ../../img; sourceTree = "<group>"; };
 		2B86970A1773F33600A5A132 /* CEntityCol.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CEntityCol.cpp; path = ../../src/CEntityCol.cpp; sourceTree = "<group>"; };
+		2BCA3DAB1780E00700CF3F22 /* CBackground.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CBackground.cpp; path = ../../src/CBackground.cpp; sourceTree = "<group>"; };
+		2BCA3DAC1780E00700CF3F22 /* CBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CBackground.h; path = ../../src/CBackground.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,8 +152,11 @@
 		2B272590176FE2E20094AC8F /* birdyShmup */ = {
 			isa = PBXGroup;
 			children = (
-				2B3D10E11776C03100D4DF86 /* CParticles.cpp */,
+				2B068896176FE5870026C1AB /* Defines.h */,
+				2BCA3DAB1780E00700CF3F22 /* CBackground.cpp */,
+				2BCA3DAC1780E00700CF3F22 /* CBackground.h */,
 				2B3D10E21776C03100D4DF86 /* CParticles.h */,
+				2B3D10E11776C03100D4DF86 /* CParticles.cpp */,
 				2B86970A1773F33600A5A132 /* CEntityCol.cpp */,
 				2B3327A01773CCBC0030F2D4 /* CPlayer.cpp */,
 				2B3327A11773CCBC0030F2D4 /* CPlayer.h */,
@@ -176,7 +182,6 @@
 				2B06888F176FE5870026C1AB /* CEvent.h */,
 				2B068892176FE5870026C1AB /* CSurface.cpp */,
 				2B068893176FE5870026C1AB /* CSurface.h */,
-				2B068896176FE5870026C1AB /* Defines.h */,
 				2B068897176FE5870026C1AB /* SDLMain.h */,
 				2B068898176FE5870026C1AB /* SDLMain.m */,
 				2B27259F176FE2E20094AC8F /* MainMenu.xib */,
@@ -279,6 +284,7 @@
 				2B86970B1773F33600A5A132 /* CEntityCol.cpp in Sources */,
 				2B3D10E01776AAF100D4DF86 /* CGUI.cpp in Sources */,
 				2B3D10E31776C03100D4DF86 /* CParticles.cpp in Sources */,
+				2BCA3DAD1780E00700CF3F22 /* CBackground.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -192,13 +192,13 @@ void CParticles::onRender(SDL_Surface* surfDisplay)
                     int lastX = x_ - rectanglesDrawing_[i].first.x + speedX[i];
                     int lastY = y_ - rectanglesDrawing_[i].first.y + speedY[i];
 
-                    printf("firstx: %i\n", rectanglesDrawing_[i].first.x);
-                    printf("x: %i\n", x_);
-                    printf("lastx: %i\n", lastX);
+                    //printf("firstx: %i\n", rectanglesDrawing_[i].first.x);
+                    //printf("x: %i\n", x_);
+                    //printf("lastx: %i\n", lastX);
                     
                     rectanglesDrawing_[i].first.x += lastX;
                     rectanglesDrawing_[i].first.y += lastY;
-                    printf("addition: %i\n", rectanglesDrawing_[i].first.x);
+                    //printf("addition: %i\n", rectanglesDrawing_[i].first.x);
                     
                 }
                 // TODO: Implementer des animations cool

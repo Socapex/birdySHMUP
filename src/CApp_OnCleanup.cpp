@@ -19,7 +19,6 @@ void CApp::OnCleanup()
 
     CParticles::particleList.clear();
 
-    SDL_FreeSurface(surfBackground_);
     SDL_FreeSurface(surfDisplay_);
     SDL_Quit();
 

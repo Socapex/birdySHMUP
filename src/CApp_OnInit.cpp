@@ -54,7 +54,7 @@ bool CApp::OnInit()
     if ((background1_.onLoad(backgroundPath.c_str())) == false) return false;
 
     // TEST
-    CParticles* explody = new CParticles(255, 255, 0, 400, 50, 5, 8, 0, 10000,
+    CParticles* explody = new CParticles(255, 255, 0, 400, 50, 5, 8, 0, 1000,
                                          100, 10, "fireworks");
 //    CParticles* explody2 = new CParticles("explosion3", 400, 200, 1000, 10000,
 //                                          10, 10);

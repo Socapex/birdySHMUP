@@ -18,11 +18,11 @@ int CApp::OnExecute()
     while(running_)
     {
         while(SDL_PollEvent(&event)) OnEvent(&event);
-        OnLoop();
-        OnRender();
+        onLoop();
+        onRender();
     }
 
-    OnCleanup();
+    onCleanup();
     return 0;
 }
 

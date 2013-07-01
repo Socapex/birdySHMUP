@@ -61,10 +61,10 @@ bool CEntity::collides(const int oX, const int oY, const int oW, const int oH)
     return true;
 }
 
-bool CEntity::OnLoad(const char* file, const int width, const int height,
+bool CEntity::onLoad(const char* file, const int width, const int height,
                      const int maxFrames)
 {
-    if ((surfaceEntity_ = CSurface::OnLoad(file)) == NULL) return false;
+    if ((surfaceEntity_ = CSurface::onLoad(file)) == NULL) return false;
 
     CSurface::Transparent(surfaceEntity_, 255, 0, 255);
 
@@ -74,23 +74,23 @@ bool CEntity::OnLoad(const char* file, const int width, const int height,
     return true;
 }
 
-void CEntity::OnLoop()
+void CEntity::onLoop()
 {
 
 }
 
-void CEntity::OnRender(SDL_Surface* Surf_Display)
+void CEntity::onRender(SDL_Surface* Surf_Display)
 {
     if (surfaceEntity_ == NULL || Surf_Display == NULL) return;
 
-    OnAnimate();
+    onAnimate();
 
     CSurface::OnDraw(Surf_Display, surfaceEntity_, x_, y_, currentFrameCol * width_,
                     (currentFrameRow + animControl->getCurrentFrame()) * height_,
                     width_, height_);
 }
 
-void CEntity::OnCleanup()
+void CEntity::onCleanup()
 {
     if (surfaceEntity_) SDL_FreeSurface(surfaceEntity_);
 
@@ -99,17 +99,17 @@ void CEntity::OnCleanup()
     delete animControl;
 }
 
-void CEntity::OnAnimate()
+void CEntity::onAnimate()
 {
     // TODO: Rajouter des defines ou autre chose pour ces chiffres.
     // Completement stupide d'etre couler dans l'beton!
     //if (moveLeft_) currentFrameCol = 0;
     //else if (moveRight_) currentFrameCol = 1;
 
-    animControl->OnAnimate();
+    animControl->onAnimate();
 }
 
-bool CEntity::OnCollision(CEntity* entity)
+bool CEntity::onCollision(CEntity* entity)
 {
 	return true;
 }

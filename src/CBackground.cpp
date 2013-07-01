@@ -21,7 +21,7 @@ CBackground::~CBackground()
 
 bool CBackground::onLoad(const char* file)
 {
-    if ((surfBackground_ = CSurface::OnLoad(file)) == NULL) return false;
+    if ((surfBackground_ = CSurface::onLoad(file)) == NULL) return false;
 
     // Centrer l'image pour le parallax
     x_ = (WWIDTH / 2) - (surfBackground_->w / 2);

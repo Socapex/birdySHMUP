@@ -35,7 +35,7 @@ void CApp::OnKeyDown(SDLKey sym, SDLMod mod, Uint16 unicode)
 
         case SDLK_SPACE:
             {
-                // BANG BANG
+                Player.shoot();
                 break;
             }
 

@@ -37,7 +37,7 @@ bool CApp::OnInit()
 
     // Load tous nos entites
     // JOUEUR
-    if (Player.OnLoad(player1Path.c_str(), 64, 64, 0) == false) return false;
+    if (Player.onLoad(player1Path.c_str(), 64, 64, 0) == false) return false;
     CEntity::entityList.push_back(&Player);
 
     // Centrer la camera sur le player (seulement pour le tutoriel)
@@ -45,7 +45,7 @@ bool CApp::OnInit()
     //CCamera::CameraControl.setTarget(&Player.x_, &Player.y_);
 
     // ENEMIES
-    if (entity1_.OnLoad(entity1Path.c_str(), 64, 64, 8) == false) return false;
+    if (entity1_.onLoad(entity1Path.c_str(), 64, 64, 8) == false) return false;
     entity1_.setY(200);
     entity1_.setType(ENTITY_TYPE_ENEMY1);
     CEntity::entityList.push_back(&entity1_);
@@ -79,13 +79,13 @@ bool CApp::OnInit()
 
 
     // EXEMPLES
-    //if((surfTest_ = CSurface::OnLoad("img/yoshi.bmp")) == NULL) return false;
+    //if((surfTest_ = CSurface::onLoad("img/yoshi.bmp")) == NULL) return false;
     //Anim_Yoshi_.setMaxFrames(8);
     //Anim_Yoshi_.setOscillate(true);
 
 
-    // if (entity1_.OnLoad(entity1Path.c_str(), 64, 64, 8) == false) return false;
-    // if (entity2_.OnLoad(entity2Path.c_str(), 64, 64, 8) == false) return false;
+    // if (entity1_.onLoad(entity1Path.c_str(), 64, 64, 8) == false) return false;
+    // if (entity2_.onLoad(entity2Path.c_str(), 64, 64, 8) == false) return false;
 
     // entity2_.setX(100);
 

@@ -1,6 +1,6 @@
 #include "CApp.h"
 
-void CApp::OnRender()
+void CApp::onRender()
 {
 
     background1_.onRender(surfDisplay_);
@@ -10,7 +10,7 @@ void CApp::OnRender()
     {
         if (!CEntity::entityList[i]) continue;
 
-        CEntity::entityList[i]->OnRender(surfDisplay_);
+        CEntity::entityList[i]->onRender(surfDisplay_);
     }
 
     // PARTICLES

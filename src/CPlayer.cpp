@@ -28,10 +28,10 @@ CPlayer::~CPlayer()
 
 
 // FONCTION SPECIFIC
-bool CPlayer::OnLoad(const char* file, const int width, const int height,
+bool CPlayer::onLoad(const char* file, const int width, const int height,
                      const int maxFrames)
 {
-    if (CEntity::OnLoad(file, width, height, maxFrames) == false) return false;
+    if (CEntity::onLoad(file, width, height, maxFrames) == false) return false;
 
 
 //    feuDuCul_ = new CParticles("explosion3", x_ + 32, y_ + 64, 10, 1, 1000,
@@ -81,6 +81,17 @@ void CPlayer::checkLife()
 
 }
 
+void CPlayer::shoot()
+{
+    
+}
+
+
+
+
+
+
+
 
 
 
@@ -92,7 +103,7 @@ void CPlayer::checkLife()
 
 
 // FONCTIONS OVERLOADED
-void CPlayer::OnLoop()
+void CPlayer::onLoop()
 {
 
     checkLife();
@@ -104,30 +115,30 @@ void CPlayer::OnLoop()
     feuDuCul2_->setY(y_ + 96);
 
     // On verra si on garde cette fonction OnMove
-    CEntity::OnLoop();
+    CEntity::onLoop();
 }
 
-void CPlayer::OnRender(SDL_Surface* Surf_Display)
+void CPlayer::onRender(SDL_Surface* Surf_Display)
 {
-    CEntity::OnRender(Surf_Display);
+    CEntity::onRender(Surf_Display);
 }
 
-void CPlayer::OnCleanup()
+void CPlayer::onCleanup()
 {
-    CEntity::OnCleanup();
+    CEntity::onCleanup();
 }
 
-void CPlayer::OnAnimate()
+void CPlayer::onAnimate()
 {
     // ANIMATIONS DU JOUEUR
     // TODO: setMaxFrames dans OnInit... ou ca A du sens ;)
     if (speedX != 0) animControl->setMaxFrames(0);
     else animControl->setMaxFrames(0);
 
-    CEntity::OnAnimate();
+    CEntity::onAnimate();
 }
 
-bool CPlayer::OnCollision(CEntity* Entity)
+bool CPlayer::onCollision(CEntity* Entity)
 {
     if (Entity->getType() == ENTITY_TYPE_ENEMY1 && life_ > 0)
     {

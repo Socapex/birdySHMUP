@@ -8,16 +8,18 @@ public:
     CPlayer();
     ~CPlayer();
 
-    bool OnLoad(const char* file, const int width, const int height,
+    bool onLoad(const char* file, const int width, const int height,
                 const int maxFrames);
     void movePlayer();
     void checkLife();
 
-    void OnLoop();
-    void OnRender(SDL_Surface* Surf_Display);
-    void OnCleanup();
-    void OnAnimate();
-    bool OnCollision(CEntity* Entity);
+    void onLoop();
+    void onRender(SDL_Surface* Surf_Display);
+    void onCleanup();
+    void onAnimate();
+    bool onCollision(CEntity* Entity);
+
+    void shoot();
 
     void setMoveLeft(const bool move);
     void setMoveRight(const bool move);

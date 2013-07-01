@@ -100,23 +100,23 @@ CParticles::CParticles(std::string type, int x, int y, float emitSpeed,
 
     if (type == "explosion1")
     {
-        entity.OnLoad(explosion1Path.c_str(), 320, 300, 20);
+        entity.onLoad(explosion1Path.c_str(), 320, 300, 20);
         
     }
 
     else if (type == "explosion2")
     {
-        entity.OnLoad(explosion2Path.c_str(), 256, 192, 64);
+        entity.onLoad(explosion2Path.c_str(), 256, 192, 64);
     }
 
     else if (type == "explosion3")
     {
-        entity.OnLoad(explosion3Path.c_str(), 96, 96, 17);
+        entity.onLoad(explosion3Path.c_str(), 96, 96, 17);
     }
 
     else if (type == "explosion4")
     {
-        entity.OnLoad(explosion4Path.c_str(), 64, 64, 25);
+        entity.onLoad(explosion4Path.c_str(), 64, 64, 25);
     }
 
     quantity_ = quantity;
@@ -238,7 +238,7 @@ void CParticles::onRender(SDL_Surface* surfDisplay)
                 entity.setX(entity.getX() + rand() % (spread_ * 2) - spread_);
                 entity.setY(entity.getY() + rand() % (spread_ * 2) - spread_);
                 surfacesDrawing_[i].first = entity;
-                surfacesDrawing_[i].first.OnRender(surfDisplay);
+                surfacesDrawing_[i].first.onRender(surfDisplay);
             }
         }
     }

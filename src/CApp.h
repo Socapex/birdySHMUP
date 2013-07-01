@@ -25,9 +25,9 @@ public:
     bool OnInit();
     void OnEvent(SDL_Event* event);
     void OnExit();
-    void OnLoop();
-    void OnRender();
-    void OnCleanup();
+    void onLoop();
+    void onRender();
+    void onCleanup();
 
     // BOUTONS
     void OnKeyDown(SDLKey sym, SDLMod mod, Uint16 unicode);

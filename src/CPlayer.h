@@ -26,6 +26,7 @@ public:
     void setMoveRight(const bool move);
     void setMoveUp(const bool move);
     void setMoveDown(const bool move);
+    void setShooting(const bool shoot);
 
 private:
     std::vector<CBullet> bulletList_;
@@ -40,6 +41,7 @@ private:
     bool moveRight_;
     bool moveUp_;
     bool moveDown_;
+    bool shooting_;
 
     float speedX;
     float speedY;

@@ -6,6 +6,7 @@ CPlayer::CPlayer()
     moveRight_ = false;
     moveUp_ = false;
     moveDown_ = false;
+    shooting_ = false;
 
     x_ = PLAYER_START_XPOSITION;
     y_ = PLAYER_START_YPOSITION;
@@ -141,6 +142,8 @@ void CPlayer::onLoop()
     checkLife();
     movePlayer();
 
+    if (shooting_) shoot();
+
     //feuDuCul_->setX(x_ + 32);
     //feuDuCul_->setY(y_ + 96);
     feuDuCul2_->setX(x_ + 32);
@@ -264,4 +267,9 @@ void CPlayer::setMoveUp(const bool move)
 void CPlayer::setMoveDown(const bool move)
 {
     moveDown_ = move;
+}
+
+void CPlayer::setShooting(const bool shoot)
+{
+    shooting_ = shoot;
 }

@@ -79,15 +79,18 @@ void CEntity::onLoop()
 
 }
 
-void CEntity::onRender(SDL_Surface* Surf_Display)
+void CEntity::onRender(SDL_Surface* surfDisplay)
 {
-    if (surfaceEntity_ == NULL || Surf_Display == NULL) return;
+    if (surfaceEntity_ == NULL || surfDisplay == NULL) return;
 
-    onAnimate();
+    if (!dead_)
+    {
+        onAnimate();
 
-    CSurface::OnDraw(Surf_Display, surfaceEntity_, x_, y_, currentFrameCol * width_,
-                    (currentFrameRow + animControl->getCurrentFrame()) * height_,
-                    width_, height_);
+        CSurface::OnDraw(surfDisplay, surfaceEntity_, x_, y_, currentFrameCol * width_,
+                         (currentFrameRow + animControl->getCurrentFrame()) * height_,
+                         width_, height_);
+    }
 }
 
 void CEntity::onCleanup()

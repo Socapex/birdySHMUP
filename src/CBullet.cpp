@@ -10,10 +10,70 @@
 
 CBullet::CBullet()
 {
-
+    x_ = 0;
+    y_ = 0;
+    setDead(true);
 }
 
 CBullet::~CBullet()
 {
     
 }
+
+void CBullet::shoot(const int x, const int y)
+{
+    x_ = x;
+    y_ = y;
+    setDead(false);
+}
+
+
+
+
+
+
+
+
+
+// FUNCTION OVERLOAD
+
+bool CBullet::onLoad(const char* file, const int width, const int height,
+                     const int maxFrames)
+{
+    if (CEntity::onLoad(file, width, height, maxFrames) == false) return false;
+
+    return true;
+}
+
+bool CBullet::onCollision(CEntity* entity)
+{
+    setDead(true);
+    CParticles* explode = new CParticles(255, 255, 0, 400, 50, 5, 8, 0, 1000,
+                                                  100, 10, "fireworks");
+    return true;
+}
+
+void CBullet::onRender(SDL_Surface *surfDisplay)
+{
+    onAnimate();
+    CEntity::onRender(surfDisplay);
+}
+
+void CBullet::onAnimate()
+{
+    y_ -= BULLET_1_SPEED;
+    y_ -= CFPS::FPSControl.getSpeedFactor();
+
+    if (y_ < 0) setDead(true);
+
+}
+
+
+
+
+
+
+
+
+
+

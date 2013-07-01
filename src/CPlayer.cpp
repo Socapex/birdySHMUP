@@ -20,6 +20,12 @@ CPlayer::CPlayer()
 
     life_ = PLAYER_LIFE;
 
+    // Pre-generate bullets
+    for (int i = 0; i < 100; ++i)
+    {
+        CBullet bullet;
+        bulletList_.push_back(bullet);
+    }
 
 }
 CPlayer::~CPlayer()
@@ -33,6 +39,25 @@ bool CPlayer::onLoad(const char* file, const int width, const int height,
 {
     if (CEntity::onLoad(file, width, height, maxFrames) == false) return false;
 
+
+
+
+    // Bullets
+    std::string bulletPath = "img/bullet.png";
+    
+#ifdef MACTERMINAL
+    // Rien faire, on n'as pas besoin de changer le path lorsqu'on compile du
+    // terminal sur mac.
+#elif __APPLE__
+    bulletPath.insert(0, "birdyShmup.app/Contents/Resources/");
+#elif __WIN32__
+    
+#endif
+
+    for (int i = 0; i < bulletList_.size(); ++i)
+    {
+        bulletList_[i].onLoad(bulletPath.c_str(), 16, 16, 0);
+    }
 
 //    feuDuCul_ = new CParticles("explosion3", x_ + 32, y_ + 64, 10, 1, 1000,
 //                               10, "firefowrks", true);
@@ -83,7 +108,14 @@ void CPlayer::checkLife()
 
 void CPlayer::shoot()
 {
-    
+    for (int i = 0; i < bulletList_.size(); ++i)
+    {
+        if (bulletList_[i].getDead())
+        {
+            bulletList_[i].shoot(x_, y_);
+            break;
+        }
+    }
 }
 
 
@@ -118,9 +150,15 @@ void CPlayer::onLoop()
     CEntity::onLoop();
 }
 
-void CPlayer::onRender(SDL_Surface* Surf_Display)
+void CPlayer::onRender(SDL_Surface* surfDisplay)
 {
-    CEntity::onRender(Surf_Display);
+    // Render bullets
+    for (int i = 0; i < bulletList_.size(); ++i)
+    {
+        if (!bulletList_[i].getDead()) bulletList_[i].onRender(surfDisplay);
+    }
+    
+    CEntity::onRender(surfDisplay);
 }
 
 void CPlayer::onCleanup()

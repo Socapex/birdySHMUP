@@ -2,6 +2,7 @@
 #define CPLAYER_H
 
 #include "CEntity.h"
+#include "CBullet.h"
 
 class CPlayer : public CEntity {
 public:
@@ -14,7 +15,7 @@ public:
     void checkLife();
 
     void onLoop();
-    void onRender(SDL_Surface* Surf_Display);
+    void onRender(SDL_Surface* surfDisplay);
     void onCleanup();
     void onAnimate();
     bool onCollision(CEntity* Entity);
@@ -27,6 +28,8 @@ public:
     void setMoveDown(const bool move);
 
 private:
+    std::vector<CBullet> bulletList_;
+
     CParticles* feuDuCul_;
     CParticles* feuDuCul2_;
 

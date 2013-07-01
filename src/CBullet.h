@@ -18,11 +18,15 @@ public:
     CBullet();
     ~CBullet();
 
-    
+    void shoot(const int x, const int y);
+
+    bool onLoad(const char* file, const int width, const int height,
+                const int maxFrames);
+    bool onCollision(CEntity* entity);
+    void onRender(SDL_Surface* surfDisplay);
+    void onAnimate();
 
 private:
-    int x_;
-    int y_;
 };
 
 #endif /* defined(__birdyShmup__CBullet__) */

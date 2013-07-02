@@ -12,6 +12,7 @@ CBullet::CBullet()
 {
     x_ = 0;
     y_ = 0;
+    enemyBullet = false;
     setDead(true);
 }
 
@@ -47,9 +48,18 @@ bool CBullet::onLoad(const char* file, const int width, const int height,
 
 bool CBullet::onCollision(CEntity* entity)
 {
-    setDead(true);
-    CParticles* explode = new CParticles(255, 255, 0, 400, 50, 5, 8, 0, 1000,
-                                                  100, 10, "fireworks");
+
+    if (!enemyBullet)
+    {
+        if (entity->getType() == ENTITY_TYPE_ENEMY1 && life_ > 0)
+        {
+            setDead(true);
+            CParticles* explode = new CParticles(255, 255, 0, x_, y_, 5, 8, 0, 1000,
+                                                 100, 10, "fireworks");
+        }
+    }
+
+
     return true;
 }
 
@@ -63,6 +73,8 @@ void CBullet::onAnimate()
 {
     y_ -= BULLET_1_SPEED;
     y_ -= CFPS::FPSControl.getSpeedFactor();
+
+    checkCollision(x_, y_);
 
     if (y_ < 0) setDead(true);
 

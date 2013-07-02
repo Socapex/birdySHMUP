@@ -50,6 +50,9 @@ public:
 
 
 protected:
+    bool checkCollision(const int newX, const int newY);
+    bool posValidEntity(CEntity* entity, const int newX, const int newY);
+
     CAnimation* animControl;
     SDL_Surface* surfaceEntity_;
 

@@ -125,6 +125,54 @@ bool CEntity::onCollision(CEntity* entity)
 
 
 
+// PRIVATE FUNCTIONS
+bool CEntity::checkCollision(const int newX, const int newY)
+{
+    bool return_ = true;
+
+    if (getFlags() & ENTITY_FLAG_MAPONLY) {}
+    else
+    {
+        for (int i = 0; i < entityList.size(); ++i)
+        {
+            if (posValidEntity(entityList[i], newX, newY) == false)
+                return_ = false;
+
+        }
+    }
+
+    return return_;
+}
+
+bool CEntity::posValidEntity(CEntity* entity, const int newX, const int newY)
+{
+    if (this != entity && entity != NULL && entity->getDead() == false
+        && entity->getFlags() ^ ENTITY_FLAG_MAPONLY
+        && entity->collides(newX + colX, newY + colY, width_ - colWidth - 1,
+                            height_ - colHeight - 1) == true)
+    {
+        CEntityCol entityCol;
+        entityCol.entityA = this;
+        entityCol.entityB = entity;
+
+        CEntityCol::EntityColList.push_back(entityCol);
+
+        return false;
+    }
+    
+    return true;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 // SETTERS
 void CEntity::setX(const float x)

@@ -27,6 +27,8 @@ public:
     void onAnimate();
 
 private:
+    bool enemyBullet;
+
 };
 
 #endif /* defined(__birdyShmup__CBullet__) */

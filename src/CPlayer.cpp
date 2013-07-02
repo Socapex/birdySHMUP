@@ -91,7 +91,7 @@ void CPlayer::movePlayer()
     speedX *= CFPS::FPSControl.getSpeedFactor();
     speedY *= CFPS::FPSControl.getSpeedFactor();
 
-    posValid(x_ + speedX, y_ + speedY);
+    checkCollision(x_ + speedX, y_ + speedY);
 
     x_ += speedX;
     y_ += speedY;
@@ -199,44 +199,6 @@ bool CPlayer::onCollision(CEntity* Entity)
 
 
 
-
-// PRIVATE FUNCTIONS
-bool CPlayer::posValid(const int newX, const int newY)
-{
-    bool return_ = true;
-
-    if (getFlags() & ENTITY_FLAG_MAPONLY) {}
-    else
-    {
-        for (int i = 0; i < entityList.size(); ++i)
-        {
-            if (posValidEntity(entityList[i], newX, newY) == false)
-                return_ = false;
-
-        }
-    }
-
-    return return_;
-}
-
-bool CPlayer::posValidEntity(CEntity* entity, const int newX, const int newY)
-{
-    if (this != entity && entity != NULL && entity->getDead() == false
-        && entity->getFlags() ^ ENTITY_FLAG_MAPONLY
-        && entity->collides(newX + colX, newY + colY, width_ - colWidth - 1,
-                            height_ - colHeight - 1) == true)
-    {
-        CEntityCol entityCol;
-        entityCol.entityA = this;
-        entityCol.entityB = entity;
-
-        CEntityCol::EntityColList.push_back(entityCol);
-
-        return false;
-    }
-
-    return true;
-}
 
 
 

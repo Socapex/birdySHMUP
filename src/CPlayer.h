@@ -34,9 +34,6 @@ private:
     CParticles* feuDuCul_;
     CParticles* feuDuCul2_;
 
-    bool posValid(const int newX, const int newY);
-    bool posValidEntity(CEntity* entity, const int newX, const int newY);
-
     bool moveLeft_;
     bool moveRight_;
     bool moveUp_;

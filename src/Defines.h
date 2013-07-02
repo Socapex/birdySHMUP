@@ -7,10 +7,19 @@
 #define TILE_SIZE   16
 
 #define WWIDTH      640
-#define WHEIGHT     480
+#define WHEIGHT     800
 
 // PLAYER STUFF
 #define PLAYER_LIFE     100
-#define PLAYER_SPEED    10;
+#define PLAYER_SPEED    15
+#define PLAYER_START_XPOSITION 300
+#define PLAYER_START_YPOSITION 400
+
+// BACKGROUND STUFF
+#define BACKGROUND_SCROLL_SPEED 1
+
+// BULLET STUFF
+#define BULLET_1_SPEED  10
 
 #endif // DEFINES_H
+ 

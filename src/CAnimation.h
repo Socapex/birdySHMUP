@@ -8,7 +8,7 @@ public:
     CAnimation();
     ~CAnimation();
 
-    void OnAnimate();
+    void onAnimate();
     void setFrameRate(const int rate);
     void setCurrentFrame(const int frame);
     void setMaxFrames(const int max);

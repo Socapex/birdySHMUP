@@ -8,7 +8,7 @@ public:
     CFPS();
     ~CFPS();
 
-    void OnLoop();
+    void onLoop();
 
     int getFPS() const;
     float getSpeedFactor() const;

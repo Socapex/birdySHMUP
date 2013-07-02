@@ -8,7 +8,7 @@ class CSurface {
 public:
     CSurface();
 
-    static SDL_Surface* OnLoad(const char* file);
+    static SDL_Surface* onLoad(const char* file);
     static bool OnDraw(SDL_Surface* surfDest, SDL_Surface* surfSource, int x,
                        int y);
     static bool OnDraw(SDL_Surface* surfDest, SDL_Surface* surfSource, int x,

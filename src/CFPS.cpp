@@ -14,7 +14,7 @@ CFPS::CFPS()
 CFPS::~CFPS()
 {}
 
-void CFPS::OnLoop()
+void CFPS::onLoop()
 {
     if (oldTime + 1000 < SDL_GetTicks())
     {

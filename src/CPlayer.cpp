@@ -6,6 +6,10 @@ CPlayer::CPlayer()
     moveRight_ = false;
     moveUp_ = false;
     moveDown_ = false;
+    shooting_ = false;
+
+    x_ = PLAYER_START_XPOSITION;
+    y_ = PLAYER_START_YPOSITION;
 
     speedX = 0;
     speedY = 0;
@@ -16,6 +20,14 @@ CPlayer::CPlayer()
     maxSpeedY_ = PLAYER_SPEED;
 
     life_ = PLAYER_LIFE;
+
+    // Pre-generate bullets
+    for (int i = 0; i < 100; ++i)
+    {
+        CBullet bullet;
+        bulletList_.push_back(bullet);
+    }
+
 }
 CPlayer::~CPlayer()
 {}
@@ -23,10 +35,36 @@ CPlayer::~CPlayer()
 
 
 // FONCTION SPECIFIC
-bool CPlayer::OnLoad(const char* file, const int width, const int height,
+bool CPlayer::onLoad(const char* file, const int width, const int height,
                      const int maxFrames)
 {
-    if (CEntity::OnLoad(file, width, height, maxFrames) == false) return false;
+    if (CEntity::onLoad(file, width, height, maxFrames) == false) return false;
+
+
+
+
+    // Bullets
+    std::string bulletPath = "img/bullet.png";
+    
+#ifdef MACTERMINAL
+    // Rien faire, on n'as pas besoin de changer le path lorsqu'on compile du
+    // terminal sur mac.
+#elif __APPLE__
+    bulletPath.insert(0, "birdyShmup.app/Contents/Resources/");
+#elif __WIN32__
+    
+#endif
+
+    for (int i = 0; i < bulletList_.size(); ++i)
+    {
+        bulletList_[i].onLoad(bulletPath.c_str(), 16, 16, 0);
+    }
+
+//    feuDuCul_ = new CParticles("explosion3", x_ + 32, y_ + 64, 10, 1, 1000,
+//                               10, "firefowrks", true);
+    feuDuCul2_ = new CParticles(255, 255, 0, x_ + 32, y_ + 64, 5, 8, 100, 1000, 100,
+                                10, "fireworks", true);
+
     return true;
 }
 
@@ -53,21 +91,46 @@ void CPlayer::movePlayer()
     speedX *= CFPS::FPSControl.getSpeedFactor();
     speedY *= CFPS::FPSControl.getSpeedFactor();
 
-    posValid(x_ + speedX, y_ + speedY);
+    checkCollision(x_ + speedX, y_ + speedY);
 
-    x_ += speedX;
-    y_ += speedY;
+    if (x_ + speedX > 0 && x_ + speedX + getWidth() < WWIDTH) x_ += speedX;
+    if (y_ + speedY > 0 && y_ + speedY + getHeight() < WHEIGHT) y_ += speedY;
 }
 
-void CPlayer::checkLife()
+bool CPlayer::checkLife()
 {
     if (life_ <= 0)
     {
         setDead(true);
         // TODO: Explode player and consume life or show game over.
+
+
+        return false;
     }
 
+    return true;
+
 }
+
+void CPlayer::shoot()
+{
+    for (int i = 0; i < bulletList_.size(); ++i)
+    {
+        if (bulletList_[i].getDead())
+        {
+            bulletList_[i].shoot(x_, y_);
+            bulletList_[i + 1].shoot(x_ + getWidth() - bulletList_[i].getWidth(),
+                                     y_);
+            break;
+        }
+    }
+}
+
+
+
+
+
+
 
 
 
@@ -80,45 +143,57 @@ void CPlayer::checkLife()
 
 
 // FONCTIONS OVERLOADED
-void CPlayer::OnLoop()
+void CPlayer::onLoop()
 {
 
-    checkLife();
-    movePlayer();
+    if (checkLife())
+    {
+        movePlayer();
 
+        if (shooting_) shoot();
 
+        //feuDuCul_->setX(x_ + 32);
+        //feuDuCul_->setY(y_ + 96);
+        feuDuCul2_->setX(x_ + 32);
+        feuDuCul2_->setY(y_ + 96);
 
-    // On verra si on garde cette fonction OnMove
-    //OnMove(speedX, speedY);
-    CEntity::OnLoop();
+        CEntity::onLoop();
+    }
 }
 
-void CPlayer::OnRender(SDL_Surface* Surf_Display)
+void CPlayer::onRender(SDL_Surface* surfDisplay)
 {
-    CEntity::OnRender(Surf_Display);
+    // Render bullets
+    for (int i = 0; i < bulletList_.size(); ++i)
+    {
+        if (!bulletList_[i].getDead()) bulletList_[i].onRender(surfDisplay);
+    }
+
+    if (!getDead()) CEntity::onRender(surfDisplay);
 }
 
-void CPlayer::OnCleanup()
+void CPlayer::onCleanup()
 {
-    CEntity::OnCleanup();
+    CEntity::onCleanup();
 }
 
-void CPlayer::OnAnimate()
+void CPlayer::onAnimate()
 {
     // ANIMATIONS DU JOUEUR
     // TODO: setMaxFrames dans OnInit... ou ca A du sens ;)
-    if (speedX != 0) Anim_Control.setMaxFrames(0);
-    else Anim_Control.setMaxFrames(0);
+    if (speedX != 0) animControl->setMaxFrames(0);
+    else animControl->setMaxFrames(0);
 
-    CEntity::OnAnimate();
+    CEntity::onAnimate();
 }
 
-bool CPlayer::OnCollision(CEntity* Entity)
+bool CPlayer::onCollision(CEntity* Entity)
 {
     if (Entity->getType() == ENTITY_TYPE_ENEMY1 && life_ > 0)
     {
         life_ -= (1 * CFPS::FPSControl.getSpeedFactor());
-        CParticles explody(255, 255, 0, x_, y_, 5, 8, 1, 10, 100, rand() % 20 + 1);
+        //CParticles explody(255, 255, 0, x_, y_, 5, 8, 1, 10, 100, rand() % 20 + 1);
+        CParticles* explody2 = new CParticles("explosion3", x_, y_, 100, 1000, 1, 10);
     }
 
     return true;
@@ -132,44 +207,6 @@ bool CPlayer::OnCollision(CEntity* Entity)
 
 
 
-
-// PRIVATE FUNCTIONS
-bool CPlayer::posValid(const int newX, const int newY)
-{
-    bool return_ = true;
-
-    if (getFlags() & ENTITY_FLAG_MAPONLY) {}
-    else
-    {
-        for (int i = 0; i < entityList.size(); ++i)
-        {
-            if (posValidEntity(entityList[i], newX, newY) == false)
-                return_ = false;
-
-        }
-    }
-
-    return return_;
-}
-
-bool CPlayer::posValidEntity(CEntity* entity, const int newX, const int newY)
-{
-    if (this != entity && entity != NULL && entity->getDead() == false
-        && entity->getFlags() ^ ENTITY_FLAG_MAPONLY
-        && entity->collides(newX + colX, newY + colY, width_ - colWidth - 1,
-                            height_ - colHeight - 1) == true)
-    {
-        CEntityCol entityCol;
-        entityCol.entityA = this;
-        entityCol.entityB = entity;
-
-        CEntityCol::EntityColList.push_back(entityCol);
-
-        return false;
-    }
-
-    return true;
-}
 
 
 
@@ -200,4 +237,9 @@ void CPlayer::setMoveUp(const bool move)
 void CPlayer::setMoveDown(const bool move)
 {
     moveDown_ = move;
+}
+
+void CPlayer::setShooting(const bool shoot)
+{
+    shooting_ = shoot;
 }

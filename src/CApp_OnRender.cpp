@@ -1,22 +1,22 @@
 #include "CApp.h"
 
-void CApp::OnRender()
+void CApp::onRender()
 {
 
-    CSurface::OnDraw(surfDisplay_, surfBackground_, 0, 0);
+    background1_.onRender(surfDisplay_);
 
     // ENTITIES
     for (int i = 0; i < CEntity::entityList.size(); ++i)
     {
         if (!CEntity::entityList[i]) continue;
 
-        CEntity::entityList[i]->OnRender(surfDisplay_);
+        CEntity::entityList[i]->onRender(surfDisplay_);
     }
 
     // PARTICLES
     for (int i = 0; i < CParticles::particleList.size(); ++i)
     {
-        CParticles::particleList[i].onRender(surfDisplay_);
+        CParticles::particleList[i]->onRender(surfDisplay_);
     }
 
     CGUI::gUI.onRender(surfDisplay_);

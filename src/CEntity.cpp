@@ -23,6 +23,7 @@ CEntity::CEntity()
     colWidth = 0;
     colHeight = 0;
 
+    animControl = new CAnimation();
 }
 
 CEntity::~CEntity()
@@ -60,56 +61,109 @@ bool CEntity::collides(const int oX, const int oY, const int oW, const int oH)
     return true;
 }
 
-bool CEntity::OnLoad(const char* file, const int width, const int height,
+bool CEntity::onLoad(const char* file, const int width, const int height,
                      const int maxFrames)
 {
-    if ((surfaceEntity_ = CSurface::OnLoad(file)) == NULL) return false;
+    if ((surfaceEntity_ = CSurface::onLoad(file)) == NULL) return false;
 
     CSurface::Transparent(surfaceEntity_, 255, 0, 255);
 
     this->setWidth(width);
     this->setHeight(height);
-    Anim_Control.setMaxFrames(maxFrames);
+    animControl->setMaxFrames(maxFrames);
     return true;
 }
 
-void CEntity::OnLoop()
+void CEntity::onLoop()
 {
 
 }
 
-void CEntity::OnRender(SDL_Surface* Surf_Display)
+void CEntity::onRender(SDL_Surface* surfDisplay)
 {
-    if (surfaceEntity_ == NULL || Surf_Display == NULL) return;
+    if (surfaceEntity_ == NULL || surfDisplay == NULL) return;
 
-    OnAnimate();
+    if (!dead_)
+    {
+        onAnimate();
 
-    CSurface::OnDraw(Surf_Display, surfaceEntity_, x_, y_, currentFrameCol * width_,
-                    (currentFrameRow + Anim_Control.getCurrentFrame()) * height_,
-                    width_, height_);
+        CSurface::OnDraw(surfDisplay, surfaceEntity_, x_, y_, currentFrameCol * width_,
+                         (currentFrameRow + animControl->getCurrentFrame()) * height_,
+                         width_, height_);
+    }
 }
 
-void CEntity::OnCleanup()
+void CEntity::onCleanup()
 {
     if (surfaceEntity_) SDL_FreeSurface(surfaceEntity_);
 
     surfaceEntity_ = NULL;
+
+    delete animControl;
 }
 
-void CEntity::OnAnimate()
+void CEntity::onAnimate()
 {
     // TODO: Rajouter des defines ou autre chose pour ces chiffres.
     // Completement stupide d'etre couler dans l'beton!
     //if (moveLeft_) currentFrameCol = 0;
     //else if (moveRight_) currentFrameCol = 1;
 
-    Anim_Control.OnAnimate();
+    animControl->onAnimate();
 }
 
-bool CEntity::OnCollision(CEntity* entity)
+bool CEntity::onCollision(CEntity* entity)
 {
 	return true;
 }
+
+
+
+
+
+
+
+
+
+// PRIVATE FUNCTIONS
+bool CEntity::checkCollision(const int newX, const int newY)
+{
+    bool return_ = true;
+
+    if (getFlags() & ENTITY_FLAG_MAPONLY) {}
+    else
+    {
+        for (int i = 0; i < entityList.size(); ++i)
+        {
+            if (checkEntityCollision(entityList[i], newX, newY) == false)
+                return_ = false;
+
+        }
+    }
+
+    return return_;
+}
+
+bool CEntity::checkEntityCollision(CEntity* entity, const int newX, const int newY)
+{
+    if (this != entity && entity != NULL && entity->getDead() == false
+        && entity->getFlags() ^ ENTITY_FLAG_MAPONLY
+        && entity->collides(newX + colX, newY + colY, width_ - colWidth - 1,
+                            height_ - colHeight - 1) == true)
+    {
+        CEntityCol entityCol;
+        entityCol.entityA = this;
+        entityCol.entityB = entity;
+
+        CEntityCol::EntityColList.push_back(entityCol);
+
+        return false;
+    }
+    
+    return true;
+}
+
+
 
 
 
@@ -158,6 +212,10 @@ void CEntity::setFlags(const int flags)
 {
     flags_ = flags;
 }
+void CEntity::setLife(const float life)
+{
+    life_ = life;
+}
 
 
 
@@ -173,6 +231,14 @@ float CEntity::getX() const
 float CEntity::getY() const
 {
     return y_;
+}
+int CEntity::getWidth() const
+{
+    return width_;
+}
+int CEntity::getHeight() const
+{
+    return height_;
 }
 int CEntity::getType() const
 {

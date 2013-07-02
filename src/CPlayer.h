@@ -2,37 +2,43 @@
 #define CPLAYER_H
 
 #include "CEntity.h"
+#include "CBullet.h"
 
 class CPlayer : public CEntity {
 public:
     CPlayer();
     ~CPlayer();
 
-    bool OnLoad(const char* file, const int width, const int height,
+    bool onLoad(const char* file, const int width, const int height,
                 const int maxFrames);
     void movePlayer();
-    void checkLife();
+    bool checkLife();
 
-    void OnLoop();
-    void OnRender(SDL_Surface* Surf_Display);
-    void OnCleanup();
-    void OnAnimate();
-    bool OnCollision(CEntity* Entity);
+    void onLoop();
+    void onRender(SDL_Surface* surfDisplay);
+    void onCleanup();
+    void onAnimate();
+    bool onCollision(CEntity* Entity);
+
+    void shoot();
 
     void setMoveLeft(const bool move);
     void setMoveRight(const bool move);
     void setMoveUp(const bool move);
     void setMoveDown(const bool move);
+    void setShooting(const bool shoot);
 
 private:
+    std::vector<CBullet> bulletList_;
 
-    bool posValid(const int newX, const int newY);
-    bool posValidEntity(CEntity* entity, const int newX, const int newY);
+    CParticles* feuDuCul_;
+    CParticles* feuDuCul2_;
 
     bool moveLeft_;
     bool moveRight_;
     bool moveUp_;
     bool moveDown_;
+    bool shooting_;
 
     float speedX;
     float speedY;

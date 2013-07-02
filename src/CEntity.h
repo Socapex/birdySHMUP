@@ -20,12 +20,13 @@ public:
 
     bool collides(const int oX, const int oY, const int oW, const int oH);
 
-    virtual bool OnLoad(const char* file, const int width, const int height, const int maxFrames);
-    virtual void OnLoop();
-    virtual void OnRender(SDL_Surface* Surf_Display);
-    virtual void OnCleanup();
-    virtual void OnAnimate();
-    virtual bool OnCollision(CEntity* entity);
+    virtual bool onLoad(const char* file, const int width, const int height,
+                        const int maxFrames);
+    virtual void onLoop();
+    virtual void onRender(SDL_Surface* surfDisplay);
+    virtual void onCleanup();
+    virtual void onAnimate();
+    virtual bool onCollision(CEntity* entity);
 
     static std::vector<CEntity*> entityList;
 
@@ -37,9 +38,12 @@ public:
     void setType(const int type);
     void setDead(const bool dead);
     void setFlags(const int flags);
+    void setLife(const float life);
 
     float getX() const;
     float getY() const;
+    int getWidth() const;
+    int getHeight() const;
     int getType() const;
     bool getDead() const;
     int getFlags() const;
@@ -47,7 +51,10 @@ public:
 
 
 protected:
-    CAnimation Anim_Control;
+    bool checkCollision(const int newX, const int newY);
+    bool checkEntityCollision(CEntity* entity, const int newX, const int newY);
+
+    CAnimation* animControl;
     SDL_Surface* surfaceEntity_;
 
     float x_;

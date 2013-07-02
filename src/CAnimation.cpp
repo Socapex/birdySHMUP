@@ -16,7 +16,7 @@ CAnimation::~CAnimation()
 
 }
 
-void CAnimation::OnAnimate()
+void CAnimation::onAnimate()
 {
     if (oldTime_ + frameRate_ > SDL_GetTicks()) return;
 

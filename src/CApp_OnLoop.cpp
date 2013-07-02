@@ -1,13 +1,13 @@
 #include "CApp.h"
 
-void CApp::OnLoop()
+void CApp::onLoop()
 {
 
     for (int i = 0; i < CEntity::entityList.size(); ++i)
     {
         if (!CEntity::entityList[i]) continue;
 
-        CEntity::entityList[i]->OnLoop();
+        CEntity::entityList[i]->onLoop();
     }
 
     // COLLISIONS
@@ -18,7 +18,7 @@ void CApp::OnLoop()
 
         if (entityA == NULL || entityB == NULL) continue;
 
-        if (entityA->OnCollision(entityB)) entityB->OnCollision(entityA);
+        if (entityA->onCollision(entityB)) entityB->onCollision(entityA);
     }
 
     CEntityCol::EntityColList.clear();
@@ -26,8 +26,8 @@ void CApp::OnLoop()
     // GUI
     CGUI::gUI.onLoop(&Player);
 
-    CFPS::FPSControl.OnLoop();
+    CFPS::FPSControl.onLoop();
 
     // EXEMPLES
-    //Anim_Yoshi_.OnAnimate();
+    //Anim_Yoshi_.onAnimate();
 }

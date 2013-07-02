@@ -12,6 +12,7 @@
 #include <SDL.h>
 #include <vector>
 #include <string>
+#include <typeinfo>
 
 class CEntity;
 
@@ -19,27 +20,47 @@ class CEntity;
 class CParticles {
 public:
     CParticles();
+    CParticles(const CParticles& part);
     CParticles(int R, int G, int B, int x, int y, int width, int height,
-               float emitSpeed, uint lifeTime, uint quantity, uint spread);
+               float emitSpeed, unsigned int lifeTime, unsigned int quantity,
+               unsigned int spread, std::string animationType = "random",
+               bool follow = false);
     CParticles(std::string type, int x, int y, float emitSpeed,
-               uint lifeTime, uint quantity, uint spread);
+               unsigned int lifeTime, unsigned int quantity, unsigned int spread,
+               std::string animationType = "random", bool follow = false);
     ~CParticles();
 
     void onLoop();
     void onRender(SDL_Surface* surfDisplay);
 
-    static std::vector<CParticles> particleList;
+    void setX(const int x);
+    void setY(const int y);
+
+    static std::vector<CParticles*> particleList;
 
 private:
+    void createAnimation(std::string type);
+
     std::vector<SDL_Rect> rectanglesToDraw_;
     std::vector<std::pair<SDL_Rect, int> > rectanglesDrawing_;
     std::vector<CEntity> surfacesToDraw_;
-    std::vector<std::pair<CEntity, uint> > surfacesDrawing_;
+    std::vector<std::pair<CEntity, unsigned int> > surfacesDrawing_;
+
+    std::vector<float> speedX;
+    std::vector<float> speedY;
+
     int x_, y_, width_, height_, density_, quantity_;
-    int startTime;
+    int startTime_;
     int R_, G_, B_;
-    uint lifeTime_, spread_;
+    unsigned int lifeTime_, spread_;
     float emitSpeed_;
+    bool follow_;
 };
+
+
+
+
+
+
 
 #endif /* defined(__birdyShmup__CParticles__) */

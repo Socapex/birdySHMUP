@@ -9,6 +9,13 @@ void CApp::OnKeyDown(SDLKey sym, SDLMod mod, Uint16 unicode)
 {
     switch(sym)
     {
+
+        case SDLK_SPACE:
+            {
+                Player.setShooting(true);
+                break;
+            }
+
         case SDLK_LEFT:
             {
                 Player.setMoveLeft(true);
@@ -33,12 +40,6 @@ void CApp::OnKeyDown(SDLKey sym, SDLMod mod, Uint16 unicode)
                 break;
             }
 
-        case SDLK_SPACE:
-            {
-                // BANG BANG
-                break;
-            }
-
         // Exemples
         // case SDLK_UP:       CCamera::CameraControl.OnMove(0, 5); break;
         // case SDLK_DOWN:     CCamera::CameraControl.OnMove(0, -5); break;
@@ -52,6 +53,13 @@ void CApp::OnKeyUp(SDLKey sym, SDLMod mod, Uint16 unicode)
 {
     switch(sym)
     {
+
+        case SDLK_SPACE:
+        {
+            Player.setShooting(false);
+            break;
+        }
+        
         case SDLK_LEFT:
             {
                 Player.setMoveLeft(false);

@@ -135,7 +135,7 @@ bool CEntity::checkCollision(const int newX, const int newY)
     {
         for (int i = 0; i < entityList.size(); ++i)
         {
-            if (posValidEntity(entityList[i], newX, newY) == false)
+            if (checkEntityCollision(entityList[i], newX, newY) == false)
                 return_ = false;
 
         }
@@ -144,7 +144,7 @@ bool CEntity::checkCollision(const int newX, const int newY)
     return return_;
 }
 
-bool CEntity::posValidEntity(CEntity* entity, const int newX, const int newY)
+bool CEntity::checkEntityCollision(CEntity* entity, const int newX, const int newY)
 {
     if (this != entity && entity != NULL && entity->getDead() == false
         && entity->getFlags() ^ ENTITY_FLAG_MAPONLY
@@ -211,6 +211,10 @@ void CEntity::setDead(const bool dead)
 void CEntity::setFlags(const int flags)
 {
     flags_ = flags;
+}
+void CEntity::setLife(const float life)
+{
+    life_ = life;
 }
 
 

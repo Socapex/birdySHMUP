@@ -38,6 +38,7 @@ public:
     void setType(const int type);
     void setDead(const bool dead);
     void setFlags(const int flags);
+    void setLife(const float life);
 
     float getX() const;
     float getY() const;
@@ -51,7 +52,7 @@ public:
 
 protected:
     bool checkCollision(const int newX, const int newY);
-    bool posValidEntity(CEntity* entity, const int newX, const int newY);
+    bool checkEntityCollision(CEntity* entity, const int newX, const int newY);
 
     CAnimation* animControl;
     SDL_Surface* surfaceEntity_;

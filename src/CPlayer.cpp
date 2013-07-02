@@ -93,8 +93,8 @@ void CPlayer::movePlayer()
 
     checkCollision(x_ + speedX, y_ + speedY);
 
-    x_ += speedX;
-    y_ += speedY;
+    if (x_ + speedX > 0 && x_ + speedX + getWidth() < WWIDTH) x_ += speedX;
+    if (y_ + speedY > 0 && y_ + speedY + getHeight() < WHEIGHT) y_ += speedY;
 }
 
 void CPlayer::checkLife()
@@ -114,6 +114,8 @@ void CPlayer::shoot()
         if (bulletList_[i].getDead())
         {
             bulletList_[i].shoot(x_, y_);
+            bulletList_[i + 1].shoot(x_ + getWidth() - bulletList_[i].getWidth(),
+                                     y_);
             break;
         }
     }

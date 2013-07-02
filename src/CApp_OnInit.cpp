@@ -7,7 +7,8 @@ bool CApp::OnInit()
     int test = SDL_GetTicks();
 
     // TODO: Choisir notre hauteur + largeur
-    if((surfDisplay_ = SDL_SetVideoMode(WWIDTH, WHEIGHT, 32, SDL_HWSURFACE | SDL_DOUBLEBUF)) == NULL) return false;
+    if((surfDisplay_ = SDL_SetVideoMode(WWIDTH, WHEIGHT, 32, SDL_HWSURFACE
+                                        | SDL_DOUBLEBUF)) == NULL) return false;
 
     // PATHS:
     // JOUEUR

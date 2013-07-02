@@ -56,6 +56,9 @@ bool CBullet::onCollision(CEntity* entity)
             setDead(true);
             CParticles* explode = new CParticles(255, 255, 0, x_, y_, 5, 8, 0, 1000,
                                                  100, 10, "fireworks");
+
+            // TODO: Checker le genre de bullet
+            entity->setLife(entity->getLife() - 10.0);
         }
     }
 
@@ -85,6 +88,12 @@ void CBullet::onAnimate()
 
 
 
+
+
+
+
+
+// GETTERS
 
 
 

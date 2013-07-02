@@ -12,7 +12,7 @@ public:
     bool onLoad(const char* file, const int width, const int height,
                 const int maxFrames);
     void movePlayer();
-    void checkLife();
+    bool checkLife();
 
     void onLoop();
     void onRender(SDL_Surface* surfDisplay);

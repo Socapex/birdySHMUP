@@ -97,13 +97,18 @@ void CPlayer::movePlayer()
     if (y_ + speedY > 0 && y_ + speedY + getHeight() < WHEIGHT) y_ += speedY;
 }
 
-void CPlayer::checkLife()
+bool CPlayer::checkLife()
 {
     if (life_ <= 0)
     {
         setDead(true);
         // TODO: Explode player and consume life or show game over.
+
+
+        return false;
     }
+
+    return true;
 
 }
 
@@ -141,18 +146,19 @@ void CPlayer::shoot()
 void CPlayer::onLoop()
 {
 
-    checkLife();
-    movePlayer();
+    if (checkLife())
+    {
+        movePlayer();
 
-    if (shooting_) shoot();
+        if (shooting_) shoot();
 
-    //feuDuCul_->setX(x_ + 32);
-    //feuDuCul_->setY(y_ + 96);
-    feuDuCul2_->setX(x_ + 32);
-    feuDuCul2_->setY(y_ + 96);
+        //feuDuCul_->setX(x_ + 32);
+        //feuDuCul_->setY(y_ + 96);
+        feuDuCul2_->setX(x_ + 32);
+        feuDuCul2_->setY(y_ + 96);
 
-    // On verra si on garde cette fonction OnMove
-    CEntity::onLoop();
+        CEntity::onLoop();
+    }
 }
 
 void CPlayer::onRender(SDL_Surface* surfDisplay)
@@ -162,8 +168,8 @@ void CPlayer::onRender(SDL_Surface* surfDisplay)
     {
         if (!bulletList_[i].getDead()) bulletList_[i].onRender(surfDisplay);
     }
-    
-    CEntity::onRender(surfDisplay);
+
+    if (!getDead()) CEntity::onRender(surfDisplay);
 }
 
 void CPlayer::onCleanup()

@@ -54,7 +54,7 @@ bool CBullet::onCollision(CEntity* entity)
         if (entity->getType() == ENTITY_TYPE_ENEMY1 && life_ > 0)
         {
             setDead(true);
-            CParticles* explode = new CParticles(255, 255, 0, x_, y_, 5, 8, 0, 1000,
+            CParticles* explode = new CParticles(255, 255, 0, x_, y_, 5, 8, 0, 100,
                                                  100, 10, "fireworks");
 
             // TODO: Checker le genre de bullet

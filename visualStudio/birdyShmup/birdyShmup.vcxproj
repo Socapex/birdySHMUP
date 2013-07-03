@@ -18,21 +18,29 @@
     <ClCompile Include="..\..\src\CApp_OnInit.cpp" />
     <ClCompile Include="..\..\src\CApp_OnLoop.cpp" />
     <ClCompile Include="..\..\src\CApp_OnRender.cpp" />
+    <ClCompile Include="..\..\src\CBackground.cpp" />
+    <ClCompile Include="..\..\src\CBullet.cpp" />
     <ClCompile Include="..\..\src\CCamera.cpp" />
     <ClCompile Include="..\..\src\CEntity.cpp" />
     <ClCompile Include="..\..\src\CEntityCol.cpp" />
     <ClCompile Include="..\..\src\CEvent.cpp" />
     <ClCompile Include="..\..\src\CFPS.cpp" />
+    <ClCompile Include="..\..\src\CGUI.cpp" />
+    <ClCompile Include="..\..\src\CParticles.cpp" />
     <ClCompile Include="..\..\src\CPlayer.cpp" />
     <ClCompile Include="..\..\src\CSurface.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\CAnimation.h" />
     <ClInclude Include="..\..\src\CApp.h" />
+    <ClInclude Include="..\..\src\CBackground.h" />
+    <ClInclude Include="..\..\src\CBullet.h" />
     <ClInclude Include="..\..\src\CCamera.h" />
     <ClInclude Include="..\..\src\CEntity.h" />
     <ClInclude Include="..\..\src\CEvent.h" />
     <ClInclude Include="..\..\src\CFPS.h" />
+    <ClInclude Include="..\..\src\CGUI.h" />
+    <ClInclude Include="..\..\src\CParticles.h" />
     <ClInclude Include="..\..\src\CPlayer.h" />
     <ClInclude Include="..\..\src\CSurface.h" />
     <ClInclude Include="..\..\src\Defines.h" />

@@ -52,7 +52,7 @@ bool CPlayer::onLoad(const char* file, const int width, const int height,
 #elif __APPLE__
     bulletPath.insert(0, "birdyShmup.app/Contents/Resources/");
 #elif __WIN32__
-    
+    bulletPath.replace(0, std::string::npos, "../../img/bullet.png");
 #endif
 
     for (int i = 0; i < bulletList_.size(); ++i)

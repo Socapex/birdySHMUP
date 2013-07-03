@@ -94,6 +94,10 @@ CParticles::CParticles(std::string type, int x, int y, float emitSpeed,
     explosion4Path.insert(0, "birdyShmup.app/Contents/Resources/");
 
 #elif __WIN32__
+	explosion1Path.replace(0, std::string::npos, "../../img/particles/explosion1.jpg");
+    explosion2Path.replace(0, std::string::npos, "../../img/particles/explosion2.png");
+    explosion3Path.replace(0, std::string::npos, "../../img/particles/explosion3.png");
+    explosion4Path.replace(0, std::string::npos, "../../img/particles/explosion4.png");
 #endif
 
     CEntity entity;

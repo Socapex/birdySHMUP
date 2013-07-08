@@ -8,6 +8,10 @@ void CApp::onCleanup()
         if (!CEntity::entityList[i]) continue;
 
         CEntity::entityList[i]->onCleanup();
+
+        // Don't delete player cause not dynamic memory
+        if (CEntity::entityList[i]->getType() != ENTITY_TYPE_PLAYER)
+            delete CEntity::entityList[i];
     }
 
     CEntity::entityList.clear();

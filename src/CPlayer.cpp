@@ -2,6 +2,8 @@
 
 CPlayer::CPlayer()
 {
+    setType(ENTITY_TYPE_PLAYER);
+
     moveLeft_ = false;
     moveRight_ = false;
     moveUp_ = false;

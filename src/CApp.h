@@ -16,8 +16,8 @@
 #include "CGUI.h"
 #include "CParticles.h"
 #include "CBackground.h"
-#include "CEnnemy.h"
-#include "CEnnemySpawner.h"
+#include "CEnemy.h"
+#include "CEnemySpawner.h"
 
 class CApp : public CEvent {
 public:
@@ -41,9 +41,9 @@ private:
 
     CPlayer Player;
 
-    CEnnemySpawner ennemySpawner_;
+    CEnemySpawner enemySpawner_;
 
-    CEnnemy entity1_;
+    CEnemy entity1_;
     CEntity entity2_;
 
     CBackground background1_;

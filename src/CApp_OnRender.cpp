@@ -5,6 +5,8 @@ void CApp::onRender()
 
     background1_.onRender(surfDisplay_);
 
+    enemySpawner_.onRender();
+
     // ENTITIES
     for (int i = 0; i < CEntity::entityList.size(); ++i)
     {

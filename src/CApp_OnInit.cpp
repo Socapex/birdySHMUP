@@ -15,18 +15,19 @@ bool CApp::OnInit()
     if (Player.onLoad(Path.player1Path.c_str(), 64, 64, 0) == false) return false;
     CEntity::entityList.push_back(&Player);
 
+
     // Centrer la camera sur le player (seulement pour le tutoriel)
     CCamera::CameraControl.targetMode = TARGET_MODE_NORMAL;
     //CCamera::CameraControl.setTarget(&Player.x_, &Player.y_);
 
+
     // ENEMIES
-    if (entity1_.onLoad(Path.entity1Path.c_str(), 64, 64, 8) == false) return false;
-    entity1_.setY(200);
-    entity1_.setType(ENTITY_TYPE_ENEMY1);
-    CEntity::entityList.push_back(&entity1_);
-    
+    enemySpawner_.onLoad();
+
+
     // BACKGROUND
     if ((background1_.onLoad(Path.backgroundPath.c_str())) == false) return false;
+
 
     // TEST
     CParticles* explody = new CParticles(255, 255, 0, 400, 50, 5, 8, 0, 1000,

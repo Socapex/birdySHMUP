@@ -17,13 +17,7 @@
 
 #include "CEnemy.h"
 
-struct wave1 {
-    int startTime = 3000;
-    bool animationStarted = false;
-    bool animationFinished = false;
-} Wave1;
 
-};
 
 class CEnemySpawner {
 public:
@@ -43,6 +37,12 @@ public:
 private:
     std::vector<CEnemy*> wave1Enemies_;
 
-
+    struct wave1 {
+        int startTime = 3000;
+        bool animationStarted = false;
+        bool animationFinished = false;
+    } Wave1;
+    
+};
 
 #endif /* defined(__birdyShmup__CEnemySpawner__) */

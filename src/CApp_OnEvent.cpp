@@ -11,40 +11,35 @@ void CApp::OnKeyDown(SDLKey sym, SDLMod mod, Uint16 unicode)
     {
 
         case SDLK_SPACE:
-            {
-                Player.setShooting(true);
-                break;
-            }
+        {
+            Player.setShooting(true);
+            break;
+        }
 
         case SDLK_LEFT:
-            {
-                Player.setMoveLeft(true);
-                break;
-            }
+        {
+            Player.setMoveLeft(true);
+            break;
+        }
 
         case SDLK_RIGHT:
-            {
-                Player.setMoveRight(true);
-                break;
-            }
+        {
+            Player.setMoveRight(true);
+            break;
+        }
 
         case SDLK_UP:
-            {
-                Player.setMoveUp(true);
-                break;
-            }
+        {
+            Player.setMoveUp(true);
+            break;
+        }
 
         case SDLK_DOWN:
-            {
-                Player.setMoveDown(true);
-                break;
-            }
+        {
+            Player.setMoveDown(true);
+            break;
+        }
 
-        // Exemples
-        // case SDLK_UP:       CCamera::CameraControl.OnMove(0, 5); break;
-        // case SDLK_DOWN:     CCamera::CameraControl.OnMove(0, -5); break;
-        // case SDLK_LEFT:     CCamera::CameraControl.OnMove(5, 0); break;
-        // case SDLK_RIGHT:    CCamera::CameraControl.OnMove(-5, 0); break;
         default: {}
     }
 }
@@ -59,31 +54,45 @@ void CApp::OnKeyUp(SDLKey sym, SDLMod mod, Uint16 unicode)
             Player.setShooting(false);
             break;
         }
-        
+
         case SDLK_LEFT:
-            {
-                Player.setMoveLeft(false);
-                break;
-            }
+        {
+            Player.setMoveLeft(false);
+            break;
+        }
 
         case SDLK_RIGHT:
-            {
-                Player.setMoveRight(false);
-                break;
-            }
+        {
+            Player.setMoveRight(false);
+            break;
+        }
 
         case SDLK_UP:
-            {
-                Player.setMoveUp(false);
-                break;
-            }
+        {
+            Player.setMoveUp(false);
+            break;
+        }
 
         case SDLK_DOWN:
-            {
-                Player.setMoveDown(false);
-                break;
-            }
+        {
+            Player.setMoveDown(false);
+            break;
+        }
 
         default: {}
     }
 }
+
+
+
+
+
+
+
+
+
+// Exemples
+// case SDLK_UP:       CCamera::CameraControl.OnMove(0, 5); break;
+// case SDLK_DOWN:     CCamera::CameraControl.OnMove(0, -5); break;
+// case SDLK_LEFT:     CCamera::CameraControl.OnMove(5, 0); break;
+// case SDLK_RIGHT:    CCamera::CameraControl.OnMove(-5, 0); break;

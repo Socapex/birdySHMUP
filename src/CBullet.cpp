@@ -49,6 +49,7 @@ bool CBullet::onLoad(const char* file, const int width, const int height,
 bool CBullet::onCollision(CEntity* entity)
 {
 
+    // TODO: Different collision checks for different bullet types
     if (!enemyBullet)
     {
         if (entity->getType() == ENTITY_TYPE_ENEMY1 && life_ > 0)

@@ -21,6 +21,9 @@
 		2B0688A7176FE5870026C1AB /* SDLMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B068898176FE5870026C1AB /* SDLMain.m */; };
 		2B0688A9176FE5C10026C1AB /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B0688A8176FE5C10026C1AB /* SDL.framework */; };
 		2B0688AB176FE5CE0026C1AB /* SDL_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B0688AA176FE5CE0026C1AB /* SDL_image.framework */; };
+		2B068CFC178AEDC400663F72 /* CEnnemy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B068CFA178AEDC400663F72 /* CEnnemy.cpp */; };
+		2B068CFF178AF60D00663F72 /* CEnnemySpawner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B068CFD178AF60C00663F72 /* CEnnemySpawner.cpp */; };
+		2B068D02178AF8CC00663F72 /* FilePaths.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B068D00178AF8CC00663F72 /* FilePaths.cpp */; };
 		2B27258B176FE2E20094AC8F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B27258A176FE2E20094AC8F /* Cocoa.framework */; };
 		2B272595176FE2E20094AC8F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2B272593176FE2E20094AC8F /* InfoPlist.strings */; };
 		2B27259B176FE2E20094AC8F /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2B272599176FE2E20094AC8F /* Credits.rtf */; };
@@ -74,6 +77,12 @@
 		2B068898176FE5870026C1AB /* SDLMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SDLMain.m; path = ../../src/SDLMain.m; sourceTree = "<group>"; };
 		2B0688A8176FE5C10026C1AB /* SDL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL.framework; path = /Library/Frameworks/SDL.framework; sourceTree = "<absolute>"; };
 		2B0688AA176FE5CE0026C1AB /* SDL_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL_image.framework; path = /Library/Frameworks/SDL_image.framework; sourceTree = "<absolute>"; };
+		2B068CFA178AEDC400663F72 /* CEnnemy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CEnnemy.cpp; path = ../../src/CEnnemy.cpp; sourceTree = "<group>"; };
+		2B068CFB178AEDC400663F72 /* CEnnemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CEnnemy.h; path = ../../src/CEnnemy.h; sourceTree = "<group>"; };
+		2B068CFD178AF60C00663F72 /* CEnnemySpawner.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CEnnemySpawner.cpp; path = ../../src/CEnnemySpawner.cpp; sourceTree = "<group>"; };
+		2B068CFE178AF60C00663F72 /* CEnnemySpawner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CEnnemySpawner.h; path = ../../src/CEnnemySpawner.h; sourceTree = "<group>"; };
+		2B068D00178AF8CC00663F72 /* FilePaths.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FilePaths.cpp; path = ../../src/FilePaths.cpp; sourceTree = "<group>"; };
+		2B068D01178AF8CC00663F72 /* FilePaths.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FilePaths.h; path = ../../src/FilePaths.h; sourceTree = "<group>"; };
 		2B272587176FE2E20094AC8F /* birdyShmup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = birdyShmup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B27258A176FE2E20094AC8F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		2B27258D176FE2E20094AC8F /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -156,6 +165,12 @@
 			isa = PBXGroup;
 			children = (
 				2B068896176FE5870026C1AB /* Defines.h */,
+				2B068D00178AF8CC00663F72 /* FilePaths.cpp */,
+				2B068D01178AF8CC00663F72 /* FilePaths.h */,
+				2B068CFD178AF60C00663F72 /* CEnnemySpawner.cpp */,
+				2B068CFE178AF60C00663F72 /* CEnnemySpawner.h */,
+				2B068CFA178AEDC400663F72 /* CEnnemy.cpp */,
+				2B068CFB178AEDC400663F72 /* CEnnemy.h */,
 				2B50D16C1780FE2200DA5159 /* CBullet.cpp */,
 				2B50D16D1780FE2200DA5159 /* CBullet.h */,
 				2BCA3DAB1780E00700CF3F22 /* CBackground.cpp */,
@@ -291,6 +306,9 @@
 				2B3D10E31776C03100D4DF86 /* CParticles.cpp in Sources */,
 				2BCA3DAD1780E00700CF3F22 /* CBackground.cpp in Sources */,
 				2B50D16E1780FE2200DA5159 /* CBullet.cpp in Sources */,
+				2B068CFC178AEDC400663F72 /* CEnnemy.cpp in Sources */,
+				2B068CFF178AF60D00663F72 /* CEnnemySpawner.cpp in Sources */,
+				2B068D02178AF8CC00663F72 /* FilePaths.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

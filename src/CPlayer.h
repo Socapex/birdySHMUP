@@ -1,6 +1,8 @@
 #ifndef CPLAYER_H
 #define CPLAYER_H
 
+#include "FilePaths.h"
+
 #include "CEntity.h"
 #include "CBullet.h"
 
@@ -12,9 +14,8 @@ public:
     bool onLoad(const char* file, const int width, const int height,
                 const int maxFrames);
     void movePlayer();
-    bool checkLife();
 
-    void onLoop();
+    void onLoop(const int vectorPosition);
     void onRender(SDL_Surface* surfDisplay);
     void onCleanup();
     void onAnimate();
@@ -48,6 +49,8 @@ private:
 
     float maxSpeedX_;
     float maxSpeedY_;
+
+    int shootLastTime_;
 
 };
 

@@ -43,22 +43,25 @@ bool CPlayer::onLoad(const char* file, const int width, const int height,
 
 
 
-    // Bullets
-    std::string bulletPath = "img/bullet.png";
-    
-#ifdef MACTERMINAL
-    // Rien faire, on n'as pas besoin de changer le path lorsqu'on compile du
-    // terminal sur mac.
-#elif __APPLE__
-    bulletPath.insert(0, "birdyShmup.app/Contents/Resources/");
-#elif __WIN32__
-    bulletPath.replace(0, std::string::npos, "../../img/bullet.png");
-#endif
+
+
+
+    // BULLETS
+
+    shootLastTime_ = SDL_GetTicks();
+
+    FilePaths Path;
 
     for (int i = 0; i < bulletList_.size(); ++i)
     {
-        bulletList_[i].onLoad(bulletPath.c_str(), 16, 16, 0);
+        bulletList_[i].onLoad(Path.bullet1Path.c_str(), 16, 16, 0);
     }
+
+
+
+
+
+    // PARTICLES
 
 //    feuDuCul_ = new CParticles("explosion3", x_ + 32, y_ + 64, 10, 1, 1000,
 //                               10, "firefowrks", true);
@@ -97,31 +100,22 @@ void CPlayer::movePlayer()
     if (y_ + speedY > 0 && y_ + speedY + getHeight() < WHEIGHT) y_ += speedY;
 }
 
-bool CPlayer::checkLife()
-{
-    if (life_ <= 0)
-    {
-        setDead(true);
-        // TODO: Explode player and consume life or show game over.
 
-
-        return false;
-    }
-
-    return true;
-
-}
 
 void CPlayer::shoot()
 {
-    for (int i = 0; i < bulletList_.size(); ++i)
+    if (shootLastTime_ + PLAYER_BULLET1_SHOOT_DELAY <= SDL_GetTicks())
     {
-        if (bulletList_[i].getDead())
+        shootLastTime_ = SDL_GetTicks();
+        for (int i = 0; i < bulletList_.size(); ++i)
         {
-            bulletList_[i].shoot(x_, y_);
-            bulletList_[i + 1].shoot(x_ + getWidth() - bulletList_[i].getWidth(),
-                                     y_);
-            break;
+            if (bulletList_[i].getDead())
+            {
+                bulletList_[i].shoot(x_, y_);
+                bulletList_[i + 1].shoot(x_ + getWidth() - bulletList_[i].getWidth(),
+                                         y_);
+                break;
+            }
         }
     }
 }
@@ -143,7 +137,7 @@ void CPlayer::shoot()
 
 
 // FONCTIONS OVERLOADED
-void CPlayer::onLoop()
+void CPlayer::onLoop(const int vectorPosition)
 {
 
     if (checkLife())
@@ -156,8 +150,13 @@ void CPlayer::onLoop()
         //feuDuCul_->setY(y_ + 96);
         feuDuCul2_->setX(x_ + 32);
         feuDuCul2_->setY(y_ + 96);
+    }
+    else
+    {
+        // Player is dead
+        setDead(true);
 
-        CEntity::onLoop();
+        // TODO: Player death
     }
 }
 

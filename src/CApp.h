@@ -5,6 +5,7 @@
 #include <string>
 
 #include "Defines.h"
+#include "FilePaths.h"
 
 #include "CSurface.h"
 #include "CEvent.h"
@@ -15,6 +16,8 @@
 #include "CGUI.h"
 #include "CParticles.h"
 #include "CBackground.h"
+#include "CEnnemy.h"
+#include "CEnnemySpawner.h"
 
 class CApp : public CEvent {
 public:
@@ -38,7 +41,9 @@ private:
 
     CPlayer Player;
 
-    CEntity entity1_;
+    CEnnemySpawner ennemySpawner_;
+
+    CEnnemy entity1_;
     CEntity entity2_;
 
     CBackground background1_;

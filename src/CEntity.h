@@ -19,10 +19,12 @@ public:
     virtual ~CEntity();
 
     bool collides(const int oX, const int oY, const int oW, const int oH);
+    bool checkLife();
+
 
     virtual bool onLoad(const char* file, const int width, const int height,
                         const int maxFrames);
-    virtual void onLoop();
+    virtual void onLoop(const int vectorPosition);
     virtual void onRender(SDL_Surface* surfDisplay);
     virtual void onCleanup();
     virtual void onAnimate();

@@ -77,50 +77,30 @@ CParticles::CParticles(std::string type, int x, int y, float emitSpeed,
                        unsigned int spread, std::string animationType,
                        bool follow)
 {
-    // Image paths, can't really do this in onInit :(
-    std::string explosion1Path = "img/particles/explosion1.jpg";
-    std::string explosion2Path = "img/particles/explosion2.png";
-    std::string explosion3Path = "img/particles/explosion3.png";
-    std::string explosion4Path = "img/particles/explosion4.png";
-
-    // Platform specific:
-#ifdef MACTERMINAL
-    // Rien faire, on n'as pas besoin de changer le path lorsqu'on compile du
-    // terminal sur mac.
-#elif __APPLE__
-    explosion1Path.insert(0, "birdyShmup.app/Contents/Resources/");
-    explosion2Path.insert(0, "birdyShmup.app/Contents/Resources/");
-    explosion3Path.insert(0, "birdyShmup.app/Contents/Resources/");
-    explosion4Path.insert(0, "birdyShmup.app/Contents/Resources/");
-
-#elif __WIN32__
-	explosion1Path.replace(0, std::string::npos, "../../img/particles/explosion1.jpg");
-    explosion2Path.replace(0, std::string::npos, "../../img/particles/explosion2.png");
-    explosion3Path.replace(0, std::string::npos, "../../img/particles/explosion3.png");
-    explosion4Path.replace(0, std::string::npos, "../../img/particles/explosion4.png");
-#endif
 
     CEntity entity;
 
+    FilePaths Path;
+
     if (type == "explosion1")
     {
-        entity.onLoad(explosion1Path.c_str(), 320, 300, 20);
+        entity.onLoad(Path.explosion1Path.c_str(), 320, 300, 20);
         
     }
 
     else if (type == "explosion2")
     {
-        entity.onLoad(explosion2Path.c_str(), 256, 192, 64);
+        entity.onLoad(Path.explosion2Path.c_str(), 256, 192, 64);
     }
 
     else if (type == "explosion3")
     {
-        entity.onLoad(explosion3Path.c_str(), 96, 96, 17);
+        entity.onLoad(Path.explosion3Path.c_str(), 96, 96, 17);
     }
 
     else if (type == "explosion4")
     {
-        entity.onLoad(explosion4Path.c_str(), 64, 64, 25);
+        entity.onLoad(Path.explosion4Path.c_str(), 64, 64, 25);
     }
 
     quantity_ = quantity;

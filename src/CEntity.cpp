@@ -61,6 +61,28 @@ bool CEntity::collides(const int oX, const int oY, const int oW, const int oH)
     return true;
 }
 
+bool CEntity::checkLife()
+{
+    if (life_ <= 0)
+    {
+        return false;
+    }
+
+    return true;
+    
+}
+
+
+
+
+
+
+
+
+
+
+// VIRTUAL FUNCTIONS
+
 bool CEntity::onLoad(const char* file, const int width, const int height,
                      const int maxFrames)
 {
@@ -74,7 +96,7 @@ bool CEntity::onLoad(const char* file, const int width, const int height,
     return true;
 }
 
-void CEntity::onLoop()
+void CEntity::onLoop(const int vectorPosition)
 {
 
 }
@@ -85,7 +107,7 @@ void CEntity::onRender(SDL_Surface* surfDisplay)
 
     if (!dead_)
     {
-        onAnimate();
+        CEntity::onAnimate();
 
         CSurface::OnDraw(surfDisplay, surfaceEntity_, x_, y_, currentFrameCol * width_,
                          (currentFrameRow + animControl->getCurrentFrame()) * height_,

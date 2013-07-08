@@ -14,6 +14,9 @@
 #include <string>
 #include <typeinfo>
 
+#include "FilePaths.h"
+
+
 class CEntity;
 
 

@@ -42,7 +42,7 @@ private:
         bool animationStarted;
         bool animationFinished;
     } Wave1;
-
+    
 };
 
 #endif /* defined(__birdyShmup__CEnemySpawner__) */

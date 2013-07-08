@@ -25,7 +25,14 @@ public:
     bool onCollision(CEntity* entity);
     void onRender(SDL_Surface* surfDisplay);
     void onAnimate();
-    
+
+
+    int getAnimStart() const;
+
+    void setAnimStart(const int time);
+
+private:
+    int animationStart;
 };
 
 #endif /* defined(__birdyShmup__CEnemy__) */

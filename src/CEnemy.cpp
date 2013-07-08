@@ -11,6 +11,8 @@
 CEnemy::CEnemy()
 {
     life_ = ENEMY1_LIFE;
+
+    animationStart = 0;
 }
 
 CEnemy::~CEnemy()
@@ -62,3 +64,22 @@ void CEnemy::onRender(SDL_Surface *surfDisplay)
 
 void CEnemy::onAnimate()
 {}
+
+
+
+
+
+
+
+
+
+
+int CEnemy::getAnimStart() const
+{
+    return animationStart;
+}
+
+void CEnemy::setAnimStart(const int time)
+{
+    animationStart = time;
+}

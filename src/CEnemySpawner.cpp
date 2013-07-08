@@ -29,6 +29,7 @@ bool CEnemySpawner::onLoad()
             return false;
 
         // Init offscreen
+        //entity1_->setX(i * 100);
         entity1_->setY(-200);
 
         entity1_->setType(ENTITY_TYPE_ENEMY1);
@@ -54,15 +55,30 @@ void CEnemySpawner::enemyAnimator()
     if (Wave1.startTime >= SDL_GetTicks() || Wave1.animationStarted)
     {
         Wave1.animationStarted = true;
-        
+
+
+        // TODO: Lire d'un fichier text somehow
         if (!Wave1.animationFinished)
         {
             for (int i = 0; i < wave1Enemies_.size(); ++i)
             {
-                Wave1.animationFinished = animStraightLine(wave1Enemies_[i],
-                                                           i * 100, 200, 10);
+                bool finished = animStraightLine(wave1Enemies_[i],
+                                               i * 100, 200, 10);
+                
+                if (i == wave1Enemies_.size() - 1) Wave1.animationFinished = finished;
             }
         }
+
+        else
+        {
+            for (int i = 0; i < wave1Enemies_.size(); ++i)
+            {
+                animStraightLine(wave1Enemies_[i],
+                                                 0, -200, 10);
+
+            }
+        }
+
     }
 }
 
@@ -80,12 +96,11 @@ bool CEnemySpawner::animStraightLine(CEnemy* enemy, const int x, const int y,
         return true;
     }
 
-    float teta = asinf(deltaY / sqrtf(powf(deltaX, 2) + powf(deltaY, 2)));
+    float tetaX = acosf(deltaX / sqrtf(powf(deltaX, 2) + powf(deltaY, 2)));
+    float tetaY = asinf(deltaY / sqrtf(powf(deltaX, 2) + powf(deltaY, 2)));
 
-    float newX = cosf(teta) * speed;
-    float newY = sinf(teta) * speed;
-
-    if (newY <= 1) newY = speed;
+    float newX = cosf(tetaX) * speed;
+    float newY = sinf(tetaY) * speed;
 
     enemy->setX(enemy->getX() + newX);
     enemy->setY(enemy->getY() + newY);

@@ -21,6 +21,8 @@
     <ClCompile Include="..\..\src\CBackground.cpp" />
     <ClCompile Include="..\..\src\CBullet.cpp" />
     <ClCompile Include="..\..\src\CCamera.cpp" />
+    <ClCompile Include="..\..\src\CEnemy.cpp" />
+    <ClCompile Include="..\..\src\CEnemySpawner.cpp" />
     <ClCompile Include="..\..\src\CEntity.cpp" />
     <ClCompile Include="..\..\src\CEntityCol.cpp" />
     <ClCompile Include="..\..\src\CEvent.cpp" />
@@ -29,6 +31,7 @@
     <ClCompile Include="..\..\src\CParticles.cpp" />
     <ClCompile Include="..\..\src\CPlayer.cpp" />
     <ClCompile Include="..\..\src\CSurface.cpp" />
+    <ClCompile Include="..\..\src\FilePaths.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\CAnimation.h" />
@@ -36,6 +39,8 @@
     <ClInclude Include="..\..\src\CBackground.h" />
     <ClInclude Include="..\..\src\CBullet.h" />
     <ClInclude Include="..\..\src\CCamera.h" />
+    <ClInclude Include="..\..\src\CEnemy.h" />
+    <ClInclude Include="..\..\src\CEnemySpawner.h" />
     <ClInclude Include="..\..\src\CEntity.h" />
     <ClInclude Include="..\..\src\CEvent.h" />
     <ClInclude Include="..\..\src\CFPS.h" />
@@ -44,6 +49,7 @@
     <ClInclude Include="..\..\src\CPlayer.h" />
     <ClInclude Include="..\..\src\CSurface.h" />
     <ClInclude Include="..\..\src\Defines.h" />
+    <ClInclude Include="..\..\src\FilePaths.h" />
     <ClInclude Include="..\..\src\SDLMain.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClInclude>

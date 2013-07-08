@@ -6,6 +6,9 @@
 //  Copyright (c) 2013 Groarke and co. All rights reserved.
 //
 
+#include <SDL.h>
+#include <string>
+
 #include "FilePaths.h"
 
 FilePaths::FilePaths()

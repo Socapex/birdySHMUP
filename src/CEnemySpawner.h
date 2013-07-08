@@ -38,9 +38,9 @@ private:
     std::vector<CEnemy*> wave1Enemies_;
 
     struct wave1 {
-        int startTime = 3000;
-        bool animationStarted = false;
-        bool animationFinished = false;
+        int startTime;
+        bool animationStarted;
+        bool animationFinished;
     } Wave1;
 
 };

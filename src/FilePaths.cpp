@@ -59,8 +59,10 @@ FilePaths::FilePaths()
 #elif __WIN32__
 
 	player1Path.replace(0, std::string::npos, "../../img/cube.png");
+    
     entity1Path.replace(0, std::string::npos, "../../img/yoshi.bmp");
     entity2Path.replace(0, std::string::npos, "../../img/yoshi.bmp");
+    
     backgroundPath.replace(0, std::string::npos, "../../img/cloud-1.jpg");
 
     bullet1Path.replace(0, std::string::npos, "../../img/bullet.png");

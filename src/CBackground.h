@@ -24,8 +24,12 @@ public:
     void onRender(SDL_Surface* surfDisplay);
     void onAnimate();
 
+	void setBackgroundLevel(int backgroundLevel);
+
 private:
     SDL_Surface* surfBackground_;
+
+	int backgroundLevel_;
 
     int x_;
     int y_;

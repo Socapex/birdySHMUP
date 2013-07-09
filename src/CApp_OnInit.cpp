@@ -27,6 +27,8 @@ bool CApp::OnInit()
 
     // BACKGROUND
     if ((background1_.onLoad(Path.backgroundPath.c_str())) == false) return false;
+	if ((parallax1_.onLoad(Path.parallaxPath.c_str())) == false) return false;
+	else parallax1_.setBackgroundLevel(BACKGROUND_SCROLL_SPEED_LEVEL_4);
 
 
     // TEST

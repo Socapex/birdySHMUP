@@ -47,6 +47,7 @@ private:
     CEntity entity2_;
 
     CBackground background1_;
+	CBackground parallax1_;
 
     CAnimation Anim_Yoshi_;
 

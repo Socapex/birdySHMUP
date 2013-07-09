@@ -10,6 +10,8 @@
 
 CBackground::CBackground()
 {
+	backgroundLevel_ = BACKGROUND_SCROLL_SPEED_LEVEL_1;
+
     x_ = 0;
     y_ = 0;
 }
@@ -50,6 +52,11 @@ void CBackground::onRender(SDL_Surface* surfDisplay)
 
 void CBackground::onAnimate()
 {
-    y_ += BACKGROUND_SCROLL_SPEED_LEVEL_4;
+	y_ += backgroundLevel_;
     y_ += CFPS::FPSControl.getSpeedFactor();
+}
+
+void CBackground::setBackgroundLevel(int backgroundLevel)
+{
+	backgroundLevel_ = backgroundLevel;
 }

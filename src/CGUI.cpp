@@ -23,23 +23,35 @@ CGUI::CGUI()
 
     black = {0, 0, 0, 0};
 
+    getReadyPlaying = false;
+    getReadyTime = 3000;
+    getReadyCounter = 3;
+
 }
 
 CGUI::~CGUI()
 {}
 
+void CGUI::getReady()
+{
+    getReadySurface_ = TTF_RenderText_Blended(getReadyFont_, "Get Ready!", black);
+    getReadyPlaying = true;
+    
+}
+
 void CGUI::onLoad()
 {
-    FilePaths Path;
 
-    mainFont_ = TTF_OpenFont(Path.font1Path.c_str(), 16);
 
-    if (mainFont_ == NULL)
+    getReadyFont_ = TTF_OpenFont(Path.font1Path.c_str(), 2);
+    mainFont16_ = TTF_OpenFont(Path.font1Path.c_str(), 16);
+
+    if (mainFont16_ == NULL)
     {
-        printf("Unable to load font: %s %s \n", mainFont_, TTF_GetError());
+        printf("Unable to load font: %s %s \n", mainFont16_, TTF_GetError());
     }
 
-    TTF_SetFontStyle(mainFont_, TTF_STYLE_BOLD);
+    TTF_SetFontStyle(mainFont16_, TTF_STYLE_BOLD);
 }
 
 void CGUI::onLoop(CPlayer* player)
@@ -49,7 +61,7 @@ void CGUI::onLoop(CPlayer* player)
 
     pointText_ = std::to_string(player->getPlayerPoints());
 
-    points_ = TTF_RenderText_Solid(mainFont_, pointText_.c_str(), black);
+    points_ = TTF_RenderText_Solid(mainFont16_, pointText_.c_str(), black);
 
 }
 
@@ -63,11 +75,28 @@ void CGUI::onRender(SDL_Surface* surfDisplay)
 
     CSurface::OnDraw(surfDisplay, points_, WWIDTH / 2 - points_->w, 10);
 
-    
+    if (getReadyPlaying)
+    {
+        getReadyFont_ = TTF_OpenFont(Path.font1Path.c_str(), getReadyCounter);
+
+        getReadySurface_ = TTF_RenderText_Blended(getReadyFont_, "Get Ready!",
+                                                  black);
+
+        getReadyCounter += 2;
+
+        if (getReadyCounter >= 64) getReadyCounter = 64;
+
+        CSurface::OnDraw(surfDisplay, getReadySurface_,
+                         (WWIDTH / 2) - (getReadySurface_->w / 2),
+                         WHEIGHT / 3) - (getReadySurface_->h / 2);
+
+        if (SDL_GetTicks() > getReadyTime) getReadyPlaying = false;
+        
+    }
 
 }
 
 void CGUI::onCleanup()
 {
-    TTF_CloseFont(mainFont_);
+    TTF_CloseFont(mainFont16_);
 }

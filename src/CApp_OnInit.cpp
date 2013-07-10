@@ -38,6 +38,7 @@ bool CApp::OnInit()
 	else parallax1_.setBackgroundLevel(BACKGROUND_SCROLL_SPEED_LEVEL_4);
 
     CGUI::gUI.onLoad();
+    CGUI::gUI.getReady();
 
 
     // TEST

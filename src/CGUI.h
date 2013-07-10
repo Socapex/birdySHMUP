@@ -26,6 +26,8 @@ public:
     CGUI();
     ~CGUI();
 
+    void getReady();
+
     void onLoad();
     void onLoop(CPlayer* player);
     void onRender(SDL_Surface* surfDisplay);
@@ -38,13 +40,20 @@ private:
     SDL_Rect healthBar_, healthBarBackground_;
 
     SDL_Surface* points_;
+    SDL_Surface* getReadySurface_;
 
-    TTF_Font* mainFont_;
+    TTF_Font* mainFont16_;
+    TTF_Font* getReadyFont_;
 
     SDL_Color black;
 
     std::string pointText_;
 
+    bool getReadyPlaying;
+    int getReadyTime;
+    int getReadyCounter;
+
+    FilePaths Path;
     
 
 };

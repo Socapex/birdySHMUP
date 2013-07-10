@@ -8,7 +8,7 @@ void CApp::onLoop()
     {
         if (!CEntity::entityList[i]) continue;
 
-        CEntity::entityList[i]->onLoop(i);
+        CEntity::entityList[i]->onLoop(i, &Player);
     }
 
     // COLLISIONS

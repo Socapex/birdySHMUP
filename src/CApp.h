@@ -2,6 +2,7 @@
 #define CAPP_H
 
 #include <SDL.h>
+#include <SDL_ttf.h>
 #include <string>
 
 #include "Defines.h"

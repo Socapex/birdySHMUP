@@ -35,6 +35,9 @@ public:
     std::string explosion3Path;
     std::string explosion4Path;
 
+    // Fonts
+    std::string font1Path;
+
 };
 
 #endif /* defined(__birdyShmup__FilePaths__) */

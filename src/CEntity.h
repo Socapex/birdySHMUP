@@ -9,6 +9,8 @@
 #include "CFPS.h"
 #include "CParticles.h"
 
+class CPlayer;
+
 enum {ENTITY_TYPE_GENERIC = 0, ENTITY_TYPE_PLAYER, ENTITY_TYPE_ENEMY1};
 enum {ENTITY_FLAG_NONE = 0, ENTITY_FLAG_GRAVITY = 0x00000001,
         ENTITY_FLAG_GHOST = 0x00000002, ENTITY_FLAG_MAPONLY = 0x00000004};
@@ -24,7 +26,7 @@ public:
 
     virtual bool onLoad(const char* file, const int width, const int height,
                         const int maxFrames);
-    virtual void onLoop(const int vectorPosition);
+    virtual void onLoop(const int vectorPosition, CPlayer* player);
     virtual void onRender(SDL_Surface* surfDisplay);
     virtual void onCleanup();
     virtual void onAnimate();

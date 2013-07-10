@@ -14,6 +14,8 @@
 #include "Defines.h"
 #include "CEntity.h"
 
+class CPlayer;
+
 class CEnemy : public CEntity {
 public:
     CEnemy();
@@ -21,7 +23,7 @@ public:
 
     bool onLoad(const char* file, const int width, const int height,
                 const int maxFrames);
-    void onLoop(const int vectorPosition);    
+    void onLoop(const int vectorPosition, CPlayer* player);
     bool onCollision(CEntity* entity);
     void onRender(SDL_Surface* surfDisplay);
     void onAnimate();

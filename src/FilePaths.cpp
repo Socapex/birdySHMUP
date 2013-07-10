@@ -33,6 +33,9 @@ FilePaths::FilePaths()
     explosion3Path = "img/particles/explosion3.png";
     explosion4Path = "img/particles/explosion4.png";
 
+    // FONTS
+    font1Path = "fonts/FixdStation.ttf";
+
 
 
 
@@ -61,6 +64,8 @@ FilePaths::FilePaths()
     explosion3Path.insert(0, "birdyShmup.app/Contents/Resources/");
     explosion4Path.insert(0, "birdyShmup.app/Contents/Resources/");
 
+    font1Path.insert(0, "birdyShmup.app/Contents/Resources/");
+
 #elif __WIN32__
 
 	player1Path.replace(0, std::string::npos, "../../img/cube.png");
@@ -77,6 +82,9 @@ FilePaths::FilePaths()
     explosion2Path.replace(0, std::string::npos, "../../img/particles/explosion2.png");
     explosion3Path.replace(0, std::string::npos, "../../img/particles/explosion3.png");
     explosion4Path.replace(0, std::string::npos, "../../img/particles/explosion4.png");
+
+    font1Path.replace(0, std::string::npos, "../../fonts/FixdStation.ttf");
+
 
 #endif
 }

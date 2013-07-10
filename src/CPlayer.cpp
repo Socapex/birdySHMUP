@@ -23,6 +23,8 @@ CPlayer::CPlayer()
 
     life_ = PLAYER_LIFE;
 
+    playerPoints_ = 0;
+
     // Pre-generate bullets
     for (int i = 0; i < 100; ++i)
     {
@@ -139,7 +141,7 @@ void CPlayer::shoot()
 
 
 // FONCTIONS OVERLOADED
-void CPlayer::onLoop(const int vectorPosition)
+void CPlayer::onLoop(const int vectorPosition, CPlayer* player)
 {
 
     if (checkLife())
@@ -220,6 +222,12 @@ bool CPlayer::onCollision(CEntity* Entity)
 
 
 // GETTERS ET SETTERS
+int CPlayer::getPlayerPoints() const
+{
+    return playerPoints_;
+}
+
+
 void CPlayer::setMoveLeft(const bool move)
 {
     moveLeft_ = move;
@@ -243,4 +251,9 @@ void CPlayer::setMoveDown(const bool move)
 void CPlayer::setShooting(const bool shoot)
 {
     shooting_ = shoot;
+}
+
+void CPlayer::setPlayerPoints(const int points)
+{
+    playerPoints_ = points;
 }

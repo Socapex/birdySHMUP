@@ -4,6 +4,13 @@ bool CApp::OnInit()
 {
     if(SDL_Init(SDL_INIT_EVERYTHING) < 0) return false;
 
+    // Init fonts
+    if (TTF_Init() < 0)
+    {
+        printf("Unable to initialize SDL_ttf: %s \n", TTF_GetError());
+        return false;
+    }
+
     // TODO: Choisir notre hauteur + largeur
     if((surfDisplay_ = SDL_SetVideoMode(WWIDTH, WHEIGHT, 32, SDL_HWSURFACE
                                         | SDL_DOUBLEBUF)) == NULL) return false;
@@ -29,6 +36,8 @@ bool CApp::OnInit()
     if ((background1_.onLoad(Path.backgroundPath.c_str())) == false) return false;
 	if ((parallax1_.onLoad(Path.parallaxPath.c_str())) == false) return false;
 	else parallax1_.setBackgroundLevel(BACKGROUND_SCROLL_SPEED_LEVEL_4);
+
+    CGUI::gUI.onLoad();
 
 
     // TEST

@@ -52,8 +52,7 @@ void CBackground::onRender(SDL_Surface* surfDisplay)
 
 void CBackground::onAnimate()
 {
-	y_ += backgroundLevel_;
-    y_ += CFPS::FPSControl.getSpeedFactor();
+	y_ += backgroundLevel_ * CFPS::FPSControl.getSpeedFactor();
 }
 
 void CBackground::setBackgroundLevel(int backgroundLevel)

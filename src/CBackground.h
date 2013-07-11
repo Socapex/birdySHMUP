@@ -32,7 +32,7 @@ private:
 	int backgroundLevel_;
 
     int x_;
-    int y_;
+    float y_;
 
 };
 

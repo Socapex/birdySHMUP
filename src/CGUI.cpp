@@ -22,6 +22,7 @@ CGUI::CGUI()
     healthBar_.h = 10;
 
     black = {0, 0, 0, 0};
+    white = {255, 255, 255, 0};
 
     getReadyPlaying = false;
     getReadyTime = 3000;
@@ -61,7 +62,7 @@ void CGUI::onLoop(CPlayer* player)
 
     pointText_ = std::to_string(player->getPlayerPoints());
 
-    points_ = TTF_RenderText_Solid(mainFont16_, pointText_.c_str(), black);
+    points_ = TTF_RenderText_Blended(mainFont16_, pointText_.c_str(), black);
 
 }
 

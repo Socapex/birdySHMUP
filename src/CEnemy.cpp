@@ -14,6 +14,9 @@ CEnemy::CEnemy()
     life_ = ENEMY1_LIFE;
 
     animationStart = 0;
+
+    deathExplosion_ = new CParticles("explosion3", x_, y_, 0,
+                                         1000, 1, 1);
 }
 
 CEnemy::~CEnemy()
@@ -47,8 +50,8 @@ void CEnemy::onLoop(const int vectorPosition, CPlayer* player)
         {
             setDead(true);
             player->setPlayerPoints(player->getPlayerPoints() + 100);
-            CParticles* explody = new CParticles("explosion3", x_, y_, 0,
-                                                 1000, 1, 1);
+            deathExplosion_->play(CEntity::x_, CEntity::y_);
+
         }
     }
 }

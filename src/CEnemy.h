@@ -34,7 +34,10 @@ public:
     void setAnimStart(const int time);
 
 private:
+    CParticles* deathExplosion_;
+
     int animationStart;
+
 };
 
 #endif /* defined(__birdyShmup__CEnemy__) */

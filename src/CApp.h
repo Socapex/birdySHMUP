@@ -2,7 +2,8 @@
 #define CAPP_H
 
 #include <SDL.h>
-#include <SDL_ttf.h>
+#include <SDL_ttf/SDL_ttf.h>
+#include <SDL_mixer.h>
 #include <string>
 
 #include "Defines.h"
@@ -19,6 +20,7 @@
 #include "CBackground.h"
 #include "CEnemy.h"
 #include "CEnemySpawner.h"
+#include "CMusic.h"
 
 class CApp : public CEvent {
 public:
@@ -26,9 +28,10 @@ public:
 
     int OnExecute();
 
-    bool OnInit();
-    void OnEvent(SDL_Event* event);
-    void OnExit();
+    bool initSDL();
+    bool onInit();
+    void onEvent(SDL_Event* event);
+    void onExit();
     void onLoop();
     void onRender();
     void onCleanup();
@@ -44,15 +47,14 @@ private:
 
     CEnemySpawner enemySpawner_;
 
-    CEnemy entity1_;
-    CEntity entity2_;
-
     CBackground background1_;
 	CBackground parallax1_;
 
-    CAnimation Anim_Yoshi_;
+    CMusic music_;
 
-    SDL_Surface* surfBackground_;
+    //CAnimation Anim_Yoshi_;
+
+    //SDL_Surface* surfBackground_;
 
     bool running_;
 

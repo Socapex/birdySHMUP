@@ -9,7 +9,7 @@ public:
     CEvent();
     virtual ~CEvent();
 
-    virtual void OnEvent(SDL_Event* Event);
+    virtual void onEvent(SDL_Event* Event);
     virtual void OnInputFocus();
     virtual void OnInputBlur();
     virtual void OnKeyDown(SDLKey sym, SDLMod mod, Uint16 unicode);
@@ -33,7 +33,7 @@ public:
     virtual void OnRestore();
     virtual void OnResize(int w,int h);
     virtual void OnExpose();
-    virtual void OnExit();
+    virtual void onExit();
     virtual void OnUser(Uint8 type, int code, void* data1, void* data2);
 };
 

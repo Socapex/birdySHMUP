@@ -1,6 +1,7 @@
 #include "CApp.h"
 
-bool CApp::OnInit()
+// Initialise SDL seperately so we can use SDL_GetTicks() inside constructors.
+bool CApp::initSDL()
 {
     if(SDL_Init(SDL_INIT_EVERYTHING) < 0) return false;
 
@@ -11,9 +12,22 @@ bool CApp::OnInit()
         return false;
     }
 
+    if( SDL_Init(SDL_INIT_AUDIO) < 0 ) return false;
+
+    Mix_OpenAudio(44100,AUDIO_S16SYS,2,640);
+
     // TODO: Choisir notre hauteur + largeur
     if((surfDisplay_ = SDL_SetVideoMode(WWIDTH, WHEIGHT, 32, SDL_HWSURFACE
                                         | SDL_DOUBLEBUF)) == NULL) return false;
+
+    SDL_EnableKeyRepeat(1, SDL_DEFAULT_REPEAT_INTERVAL / 3);
+
+    return true;
+}
+
+bool CApp::onInit()
+{
+
 
     FilePaths Path;
 
@@ -41,13 +55,20 @@ bool CApp::OnInit()
     CGUI::gUI.getReady();
 
 
+    // MUSIC
+    music_.onLoad();
+    music_.play();
+
+
     // TEST
     CParticles* explody = new CParticles(255, 255, 0, 400, 50, 5, 8, 0, 1000,
                                          100, 10, "fireworks");
+
+    explody->play(400, 50);
 //    CParticles* explody2 = new CParticles("explosion3", 400, 200, 1000, 10000,
 //                                          10, 10);
 
-    SDL_EnableKeyRepeat(1, SDL_DEFAULT_REPEAT_INTERVAL / 3);
+
 
     return true;
 

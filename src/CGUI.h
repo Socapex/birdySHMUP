@@ -12,7 +12,7 @@
 
 
 #include <SDL.h>
-#include <SDL_ttf.h>
+#include <SDL_ttf/SDL_ttf.h>
 #include <string>
 
 #include "Defines.h"
@@ -46,6 +46,7 @@ private:
     TTF_Font* getReadyFont_;
 
     SDL_Color black;
+    SDL_Color white;
 
     std::string pointText_;
 

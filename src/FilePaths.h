@@ -38,6 +38,9 @@ public:
     // Fonts
     std::string font1Path;
 
+    // Music
+    std::string song1Path;
+
 };
 
 #endif /* defined(__birdyShmup__FilePaths__) */

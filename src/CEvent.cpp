@@ -6,7 +6,7 @@ CEvent::CEvent()
 CEvent::~CEvent()
 {}
 
-void CEvent::OnEvent(SDL_Event* event)
+void CEvent::onEvent(SDL_Event* event)
 {
     switch(event->type)
     {
@@ -143,7 +143,7 @@ void CEvent::OnEvent(SDL_Event* event)
 
         case SDL_QUIT:
         {
-            OnExit();
+            onExit();
             break;
         }
 
@@ -266,7 +266,7 @@ void CEvent::OnExpose() {
     //Pure virtual, do nothing
 }
 
-void CEvent::OnExit() {
+void CEvent::onExit() {
     //Pure virtual, do nothing
 }
 

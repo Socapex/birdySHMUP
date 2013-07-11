@@ -11,13 +11,14 @@ CApp::CApp()
 
 int CApp::OnExecute()
 {
-    if(OnInit() == false) return -1;
+    if(initSDL() == false) return -1;
+    if(onInit() == false) return -1;
 
     SDL_Event event;
 
     while(running_)
     {
-        while(SDL_PollEvent(&event)) OnEvent(&event);
+        while(SDL_PollEvent(&event)) onEvent(&event);
         onLoop();
         onRender();
     }
@@ -26,7 +27,7 @@ int CApp::OnExecute()
     return 0;
 }
 
-void CApp::OnExit()
+void CApp::onExit()
 {
     running_ = false;
 }

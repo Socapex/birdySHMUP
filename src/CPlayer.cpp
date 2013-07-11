@@ -183,7 +183,7 @@ void CPlayer::onCleanup()
 void CPlayer::onAnimate()
 {
     // ANIMATIONS DU JOUEUR
-    // TODO: setMaxFrames dans OnInit... ou ca A du sens ;)
+    // TODO: setMaxFrames dans onInit... ou ca A du sens ;)
     if (speedX != 0) animControl->setMaxFrames(0);
     else animControl->setMaxFrames(0);
 

@@ -36,6 +36,8 @@ FilePaths::FilePaths()
     // FONTS
     font1Path = "fonts/FixdStation.ttf";
 
+    // MUSIC
+    song1Path = "music/WelcomeToEurope.ogg";
 
 
 
@@ -66,6 +68,8 @@ FilePaths::FilePaths()
 
     font1Path.insert(0, "birdyShmup.app/Contents/Resources/");
 
+    song1Path.insert(0, "birdyShmup.app/Contents/Resources/");
+
 #elif __WIN32__
 
 	player1Path.replace(0, std::string::npos, "../../img/cube.png");
@@ -84,6 +88,8 @@ FilePaths::FilePaths()
     explosion4Path.replace(0, std::string::npos, "../../img/particles/explosion4.png");
 
     font1Path.replace(0, std::string::npos, "../../fonts/FixdStation.ttf");
+
+    song1Path.replace(0, std::string::npos, "../../fonts/FixdStation.ttf");
 
 
 #endif

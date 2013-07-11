@@ -28,7 +28,7 @@ private:
     SDL_Surface* surfBackground_;
 
     int x_;
-    int y_;
+    float y_;
 
 };
 

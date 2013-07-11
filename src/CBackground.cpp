@@ -50,6 +50,5 @@ void CBackground::onRender(SDL_Surface* surfDisplay)
 
 void CBackground::onAnimate()
 {
-    y_ += BACKGROUND_SCROLL_SPEED;
-    y_ += CFPS::FPSControl.getSpeedFactor();
+    y_ += BACKGROUND_SCROLL_SPEED * CFPS::FPSControl.getSpeedFactor();
 }

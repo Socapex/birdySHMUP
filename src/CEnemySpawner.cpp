@@ -104,8 +104,8 @@ bool CEnemySpawner::animStraightLine(CEnemy* enemy, const int x, const int y,
     float tetaX = acosf(deltaX / sqrtf(powf(deltaX, 2) + powf(deltaY, 2)));
     float tetaY = asinf(deltaY / sqrtf(powf(deltaX, 2) + powf(deltaY, 2)));
 
-    float newX = cosf(tetaX) * speed;
-    float newY = sinf(tetaY) * speed;
+    float newX = cosf(tetaX) * speed * CFPS::FPSControl.getSpeedFactor();
+    float newY = sinf(tetaY) * speed * CFPS::FPSControl.getSpeedFactor();
 
     enemy->setX(enemy->getX() + newX);
     enemy->setY(enemy->getY() + newY);

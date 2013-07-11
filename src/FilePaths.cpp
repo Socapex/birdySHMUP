@@ -6,6 +6,9 @@
 //  Copyright (c) 2013 Groarke and co. All rights reserved.
 //
 
+#include <SDL.h>
+#include <string>
+
 #include "FilePaths.h"
 
 FilePaths::FilePaths()
@@ -19,6 +22,7 @@ FilePaths::FilePaths()
 
     // BACKGROUND & MISC
     backgroundPath = "img/cloud-1.jpg";
+	parallaxPath = "img/parallax.png";
 
     // BULLETS
     bullet1Path = "img/bullet.png";
@@ -48,6 +52,7 @@ FilePaths::FilePaths()
     entity2Path.insert(0, "birdyShmup.app/Contents/Resources/");
     
     backgroundPath.insert(0, "birdyShmup.app/Contents/Resources/");
+	parallaxPath.insert(0, "birdyShmup.app/Contents/Resources/");
     
     bullet1Path.insert(0, "birdyShmup.app/Contents/Resources/");
     
@@ -64,6 +69,7 @@ FilePaths::FilePaths()
     entity2Path.replace(0, std::string::npos, "../../img/yoshi.bmp");
     
     backgroundPath.replace(0, std::string::npos, "../../img/cloud-1.jpg");
+	parallaxPath.replace(0, std::string::npos, "../../img/parallax.png");
 
     bullet1Path.replace(0, std::string::npos, "../../img/bullet.png");
     

@@ -10,7 +10,9 @@
 
 CEnemySpawner::CEnemySpawner()
 {
-
+	Wave1.startTime = 3000;
+	Wave1.animationStarted = false;
+	Wave1.animationFinished = false;
 }
 
 CEnemySpawner::~CEnemySpawner()

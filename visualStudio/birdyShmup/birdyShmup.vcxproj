@@ -28,6 +28,7 @@
     <ClCompile Include="..\..\src\CEvent.cpp" />
     <ClCompile Include="..\..\src\CFPS.cpp" />
     <ClCompile Include="..\..\src\CGUI.cpp" />
+    <ClCompile Include="..\..\src\CMusic.cpp" />
     <ClCompile Include="..\..\src\CParticles.cpp" />
     <ClCompile Include="..\..\src\CPlayer.cpp" />
     <ClCompile Include="..\..\src\CSurface.cpp" />
@@ -45,6 +46,7 @@
     <ClInclude Include="..\..\src\CEvent.h" />
     <ClInclude Include="..\..\src\CFPS.h" />
     <ClInclude Include="..\..\src\CGUI.h" />
+    <ClInclude Include="..\..\src\CMusic.h" />
     <ClInclude Include="..\..\src\CParticles.h" />
     <ClInclude Include="..\..\src\CPlayer.h" />
     <ClInclude Include="..\..\src\CSurface.h" />

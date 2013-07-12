@@ -2,7 +2,7 @@
 #define CAPP_H
 
 #include <SDL.h>
-#include <SDL_ttf/SDL_ttf.h>
+#include <SDL_ttf.h>
 #include <SDL_mixer.h>
 #include <string>
 

@@ -38,7 +38,7 @@ bool CEnemy::onLoad(const char* file, const int width, const int height,
     return true;
 }
 
-void CEnemy::onLoop(const int vectorPosition, CPlayer* player)
+void CEnemy::onLoop(CPlayer* player)
 {
     if (!getDead())
     {

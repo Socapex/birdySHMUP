@@ -16,8 +16,9 @@
 #include "FilePaths.h"
 
 #include "CEnemy.h"
+#include "CEntity.h"
 
-
+class CPlayer;
 
 class CEnemySpawner {
 public:
@@ -25,8 +26,8 @@ public:
     ~CEnemySpawner();
 
     bool onLoad();
-    void onLoop();
-    void onRender();
+    void onLoop(CPlayer* Player);
+    void onRender(SDL_Surface* surfDisplay_);
 
     void enemyAnimator();
 

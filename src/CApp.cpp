@@ -5,6 +5,10 @@ CApp::CApp()
     surfDisplay_ = NULL;
     running_ = true;
 
+    level1_ = NULL;
+
+    currentLevel_ = 1;
+
     // EXEMPLES
     //surfTest_ = NULL;
 }

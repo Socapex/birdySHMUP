@@ -142,7 +142,7 @@ void CPlayer::shoot()
 
 
 // FONCTIONS OVERLOADED
-void CPlayer::onLoop(const int vectorPosition, CPlayer* player)
+void CPlayer::onLoop(CPlayer* player)
 {
 
     if (checkLife())

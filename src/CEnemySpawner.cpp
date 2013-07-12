@@ -42,14 +42,28 @@ bool CEnemySpawner::onLoad()
     return true;
 }
 
-void CEnemySpawner::onLoop()
+void CEnemySpawner::onLoop(CPlayer* Player)
 {
-    
+    // ENTITIES
+    for (int i = 0; i < CEntity::entityList.size(); ++i)
+    {
+        if (!CEntity::entityList[i]) continue;
+
+        CEntity::entityList[i]->onLoop(Player);
+    }
 }
 
-void CEnemySpawner::onRender()
+void CEnemySpawner::onRender(SDL_Surface* surfDisplay_)
 {
     enemyAnimator();
+
+    // ENTITIES
+    for (int i = 0; i < CEntity::entityList.size(); ++i)
+    {
+        if (!CEntity::entityList[i]) continue;
+
+        CEntity::entityList[i]->onRender(surfDisplay_);
+    }
 }
 
 void CEnemySpawner::enemyAnimator()

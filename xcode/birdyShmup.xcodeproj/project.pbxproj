@@ -31,6 +31,7 @@
 		2B272595176FE2E20094AC8F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2B272593176FE2E20094AC8F /* InfoPlist.strings */; };
 		2B27259B176FE2E20094AC8F /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2B272599176FE2E20094AC8F /* Credits.rtf */; };
 		2B2725A1176FE2E20094AC8F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B27259F176FE2E20094AC8F /* MainMenu.xib */; };
+		2B2BAB151790A1790099D5E5 /* CLevel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B2BAB131790A1790099D5E5 /* CLevel.cpp */; };
 		2B3327A41773CCBC0030F2D4 /* CPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B3327A01773CCBC0030F2D4 /* CPlayer.cpp */; };
 		2B3327A51773CCBC0030F2D4 /* CFPS.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B3327A21773CCBC0030F2D4 /* CFPS.cpp */; };
 		2B3D10E01776AAF100D4DF86 /* CGUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B3D10DF1776AAF100D4DF86 /* CGUI.cpp */; };
@@ -102,6 +103,8 @@
 		2B272598176FE2E20094AC8F /* birdyShmup-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "birdyShmup-Prefix.pch"; sourceTree = "<group>"; };
 		2B27259A176FE2E20094AC8F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		2B2725A0176FE2E20094AC8F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		2B2BAB131790A1790099D5E5 /* CLevel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CLevel.cpp; path = ../../src/CLevel.cpp; sourceTree = "<group>"; };
+		2B2BAB141790A1790099D5E5 /* CLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLevel.h; path = ../../src/CLevel.h; sourceTree = "<group>"; };
 		2B3327A01773CCBC0030F2D4 /* CPlayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CPlayer.cpp; path = ../../src/CPlayer.cpp; sourceTree = "<group>"; };
 		2B3327A11773CCBC0030F2D4 /* CPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPlayer.h; path = ../../src/CPlayer.h; sourceTree = "<group>"; };
 		2B3327A21773CCBC0030F2D4 /* CFPS.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CFPS.cpp; path = ../../src/CFPS.cpp; sourceTree = "<group>"; };
@@ -186,6 +189,8 @@
 				2B068896176FE5870026C1AB /* Defines.h */,
 				2B068D00178AF8CC00663F72 /* FilePaths.cpp */,
 				2B068D01178AF8CC00663F72 /* FilePaths.h */,
+				2B2BAB131790A1790099D5E5 /* CLevel.cpp */,
+				2B2BAB141790A1790099D5E5 /* CLevel.h */,
 				2B5E86BB178E2D37003608E0 /* CMusic.cpp */,
 				2B5E86BC178E2D38003608E0 /* CMusic.h */,
 				2B068CFD178AF60C00663F72 /* CEnemySpawner.cpp */,
@@ -333,6 +338,7 @@
 				2B068CFF178AF60D00663F72 /* CEnemySpawner.cpp in Sources */,
 				2B068D02178AF8CC00663F72 /* FilePaths.cpp in Sources */,
 				2B5E86BD178E2D38003608E0 /* CMusic.cpp in Sources */,
+				2B2BAB151790A1790099D5E5 /* CLevel.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

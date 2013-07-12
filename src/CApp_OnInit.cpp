@@ -31,10 +31,10 @@ bool CApp::onInit()
 
     FilePaths Path;
 
-    // Load tous nos entites
     // JOUEUR
-    if (Player.onLoad(Path.player1Path.c_str(), 128, 128, 0) == false) return false;
-    CEntity::entityList.push_back(&Player);
+    Player = new CPlayer();
+    if (Player->onLoad(Path.player1Path.c_str(), 128, 128, 0) == false) return false;
+    CEntity::entityList.push_back(Player);
 
 
     // Centrer la camera sur le player (seulement pour le tutoriel)
@@ -42,41 +42,14 @@ bool CApp::onInit()
     //CCamera::CameraControl.setTarget(&Player.x_, &Player.y_);
 
 
-    // ENEMIES
-    enemySpawner_.onLoad();
-
-
-    // BACKGROUND
-    if ((background1_.onLoad(Path.backgroundPath.c_str())) == false) return false;
-	if ((parallax1_.onLoad(Path.parallaxPath.c_str())) == false) return false;
-	parallax1_.setBackgroundLevel(BACKGROUND_SCROLL_SPEED_LEVEL_4);
-
-    if ((parallax2_.onLoad(Path.parallax2Path.c_str())) == false) return false;
-	parallax2_.setBackgroundLevel(BACKGROUND_SCROLL_SPEED_LEVEL_2);
-
-    CGUI::gUI.onLoad();
-    CGUI::gUI.getReady();
-
-
-    // MUSIC
-    music_.onLoad();
-    music_.play();
-
     // SPLASHSCREEN
     if ((splashScreen1_.onLoad(Path.splash1Path.c_str())) == false) return false;
 
     // MAINMENU
     if ((mainMenu1_.onLoad(Path.main1Path.c_str())) == false) return false;
 
-    // TEST
-    CParticles* explody = new CParticles(255, 255, 0, 400, 50, 5, 8, 0, 1000,
-                                         100, 10, "fireworks");
-
-    explody->play(400, 50);
-//    CParticles* explody2 = new CParticles("explosion3", 400, 200, 1000, 10000,
-//                                          10, 10);
-
-
+    CGUI::gUI.onLoad();
+    CGUI::gUI.getReady();
 
     return true;
 

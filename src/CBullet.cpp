@@ -57,6 +57,7 @@ bool CBullet::onCollision(CEntity* entity)
     {
         if (entity->getType() == ENTITY_TYPE_ENEMY1 && entity->getLife() > 0)
         {
+            // this bullet
             setDead(true);
             
             deathExplosion_->play(x_, y_);

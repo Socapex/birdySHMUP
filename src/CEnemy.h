@@ -23,7 +23,7 @@ public:
 
     bool onLoad(const char* file, const int width, const int height,
                 const int maxFrames);
-    void onLoop(const int vectorPosition, CPlayer* player);
+    void onLoop(CPlayer* player);
     bool onCollision(CEntity* entity);
     void onRender(SDL_Surface* surfDisplay);
     void onAnimate();

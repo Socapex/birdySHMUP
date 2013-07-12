@@ -15,7 +15,7 @@ public:
                 const int maxFrames);
     void movePlayer();
 
-    void onLoop(const int vectorPosition, CPlayer* player);
+    void onLoop(CPlayer* player);
     void onRender(SDL_Surface* surfDisplay);
     void onCleanup();
     void onAnimate();

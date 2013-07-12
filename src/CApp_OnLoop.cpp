@@ -3,30 +3,13 @@
 void CApp::onLoop()
 {
 
-    // ENTITIES
-    for (int i = 0; i < CEntity::entityList.size(); ++i)
+    if (currentLevel_ == 1)
     {
-        if (!CEntity::entityList[i]) continue;
-
-        CEntity::entityList[i]->onLoop(i, &Player);
+        if (level1_ == NULL) level1_ = new CLevel();
+        level1_->onLoop(Player);
     }
 
-    // COLLISIONS
-    for (int i = 0; i < CEntityCol::EntityColList.size(); ++i)
-    {
-        CEntity* entityA = CEntityCol::EntityColList[i].entityA;
-        CEntity* entityB = CEntityCol::EntityColList[i].entityB;
-
-        if (entityA == NULL || entityB == NULL) continue;
-
-        if (entityA->onCollision(entityB)) entityB->onCollision(entityA);
-    }
-
-    CEntityCol::EntityColList.clear();
-
-    // GUI
-    CGUI::gUI.onLoop(&Player);
-
+    CGUI::gUI.onLoop(Player);
     CFPS::FPSControl.onLoop();
 
     // EXEMPLES

@@ -4,30 +4,11 @@ void CApp::onRender()
 {
     mainMenu1_.onRender(surfDisplay_);
 
-    /*
-    background1_.onRender(surfDisplay_);
-	
-    parallax1_.onRender(surfDisplay_);
-    parallax2_.onRender(surfDisplay_);
-    
-    enemySpawner_.onRender();
+    if (currentLevel_ == 1) level1_->onRender(surfDisplay_);
 
-    // ENTITIES
-    for (int i = 0; i < CEntity::entityList.size(); ++i)
-    {
-        if (!CEntity::entityList[i]) continue;
 
-        CEntity::entityList[i]->onRender(surfDisplay_);
-    }
-
-    // PARTICLES
-    for (int i = 0; i < CParticles::particleList.size(); ++i)
-    {
-        CParticles::particleList[i]->onRender(surfDisplay_);
-    }
 
     CGUI::gUI.onRender(surfDisplay_);
-    */
 
     SDL_Flip(surfDisplay_);
 

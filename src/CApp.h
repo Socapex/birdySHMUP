@@ -9,18 +9,12 @@
 #include "Defines.h"
 #include "FilePaths.h"
 
-#include "CSurface.h"
+#include "CLevel.h"
 #include "CEvent.h"
-#include "CEntity.h"
 #include "CCamera.h"
 #include "CPlayer.h"
 #include "CFPS.h"
 #include "CGUI.h"
-#include "CParticles.h"
-#include "CBackground.h"
-#include "CEnemy.h"
-#include "CEnemySpawner.h"
-#include "CMusic.h"
 #include "CSplashScreen.h"
 #include "CMainMenu.h"
 
@@ -45,24 +39,17 @@ public:
 private:
     SDL_Surface* surfDisplay_;
 
-    CPlayer Player;
+    CPlayer* Player;
 
-    CEnemySpawner enemySpawner_;
-
-    CBackground background1_;
-	CBackground parallax1_;
-    CBackground parallax2_;
-
-    CMusic music_;
+    CLevel* level1_;
+    bool loadLevel1_;
 
     // Les Menu
     CSplashScreen splashScreen1_;
 
     CMainMenu mainMenu1_;
 
-    //CAnimation Anim_Yoshi_;
-
-    //SDL_Surface* surfBackground_;
+    int currentLevel_;
 
     bool running_;
 

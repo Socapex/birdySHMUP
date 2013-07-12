@@ -13,6 +13,7 @@ CGUI CGUI::gUI;
 
 CGUI::CGUI()
 {
+    // Barre de vie
     healthBarBackground_.x = 10;
     healthBarBackground_.y = 10;
     healthBarBackground_.w = 104;
@@ -109,7 +110,7 @@ void CGUI::onRender(SDL_Surface* surfDisplay)
                                                   white);
         TTF_SetFontStyle(getReadyFont_, TTF_STYLE_BOLD);
 
-        getReadyCounter += 2;
+        getReadyCounter += 4;
 
         if (getReadyCounter >= 64) getReadyCounter = 64;
 

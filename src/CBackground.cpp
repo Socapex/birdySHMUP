@@ -16,24 +16,44 @@ CBackground::CBackground()
     y_ = 0;
 }
 
-CBackground::~CBackground()
+CBackground::CBackground(const char* file)
 {
-    SDL_FreeSurface(surfBackground_);
-}
+	backgroundLevel_ = BACKGROUND_SCROLL_SPEED_LEVEL_1;
 
-bool CBackground::onLoad(const char* file)
-{
-    if ((surfBackground_ = CSurface::onLoad(file)) == NULL) return false;
+    x_ = 0;
+    y_ = 0;
+
+
+    surfBackground_ = CSurface::onLoad(file);
 
     // Centrer l'image pour le parallax
     x_ = (WWIDTH / 2) - (surfBackground_->w / 2);
+    
+}
 
 	// Savoir ou le player spawn au debut pour le parallax	
 	tempX_ = CEntity::entityList[0]->getX();
 	tempY_ = CEntity::entityList[0]->getY();
 
     return true;
+
+CBackground::~CBackground()
+{
+    SDL_FreeSurface(surfBackground_);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 void CBackground::onRender(SDL_Surface* surfDisplay)
 {

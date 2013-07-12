@@ -23,9 +23,9 @@ class CPlayer;
 class CEnemySpawner {
 public:
     CEnemySpawner();
+    CEnemySpawner(const char* file);
     ~CEnemySpawner();
 
-    bool onLoad();
     void onLoop(CPlayer* Player);
     void onRender(SDL_Surface* surfDisplay_);
 

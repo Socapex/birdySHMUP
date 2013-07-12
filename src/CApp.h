@@ -9,7 +9,7 @@
 #include "Defines.h"
 #include "FilePaths.h"
 
-#include "CLevel.h"
+#include "Game/Level1.h"
 #include "CEvent.h"
 #include "CCamera.h"
 #include "CPlayer.h"
@@ -41,8 +41,7 @@ private:
 
     CPlayer* Player;
 
-    CLevel* level1_;
-    bool loadLevel1_;
+    Level1* level1_;
 
     // Les Menu
     CSplashScreen splashScreen1_;

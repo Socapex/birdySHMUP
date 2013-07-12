@@ -40,6 +40,7 @@
 		2B5E86BA178E2C2E003608E0 /* SDL_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B5E86B9178E2C2D003608E0 /* SDL_mixer.framework */; };
 		2B5E86BD178E2D38003608E0 /* CMusic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B5E86BB178E2D37003608E0 /* CMusic.cpp */; };
 		2B5E86BF178E332B003608E0 /* music in Resources */ = {isa = PBXBuildFile; fileRef = 2B5E86BE178E332A003608E0 /* music */; };
+		2B676DA71790BD53002F6AA8 /* Level1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B676DA51790BD53002F6AA8 /* Level1.cpp */; };
 		2B734397177178A700FCC983 /* SDL_image.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2B0688AA176FE5CE0026C1AB /* SDL_image.framework */; };
 		2B734398177178A700FCC983 /* SDL.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2B0688A8176FE5C10026C1AB /* SDL.framework */; };
 		2B84554617711ACF005DC982 /* img in Resources */ = {isa = PBXBuildFile; fileRef = 2B84554317711ACF005DC982 /* img */; };
@@ -119,6 +120,8 @@
 		2B5E86BB178E2D37003608E0 /* CMusic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CMusic.cpp; path = ../../src/CMusic.cpp; sourceTree = "<group>"; };
 		2B5E86BC178E2D38003608E0 /* CMusic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CMusic.h; path = ../../src/CMusic.h; sourceTree = "<group>"; };
 		2B5E86BE178E332A003608E0 /* music */ = {isa = PBXFileReference; lastKnownFileType = folder; name = music; path = ../../music; sourceTree = "<group>"; };
+		2B676DA51790BD53002F6AA8 /* Level1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Level1.cpp; sourceTree = "<group>"; };
+		2B676DA61790BD53002F6AA8 /* Level1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level1.h; sourceTree = "<group>"; };
 		2B84554317711ACF005DC982 /* img */ = {isa = PBXFileReference; lastKnownFileType = folder; name = img; path = ../../img; sourceTree = "<group>"; };
 		2B86970A1773F33600A5A132 /* CEntityCol.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CEntityCol.cpp; path = ../../src/CEntityCol.cpp; sourceTree = "<group>"; };
 		2BCA3DAB1780E00700CF3F22 /* CBackground.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CBackground.cpp; path = ../../src/CBackground.cpp; sourceTree = "<group>"; };
@@ -184,8 +187,7 @@
 		2B272590176FE2E20094AC8F /* birdyShmup */ = {
 			isa = PBXGroup;
 			children = (
-				2B5E86BE178E332A003608E0 /* music */,
-				2B16D1E7178CD7FC00BB515A /* fonts */,
+				2B676DA41790BD53002F6AA8 /* Game */,
 				2B068896176FE5870026C1AB /* Defines.h */,
 				2B068D00178AF8CC00663F72 /* FilePaths.cpp */,
 				2B068D01178AF8CC00663F72 /* FilePaths.h */,
@@ -210,7 +212,6 @@
 				2B3D10DF1776AAF100D4DF86 /* CGUI.cpp */,
 				2B3327A21773CCBC0030F2D4 /* CFPS.cpp */,
 				2B3327A31773CCBC0030F2D4 /* CFPS.h */,
-				2B84554317711ACF005DC982 /* img */,
 				2B06887F176FE5870026C1AB /* CAnimation.cpp */,
 				2B068880176FE5870026C1AB /* CAnimation.h */,
 				2B068881176FE5870026C1AB /* CApp_OnCleanup.cpp */,
@@ -231,6 +232,9 @@
 				2B068897176FE5870026C1AB /* SDLMain.h */,
 				2B068898176FE5870026C1AB /* SDLMain.m */,
 				2B27259F176FE2E20094AC8F /* MainMenu.xib */,
+				2B84554317711ACF005DC982 /* img */,
+				2B5E86BE178E332A003608E0 /* music */,
+				2B16D1E7178CD7FC00BB515A /* fonts */,
 				2B272591176FE2E20094AC8F /* Supporting Files */,
 			);
 			path = birdyShmup;
@@ -245,6 +249,16 @@
 				2B272599176FE2E20094AC8F /* Credits.rtf */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2B676DA41790BD53002F6AA8 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				2B676DA51790BD53002F6AA8 /* Level1.cpp */,
+				2B676DA61790BD53002F6AA8 /* Level1.h */,
+			);
+			name = Game;
+			path = ../../src/Game;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,6 +353,7 @@
 				2B068D02178AF8CC00663F72 /* FilePaths.cpp in Sources */,
 				2B5E86BD178E2D38003608E0 /* CMusic.cpp in Sources */,
 				2B2BAB151790A1790099D5E5 /* CLevel.cpp in Sources */,
+				2B676DA71790BD53002F6AA8 /* Level1.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

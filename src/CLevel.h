@@ -29,15 +29,15 @@ public:
     virtual void onLoop(CPlayer* Player);
     virtual void onRender(SDL_Surface* surfDisplay_);
 
-private:
+protected:
 
-    CEnemySpawner enemySpawner_;
+    CEnemySpawner* enemySpawner_;
 
-    CBackground background1_;
-	CBackground parallax1_;
-    CBackground parallax2_;
+    CBackground* background1_;
+	CBackground* parallax1_;
+    CBackground* parallax2_;
 
-    CMusic music_;
+    CMusic* music_;
 };
 
 #endif /* defined(__birdyShmup__CLevel__) */

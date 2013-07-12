@@ -33,6 +33,8 @@ public:
                std::string animationType = "random", bool follow = false);
     ~CParticles();
 
+    void play(const int x, const int y);
+
     void onLoop();
     void onRender(SDL_Surface* surfDisplay);
 
@@ -58,6 +60,7 @@ private:
     unsigned int lifeTime_, spread_;
     float emitSpeed_;
     bool follow_;
+    bool play_;
 };
 
 

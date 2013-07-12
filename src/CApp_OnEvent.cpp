@@ -1,8 +1,8 @@
 #include "CApp.h"
 
-void CApp::OnEvent(SDL_Event* event)
+void CApp::onEvent(SDL_Event* event)
 {
-    CEvent::OnEvent(event);
+    CEvent::onEvent(event);
 }
 
 void CApp::OnKeyDown(SDLKey sym, SDLMod mod, Uint16 unicode)

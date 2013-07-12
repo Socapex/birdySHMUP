@@ -7,12 +7,16 @@
 //
 
 #include "CEnemy.h"
+#include "CPlayer.h"
 
 CEnemy::CEnemy()
 {
     life_ = ENEMY1_LIFE;
 
     animationStart = 0;
+
+    deathExplosion_ = new CParticles("explosion3", x_, y_, 0,
+                                         1000, 1, 1);
 }
 
 CEnemy::~CEnemy()
@@ -34,7 +38,7 @@ bool CEnemy::onLoad(const char* file, const int width, const int height,
     return true;
 }
 
-void CEnemy::onLoop(const int vectorPosition)
+void CEnemy::onLoop(const int vectorPosition, CPlayer* player)
 {
     if (!getDead())
     {
@@ -45,8 +49,9 @@ void CEnemy::onLoop(const int vectorPosition)
         else
         {
             setDead(true);
-            CParticles* explody = new CParticles("explosion3", x_, y_, 0,
-                                                 1000, 1, 1);
+            player->setPlayerPoints(player->getPlayerPoints() + 100);
+            deathExplosion_->play(CEntity::x_, CEntity::y_);
+
         }
     }
 }

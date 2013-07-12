@@ -96,7 +96,7 @@ bool CEntity::onLoad(const char* file, const int width, const int height,
     return true;
 }
 
-void CEntity::onLoop(const int vectorPosition)
+void CEntity::onLoop(const int vectorPosition, CPlayer* player)
 {
 
 }

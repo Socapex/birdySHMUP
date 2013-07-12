@@ -23,7 +23,11 @@ void CApp::onCleanup()
 
     CParticles::particleList.clear();
 
+    CGUI::gUI.onCleanup();
+
     SDL_FreeSurface(surfDisplay_);
+
+    TTF_Quit();
     SDL_Quit();
 
     // EXEMPLES

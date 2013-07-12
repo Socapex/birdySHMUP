@@ -15,7 +15,7 @@ public:
                 const int maxFrames);
     void movePlayer();
 
-    void onLoop(const int vectorPosition);
+    void onLoop(const int vectorPosition, CPlayer* player);
     void onRender(SDL_Surface* surfDisplay);
     void onCleanup();
     void onAnimate();
@@ -23,11 +23,14 @@ public:
 
     void shoot();
 
+    int getPlayerPoints() const;
+
     void setMoveLeft(const bool move);
     void setMoveRight(const bool move);
     void setMoveUp(const bool move);
     void setMoveDown(const bool move);
     void setShooting(const bool shoot);
+    void setPlayerPoints(const int points);
 
 private:
     std::vector<CBullet> bulletList_;
@@ -51,6 +54,8 @@ private:
     float maxSpeedY_;
 
     int shootLastTime_;
+
+    int playerPoints_;
 
 };
 

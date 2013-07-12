@@ -39,7 +39,7 @@ void CBackground::onRender(SDL_Surface* surfDisplay)
 
     if (y_ > 0)
     {
-        CSurface::OnDraw(surfDisplay, surfBackground_, x_, y_ - surfBackground_->h);
+        CSurface::OnDraw(surfDisplay, surfBackground_, x_, y_ - surfBackground_->h - 1);
     }
 
     if (y_ > WHEIGHT)

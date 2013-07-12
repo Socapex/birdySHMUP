@@ -14,15 +14,16 @@
 FilePaths::FilePaths()
 {
     // JOUEUR
-    player1Path = "img/cube.png";
+    player1Path = "img/birdbody2.png";
 
     // ENEMIES
     entity1Path = "img/yoshi.png";
     entity2Path = "img/yoshi.bmp";
 
     // BACKGROUND & MISC
-    backgroundPath = "img/cloud-1.jpg";
-	parallaxPath = "img/parallax.png";
+    backgroundPath = "img/cloud-2.jpg";
+	parallaxPath = "img/parallaxTest.png";
+    parallax2Path = "img/parallaxTest2.png";
 
     // BULLETS
     bullet1Path = "img/bullet.png";
@@ -33,6 +34,11 @@ FilePaths::FilePaths()
     explosion3Path = "img/particles/explosion3.png";
     explosion4Path = "img/particles/explosion4.png";
 
+    // FONTS
+    font1Path = "fonts/FixdStation.ttf";
+
+    // MUSIC
+    song1Path = "music/WelcomeToEurope.ogg";
 
 
 
@@ -53,6 +59,7 @@ FilePaths::FilePaths()
     
     backgroundPath.insert(0, "birdyShmup.app/Contents/Resources/");
 	parallaxPath.insert(0, "birdyShmup.app/Contents/Resources/");
+    parallax2Path.insert(0, "birdyShmup.app/Contents/Resources/");
     
     bullet1Path.insert(0, "birdyShmup.app/Contents/Resources/");
     
@@ -60,6 +67,10 @@ FilePaths::FilePaths()
     explosion2Path.insert(0, "birdyShmup.app/Contents/Resources/");
     explosion3Path.insert(0, "birdyShmup.app/Contents/Resources/");
     explosion4Path.insert(0, "birdyShmup.app/Contents/Resources/");
+
+    font1Path.insert(0, "birdyShmup.app/Contents/Resources/");
+
+    song1Path.insert(0, "birdyShmup.app/Contents/Resources/");
 
 #elif __WIN32__
 
@@ -70,6 +81,7 @@ FilePaths::FilePaths()
     
     backgroundPath.replace(0, std::string::npos, "../../img/cloud-1.jpg");
 	parallaxPath.replace(0, std::string::npos, "../../img/parallax.png");
+    parallax2Path.replace(0, std::string::npos, "../../img/parallax.png");
 
     bullet1Path.replace(0, std::string::npos, "../../img/bullet.png");
     
@@ -77,6 +89,11 @@ FilePaths::FilePaths()
     explosion2Path.replace(0, std::string::npos, "../../img/particles/explosion2.png");
     explosion3Path.replace(0, std::string::npos, "../../img/particles/explosion3.png");
     explosion4Path.replace(0, std::string::npos, "../../img/particles/explosion4.png");
+
+    font1Path.replace(0, std::string::npos, "../../fonts/FixdStation.ttf");
+
+    song1Path.replace(0, std::string::npos, "../../fonts/FixdStation.ttf");
+
 
 #endif
 }

@@ -23,6 +23,8 @@ CPlayer::CPlayer()
 
     life_ = PLAYER_LIFE;
 
+    playerPoints_ = 0;
+
     // Pre-generate bullets
     for (int i = 0; i < 100; ++i)
     {
@@ -113,8 +115,9 @@ void CPlayer::shoot()
         {
             if (bulletList_[i].getDead())
             {
-                bulletList_[i].shoot(x_, y_);
-                bulletList_[i + 1].shoot(x_ + getWidth() - bulletList_[i].getWidth(),
+                bulletList_[i].shoot(x_ + 20, y_);
+                bulletList_[i + 1].shoot(x_ + getWidth()
+                                         - bulletList_[i].getWidth() - 20,
                                          y_);
                 break;
             }
@@ -139,7 +142,7 @@ void CPlayer::shoot()
 
 
 // FONCTIONS OVERLOADED
-void CPlayer::onLoop(const int vectorPosition)
+void CPlayer::onLoop(const int vectorPosition, CPlayer* player)
 {
 
     if (checkLife())
@@ -150,8 +153,9 @@ void CPlayer::onLoop(const int vectorPosition)
 
         //feuDuCul_->setX(x_ + 32);
         //feuDuCul_->setY(y_ + 96);
-        feuDuCul2_->setX(x_ + 32);
-        feuDuCul2_->setY(y_ + 96);
+        feuDuCul2_->setX(x_ + 64);
+        feuDuCul2_->setY(y_ + 150);
+        feuDuCul2_->play(x_ + 32, y_ + 96);
     }
     else
     {
@@ -181,7 +185,7 @@ void CPlayer::onCleanup()
 void CPlayer::onAnimate()
 {
     // ANIMATIONS DU JOUEUR
-    // TODO: setMaxFrames dans OnInit... ou ca A du sens ;)
+    // TODO: setMaxFrames dans onInit... ou ca A du sens ;)
     if (speedX != 0) animControl->setMaxFrames(0);
     else animControl->setMaxFrames(0);
 
@@ -195,6 +199,7 @@ bool CPlayer::onCollision(CEntity* Entity)
         life_ -= (1 * CFPS::FPSControl.getSpeedFactor());
         //CParticles explody(255, 255, 0, x_, y_, 5, 8, 1, 10, 100, rand() % 20 + 1);
         CParticles* explody2 = new CParticles("explosion3", x_, y_, 100, 1000, 1, 10);
+        explody2->play(x_, y_);
     }
 
     return true;
@@ -220,6 +225,12 @@ bool CPlayer::onCollision(CEntity* Entity)
 
 
 // GETTERS ET SETTERS
+int CPlayer::getPlayerPoints() const
+{
+    return playerPoints_;
+}
+
+
 void CPlayer::setMoveLeft(const bool move)
 {
     moveLeft_ = move;
@@ -243,4 +254,9 @@ void CPlayer::setMoveDown(const bool move)
 void CPlayer::setShooting(const bool shoot)
 {
     shooting_ = shoot;
+}
+
+void CPlayer::setPlayerPoints(const int points)
+{
+    playerPoints_ = points;
 }

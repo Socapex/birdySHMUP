@@ -25,6 +25,7 @@ public:
     // Background
     std::string backgroundPath;
 	std::string parallaxPath;
+    std::string parallax2Path;
 
     // Bullets
     std::string bullet1Path;
@@ -34,6 +35,12 @@ public:
     std::string explosion2Path;
     std::string explosion3Path;
     std::string explosion4Path;
+
+    // Fonts
+    std::string font1Path;
+
+    // Music
+    std::string song1Path;
 
 };
 

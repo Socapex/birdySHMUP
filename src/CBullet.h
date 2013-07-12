@@ -27,6 +27,8 @@ public:
     void onAnimate();
 
 private:
+    CParticles* deathExplosion_;
+
     bool enemyBullet;
 
 };

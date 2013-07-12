@@ -12,8 +12,9 @@
 
 
 #include <SDL.h>
-#include <SDL_ttf/SDL_ttf.h>
+#include <SDL_ttf.h>
 #include <string>
+#include <sstream>
 
 #include "Defines.h"
 #include "FilePaths.h"

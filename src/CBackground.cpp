@@ -59,3 +59,8 @@ void CBackground::setBackgroundLevel(int backgroundLevel)
 {
 	backgroundLevel_ = backgroundLevel;
 }
+
+SDL_Surface* CBackground::getSurface()
+{
+    return surfBackground_;
+}

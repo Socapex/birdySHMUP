@@ -4,9 +4,10 @@ void CApp::onRender()
 {
 
     background1_.onRender(surfDisplay_);
-	parallax1_.onRender(surfDisplay_);
+	
+    parallax1_.onRender(surfDisplay_);
     parallax2_.onRender(surfDisplay_);
-
+    
     enemySpawner_.onRender();
 
     // ENTITIES

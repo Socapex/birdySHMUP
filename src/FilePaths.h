@@ -42,6 +42,9 @@ public:
     // Music
     std::string song1Path;
 
+    // Splash Screen
+    std::string splash1Path;
+
 };
 
 #endif /* defined(__birdyShmup__FilePaths__) */

@@ -21,6 +21,7 @@
 #include "CEnemy.h"
 #include "CEnemySpawner.h"
 #include "CMusic.h"
+#include "CSplashScreen.h"
 
 class CApp : public CEvent {
 public:
@@ -52,6 +53,8 @@ private:
     CBackground parallax2_;
 
     CMusic music_;
+
+    CSplashScreen splashScreen1_;
 
     //CAnimation Anim_Yoshi_;
 

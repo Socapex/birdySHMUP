@@ -25,7 +25,7 @@ CGUI::CGUI()
     white = {255, 255, 255, 0};
 
     getReadyPlaying = false;
-    getReadyTime = 3000;
+    getReadyTime = 3500;
     getReadyCounter = 3;
 
 }
@@ -35,7 +35,8 @@ CGUI::~CGUI()
 
 void CGUI::getReady()
 {
-    getReadySurface_ = TTF_RenderText_Blended(getReadyFont_, "Get Ready!", black);
+    getReadySurface_ = TTF_RenderText_Blended(getReadyFont_, "Get Ready!", white);
+    TTF_SetFontStyle(getReadyFont_, TTF_STYLE_BOLD);
     getReadyPlaying = true;
     
 }
@@ -45,14 +46,14 @@ void CGUI::onLoad()
 
 
     getReadyFont_ = TTF_OpenFont(Path.font1Path.c_str(), 2);
-    mainFont16_ = TTF_OpenFont(Path.font1Path.c_str(), 16);
+    pointFont_ = TTF_OpenFont(Path.font1Path.c_str(), 26);
 
-    if (mainFont16_ == NULL)
+    if (pointFont_ == NULL)
     {
-        printf("Unable to load font: %s %s \n", mainFont16_, TTF_GetError());
+        printf("Unable to load font: %s %s \n", pointFont_, TTF_GetError());
     }
 
-    TTF_SetFontStyle(mainFont16_, TTF_STYLE_BOLD);
+    TTF_SetFontStyle(pointFont_, TTF_STYLE_BOLD);
 }
 
 void CGUI::onLoop(CPlayer* player)
@@ -62,7 +63,7 @@ void CGUI::onLoop(CPlayer* player)
 
     pointText_ = std::to_string(player->getPlayerPoints());
 
-    points_ = TTF_RenderText_Blended(mainFont16_, pointText_.c_str(), black);
+    points_ = TTF_RenderText_Blended(pointFont_, pointText_.c_str(), white);
 
 }
 
@@ -81,7 +82,8 @@ void CGUI::onRender(SDL_Surface* surfDisplay)
         getReadyFont_ = TTF_OpenFont(Path.font1Path.c_str(), getReadyCounter);
 
         getReadySurface_ = TTF_RenderText_Blended(getReadyFont_, "Get Ready!",
-                                                  black);
+                                                  white);
+        TTF_SetFontStyle(getReadyFont_, TTF_STYLE_BOLD);
 
         getReadyCounter += 2;
 
@@ -99,5 +101,5 @@ void CGUI::onRender(SDL_Surface* surfDisplay)
 
 void CGUI::onCleanup()
 {
-    TTF_CloseFont(mainFont16_);
+    TTF_CloseFont(pointFont_);
 }

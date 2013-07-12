@@ -42,7 +42,7 @@ private:
     SDL_Surface* points_;
     SDL_Surface* getReadySurface_;
 
-    TTF_Font* mainFont16_;
+    TTF_Font* pointFont_;
     TTF_Font* getReadyFont_;
 
     SDL_Color black;

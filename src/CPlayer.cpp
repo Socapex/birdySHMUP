@@ -115,8 +115,9 @@ void CPlayer::shoot()
         {
             if (bulletList_[i].getDead())
             {
-                bulletList_[i].shoot(x_, y_);
-                bulletList_[i + 1].shoot(x_ + getWidth() - bulletList_[i].getWidth(),
+                bulletList_[i].shoot(x_ + 20, y_);
+                bulletList_[i + 1].shoot(x_ + getWidth()
+                                         - bulletList_[i].getWidth() - 20,
                                          y_);
                 break;
             }
@@ -152,8 +153,9 @@ void CPlayer::onLoop(const int vectorPosition, CPlayer* player)
 
         //feuDuCul_->setX(x_ + 32);
         //feuDuCul_->setY(y_ + 96);
-        feuDuCul2_->setX(x_ + 32);
-        feuDuCul2_->setY(y_ + 96);
+        feuDuCul2_->setX(x_ + 64);
+        feuDuCul2_->setY(y_ + 150);
+        feuDuCul2_->play(x_ + 32, y_ + 96);
     }
     else
     {
@@ -197,6 +199,7 @@ bool CPlayer::onCollision(CEntity* Entity)
         life_ -= (1 * CFPS::FPSControl.getSpeedFactor());
         //CParticles explody(255, 255, 0, x_, y_, 5, 8, 1, 10, 100, rand() % 20 + 1);
         CParticles* explody2 = new CParticles("explosion3", x_, y_, 100, 1000, 1, 10);
+        explody2->play(x_, y_);
     }
 
     return true;

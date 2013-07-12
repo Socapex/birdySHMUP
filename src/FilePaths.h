@@ -25,6 +25,7 @@ public:
     // Background
     std::string backgroundPath;
 	std::string parallaxPath;
+    std::string parallax2Path;
 
     // Bullets
     std::string bullet1Path;

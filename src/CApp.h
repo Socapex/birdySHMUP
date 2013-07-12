@@ -49,6 +49,7 @@ private:
 
     CBackground background1_;
 	CBackground parallax1_;
+    CBackground parallax2_;
 
     CMusic music_;
 

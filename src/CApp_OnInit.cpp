@@ -33,7 +33,7 @@ bool CApp::onInit()
 
     // Load tous nos entites
     // JOUEUR
-    if (Player.onLoad(Path.player1Path.c_str(), 64, 64, 0) == false) return false;
+    if (Player.onLoad(Path.player1Path.c_str(), 128, 128, 0) == false) return false;
     CEntity::entityList.push_back(&Player);
 
 
@@ -50,6 +50,9 @@ bool CApp::onInit()
     if ((background1_.onLoad(Path.backgroundPath.c_str())) == false) return false;
 	if ((parallax1_.onLoad(Path.parallaxPath.c_str())) == false) return false;
 	else parallax1_.setBackgroundLevel(BACKGROUND_SCROLL_SPEED_LEVEL_4);
+
+    if ((parallax2_.onLoad(Path.parallax2Path.c_str())) == false) return false;
+    parallax2_.setBackgroundLevel(BACKGROUND_SCROLL_SPEED_LEVEL_2);
 
     CGUI::gUI.onLoad();
     CGUI::gUI.getReady();

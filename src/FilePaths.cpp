@@ -14,15 +14,16 @@
 FilePaths::FilePaths()
 {
     // JOUEUR
-    player1Path = "img/cube.png";
+    player1Path = "img/birdbody2.png";
 
     // ENEMIES
     entity1Path = "img/yoshi.png";
     entity2Path = "img/yoshi.bmp";
 
     // BACKGROUND & MISC
-    backgroundPath = "img/cloud-1.jpg";
-	parallaxPath = "img/parallax.png";
+    backgroundPath = "img/cloud-2.jpg";
+	parallaxPath = "img/parallaxTest.png";
+    parallax2Path = "img/parallaxTest2.png";
 
     // BULLETS
     bullet1Path = "img/bullet.png";
@@ -58,6 +59,7 @@ FilePaths::FilePaths()
     
     backgroundPath.insert(0, "birdyShmup.app/Contents/Resources/");
 	parallaxPath.insert(0, "birdyShmup.app/Contents/Resources/");
+    parallax2Path.insert(0, "birdyShmup.app/Contents/Resources/");
     
     bullet1Path.insert(0, "birdyShmup.app/Contents/Resources/");
     
@@ -79,6 +81,7 @@ FilePaths::FilePaths()
     
     backgroundPath.replace(0, std::string::npos, "../../img/cloud-1.jpg");
 	parallaxPath.replace(0, std::string::npos, "../../img/parallax.png");
+    parallax2Path.replace(0, std::string::npos, "../../img/parallax.png");
 
     bullet1Path.replace(0, std::string::npos, "../../img/bullet.png");
     

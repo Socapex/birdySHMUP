@@ -16,17 +16,19 @@
 class CBullet : public CEntity {
 public:
     CBullet();
+    CBullet(const char* file, const int width, const int height,
+            const int maxFrames);
     ~CBullet();
 
     void shoot(const int x, const int y);
 
-    bool onLoad(const char* file, const int width, const int height,
-                const int maxFrames);
     bool onCollision(CEntity* entity);
     void onRender(SDL_Surface* surfDisplay);
     void onAnimate();
 
 private:
+    void Init();
+
     CParticles* deathExplosion_;
 
     bool enemyBullet;

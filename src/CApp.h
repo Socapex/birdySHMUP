@@ -21,16 +21,14 @@
 class CApp : public CEvent {
 public:
     CApp();
+    ~CApp();
 
     int OnExecute();
 
-    bool initSDL();
-    bool onInit();
     void onEvent(SDL_Event* event);
     void onExit();
     void onLoop();
     void onRender();
-    void onCleanup();
 
     // BOUTONS
     void OnKeyDown(SDLKey sym, SDLMod mod, Uint16 unicode);
@@ -40,6 +38,8 @@ private:
     SDL_Surface* surfDisplay_;
 
     CPlayer* Player;
+
+    CGUI* gUI_;
 
     Level1* level1_;
 
@@ -51,9 +51,6 @@ private:
     int currentLevel_;
 
     bool running_;
-
-    // EXEMPLES
-    //SDL_Surface* surfTest_;
 };
 
 #endif // CAPP_H

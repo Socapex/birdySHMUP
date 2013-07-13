@@ -25,12 +25,7 @@ CPlayer::CPlayer()
 
     playerPoints_ = 0;
 
-    // Pre-generate bullets
-    for (int i = 0; i < 100; ++i)
-    {
-        CBullet bullet;
-        bulletList_.push_back(bullet);
-    }
+    shootLastTime_ = SDL_GetTicks();
 
 }
 CPlayer::~CPlayer()
@@ -43,23 +38,6 @@ bool CPlayer::onLoad(const char* file, const int width, const int height,
                      const int maxFrames)
 {
     if (CEntity::onLoad(file, width, height, maxFrames) == false) return false;
-
-
-
-
-
-
-
-    // BULLETS
-
-    shootLastTime_ = SDL_GetTicks();
-
-    FilePaths Path;
-
-    for (int i = 0; i < bulletList_.size(); ++i)
-    {
-        bulletList_[i].onLoad(Path.bullet1Path.c_str(), 16, 16, 0);
-    }
 
 
 
@@ -111,17 +89,9 @@ void CPlayer::shoot()
     if (shootLastTime_ + PLAYER_BULLET1_SHOOT_DELAY <= SDL_GetTicks())
     {
         shootLastTime_ = SDL_GetTicks();
-        for (int i = 0; i < bulletList_.size(); ++i)
-        {
-            if (bulletList_[i].getDead())
-            {
-                bulletList_[i].shoot(x_ + 20, y_);
-                bulletList_[i + 1].shoot(x_ + getWidth()
-                                         - bulletList_[i].getWidth() - 20,
-                                         y_);
-                break;
-            }
-        }
+        bullets1_.shoot(x_ + 20, y_);
+        bullets1_.shoot(x_ + getWidth() - bullets1_.getBulletWidth() - 20,
+                        y_);
     }
 }
 
@@ -168,11 +138,7 @@ void CPlayer::onLoop(CPlayer* player)
 
 void CPlayer::onRender(SDL_Surface* surfDisplay)
 {
-    // Render bullets
-    for (int i = 0; i < bulletList_.size(); ++i)
-    {
-        if (!bulletList_[i].getDead()) bulletList_[i].onRender(surfDisplay);
-    }
+    bullets1_.onRender(surfDisplay);
 
     if (!getDead()) CEntity::onRender(surfDisplay);
 }

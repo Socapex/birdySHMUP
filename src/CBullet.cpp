@@ -10,19 +10,41 @@
 
 CBullet::CBullet()
 {
-    x_ = 0;
-    y_ = 0;
-    enemyBullet = false;
-    setDead(true);
+    this->Init();
 
     deathExplosion_ = new CParticles(255, 255, 0, x_, y_, 2, 3, 0, 100,
                                                10, 10, "fireworks");
+}
+
+CBullet::CBullet(const char* file, const int width, const int height,
+                 const int maxFrames)
+{
+    this->Init();
+    CEntity::onLoad(file, width, height, maxFrames);
+    deathExplosion_ = new CParticles(255, 255, 0, x_, y_, 2, 3, 0, 100,
+                                     10, 10, "fireworks");
 }
 
 CBullet::~CBullet()
 {
     
 }
+
+// PRIVATE
+void CBullet::Init()
+{
+    x_ = 0;
+    y_ = 0;
+    enemyBullet = false;
+    CEntity::setDead(true);
+}
+
+
+
+
+
+
+
 
 void CBullet::shoot(const int x, const int y)
 {
@@ -37,17 +59,7 @@ void CBullet::shoot(const int x, const int y)
 
 
 
-
-
 // FUNCTION OVERLOAD
-
-bool CBullet::onLoad(const char* file, const int width, const int height,
-                     const int maxFrames)
-{
-    if (CEntity::onLoad(file, width, height, maxFrames) == false) return false;
-
-    return true;
-}
 
 bool CBullet::onCollision(CEntity* entity)
 {

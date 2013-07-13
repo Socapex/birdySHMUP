@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2B068899176FE5870026C1AB /* CAnimation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B06887F176FE5870026C1AB /* CAnimation.cpp */; };
-		2B06889A176FE5870026C1AB /* CApp_OnCleanup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B068881176FE5870026C1AB /* CApp_OnCleanup.cpp */; };
 		2B06889B176FE5870026C1AB /* CApp_OnEvent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B068882176FE5870026C1AB /* CApp_OnEvent.cpp */; };
-		2B06889C176FE5870026C1AB /* CApp_OnInit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B068883176FE5870026C1AB /* CApp_OnInit.cpp */; };
 		2B06889D176FE5870026C1AB /* CApp_OnLoop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B068884176FE5870026C1AB /* CApp_OnLoop.cpp */; };
 		2B06889E176FE5870026C1AB /* CApp_OnRender.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B068885176FE5870026C1AB /* CApp_OnRender.cpp */; };
 		2B06889F176FE5870026C1AB /* CApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B068886176FE5870026C1AB /* CApp.cpp */; };
@@ -46,6 +44,7 @@
 		2B84554617711ACF005DC982 /* img in Resources */ = {isa = PBXBuildFile; fileRef = 2B84554317711ACF005DC982 /* img */; };
 		2B86970B1773F33600A5A132 /* CEntityCol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B86970A1773F33600A5A132 /* CEntityCol.cpp */; };
 		2BCA3DAD1780E00700CF3F22 /* CBackground.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BCA3DAB1780E00700CF3F22 /* CBackground.cpp */; };
+		2BE705D91792187400504F86 /* CBulletSpawner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BE705D71792187400504F86 /* CBulletSpawner.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -66,9 +65,7 @@
 /* Begin PBXFileReference section */
 		2B06887F176FE5870026C1AB /* CAnimation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CAnimation.cpp; path = ../../src/CAnimation.cpp; sourceTree = "<group>"; };
 		2B068880176FE5870026C1AB /* CAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CAnimation.h; path = ../../src/CAnimation.h; sourceTree = "<group>"; };
-		2B068881176FE5870026C1AB /* CApp_OnCleanup.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CApp_OnCleanup.cpp; path = ../../src/CApp_OnCleanup.cpp; sourceTree = "<group>"; };
 		2B068882176FE5870026C1AB /* CApp_OnEvent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CApp_OnEvent.cpp; path = ../../src/CApp_OnEvent.cpp; sourceTree = "<group>"; };
-		2B068883176FE5870026C1AB /* CApp_OnInit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CApp_OnInit.cpp; path = ../../src/CApp_OnInit.cpp; sourceTree = "<group>"; };
 		2B068884176FE5870026C1AB /* CApp_OnLoop.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CApp_OnLoop.cpp; path = ../../src/CApp_OnLoop.cpp; sourceTree = "<group>"; };
 		2B068885176FE5870026C1AB /* CApp_OnRender.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CApp_OnRender.cpp; path = ../../src/CApp_OnRender.cpp; sourceTree = "<group>"; };
 		2B068886176FE5870026C1AB /* CApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CApp.cpp; path = ../../src/CApp.cpp; sourceTree = "<group>"; };
@@ -126,6 +123,8 @@
 		2B86970A1773F33600A5A132 /* CEntityCol.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CEntityCol.cpp; path = ../../src/CEntityCol.cpp; sourceTree = "<group>"; };
 		2BCA3DAB1780E00700CF3F22 /* CBackground.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CBackground.cpp; path = ../../src/CBackground.cpp; sourceTree = "<group>"; };
 		2BCA3DAC1780E00700CF3F22 /* CBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CBackground.h; path = ../../src/CBackground.h; sourceTree = "<group>"; };
+		2BE705D71792187400504F86 /* CBulletSpawner.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CBulletSpawner.cpp; path = ../../src/CBulletSpawner.cpp; sourceTree = "<group>"; };
+		2BE705D81792187400504F86 /* CBulletSpawner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CBulletSpawner.h; path = ../../src/CBulletSpawner.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +198,8 @@
 				2B068CFE178AF60C00663F72 /* CEnemySpawner.h */,
 				2B068CFA178AEDC400663F72 /* CEnemy.cpp */,
 				2B068CFB178AEDC400663F72 /* CEnemy.h */,
+				2BE705D71792187400504F86 /* CBulletSpawner.cpp */,
+				2BE705D81792187400504F86 /* CBulletSpawner.h */,
 				2B50D16C1780FE2200DA5159 /* CBullet.cpp */,
 				2B50D16D1780FE2200DA5159 /* CBullet.h */,
 				2BCA3DAB1780E00700CF3F22 /* CBackground.cpp */,
@@ -214,9 +215,7 @@
 				2B3327A31773CCBC0030F2D4 /* CFPS.h */,
 				2B06887F176FE5870026C1AB /* CAnimation.cpp */,
 				2B068880176FE5870026C1AB /* CAnimation.h */,
-				2B068881176FE5870026C1AB /* CApp_OnCleanup.cpp */,
 				2B068882176FE5870026C1AB /* CApp_OnEvent.cpp */,
-				2B068883176FE5870026C1AB /* CApp_OnInit.cpp */,
 				2B068884176FE5870026C1AB /* CApp_OnLoop.cpp */,
 				2B068885176FE5870026C1AB /* CApp_OnRender.cpp */,
 				2B068886176FE5870026C1AB /* CApp.cpp */,
@@ -330,9 +329,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B068899176FE5870026C1AB /* CAnimation.cpp in Sources */,
-				2B06889A176FE5870026C1AB /* CApp_OnCleanup.cpp in Sources */,
 				2B06889B176FE5870026C1AB /* CApp_OnEvent.cpp in Sources */,
-				2B06889C176FE5870026C1AB /* CApp_OnInit.cpp in Sources */,
 				2B06889D176FE5870026C1AB /* CApp_OnLoop.cpp in Sources */,
 				2B06889E176FE5870026C1AB /* CApp_OnRender.cpp in Sources */,
 				2B06889F176FE5870026C1AB /* CApp.cpp in Sources */,
@@ -354,6 +351,7 @@
 				2B5E86BD178E2D38003608E0 /* CMusic.cpp in Sources */,
 				2B2BAB151790A1790099D5E5 /* CLevel.cpp in Sources */,
 				2B676DA71790BD53002F6AA8 /* Level1.cpp in Sources */,
+				2BE705D91792187400504F86 /* CBulletSpawner.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

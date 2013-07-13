@@ -4,7 +4,7 @@
 #include "FilePaths.h"
 
 #include "CEntity.h"
-#include "CBullet.h"
+#include "CBulletSpawner.h"
 
 class CPlayer : public CEntity {
 public:
@@ -33,10 +33,10 @@ public:
     void setPlayerPoints(const int points);
 
 private:
-    std::vector<CBullet> bulletList_;
-
     CParticles* feuDuCul_;
     CParticles* feuDuCul2_;
+
+    CBulletSpawner bullets1_;
 
     bool moveLeft_;
     bool moveRight_;

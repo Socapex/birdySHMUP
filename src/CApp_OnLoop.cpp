@@ -9,9 +9,6 @@ void CApp::onLoop()
         level1_->onLoop(Player);
     }
 
-    CGUI::gUI.onLoop(Player);
+    gUI_->onLoop(Player);
     CFPS::FPSControl.onLoop();
-
-    // EXEMPLES
-    //Anim_Yoshi_.onAnimate();
 }

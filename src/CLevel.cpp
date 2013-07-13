@@ -10,7 +10,11 @@
 
 CLevel::CLevel()
 {
-
+    enemySpawner_ = NULL;
+    background1_ = NULL;
+    parallax1_ = NULL;
+    parallax2_ = NULL;
+    music_ = NULL;
 
 }
 

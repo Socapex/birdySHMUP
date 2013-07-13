@@ -92,7 +92,7 @@ FilePaths::FilePaths()
 
     font1Path.replace(0, std::string::npos, "../../fonts/FixdStation.ttf");
 
-    song1Path.replace(0, std::string::npos, "../../fonts/FixdStation.ttf");
+    song1Path.replace(0, std::string::npos, "../../music/WelcomeToEurope.ogg");
 
 
 #endif

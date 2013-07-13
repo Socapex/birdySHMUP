@@ -13,10 +13,10 @@ release: compile_release
 
 compile_release:
 ifeq ($(UNAME), Darwin)
-	clang++ `sdl-config --cflags --libs` -lSDL_image -lSDL_ttf -o $(EXEC) src/*.cpp -DMACTERMINAL
+	clang++ `sdl-config --cflags --libs` -lSDL_image -lSDL_ttf -lSDL_mixer -o $(EXEC) src/*.cpp -DMACTERMINAL
 endif
 ifeq ($(UNAME), Linux)
-	g++  src/*.cpp `sdl-config --cflags --libs` -lSDL_image -lSDL_ttf -o $(EXEC)
+	g++  src/*.cpp `sdl-config --cflags --libs` -lSDL_image -lSDL_ttf -lSDL_mixer -o $(EXEC)
 endif
 
 clean:

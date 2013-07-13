@@ -8,6 +8,7 @@
 
 #include "CGUI.h"
 
+
 CGUI CGUI::gUI;
 
 CGUI::CGUI()
@@ -77,7 +78,14 @@ void CGUI::onLoop(CPlayer* player)
     // Check player life
     healthBar_.w = player->getLife() / PLAYER_LIFE * 100;
 
-    pointText_ = std::to_string(player->getPlayerPoints());
+    /******************* POUR BEN :D**********************/
+
+    std::stringstream ss;
+
+    ss << player->getPlayerPoints();
+
+
+    pointText_ = ss.str();
 
     points_ = TTF_RenderText_Blended(pointFont_, pointText_.c_str(), white);
 

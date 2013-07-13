@@ -65,6 +65,9 @@ bool CApp::onInit()
     // SPLASHSCREEN
     if ((splashScreen1_.onLoad(Path.splash1Path.c_str())) == false) return false;
 
+    // MAINMENU
+    if ((mainMenu1_.onLoad(Path.main1Path.c_str())) == false) return false;
+
     // TEST
     CParticles* explody = new CParticles(255, 255, 0, 400, 50, 5, 8, 0, 1000,
                                          100, 10, "fireworks");

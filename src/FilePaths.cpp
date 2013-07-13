@@ -41,7 +41,10 @@ FilePaths::FilePaths()
     song1Path = "music/WelcomeToEurope.ogg";
 
     // SPLASHSCREEN
-    splash1Path = "img/SplashScreen/SuperSplash.png";
+    splash1Path = "img/Screens/SplashScreen/SuperSplash.png";
+
+    // MainMenu
+    main1Path = "img/Screens/MainMenu/MainMenu.png";
 
 
 

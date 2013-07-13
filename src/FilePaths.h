@@ -45,6 +45,9 @@ public:
     // Splash Screen
     std::string splash1Path;
 
+    // Main menu
+    std::string main1Path;
+
 };
 
 #endif /* defined(__birdyShmup__FilePaths__) */

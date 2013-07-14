@@ -52,7 +52,7 @@ bool CApp::onInit()
 	else parallax1_.setBackgroundLevel(BACKGROUND_SCROLL_SPEED_LEVEL_4);
 
     if ((parallax2_.onLoad(Path.parallax2Path.c_str())) == false) return false;
-    parallax2_.setBackgroundLevel(BACKGROUND_SCROLL_SPEED_LEVEL_2);
+    else parallax2_.setBackgroundLevel(BACKGROUND_SCROLL_SPEED_LEVEL_2);
 
     CGUI::gUI.onLoad();
     CGUI::gUI.getReady();

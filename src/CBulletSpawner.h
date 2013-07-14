@@ -26,7 +26,7 @@ public:
     int getBulletWidth() const;
 
 private:
-    std::vector<CBullet> bulletList_;
+    std::vector<CBullet*> bulletList_;
     
 };
 

@@ -48,8 +48,8 @@ private:
 
     std::vector<SDL_Rect> rectanglesToDraw_;
     std::vector<std::pair<SDL_Rect, int> > rectanglesDrawing_;
-    std::vector<CEntity> surfacesToDraw_;
-    std::vector<std::pair<CEntity, unsigned int> > surfacesDrawing_;
+    std::vector<CEntity*> surfacesToDraw_;
+    std::vector<std::pair<CEntity*, unsigned int> > surfacesDrawing_;
 
     std::vector<float> speedX;
     std::vector<float> speedY;

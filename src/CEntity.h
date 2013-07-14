@@ -28,7 +28,6 @@ public:
                         const int maxFrames);
     virtual void onLoop(CPlayer* player);
     virtual void onRender(SDL_Surface* surfDisplay);
-    virtual void onCleanup();
     virtual void onAnimate();
     virtual bool onCollision(CEntity* entity);
 

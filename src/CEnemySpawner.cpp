@@ -70,7 +70,6 @@ CEnemySpawner::~CEnemySpawner()
         // Don't delete player
         if (CEntity::entityList[i]->getType() != ENTITY_TYPE_PLAYER)
         {
-            CEntity::entityList[i]->onCleanup();
             delete CEntity::entityList[i];
         }
     }

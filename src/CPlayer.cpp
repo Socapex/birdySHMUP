@@ -26,10 +26,13 @@ CPlayer::CPlayer()
     playerPoints_ = 0;
 
     shootLastTime_ = SDL_GetTicks();
+    bullets1_ = new CBulletSpawner();
 
 }
 CPlayer::~CPlayer()
-{}
+{
+    delete bullets1_;
+}
 
 
 
@@ -89,8 +92,8 @@ void CPlayer::shoot()
     if (shootLastTime_ + PLAYER_BULLET1_SHOOT_DELAY <= SDL_GetTicks())
     {
         shootLastTime_ = SDL_GetTicks();
-        bullets1_.shoot(x_ + 20, y_);
-        bullets1_.shoot(x_ + getWidth() - bullets1_.getBulletWidth() - 20,
+        bullets1_->shoot(x_ + 20, y_);
+        bullets1_->shoot(x_ + getWidth() - bullets1_->getBulletWidth() - 20,
                         y_);
     }
 }
@@ -138,15 +141,11 @@ void CPlayer::onLoop(CPlayer* player)
 
 void CPlayer::onRender(SDL_Surface* surfDisplay)
 {
-    bullets1_.onRender(surfDisplay);
+    bullets1_->onRender(surfDisplay);
 
     if (!getDead()) CEntity::onRender(surfDisplay);
 }
 
-void CPlayer::onCleanup()
-{
-    CEntity::onCleanup();
-}
 
 void CPlayer::onAnimate()
 {

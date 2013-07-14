@@ -17,7 +17,6 @@ public:
 
     void onLoop(CPlayer* player);
     void onRender(SDL_Surface* surfDisplay);
-    void onCleanup();
     void onAnimate();
     bool onCollision(CEntity* Entity);
 
@@ -36,7 +35,7 @@ private:
     CParticles* feuDuCul_;
     CParticles* feuDuCul2_;
 
-    CBulletSpawner bullets1_;
+    CBulletSpawner* bullets1_;
 
     bool moveLeft_;
     bool moveRight_;

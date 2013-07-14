@@ -33,7 +33,7 @@ public:
 
 private:
     CParticles* feuDuCul_;
-    CParticles* feuDuCul2_;
+    CParticles* collisionExplosion_;
 
     CBulletSpawner* bullets1_;
 

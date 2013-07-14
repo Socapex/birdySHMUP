@@ -21,8 +21,7 @@ CEnemySpawner::CEnemySpawner()
     FilePaths Path;
     for (int i = 0; i < 8; ++i)
     {
-        CEnemy* entity1_ = new CEnemy();
-        entity1_->onLoad(Path.entity1Path.c_str(), 64, 64, 8);
+        CEnemy* entity1_ = new Enemy1();
 
         // Init offscreen
         entity1_->setX(i * 75);
@@ -34,31 +33,10 @@ CEnemySpawner::CEnemySpawner()
     }
 }
 
+// TODO: Read from text file
 CEnemySpawner::CEnemySpawner(const char* file)
 {
-	Wave1.startTime = 3000;
-	Wave1.animationStarted = false;
-	Wave1.animationFinished = false;
 
-
-
-
-
-    // Todo: Read these values from text file
-    FilePaths Path;
-    for (int i = 0; i < 8; ++i)
-    {
-        CEnemy* entity1_ = new CEnemy();
-        entity1_->onLoad(Path.entity1Path.c_str(), 64, 64, 8);
-
-        // Init offscreen
-        entity1_->setX(i * 75);
-        entity1_->setY(-200);
-        entity1_->setAnimStart(i*500);
-        entity1_->setType(ENTITY_TYPE_ENEMY1);
-        CEntity::entityList.push_back(entity1_);
-        wave1Enemies_.push_back(entity1_);
-    }
 }
 
 CEnemySpawner::~CEnemySpawner()

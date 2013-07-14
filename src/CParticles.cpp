@@ -9,8 +9,6 @@
 #include "CParticles.h"
 #include "CEntity.h"
 
-std::vector<CParticles*> CParticles::particleList;
-
 CParticles::CParticles()
 {
 }
@@ -69,8 +67,6 @@ CParticles::CParticles(int R, int G, int B, int x, int y, int width, int height,
     }
 
     createAnimation(animationType);
-
-    particleList.push_back(this);
 }
 
 CParticles::CParticles(std::string type, int x, int y, float emitSpeed,
@@ -120,10 +116,6 @@ CParticles::CParticles(std::string type, int x, int y, float emitSpeed,
     {
         surfacesToDraw_.push_back(entity);
     }
-
-    CParticles::particleList.push_back(this);
-    
-
 }
 
 CParticles::~CParticles()
@@ -145,7 +137,22 @@ CParticles::~CParticles()
 void CParticles::play(const int x, const int y)
 {
     play_ = true;
+    startTime_ = SDL_GetTicks();
 
+    // Reset vectors
+    for (int i = 0; i < surfacesDrawing_.size(); ++i)
+    {
+        surfacesToDraw_.push_back(surfacesDrawing_.back().first);
+        surfacesDrawing_.pop_back();
+    }
+
+    for (int i = 0; i < rectanglesDrawing_.size(); ++i)
+    {
+        rectanglesToDraw_.push_back(rectanglesDrawing_.back().first);
+        rectanglesDrawing_.pop_back();
+    }
+
+    // Reset x and y
     if (!surfacesToDraw_.empty())
     {
         for (int i = 0; i < surfacesToDraw_.size(); ++i)

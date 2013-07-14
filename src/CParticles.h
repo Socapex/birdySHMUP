@@ -41,8 +41,6 @@ public:
     void setX(const int x);
     void setY(const int y);
 
-    static std::vector<CParticles*> particleList;
-
 private:
     void createAnimation(std::string type);
 

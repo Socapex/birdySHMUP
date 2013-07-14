@@ -25,8 +25,5 @@
 // BULLET STUFF
 #define BULLET_1_SPEED  50
 
-// ENNEMY 1
-#define ENEMY1_LIFE 100
-
 #endif // DEFINES_H
  

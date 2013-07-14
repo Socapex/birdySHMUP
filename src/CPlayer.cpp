@@ -28,10 +28,16 @@ CPlayer::CPlayer()
     shootLastTime_ = SDL_GetTicks();
     bullets1_ = new CBulletSpawner();
 
+    feuDuCul_ = new CParticles(255, 255, 0, x_ + 32, y_ + 64, 5, 8, 100, 1000, 100,
+                                10, "fireworks", true);
+    collisionExplosion_ = new CParticles("explosion3", x_, y_, 100, 1000, 1, 10);
+
 }
 CPlayer::~CPlayer()
 {
     delete bullets1_;
+    delete feuDuCul_;
+    delete collisionExplosion_;
 }
 
 
@@ -41,17 +47,6 @@ bool CPlayer::onLoad(const char* file, const int width, const int height,
                      const int maxFrames)
 {
     if (CEntity::onLoad(file, width, height, maxFrames) == false) return false;
-
-
-
-
-
-    // PARTICLES
-
-//    feuDuCul_ = new CParticles("explosion3", x_ + 32, y_ + 64, 10, 1, 1000,
-//                               10, "firefowrks", true);
-    feuDuCul2_ = new CParticles(255, 255, 0, x_ + 32, y_ + 64, 5, 8, 100, 1000, 100,
-                                10, "fireworks", true);
 
     return true;
 }
@@ -126,9 +121,9 @@ void CPlayer::onLoop(CPlayer* player)
 
         //feuDuCul_->setX(x_ + 32);
         //feuDuCul_->setY(y_ + 96);
-        feuDuCul2_->setX(x_ + 64);
-        feuDuCul2_->setY(y_ + 150);
-        feuDuCul2_->play(x_ + 32, y_ + 96);
+        feuDuCul_->setX(x_ + 64);
+        feuDuCul_->setY(y_ + 150);
+        feuDuCul_->play(x_ + 32, y_ + 96);
     }
     else
     {
@@ -142,6 +137,8 @@ void CPlayer::onLoop(CPlayer* player)
 void CPlayer::onRender(SDL_Surface* surfDisplay)
 {
     bullets1_->onRender(surfDisplay);
+    feuDuCul_->onRender(surfDisplay);
+    collisionExplosion_->onRender(surfDisplay);
 
     if (!getDead()) CEntity::onRender(surfDisplay);
 }
@@ -162,9 +159,8 @@ bool CPlayer::onCollision(CEntity* Entity)
     if (Entity->getType() == ENTITY_TYPE_ENEMY1 && life_ > 0)
     {
         life_ -= (1 * CFPS::FPSControl.getSpeedFactor());
-        //CParticles explody(255, 255, 0, x_, y_, 5, 8, 1, 10, 100, rand() % 20 + 1);
-        CParticles* explody2 = new CParticles("explosion3", x_, y_, 100, 1000, 1, 10);
-        explody2->play(x_, y_);
+        
+        collisionExplosion_->play(x_, y_);
     }
 
     return true;

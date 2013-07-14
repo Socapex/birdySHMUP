@@ -11,12 +11,14 @@
 CBulletSpawner::CBulletSpawner()
 {
 
+    // TODO: Specify bullet type
+    
     FilePaths Path;
 
     // Pre-generate bullets
     for (int i = 0; i < 100; ++i)
     {
-        CBullet* bullet = new CBullet(Path.bullet1Path.c_str(), 16, 16, 0);
+        CBullet* bullet = new PlayerBullet1;
         bulletList_.push_back(bullet);
     }
 }

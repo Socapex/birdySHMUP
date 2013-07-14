@@ -25,14 +25,6 @@ CLevel::~CLevel()
     delete parallax1_;
     delete parallax2_;
     delete music_;
-
-    // Delete particles
-    for (int i = 0; i < CParticles::particleList.size(); ++i)
-    {
-        delete CParticles::particleList[i];
-    }
-
-    CParticles::particleList.clear();
 }
 
 void CLevel::onLoop(CPlayer* Player)
@@ -65,11 +57,4 @@ void CLevel::onRender(SDL_Surface* surfDisplay_)
 
     enemySpawner_->onRender(surfDisplay_);
 
-
-
-    // PARTICLES
-    for (int i = 0; i < CParticles::particleList.size(); ++i)
-    {
-        CParticles::particleList[i]->onRender(surfDisplay_);
-    }
 }

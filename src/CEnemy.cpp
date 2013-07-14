@@ -11,16 +11,14 @@
 
 CEnemy::CEnemy()
 {
-    life_ = ENEMY1_LIFE;
-
     animationStart = 0;
-
-    deathExplosion_ = new CParticles("explosion3", x_, y_, 0,
-                                         1000, 1, 1);
+    killPoints_ = 0;
 }
 
 CEnemy::~CEnemy()
-{}
+{
+    delete deathExplosion_;
+}
 
 
 
@@ -29,14 +27,6 @@ CEnemy::~CEnemy()
 
 
 // FUNCTION OVERLOAD
-
-bool CEnemy::onLoad(const char* file, const int width, const int height,
-                     const int maxFrames)
-{
-    if (CEntity::onLoad(file, width, height, maxFrames) == false) return false;
-
-    return true;
-}
 
 void CEnemy::onLoop(CPlayer* player)
 {
@@ -49,7 +39,7 @@ void CEnemy::onLoop(CPlayer* player)
         else
         {
             setDead(true);
-            player->setPlayerPoints(player->getPlayerPoints() + 100);
+            player->setPlayerPoints(player->getPlayerPoints() + killPoints_);
             deathExplosion_->play(CEntity::x_, CEntity::y_);
 
         }
@@ -64,6 +54,7 @@ bool CEnemy::onCollision(CEntity *entity)
 void CEnemy::onRender(SDL_Surface *surfDisplay)
 {
     onAnimate();
+    deathExplosion_->onRender(surfDisplay);
     CEntity::onRender(surfDisplay);
 }
 

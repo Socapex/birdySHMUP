@@ -15,8 +15,8 @@
 
 #include "FilePaths.h"
 
-#include "CEnemy.h"
-#include "CEntity.h"
+#include "Game/Enemy1.h"
+
 
 class CPlayer;
 

@@ -21,8 +21,6 @@ public:
     CEnemy();
     ~CEnemy();
 
-    bool onLoad(const char* file, const int width, const int height,
-                const int maxFrames);
     void onLoop(CPlayer* player);
     bool onCollision(CEntity* entity);
     void onRender(SDL_Surface* surfDisplay);
@@ -33,10 +31,11 @@ public:
 
     void setAnimStart(const int time);
 
-private:
+protected:
     CParticles* deathExplosion_;
 
     int animationStart;
+    int killPoints_;
 
 };
 

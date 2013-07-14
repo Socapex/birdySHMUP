@@ -33,7 +33,7 @@ CApp::CApp()
 
 
     level1_ = NULL;
-    currentLevel_ = 1;
+    currentLevel_ = 0;
 
     FilePaths Path;
 

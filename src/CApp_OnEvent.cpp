@@ -13,6 +13,7 @@ void CApp::OnKeyDown(SDLKey sym, SDLMod mod, Uint16 unicode)
         case SDLK_SPACE:
         {
             Player->setShooting(true);
+            currentLevel_ = 1;
             break;
         }
 
@@ -52,6 +53,7 @@ void CApp::OnKeyUp(SDLKey sym, SDLMod mod, Uint16 unicode)
         case SDLK_SPACE:
         {
             Player->setShooting(false);
+            currentLevel_ = 1;
             break;
         }
 

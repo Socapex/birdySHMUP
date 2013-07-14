@@ -16,6 +16,7 @@
 #include "CSurface.h"
 #include "CButton.h"
 #include "CFPS.h"
+#include "FilePaths.h"
 
 class CMainMenu {
 public:
@@ -30,6 +31,7 @@ private:
     
     SDL_Surface* surfMainMenu_;
     CButton playButton_;
+    FilePaths filePath_;
 
     int x_;
     float y_;

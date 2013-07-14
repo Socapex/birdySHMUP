@@ -47,6 +47,7 @@ public:
 
     // Main menu
     std::string main1Path;
+    std::string playButton1Path;
 
 };
 

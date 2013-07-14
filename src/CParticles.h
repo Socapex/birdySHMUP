@@ -38,6 +38,8 @@ public:
     void onLoop();
     void onRender(SDL_Surface* surfDisplay);
 
+    bool getPlaying() const;
+
     void setX(const int x);
     void setY(const int y);
 

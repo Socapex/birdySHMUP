@@ -81,5 +81,8 @@ CParticles* CBullet::getDeathExplosion() const
     return deathExplosion_;
 }
 
-
+bool CBullet::getPlaying() const
+{
+    return deathExplosion_->getPlaying();
+}
 

@@ -328,7 +328,11 @@ void CParticles::createAnimation(std::string type)
 
 
 
-
+// GETTERS SETTERS
+bool CParticles::getPlaying() const
+{
+    return play_;
+}
 
 void CParticles::setX(const int x)
 {

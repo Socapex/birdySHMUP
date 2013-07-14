@@ -24,6 +24,7 @@ public:
     virtual void onRender(SDL_Surface* surfDisplay);
 
     CParticles* getDeathExplosion() const;
+    bool getPlaying() const;
 
 protected:
     CParticles* deathExplosion_;

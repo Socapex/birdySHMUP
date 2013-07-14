@@ -22,8 +22,8 @@ CGUI::CGUI()
     healthBar_.w = 100;
     healthBar_.h = 10;
 	
-	//Louche, lorsqu'on initialise toute la structure en même temps,
-	//VS n'aime pas ça... Comme au-dessus, je vais initialiser chaque
+	//Louche, lorsqu'on initialise toute la structure en meme temps,
+	//VS n'aime pas ca... Comme au-dessus, je vais initialiser chaque
 	//champ un par un.
 	/*
     black = {0, 0, 0, 0};

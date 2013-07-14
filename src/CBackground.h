@@ -26,6 +26,7 @@ public:
     void onAnimate();
 
 	void setBackgroundLevel(int backgroundLevel);
+    SDL_Surface* getSurface();
 
 private:
     SDL_Surface* surfBackground_;

@@ -2,11 +2,14 @@
 
 void CApp::onRender()
 {
+    mainMenu1_.onRender(surfDisplay_);
 
+    /*
     background1_.onRender(surfDisplay_);
-	parallax1_.onRender(surfDisplay_);
+	
+    parallax1_.onRender(surfDisplay_);
     parallax2_.onRender(surfDisplay_);
-
+    
     enemySpawner_.onRender();
 
     // ENTITIES
@@ -24,6 +27,7 @@ void CApp::onRender()
     }
 
     CGUI::gUI.onRender(surfDisplay_);
+    */
 
     SDL_Flip(surfDisplay_);
 

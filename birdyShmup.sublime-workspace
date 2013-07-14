@@ -519,22 +519,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "src/CEntity.h",
-			"settings":
-			{
-				"buffer_size": 814,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/CEntity.cpp",
-			"settings":
-			{
-				"buffer_size": 1328,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "Packages/C++/C++.sublime-build",
 	"command_palette":
@@ -924,61 +908,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "src/CEntity.h",
-					"settings":
-					{
-						"buffer_size": 814,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "src/CEntity.cpp",
-					"settings":
-					{
-						"buffer_size": 1328,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],

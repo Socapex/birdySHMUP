@@ -29,13 +29,12 @@ CBackground::CBackground(const char* file)
     // Centrer l'image pour le parallax
     x_ = (WWIDTH / 2) - (surfBackground_->w / 2);
     
-}
-
-	// Savoir ou le player spawn au debut pour le parallax	
+	// Savoir ou le player spawn au debut pour le parallax
 	tempX_ = CEntity::entityList[0]->getX();
 	tempY_ = CEntity::entityList[0]->getY();
 
-    return true;
+}
+
 
 CBackground::~CBackground()
 {

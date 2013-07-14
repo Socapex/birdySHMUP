@@ -43,6 +43,9 @@
 		2B734398177178A700FCC983 /* SDL.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2B0688A8176FE5C10026C1AB /* SDL.framework */; };
 		2B84554617711ACF005DC982 /* img in Resources */ = {isa = PBXBuildFile; fileRef = 2B84554317711ACF005DC982 /* img */; };
 		2B86970B1773F33600A5A132 /* CEntityCol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B86970A1773F33600A5A132 /* CEntityCol.cpp */; };
+		2BBBDFD31793613A00306A96 /* CButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BBBDFCD1793613A00306A96 /* CButton.cpp */; };
+		2BBBDFD41793613A00306A96 /* CMainMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BBBDFCF1793613A00306A96 /* CMainMenu.cpp */; };
+		2BBBDFD51793613A00306A96 /* CSplashScreen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BBBDFD11793613A00306A96 /* CSplashScreen.cpp */; };
 		2BCA3DAD1780E00700CF3F22 /* CBackground.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BCA3DAB1780E00700CF3F22 /* CBackground.cpp */; };
 		2BE705D91792187400504F86 /* CBulletSpawner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BE705D71792187400504F86 /* CBulletSpawner.cpp */; };
 		2BE705DF17922C6200504F86 /* PlayerBullet1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BE705DE17922C6200504F86 /* PlayerBullet1.cpp */; };
@@ -124,6 +127,12 @@
 		2B676DA61790BD53002F6AA8 /* Level1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level1.h; sourceTree = "<group>"; };
 		2B84554317711ACF005DC982 /* img */ = {isa = PBXFileReference; lastKnownFileType = folder; name = img; path = ../../img; sourceTree = "<group>"; };
 		2B86970A1773F33600A5A132 /* CEntityCol.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CEntityCol.cpp; path = ../../src/CEntityCol.cpp; sourceTree = "<group>"; };
+		2BBBDFCD1793613A00306A96 /* CButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CButton.cpp; path = ../../src/CButton.cpp; sourceTree = "<group>"; };
+		2BBBDFCE1793613A00306A96 /* CButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CButton.h; path = ../../src/CButton.h; sourceTree = "<group>"; };
+		2BBBDFCF1793613A00306A96 /* CMainMenu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CMainMenu.cpp; path = ../../src/CMainMenu.cpp; sourceTree = "<group>"; };
+		2BBBDFD01793613A00306A96 /* CMainMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CMainMenu.h; path = ../../src/CMainMenu.h; sourceTree = "<group>"; };
+		2BBBDFD11793613A00306A96 /* CSplashScreen.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CSplashScreen.cpp; path = ../../src/CSplashScreen.cpp; sourceTree = "<group>"; };
+		2BBBDFD21793613A00306A96 /* CSplashScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSplashScreen.h; path = ../../src/CSplashScreen.h; sourceTree = "<group>"; };
 		2BCA3DAB1780E00700CF3F22 /* CBackground.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CBackground.cpp; path = ../../src/CBackground.cpp; sourceTree = "<group>"; };
 		2BCA3DAC1780E00700CF3F22 /* CBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CBackground.h; path = ../../src/CBackground.h; sourceTree = "<group>"; };
 		2BE705D71792187400504F86 /* CBulletSpawner.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CBulletSpawner.cpp; path = ../../src/CBulletSpawner.cpp; sourceTree = "<group>"; };
@@ -195,6 +204,12 @@
 		2B272590176FE2E20094AC8F /* birdyShmup */ = {
 			isa = PBXGroup;
 			children = (
+				2BBBDFCD1793613A00306A96 /* CButton.cpp */,
+				2BBBDFCE1793613A00306A96 /* CButton.h */,
+				2BBBDFCF1793613A00306A96 /* CMainMenu.cpp */,
+				2BBBDFD01793613A00306A96 /* CMainMenu.h */,
+				2BBBDFD11793613A00306A96 /* CSplashScreen.cpp */,
+				2BBBDFD21793613A00306A96 /* CSplashScreen.h */,
 				2B676DA41790BD53002F6AA8 /* Game */,
 				2B068896176FE5870026C1AB /* Defines.h */,
 				2B068D00178AF8CC00663F72 /* FilePaths.cpp */,
@@ -370,6 +385,9 @@
 				2BE705DF17922C6200504F86 /* PlayerBullet1.cpp in Sources */,
 				2BE705E2179232EC00504F86 /* Enemy1.cpp in Sources */,
 				2BE705E817923F0E00504F86 /* Enemy1Bullet.cpp in Sources */,
+				2BBBDFD31793613A00306A96 /* CButton.cpp in Sources */,
+				2BBBDFD41793613A00306A96 /* CMainMenu.cpp in Sources */,
+				2BBBDFD51793613A00306A96 /* CSplashScreen.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

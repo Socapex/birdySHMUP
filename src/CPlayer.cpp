@@ -137,7 +137,7 @@ void CPlayer::onLoop(CPlayer* player)
 void CPlayer::onRender(SDL_Surface* surfDisplay)
 {
     bullets1_->onRender(surfDisplay);
-    feuDuCul_->onRender(surfDisplay);
+    //feuDuCul_->onRender(surfDisplay);
     collisionExplosion_->onRender(surfDisplay);
 
     if (!getDead()) CEntity::onRender(surfDisplay);

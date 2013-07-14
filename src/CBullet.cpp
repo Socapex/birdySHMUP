@@ -76,7 +76,10 @@ void CBullet::onRender(SDL_Surface *surfDisplay)
 
 
 // GETTERS
-
+CParticles* CBullet::getDeathExplosion() const
+{
+    return deathExplosion_;
+}
 
 
 

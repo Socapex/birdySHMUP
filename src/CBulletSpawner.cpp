@@ -69,6 +69,13 @@ void CBulletSpawner::onRender(SDL_Surface* surfDisplay)
     {
         if (!bulletList_[i]->getDead()) bulletList_[i]->onRender(surfDisplay);
     }
+
+    // Render explosions
+    for (int i = 0; i < bulletList_.size(); ++i)
+    {
+        if (bulletList_[i]->getDead())
+            bulletList_[i]->getDeathExplosion()->onRender(surfDisplay);
+    }
 }
 
 

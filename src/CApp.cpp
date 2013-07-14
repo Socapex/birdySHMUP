@@ -104,6 +104,7 @@ void CApp::onExit()
 
 int main(int argc, char *argv[])
 {
+    // Initialise SDL outside CApp so objects can use SDL_GetTicks in constructors
     if(initSDL() == false) return -1;
     
     CApp theApp;

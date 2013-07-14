@@ -23,6 +23,8 @@ public:
     virtual bool onCollision(CEntity* entity);
     virtual void onRender(SDL_Surface* surfDisplay);
 
+    CParticles* getDeathExplosion() const;
+
 protected:
     CParticles* deathExplosion_;
 

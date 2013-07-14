@@ -16,6 +16,8 @@ public:
 	~CButton();
 	bool onLoad(std::string filePath);
 	void onDraw(SDL_Surface* dest,int x, int y);
+	int getWidth();
+	int getHeight();
 
 private:
 	SDL_Surface* surfButton_;

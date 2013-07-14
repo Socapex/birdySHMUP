@@ -45,10 +45,7 @@ FilePaths::FilePaths()
 
     // MainMenu
     main1Path = "img/Screens/MainMenu/MainMenu.png";
-
-
-
-
+    playButton1Path = "img/Screens/MainMenu/Buttons/PlayButton.png";
 
 
 
@@ -78,6 +75,11 @@ FilePaths::FilePaths()
 
     song1Path.insert(0, "birdyShmup.app/Contents/Resources/");
 
+    splash1Path.insert(0, "birdyShmup.app/Contents/Resources/");
+
+    main1Path.insert(0, "birdyShmup.app/Contents/Resources/");
+    playButton1Path.insert(0, "birdyShmup.app/Contents/Resources/");
+
 #elif __WIN32__
 
 	player1Path.replace(0, std::string::npos, "../../img/cube.png");
@@ -99,6 +101,11 @@ FilePaths::FilePaths()
     font1Path.replace(0, std::string::npos, "../../fonts/FixdStation.ttf");
 
     song1Path.replace(0, std::string::npos, "../../fonts/FixdStation.ttf");
+
+    splash1Path.replace(0, std::string::npos, "../../img/Screens/SplashScreen/SuperSplash.png");
+
+    main1Path.insert(0, std::string::npos, "../../img/Screens/MainMenu/MainMenu.png");
+    playButton1Path.insert(0, std::string::npos, "../../img/Screens/MainMenu/Buttons/PlayButton.png");
 
 
 #endif

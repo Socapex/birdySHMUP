@@ -32,3 +32,13 @@ void CButton::onDraw(SDL_Surface* dest,int x, int y)
     rectButton_->w = surfButton_->w;
 	SDL_BlitSurface(surfButton_, NULL, dest, rectButton_);
 }
+
+int CButton::getWidth()
+{
+	return surfButton_->h;
+}
+
+int CButton::getHeight()
+{
+	return surfButton_->w;
+}

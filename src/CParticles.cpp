@@ -279,6 +279,19 @@ void CParticles::onRender(SDL_Surface* surfDisplay)
                 }
             }
         }
+
+        // Done drawing?
+        if (surfacesToDraw_.empty() && !surfacesDrawing_.empty())
+        {
+            if (surfacesDrawing_.back().second + lifeTime_ < SDL_GetTicks())
+                play_ = false;
+        }
+
+        if (rectanglesToDraw_.empty() && !rectanglesDrawing_.empty())
+        {
+            if (rectanglesDrawing_.back().second + lifeTime_ < SDL_GetTicks())
+                play_ = false;
+        }
     }
 }
 

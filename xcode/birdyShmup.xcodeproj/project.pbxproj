@@ -47,6 +47,7 @@
 		2BE705D91792187400504F86 /* CBulletSpawner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BE705D71792187400504F86 /* CBulletSpawner.cpp */; };
 		2BE705DF17922C6200504F86 /* PlayerBullet1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BE705DE17922C6200504F86 /* PlayerBullet1.cpp */; };
 		2BE705E2179232EC00504F86 /* Enemy1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BE705E0179232EC00504F86 /* Enemy1.cpp */; };
+		2BE705E817923F0E00504F86 /* Enemy1Bullet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BE705E617923F0E00504F86 /* Enemy1Bullet.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -131,6 +132,8 @@
 		2BE705DE17922C6200504F86 /* PlayerBullet1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlayerBullet1.cpp; sourceTree = "<group>"; };
 		2BE705E0179232EC00504F86 /* Enemy1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Enemy1.cpp; sourceTree = "<group>"; };
 		2BE705E1179232EC00504F86 /* Enemy1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enemy1.h; sourceTree = "<group>"; };
+		2BE705E617923F0E00504F86 /* Enemy1Bullet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Enemy1Bullet.cpp; sourceTree = "<group>"; };
+		2BE705E717923F0E00504F86 /* Enemy1Bullet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enemy1Bullet.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -265,6 +268,8 @@
 				2B676DA61790BD53002F6AA8 /* Level1.h */,
 				2BE705E0179232EC00504F86 /* Enemy1.cpp */,
 				2BE705E1179232EC00504F86 /* Enemy1.h */,
+				2BE705E617923F0E00504F86 /* Enemy1Bullet.cpp */,
+				2BE705E717923F0E00504F86 /* Enemy1Bullet.h */,
 			);
 			name = Game;
 			path = ../../src/Game;
@@ -364,6 +369,7 @@
 				2BE705D91792187400504F86 /* CBulletSpawner.cpp in Sources */,
 				2BE705DF17922C6200504F86 /* PlayerBullet1.cpp in Sources */,
 				2BE705E2179232EC00504F86 /* Enemy1.cpp in Sources */,
+				2BE705E817923F0E00504F86 /* Enemy1Bullet.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

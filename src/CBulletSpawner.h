@@ -11,13 +11,15 @@
 
 #include <SDL.h>
 #include <vector>
+#include <cstring>
 
 #include "Game/PlayerBullet1.h"
-//#include "CBullet.h"
+#include "Game/Enemy1Bullet.h"
 
 class CBulletSpawner {
 public:
     CBulletSpawner();
+    CBulletSpawner(char* bulletType);
     ~CBulletSpawner();
 
     void shoot(const int x, const int y);

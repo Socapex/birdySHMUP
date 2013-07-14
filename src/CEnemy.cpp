@@ -13,11 +13,13 @@ CEnemy::CEnemy()
 {
     animationStart = 0;
     killPoints_ = 0;
+    shootDelay_ = 0;
 }
 
 CEnemy::~CEnemy()
 {
     delete deathExplosion_;
+    delete bullets_;
 }
 
 
@@ -34,7 +36,11 @@ void CEnemy::onLoop(CPlayer* player)
     {
         if (checkLife())
         {
-
+            if (shootDelay_ < SDL_GetTicks())
+            {
+                shootDelay_ += SDL_GetTicks();
+                bullets_->shoot(x_, y_);
+            }
         }
         else
         {
@@ -54,6 +60,7 @@ bool CEnemy::onCollision(CEntity *entity)
 void CEnemy::onRender(SDL_Surface *surfDisplay)
 {
     onAnimate();
+    bullets_->onRender(surfDisplay);
     deathExplosion_->onRender(surfDisplay);
     CEntity::onRender(surfDisplay);
 }

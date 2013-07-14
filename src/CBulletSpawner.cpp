@@ -8,6 +8,7 @@
 
 #include "CBulletSpawner.h"
 
+
 CBulletSpawner::CBulletSpawner()
 {
 
@@ -19,6 +20,23 @@ CBulletSpawner::CBulletSpawner()
     for (int i = 0; i < 100; ++i)
     {
         CBullet* bullet = new PlayerBullet1;
+        bulletList_.push_back(bullet);
+    }
+}
+
+CBulletSpawner::CBulletSpawner(char* bulletType)
+{
+
+    // TODO: Specify bullet type
+
+    FilePaths Path;
+
+    // Pre-generate bullets
+    for (int i = 0; i < 100; ++i)
+    {
+        CBullet* bullet;
+        if (std::strcmp(bulletType, "player") == 0) bullet = new PlayerBullet1;
+        else if (std::strcmp(bulletType, "enemy1") == 0) bullet = new Enemy1Bullet;
         bulletList_.push_back(bullet);
     }
 }

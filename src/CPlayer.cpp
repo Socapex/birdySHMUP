@@ -26,7 +26,7 @@ CPlayer::CPlayer()
     playerPoints_ = 0;
 
     shootLastTime_ = SDL_GetTicks();
-    bullets1_ = new CBulletSpawner();
+    bullets1_ = new CBulletSpawner("player");
 
     feuDuCul_ = new CParticles(255, 255, 0, x_ + 32, y_ + 64, 5, 8, 100, 1000, 100,
                                 10, "fireworks", true);

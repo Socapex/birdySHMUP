@@ -27,6 +27,7 @@ protected:
     CParticles* deathExplosion_;
 
     float damage_;
+    float speed_;
 
 };
 

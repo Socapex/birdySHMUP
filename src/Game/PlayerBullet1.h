@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 Groarke and co. All rights reserved.
 //
 
-#ifndef __birdyShmup__PlayerBullet__
-#define __birdyShmup__PlayerBullet__
+#ifndef __birdyShmup__PlayerBullet1__
+#define __birdyShmup__PlayerBullet1__
 
 #include "../FilePaths.h"
 

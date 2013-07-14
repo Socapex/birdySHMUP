@@ -12,8 +12,11 @@
 #include <SDL.h>
 
 #include "Defines.h"
-#include "CEntity.h"
 
+#include "CEntity.h"
+//#include "CBulletSpawner.cpp"
+
+class CBulletSpawner;
 class CPlayer;
 
 class CEnemy : public CEntity {
@@ -33,9 +36,12 @@ public:
 
 protected:
     CParticles* deathExplosion_;
+    CBulletSpawner* bullets_;
+
 
     int animationStart;
     int killPoints_;
+    int shootDelay_;
 
 };
 

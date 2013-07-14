@@ -12,6 +12,9 @@
 #include "../FilePaths.h"
 
 #include "../CEnemy.h"
+//#include "../CBulletSpawner.h"
+
+class CBulletSpawner;
 
 class Enemy1 : public CEnemy {
 public:

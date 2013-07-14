@@ -7,6 +7,7 @@
 //
 
 #include "Enemy1.h"
+#include "../CBulletSpawner.h"
 
 Enemy1::Enemy1()
 {
@@ -14,9 +15,11 @@ Enemy1::Enemy1()
     
     life_ = 100;
     killPoints_ = 100;
+    shootDelay_ = 100;
     CEntity::onLoad(Path.entity1Path.c_str(), 64, 64, 8);
     deathExplosion_ = new CParticles("explosion3", x_, y_, 0,
                                      1000, 1, 1);
+    bullets_ = new CBulletSpawner("enemy1");
 }
 
 Enemy1::~Enemy1()

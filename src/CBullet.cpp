@@ -12,6 +12,8 @@ CBullet::CBullet()
 {
     x_ = 0;
     y_ = 0;
+    damage_ = 0;
+    speed_ = 0;
     CEntity::setDead(true);
 
 }
@@ -32,7 +34,7 @@ void CBullet::shoot(const int x, const int y)
 {
     x_ = x;
     y_ = y;
-    setDead(false);
+    CEntity::setDead(false);
 }
 
 
@@ -45,23 +47,13 @@ void CBullet::shoot(const int x, const int y)
 
 bool CBullet::onCollision(CEntity* entity)
 {
-//
-//    // TODO: Different collision checks for different bullet types
-//    if (!enemyBullet)
-//    {
-//        if (entity->getType() == ENTITY_TYPE_ENEMY1 && entity->getLife() > 0)
-//        {
-//            // this bullet
-//            setDead(true);
-//            
-//            deathExplosion_->play(x_, y_);
-//
-//            // TODO: Checker le genre de bullet
-//            entity->setLife(entity->getLife() - damage_);
-//        }
-//    }
-//
-//
+    // this bullet
+    setDead(true);
+
+    deathExplosion_->play(x_, y_);
+
+    // TODO: Checker le genre de bullet
+    entity->setLife(entity->getLife() - damage_);
     return true;
 }
 

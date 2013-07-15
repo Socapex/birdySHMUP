@@ -23,9 +23,9 @@ CEnemy::CEnemy()
 
 CEnemy::~CEnemy()
 {
-    delete deathExplosion_;
-    delete bullets_;
-    delete deathSound_;
+    if (deathExplosion_ != NULL) delete deathExplosion_;
+    if (bullets_ != NULL) delete bullets_;
+    if (deathSound_ != NULL) delete deathSound_;
 }
 
 

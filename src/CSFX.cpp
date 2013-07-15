@@ -28,5 +28,5 @@ CSFX::~CSFX()
 
 void CSFX::play(const int channel) const
 {
-    Mix_PlayChannel(channel, sfx_, 0);
+    if (sfx_ != NULL) Mix_PlayChannel(channel, sfx_, 0);
 }

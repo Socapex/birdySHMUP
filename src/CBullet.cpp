@@ -24,9 +24,8 @@ CBullet::CBullet()
 
 CBullet::~CBullet()
 {
-    //TODO: delete ParticleSpawner (not the static particle vector)
-    delete deathExplosion_;
-    delete shootSFX_;
+    if (deathExplosion_ != NULL) delete deathExplosion_;
+    if (shootSFX_ != NULL) delete shootSFX_;
 }
 
 

@@ -34,7 +34,7 @@ CBullet::~CBullet()
 
 
 
-void CBullet::shoot(const int x, const int y)
+void CBullet::shoot(const float x, const float y)
 {
     x_ = x;
     y_ = y;

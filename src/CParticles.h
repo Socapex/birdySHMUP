@@ -24,24 +24,24 @@ class CParticles {
 public:
     CParticles();
     CParticles(const CParticles& part);
-    CParticles(int R, int G, int B, int x, int y, int width, int height,
+    CParticles(int R, int G, int B, float x, float y, int width, int height,
                float emitSpeed, unsigned int lifeTime, unsigned int quantity,
                unsigned int spread, std::string animationType = "random",
                bool follow = false);
-    CParticles(std::string type, int x, int y, float emitSpeed,
+    CParticles(std::string type, float x, float y, float emitSpeed,
                unsigned int lifeTime, unsigned int quantity, unsigned int spread,
                std::string animationType = "random", bool follow = false);
     ~CParticles();
 
-    void play(const int x, const int y);
+    void play(const float x, const float y);
 
     void onLoop();
     void onRender(SDL_Surface* surfDisplay);
 
     bool getPlaying() const;
 
-    void setX(const int x);
-    void setY(const int y);
+	void setX(const float x);
+    void setY(const float y);
 
 private:
     void createAnimation(std::string type);
@@ -54,10 +54,11 @@ private:
     std::vector<float> speedX;
     std::vector<float> speedY;
 
-    int x_, y_, width_, height_, density_, quantity_;
+    int width_, height_, density_, quantity_;
     int startTime_;
     int R_, G_, B_;
     unsigned int lifeTime_, spread_;
+	float x_, y_;
     float emitSpeed_;
     bool follow_;
     bool play_;

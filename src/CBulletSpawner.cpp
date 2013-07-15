@@ -50,7 +50,7 @@ CBulletSpawner::~CBulletSpawner()
 }
 
 
-void CBulletSpawner::shoot(const int x, const int y)
+void CBulletSpawner::shoot(const float x, const float y)
 {
     for (int i = 0; i < bulletList_.size(); ++i)
     {

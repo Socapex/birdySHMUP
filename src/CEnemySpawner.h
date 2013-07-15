@@ -31,7 +31,7 @@ public:
 
     void enemyAnimator();
 
-    bool animStraightLine(CEnemy* enemy, const int x, const int y,
+    bool animStraightLine(CEnemy* enemy, const float x, const float y,
                           const float speed);
     
 

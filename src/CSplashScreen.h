@@ -28,7 +28,7 @@ private:
     
     SDL_Surface* surfSplashScreen_;
 
-    int x_;
+    float x_;
     float y_;
     float alpha_;
 

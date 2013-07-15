@@ -27,7 +27,7 @@ CBackground::CBackground(const char* file)
     surfBackground_ = CSurface::onLoad(file);
 
     // Centrer l'image pour le parallax
-    x_ = (WWIDTH / 2) - (surfBackground_->w / 2);
+    x_ = (WWIDTH / 2.0f) - (surfBackground_->w / 2.0f);
     
 	// Savoir ou le player spawn au debut pour le parallax
 	tempX_ = CEntity::entityList[0]->getX();

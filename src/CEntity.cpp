@@ -40,12 +40,12 @@ CEntity::~CEntity()
 
 
 
-bool CEntity::collides(const int oX, const int oY, const int oW, const int oH)
+bool CEntity::collides(const float oX, const float oY, const float oW, const float oH)
 {
-    int left1, left2, right1, right2, top1, top2, bottom1, bottom2;
+    float left1, left2, right1, right2, top1, top2, bottom1, bottom2;
 
-    int tX = (int)x_ + colX;
-    int tY = (int)y_ + colY;
+    float tX = x_ + colX;
+    float tY = y_ + colY;
 
     left1 = tX;
     left2 = oX;
@@ -145,7 +145,7 @@ bool CEntity::onCollision(CEntity* entity)
 
 
 // PRIVATE FUNCTIONS
-bool CEntity::checkCollision(const int newX, const int newY)
+bool CEntity::checkCollision(const float newX, const float newY)
 {
     bool return_ = true;
 
@@ -163,12 +163,12 @@ bool CEntity::checkCollision(const int newX, const int newY)
     return return_;
 }
 
-bool CEntity::checkEntityCollision(CEntity* entity, const int newX, const int newY)
+bool CEntity::checkEntityCollision(CEntity* entity, const float newX, const float newY)
 {
     if (this != entity && entity != NULL && entity->getDead() == false
         && entity->getFlags() ^ ENTITY_FLAG_MAPONLY
-        && entity->collides(newX + colX, newY + colY, width_ - colWidth - 1,
-                            height_ - colHeight - 1) == true)
+        && entity->collides(newX + colX, newY + colY, width_ - colWidth - 1.0f,
+                            height_ - colHeight - 1.0f) == true)
     {
         CEntityCol entityCol;
         entityCol.entityA = this;

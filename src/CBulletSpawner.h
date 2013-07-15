@@ -22,7 +22,7 @@ public:
     CBulletSpawner(char* bulletType);
     ~CBulletSpawner();
 
-    void shoot(const int x, const int y);
+    void shoot(const float x, const float y);
 
     void onRender(SDL_Surface* surfDisplay);
 

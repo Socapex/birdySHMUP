@@ -13,7 +13,7 @@ CCamera::~CCamera()
 {}
 
 // SETTERS
-void CCamera::setPos(const int x, const int y)
+void CCamera::setPos(const float x, const float y)
 {
     x_ = x;
     y_ = y;
@@ -27,7 +27,7 @@ void CCamera::setTarget(float* x, float* y)
 
 
 // GETTERS
-int CCamera::getX() const
+float CCamera::getX() const
 {
     if (targetX_ != NULL)
     {
@@ -39,7 +39,7 @@ int CCamera::getX() const
     return x_;
 }
 
-int CCamera::getY() const
+float CCamera::getY() const
 {
     if (targetY_ != NULL)
     {

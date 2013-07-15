@@ -43,7 +43,7 @@ CBulletSpawner::CBulletSpawner(char* bulletType)
 
 CBulletSpawner::~CBulletSpawner()
 {
-    for (int i = 0; i < bulletList_.size(); ++i) {
+    for (unsigned int i = 0; i < bulletList_.size(); ++i) {
         delete bulletList_[i];
     }
     bulletList_.clear();
@@ -52,7 +52,7 @@ CBulletSpawner::~CBulletSpawner()
 
 void CBulletSpawner::shoot(const float x, const float y)
 {
-    for (int i = 0; i < bulletList_.size(); ++i)
+    for (unsigned int i = 0; i < bulletList_.size(); ++i)
     {
         if (bulletList_[i]->getDead())
         {
@@ -65,13 +65,13 @@ void CBulletSpawner::shoot(const float x, const float y)
 void CBulletSpawner::onRender(SDL_Surface* surfDisplay)
 {
     // Render bullets
-    for (int i = 0; i < bulletList_.size(); ++i)
+    for (unsigned int i = 0; i < bulletList_.size(); ++i)
     {
         if (!bulletList_[i]->getDead()) bulletList_[i]->onRender(surfDisplay);
     }
 
     // Render explosions
-    for (int i = 0; i < bulletList_.size(); ++i)
+    for (unsigned int i = 0; i < bulletList_.size(); ++i)
     {
         if (bulletList_[i]->getDead() && bulletList_[i]->getPlaying())
             bulletList_[i]->getDeathExplosion()->onRender(surfDisplay);

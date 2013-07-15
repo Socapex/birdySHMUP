@@ -41,7 +41,7 @@ CEnemySpawner::CEnemySpawner(const char* file)
 
 CEnemySpawner::~CEnemySpawner()
 {
-    for (int i = 0; i < CEntity::entityList.size(); ++i)
+    for (unsigned int i = 0; i < CEntity::entityList.size(); ++i)
     {
         if (!CEntity::entityList[i]) continue;
 
@@ -59,7 +59,7 @@ CEnemySpawner::~CEnemySpawner()
 void CEnemySpawner::onLoop(CPlayer* Player)
 {
     // ENTITIES
-    for (int i = 0; i < CEntity::entityList.size(); ++i)
+    for (unsigned int i = 0; i < CEntity::entityList.size(); ++i)
     {
         if (!CEntity::entityList[i]) continue;
 
@@ -72,7 +72,7 @@ void CEnemySpawner::onRender(SDL_Surface* surfDisplay_)
     enemyAnimator();
 
     // ENTITIES
-    for (int i = 0; i < CEntity::entityList.size(); ++i)
+    for (unsigned int i = 0; i < CEntity::entityList.size(); ++i)
     {
         if (!CEntity::entityList[i]) continue;
 
@@ -90,7 +90,7 @@ void CEnemySpawner::enemyAnimator()
         // TODO: Lire d'un fichier text somehow
         if (!Wave1.animationFinished)
         {
-            for (int i = 0; i < wave1Enemies_.size(); ++i)
+            for (unsigned int i = 0; i < wave1Enemies_.size(); ++i)
             {
                 if (Wave1.startTime + wave1Enemies_[i]->getAnimStart() <
                     SDL_GetTicks())

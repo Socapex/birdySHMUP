@@ -110,7 +110,7 @@
   <PropertyGroup />
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>Level4</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>..\libs\SDL_image-1.2.12\include;..\libs\SDL-1.2.15\include;..\libs\SDL_ttf-2.0.11\include;..\libs\SDL_mixer-1.2.12\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>

@@ -152,7 +152,7 @@ bool CEntity::checkCollision(const float newX, const float newY)
     if (getFlags() & ENTITY_FLAG_MAPONLY) {}
     else
     {
-        for (int i = 0; i < entityList.size(); ++i)
+        for (unsigned int i = 0; i < entityList.size(); ++i)
         {
             if (checkEntityCollision(entityList[i], newX, newY) == false)
                 return_ = false;

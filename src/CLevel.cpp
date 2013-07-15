@@ -35,7 +35,7 @@ void CLevel::onLoop(CPlayer* Player)
     enemySpawner_->onLoop(Player);
 
     // COLLISIONS
-    for (int i = 0; i < CEntityCol::EntityColList.size(); ++i)
+    for (unsigned int i = 0; i < CEntityCol::EntityColList.size(); ++i)
     {
         CEntity* entityA = CEntityCol::EntityColList[i].entityA;
         CEntity* entityB = CEntityCol::EntityColList[i].entityB;

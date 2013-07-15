@@ -81,22 +81,22 @@ void CBackground::onAnimate()
 	//Paralax en x
 	if(tempX_ < CEntity::entityList[0]->getX())
 	{
-		x_ -= (float)backgroundLevel_/4;
+		x_ -= (float)backgroundLevel_/4 * CFPS::FPSControl.getSpeedFactor();
 	}
 	else if(tempX_ > CEntity::entityList[0]->getX())
 	{
-		x_ += (float)backgroundLevel_/4;
+		x_ += (float)backgroundLevel_/4 * CFPS::FPSControl.getSpeedFactor();
 	}
 	tempX_ = CEntity::entityList[0]->getX();
 
 	//Parallax en y
 	if(tempY_ < CEntity::entityList[0]->getY())
 	{
-		y_ -= (float)backgroundLevel_/4;
+		y_ -= (float)backgroundLevel_/4 * CFPS::FPSControl.getSpeedFactor();
 	}
 	else if(tempY_ > CEntity::entityList[0]->getY())
 	{
-		y_ += (float)backgroundLevel_/4;
+		y_ += (float)backgroundLevel_/4 * CFPS::FPSControl.getSpeedFactor();
 	}
 	tempY_ = CEntity::entityList[0]->getY();
 

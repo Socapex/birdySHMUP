@@ -17,16 +17,16 @@ Level1::Level1()
 
 
     // BACKGROUND
-    background1_ = new CBackground(Path.backgroundPath.c_str());
-	parallax1_ = new CBackground(Path.parallaxPath.c_str());
+    background1_ = new CBackground(Path.Files["backgroundPath"].c_str());
+	parallax1_ = new CBackground(Path.Files["parallaxPath"].c_str());
 	parallax1_->setBackgroundLevel(BACKGROUND_SCROLL_SPEED_LEVEL_4);
 
-    parallax2_ = new CBackground(Path.parallax2Path.c_str());
+    parallax2_ = new CBackground(Path.Files["parallax2Path"].c_str());
     parallax2_->setBackgroundLevel(BACKGROUND_SCROLL_SPEED_LEVEL_2);
 
 
     // MUSIC
-    music_ = new CMusic(Path.song1Path.c_str());
+    music_ = new CMusic(Path.Files["song1Path"].c_str());
     music_->play();
 
 

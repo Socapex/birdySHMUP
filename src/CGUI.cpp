@@ -34,9 +34,9 @@ CGUI::CGUI()
 	black.b = 0;
 	black.unused = 0;
 
-	white.r = 0;
-	white.g = 0;
-	white.b = 0;
+	white.r = 255;
+	white.g = 255;
+	white.b = 255;
 	white.unused = 0;
 
 
@@ -50,8 +50,8 @@ CGUI::CGUI()
     pointFont_ = NULL;
     getReadyFont_ = NULL;
 
-    getReadyFont_ = TTF_OpenFont(Path.font1Path.c_str(), 2);
-    pointFont_ = TTF_OpenFont(Path.font1Path.c_str(), 26);
+    getReadyFont_ = TTF_OpenFont(Path.Files["font1Path"].c_str(), 2);
+    pointFont_ = TTF_OpenFont(Path.Files["font1Path"].c_str(), 26);
 
     if (pointFont_ == NULL)
     {
@@ -120,7 +120,7 @@ void CGUI::onRender(SDL_Surface* surfDisplay)
 
     if (getReadyPlaying)
     {
-        getReadyFont_ = TTF_OpenFont(Path.font1Path.c_str(), getReadyCounter);
+        getReadyFont_ = TTF_OpenFont(Path.Files["font1Path"].c_str(), getReadyCounter);
 
         getReadySurface_ = TTF_RenderText_Blended(getReadyFont_, "Get Ready!",
                                                   white);

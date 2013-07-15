@@ -10,6 +10,8 @@
 
 CLevel::CLevel()
 {
+    levelStartTime = SDL_GetTicks();
+
     enemySpawner_ = NULL;
     background1_ = NULL;
     parallax1_ = NULL;
@@ -57,4 +59,15 @@ void CLevel::onRender(SDL_Surface* surfDisplay_)
 
     enemySpawner_->onRender(surfDisplay_);
 
+}
+
+
+
+
+
+
+// GETTERS SETTERS
+int CLevel::getLevelStartTime() const
+{
+    return levelStartTime;
 }

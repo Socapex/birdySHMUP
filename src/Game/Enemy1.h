@@ -15,6 +15,7 @@
 //#include "../CBulletSpawner.h"
 
 class CBulletSpawner;
+class CSFX;
 
 class Enemy1 : public CEnemy {
 public:

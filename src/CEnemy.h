@@ -18,6 +18,7 @@
 
 class CBulletSpawner;
 class CPlayer;
+class CSFX;
 
 class CEnemy : public CEntity {
 public:
@@ -37,11 +38,13 @@ public:
 protected:
     CParticles* deathExplosion_;
     CBulletSpawner* bullets_;
+    CSFX* deathSound_;
 
 
     int animationStart;
     int killPoints_;
     int shootDelay_;
+    int nextShot_;
 
 };
 

@@ -29,6 +29,8 @@ public:
     virtual void onLoop(CPlayer* Player);
     virtual void onRender(SDL_Surface* surfDisplay_);
 
+    int getLevelStartTime() const;
+
 protected:
 
     CEnemySpawner* enemySpawner_;
@@ -38,6 +40,9 @@ protected:
     CBackground* parallax2_;
 
     CMusic* music_;
+
+private:
+    int levelStartTime;
 };
 
 #endif /* defined(__birdyShmup__CLevel__) */

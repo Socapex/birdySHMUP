@@ -10,7 +10,7 @@
 
 CEnemySpawner::CEnemySpawner()
 {
-	Wave1.startTime = 3000;
+	Wave1.startTime = SDL_GetTicks() + 3000;
 	Wave1.animationStarted = false;
 	Wave1.animationFinished = false;
 
@@ -104,15 +104,15 @@ void CEnemySpawner::enemyAnimator()
             }
         }
 
-        else
-        {
-            for (int i = 0; i < wave1Enemies_.size(); ++i)
-            {
-                animStraightLine(wave1Enemies_[i],
-                                                 0, -200, 10);
-
-            }
-        }
+//        else
+//        {
+//            for (int i = 0; i < wave1Enemies_.size(); ++i)
+//            {
+//                animStraightLine(wave1Enemies_[i],
+//                                                 0, -200, 10);
+//
+//            }
+//        }
 
     }
 }

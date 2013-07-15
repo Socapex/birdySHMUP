@@ -54,8 +54,8 @@ CParticles::CParticles(int R, int G, int B, int x, int y, int width, int height,
     x_ = x;
     y_ = y;
     play_ = false;
-    
-    
+
+
     for (int i = 0; i < quantity; ++i)
     {
         SDL_Rect rect;
@@ -81,23 +81,23 @@ CParticles::CParticles(std::string type, int x, int y, float emitSpeed,
 
     if (type == "explosion1")
     {
-        entity->onLoad(Path.explosion1Path.c_str(), 320, 300, 20);
+        entity->onLoad(Path.Files["explosion1Path"].c_str(), 320, 300, 20);
         
     }
 
     else if (type == "explosion2")
     {
-        entity->onLoad(Path.explosion2Path.c_str(), 256, 192, 64);
+        entity->onLoad(Path.Files["explosion2Path"].c_str(), 256, 192, 64);
     }
 
     else if (type == "explosion3")
     {
-        entity->onLoad(Path.explosion3Path.c_str(), 96, 96, 17);
+        entity->onLoad(Path.Files["explosion3Path"].c_str(), 96, 96, 17);
     }
 
     else if (type == "explosion4")
     {
-        entity->onLoad(Path.explosion4Path.c_str(), 64, 64, 25);
+        entity->onLoad(Path.Files["explosion4Path"].c_str(), 64, 64, 25);
     }
 
     quantity_ = quantity;

@@ -26,6 +26,11 @@ CPlayer::CPlayer()
     playerPoints_ = 0;
 
     shootLastTime_ = SDL_GetTicks();
+
+    bullets1_ = NULL;
+    feuDuCul_ = NULL;
+    collisionExplosion_ = NULL;
+
     bullets1_ = new CBulletSpawner("player");
 
     feuDuCul_ = new CParticles(255, 255, 0, x_ + 32, y_ + 64, 5, 8, 100, 1000, 100,
@@ -35,9 +40,9 @@ CPlayer::CPlayer()
 }
 CPlayer::~CPlayer()
 {
-    delete bullets1_;
-    delete feuDuCul_;
-    delete collisionExplosion_;
+    if (bullets1_ != NULL) delete bullets1_;
+    if (feuDuCul_ != NULL) delete feuDuCul_;
+    if (collisionExplosion_ != NULL) delete collisionExplosion_;
 }
 
 

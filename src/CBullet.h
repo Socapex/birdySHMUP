@@ -13,6 +13,8 @@
 
 #include "CEntity.h"
 
+class CSFX;
+
 class CBullet : public CEntity {
 public:
     CBullet();
@@ -28,6 +30,7 @@ public:
 
 protected:
     CParticles* deathExplosion_;
+    CSFX* shootSFX_;
 
     float damage_;
     float speed_;

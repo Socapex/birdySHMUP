@@ -19,13 +19,14 @@
 class CBackground {
 public:
     CBackground();
+    CBackground(const char* file);
     ~CBackground();
 
-    bool onLoad(const char* file);
     void onRender(SDL_Surface* surfDisplay);
     void onAnimate();
 
 	void setBackgroundLevel(int backgroundLevel);
+    SDL_Surface* getSurface();
 
 private:
     SDL_Surface* surfBackground_;

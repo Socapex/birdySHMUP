@@ -38,18 +38,18 @@ public:
     void onLoop();
     void onRender(SDL_Surface* surfDisplay);
 
+    bool getPlaying() const;
+
     void setX(const int x);
     void setY(const int y);
-
-    static std::vector<CParticles*> particleList;
 
 private:
     void createAnimation(std::string type);
 
     std::vector<SDL_Rect> rectanglesToDraw_;
     std::vector<std::pair<SDL_Rect, int> > rectanglesDrawing_;
-    std::vector<CEntity> surfacesToDraw_;
-    std::vector<std::pair<CEntity, unsigned int> > surfacesDrawing_;
+    std::vector<CEntity*> surfacesToDraw_;
+    std::vector<std::pair<CEntity*, unsigned int> > surfacesDrawing_;
 
     std::vector<float> speedX;
     std::vector<float> speedY;

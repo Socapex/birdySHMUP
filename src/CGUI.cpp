@@ -9,10 +9,9 @@
 #include "CGUI.h"
 
 
-CGUI CGUI::gUI;
-
 CGUI::CGUI()
 {
+    // Barre de vie
     healthBarBackground_.x = 10;
     healthBarBackground_.y = 10;
     healthBarBackground_.w = 104;
@@ -45,22 +44,11 @@ CGUI::CGUI()
     getReadyTime = 3500;
     getReadyCounter = 3;
 
-}
 
-CGUI::~CGUI()
-{}
-
-void CGUI::getReady()
-{
-    getReadySurface_ = TTF_RenderText_Blended(getReadyFont_, "Get Ready!", white);
-    TTF_SetFontStyle(getReadyFont_, TTF_STYLE_BOLD);
-    getReadyPlaying = true;
-    
-}
-
-void CGUI::onLoad()
-{
-
+    points_ = NULL;
+    getReadySurface_ = NULL;
+    pointFont_ = NULL;
+    getReadyFont_ = NULL;
 
     getReadyFont_ = TTF_OpenFont(Path.font1Path.c_str(), 2);
     pointFont_ = TTF_OpenFont(Path.font1Path.c_str(), 26);
@@ -71,6 +59,35 @@ void CGUI::onLoad()
     }
 
     TTF_SetFontStyle(pointFont_, TTF_STYLE_BOLD);
+
+}
+
+CGUI::~CGUI()
+{
+    SDL_FreeSurface(points_);
+    SDL_FreeSurface(getReadySurface_);
+    
+    TTF_CloseFont(pointFont_);
+    TTF_CloseFont(getReadyFont_);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+void CGUI::getReady()
+{
+    getReadySurface_ = TTF_RenderText_Blended(getReadyFont_, "Get Ready!", white);
+    TTF_SetFontStyle(getReadyFont_, TTF_STYLE_BOLD);
+    getReadyPlaying = true;
+    
 }
 
 void CGUI::onLoop(CPlayer* player)
@@ -109,7 +126,7 @@ void CGUI::onRender(SDL_Surface* surfDisplay)
                                                   white);
         TTF_SetFontStyle(getReadyFont_, TTF_STYLE_BOLD);
 
-        getReadyCounter += 2;
+        getReadyCounter += 4;
 
         if (getReadyCounter >= 64) getReadyCounter = 64;
 
@@ -121,9 +138,4 @@ void CGUI::onRender(SDL_Surface* surfDisplay)
         
     }
 
-}
-
-void CGUI::onCleanup()
-{
-    TTF_CloseFont(pointFont_);
 }

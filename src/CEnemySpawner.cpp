@@ -13,22 +13,15 @@ CEnemySpawner::CEnemySpawner()
 	Wave1.startTime = 3000;
 	Wave1.animationStarted = false;
 	Wave1.animationFinished = false;
-}
 
-CEnemySpawner::~CEnemySpawner()
-{}
 
-bool CEnemySpawner::onLoad()
-{
-    FilePaths Path;
+
 
     // Todo: Read these values from text file
-
+    FilePaths Path;
     for (int i = 0; i < 8; ++i)
     {
-        CEnemy* entity1_ = new CEnemy();
-        if (entity1_->onLoad(Path.entity1Path.c_str(), 64, 64, 8) == false)
-            return false;
+        CEnemy* entity1_ = new Enemy1();
 
         // Init offscreen
         entity1_->setX(i * 75);
@@ -38,18 +31,53 @@ bool CEnemySpawner::onLoad()
         CEntity::entityList.push_back(entity1_);
         wave1Enemies_.push_back(entity1_);
     }
-
-    return true;
 }
 
-void CEnemySpawner::onLoop()
+// TODO: Read from text file
+CEnemySpawner::CEnemySpawner(const char* file)
 {
-    
+
 }
 
-void CEnemySpawner::onRender()
+CEnemySpawner::~CEnemySpawner()
+{
+    for (int i = 0; i < CEntity::entityList.size(); ++i)
+    {
+        if (!CEntity::entityList[i]) continue;
+
+        // Don't delete player
+        if (CEntity::entityList[i]->getType() != ENTITY_TYPE_PLAYER)
+        {
+            delete CEntity::entityList[i];
+        }
+    }
+
+    CEntity::entityList.clear();
+}
+
+
+void CEnemySpawner::onLoop(CPlayer* Player)
+{
+    // ENTITIES
+    for (int i = 0; i < CEntity::entityList.size(); ++i)
+    {
+        if (!CEntity::entityList[i]) continue;
+
+        CEntity::entityList[i]->onLoop(Player);
+    }
+}
+
+void CEnemySpawner::onRender(SDL_Surface* surfDisplay_)
 {
     enemyAnimator();
+
+    // ENTITIES
+    for (int i = 0; i < CEntity::entityList.size(); ++i)
+    {
+        if (!CEntity::entityList[i]) continue;
+
+        CEntity::entityList[i]->onRender(surfDisplay_);
+    }
 }
 
 void CEnemySpawner::enemyAnimator()

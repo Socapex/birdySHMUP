@@ -12,31 +12,32 @@ void CApp::OnKeyDown(SDLKey sym, SDLMod mod, Uint16 unicode)
 
         case SDLK_SPACE:
         {
-            Player.setShooting(true);
+            Player->setShooting(true);
+            currentLevel_ = 1;
             break;
         }
 
         case SDLK_LEFT:
         {
-            Player.setMoveLeft(true);
+            Player->setMoveLeft(true);
             break;
         }
 
         case SDLK_RIGHT:
         {
-            Player.setMoveRight(true);
+            Player->setMoveRight(true);
             break;
         }
 
         case SDLK_UP:
         {
-            Player.setMoveUp(true);
+            Player->setMoveUp(true);
             break;
         }
 
         case SDLK_DOWN:
         {
-            Player.setMoveDown(true);
+            Player->setMoveDown(true);
             break;
         }
 
@@ -51,48 +52,35 @@ void CApp::OnKeyUp(SDLKey sym, SDLMod mod, Uint16 unicode)
 
         case SDLK_SPACE:
         {
-            Player.setShooting(false);
+            Player->setShooting(false);
+            currentLevel_ = 1;
             break;
         }
 
         case SDLK_LEFT:
         {
-            Player.setMoveLeft(false);
+            Player->setMoveLeft(false);
             break;
         }
 
         case SDLK_RIGHT:
         {
-            Player.setMoveRight(false);
+            Player->setMoveRight(false);
             break;
         }
 
         case SDLK_UP:
         {
-            Player.setMoveUp(false);
+            Player->setMoveUp(false);
             break;
         }
 
         case SDLK_DOWN:
         {
-            Player.setMoveDown(false);
+            Player->setMoveDown(false);
             break;
         }
 
         default: {}
     }
 }
-
-
-
-
-
-
-
-
-
-// Exemples
-// case SDLK_UP:       CCamera::CameraControl.OnMove(0, 5); break;
-// case SDLK_DOWN:     CCamera::CameraControl.OnMove(0, -5); break;
-// case SDLK_LEFT:     CCamera::CameraControl.OnMove(5, 0); break;
-// case SDLK_RIGHT:    CCamera::CameraControl.OnMove(-5, 0); break;

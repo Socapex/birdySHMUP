@@ -17,6 +17,7 @@
 class CMusic {
 public:
     CMusic();
+    CMusic(const char* file);
     ~CMusic();
 
     void play();

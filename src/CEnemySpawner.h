@@ -15,18 +15,19 @@
 
 #include "FilePaths.h"
 
-#include "CEnemy.h"
+#include "Game/Enemy1.h"
 
 
+class CPlayer;
 
 class CEnemySpawner {
 public:
     CEnemySpawner();
+    CEnemySpawner(const char* file);
     ~CEnemySpawner();
 
-    bool onLoad();
-    void onLoop();
-    void onRender();
+    void onLoop(CPlayer* Player);
+    void onRender(SDL_Surface* surfDisplay_);
 
     void enemyAnimator();
 

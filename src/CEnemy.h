@@ -12,8 +12,11 @@
 #include <SDL.h>
 
 #include "Defines.h"
-#include "CEntity.h"
 
+#include "CEntity.h"
+//#include "CBulletSpawner.cpp"
+
+class CBulletSpawner;
 class CPlayer;
 
 class CEnemy : public CEntity {
@@ -21,9 +24,7 @@ public:
     CEnemy();
     ~CEnemy();
 
-    bool onLoad(const char* file, const int width, const int height,
-                const int maxFrames);
-    void onLoop(const int vectorPosition, CPlayer* player);
+    void onLoop(CPlayer* player);
     bool onCollision(CEntity* entity);
     void onRender(SDL_Surface* surfDisplay);
     void onAnimate();
@@ -33,10 +34,14 @@ public:
 
     void setAnimStart(const int time);
 
-private:
+protected:
     CParticles* deathExplosion_;
+    CBulletSpawner* bullets_;
+
 
     int animationStart;
+    int killPoints_;
+    int shootDelay_;
 
 };
 

@@ -26,9 +26,8 @@ public:
 
     virtual bool onLoad(const char* file, const int width, const int height,
                         const int maxFrames);
-    virtual void onLoop(const int vectorPosition, CPlayer* player);
+    virtual void onLoop(CPlayer* player);
     virtual void onRender(SDL_Surface* surfDisplay);
-    virtual void onCleanup();
     virtual void onAnimate();
     virtual bool onCollision(CEntity* entity);
 

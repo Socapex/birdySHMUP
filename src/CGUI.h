@@ -30,12 +30,8 @@ public:
 
     void getReady();
 
-    void onLoad();
     void onLoop(CPlayer* player);
     void onRender(SDL_Surface* surfDisplay);
-    void onCleanup();
-
-    static CGUI gUI;
     
 
 private:

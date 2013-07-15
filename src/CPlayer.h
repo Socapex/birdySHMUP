@@ -4,7 +4,7 @@
 #include "FilePaths.h"
 
 #include "CEntity.h"
-#include "CBullet.h"
+#include "CBulletSpawner.h"
 
 class CPlayer : public CEntity {
 public:
@@ -15,9 +15,8 @@ public:
                 const int maxFrames);
     void movePlayer();
 
-    void onLoop(const int vectorPosition, CPlayer* player);
+    void onLoop(CPlayer* player);
     void onRender(SDL_Surface* surfDisplay);
-    void onCleanup();
     void onAnimate();
     bool onCollision(CEntity* Entity);
 
@@ -33,10 +32,10 @@ public:
     void setPlayerPoints(const int points);
 
 private:
-    std::vector<CBullet> bulletList_;
-
     CParticles* feuDuCul_;
-    CParticles* feuDuCul2_;
+    CParticles* collisionExplosion_;
+
+    CBulletSpawner* bullets1_;
 
     bool moveLeft_;
     bool moveRight_;

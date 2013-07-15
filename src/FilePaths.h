@@ -42,6 +42,13 @@ public:
     // Music
     std::string song1Path;
 
+    // Splash Screen
+    std::string splash1Path;
+
+    // Main menu
+    std::string main1Path;
+    std::string playButton1Path;
+
 };
 
 #endif /* defined(__birdyShmup__FilePaths__) */

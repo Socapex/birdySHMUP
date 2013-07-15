@@ -10,22 +10,27 @@
 
 CMusic::CMusic()
 {
-    
+    song1_ = NULL;
+}
+
+CMusic::CMusic(const char* file)
+{
+    song1_ = Mix_LoadMUS(file);
 }
 
 CMusic::~CMusic()
-{}
+{
+    Mix_FreeMusic(song1_);
+}
+
+
+
+
+
+
+
 
 void CMusic::play()
 {
     Mix_PlayMusic(song1_, -1);
-}
-
-bool CMusic::onLoad()
-{
-    FilePaths Path;
-
-    song1_ = Mix_LoadMUS(Path.song1Path.c_str());
-    
-    return true;
 }

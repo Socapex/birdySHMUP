@@ -23,7 +23,10 @@ bool CMainMenu::onLoad(const char* file)
 {
     if ((surfMainMenu_ = CSurface::onLoad(file)) == NULL) return false;
     // ADD BUTTONS HERE
-    if(playButton_.onLoad(filePath_.playButton1Path) == false) return false;
+    if(playButton_.onLoad(filePath_.playButton1Path.c_str()) == false) return false;
+    playButton_.setX((WWIDTH/2-playButton_.getWidth()/2));
+    playButton_.setY((WHEIGHT/2-playButton_.getHeight()/2));
+
     return true;
 }
 
@@ -34,7 +37,7 @@ void CMainMenu::onRender(SDL_Surface* surfDisplay)
     onAnimate();
     CSurface::OnDraw(surfDisplay, surfMainMenu_, x_, y_);
     // ADD BUTTONS HERE
-    playButton_.onDraw(surfDisplay, (WWIDTH/2-playButton_.getWidth()), (WHEIGHT/2-playButton_.getHeight()));
+    playButton_.onDraw(surfDisplay);
 }
 
 void CMainMenu::onAnimate()

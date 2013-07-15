@@ -53,7 +53,7 @@ void CEnemy::onLoop(CPlayer* player)
             setDead(true);
             player->setPlayerPoints(player->getPlayerPoints() + killPoints_);
             deathExplosion_->play(CEntity::x_, CEntity::y_);
-            deathSound_->play();
+            deathSound_->play(SFX_AUDIO_CHANNEL_DEATH);
 
         }
     }

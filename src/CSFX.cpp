@@ -15,8 +15,8 @@ CSFX::CSFX()
 
 CSFX::CSFX(const char* file)
 {
-    sfx_ = Mix_LoadWAV(file);
-    printf("Problem loading sfx file : %s\n", Mix_GetError());
+    if ((sfx_ = Mix_LoadWAV(file)) == NULL)
+        printf("Problem loading sfx file : %s\n", Mix_GetError());
 }
 
 CSFX::~CSFX()
@@ -26,7 +26,7 @@ CSFX::~CSFX()
 
 
 
-void CSFX::play() const
+void CSFX::play(const int channel) const
 {
-    Mix_PlayChannel(-1, sfx_, 0);
+    Mix_PlayChannel(channel, sfx_, 0);
 }

@@ -23,7 +23,7 @@ bool CMainMenu::onLoad(const char* file)
 {
     if ((surfMainMenu_ = CSurface::onLoad(file)) == NULL) return false;
     // ADD BUTTONS HERE
-    if(playButton_.onLoad(filePath_.playButton1Path) == false) return false;
+    if(playButton_.onLoad(filePath_.Files["playButton1Path"]) == false) return false;
     return true;
 }
 

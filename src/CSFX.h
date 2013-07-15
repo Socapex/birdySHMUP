@@ -18,7 +18,7 @@ public:
     CSFX(const char* file);
     ~CSFX();
 
-    void play() const;
+    void play(const int channel) const;
 
 private:
     Mix_Chunk* sfx_;

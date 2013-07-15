@@ -47,6 +47,7 @@
 		2BBBDFD41793613A00306A96 /* CMainMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BBBDFCF1793613A00306A96 /* CMainMenu.cpp */; };
 		2BBBDFD51793613A00306A96 /* CSplashScreen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BBBDFD11793613A00306A96 /* CSplashScreen.cpp */; };
 		2BBBDFD8179369D800306A96 /* CSFX.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BBBDFD6179369D800306A96 /* CSFX.cpp */; };
+		2BBBDFDA17938F2300306A96 /* sfx in Resources */ = {isa = PBXBuildFile; fileRef = 2BBBDFD917938F2300306A96 /* sfx */; };
 		2BCA3DAD1780E00700CF3F22 /* CBackground.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BCA3DAB1780E00700CF3F22 /* CBackground.cpp */; };
 		2BE705D91792187400504F86 /* CBulletSpawner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BE705D71792187400504F86 /* CBulletSpawner.cpp */; };
 		2BE705DF17922C6200504F86 /* PlayerBullet1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BE705DE17922C6200504F86 /* PlayerBullet1.cpp */; };
@@ -136,6 +137,7 @@
 		2BBBDFD21793613A00306A96 /* CSplashScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSplashScreen.h; path = ../../src/CSplashScreen.h; sourceTree = "<group>"; };
 		2BBBDFD6179369D800306A96 /* CSFX.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CSFX.cpp; path = ../../src/CSFX.cpp; sourceTree = "<group>"; };
 		2BBBDFD7179369D800306A96 /* CSFX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSFX.h; path = ../../src/CSFX.h; sourceTree = "<group>"; };
+		2BBBDFD917938F2300306A96 /* sfx */ = {isa = PBXFileReference; lastKnownFileType = folder; name = sfx; path = ../../sfx; sourceTree = "<group>"; };
 		2BCA3DAB1780E00700CF3F22 /* CBackground.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CBackground.cpp; path = ../../src/CBackground.cpp; sourceTree = "<group>"; };
 		2BCA3DAC1780E00700CF3F22 /* CBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CBackground.h; path = ../../src/CBackground.h; sourceTree = "<group>"; };
 		2BE705D71792187400504F86 /* CBulletSpawner.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CBulletSpawner.cpp; path = ../../src/CBulletSpawner.cpp; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 				2B068897176FE5870026C1AB /* SDLMain.h */,
 				2B068898176FE5870026C1AB /* SDLMain.m */,
 				2B27259F176FE2E20094AC8F /* MainMenu.xib */,
+				2BBBDFD917938F2300306A96 /* sfx */,
 				2B84554317711ACF005DC982 /* img */,
 				2B5E86BE178E332A003608E0 /* music */,
 				2B16D1E7178CD7FC00BB515A /* fonts */,
@@ -353,6 +356,7 @@
 				2B84554617711ACF005DC982 /* img in Resources */,
 				2B16D1E8178CD7FC00BB515A /* fonts in Resources */,
 				2B5E86BF178E332B003608E0 /* music in Resources */,
+				2BBBDFDA17938F2300306A96 /* sfx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

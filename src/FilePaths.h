@@ -10,45 +10,13 @@
 #define __birdyShmup__FilePaths__
 
 #include <string>
+#include <map>
 
 class FilePaths {
 public:
     FilePaths();
 
-    // Player
-    std::string player1Path;
-
-    // Ennemies
-    std::string entity1Path;
-    std::string entity2Path;
-
-    // Background
-    std::string backgroundPath;
-	std::string parallaxPath;
-    std::string parallax2Path;
-
-    // Bullets
-    std::string bullet1Path;
-
-    // Particles
-    std::string explosion1Path;
-    std::string explosion2Path;
-    std::string explosion3Path;
-    std::string explosion4Path;
-
-    // Fonts
-    std::string font1Path;
-
-    // Music
-    std::string song1Path;
-    std::string sfxMedExplosion;
-
-    // Splash Screen
-    std::string splash1Path;
-
-    // Main menu
-    std::string main1Path;
-    std::string playButton1Path;
+    std::map<std::string, std::string> Files;
 
 };
 

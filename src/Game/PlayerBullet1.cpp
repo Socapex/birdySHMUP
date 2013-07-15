@@ -7,6 +7,7 @@
 //
 
 #include "PlayerBullet1.h"
+#include "../CSFX.h"
 
 PlayerBullet1::PlayerBullet1()
 {
@@ -15,10 +16,11 @@ PlayerBullet1::PlayerBullet1()
     
     FilePaths Path;
     
-    CEntity::onLoad(Path.bullet1Path.c_str(), 16, 16, 0);
+    CEntity::onLoad(Path.Files["bullet1Path"].c_str(), 16, 16, 0);
     
     deathExplosion_ = new CParticles(255, 255, 0, x_, y_, 2, 3, 0, 100,
                                      100, 10, "fireworks");
+    shootSFX_ = new CSFX(Path.Files["sfxLaser1"].c_str());
 
 }
 

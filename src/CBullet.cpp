@@ -7,6 +7,7 @@
 //
 
 #include "CBullet.h"
+#include "CSFX.h"
 
 CBullet::CBullet()
 {
@@ -16,12 +17,16 @@ CBullet::CBullet()
     speed_ = 0;
     CEntity::setDead(true);
 
+    deathExplosion_ = NULL;
+    shootSFX_ = NULL;
+
 }
 
 CBullet::~CBullet()
 {
     //TODO: delete ParticleSpawner (not the static particle vector)
     delete deathExplosion_;
+    delete shootSFX_;
 }
 
 
@@ -35,6 +40,7 @@ void CBullet::shoot(const int x, const int y)
     x_ = x;
     y_ = y;
     CEntity::setDead(false);
+    shootSFX_->play(SFX_AUDIO_CHANNEL_LASER);
 }
 
 

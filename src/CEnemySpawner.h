@@ -39,7 +39,7 @@ private:
     std::vector<CEnemy*> wave1Enemies_;
 
     struct wave1 {
-        int startTime;
+        unsigned int startTime;
         bool animationStarted;
         bool animationFinished;
     } Wave1;

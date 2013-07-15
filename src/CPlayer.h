@@ -52,7 +52,7 @@ private:
     float maxSpeedX_;
     float maxSpeedY_;
 
-    int shootLastTime_;
+    unsigned int shootLastTime_;
 
     int playerPoints_;
 

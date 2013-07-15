@@ -22,7 +22,7 @@ private:
     int currentFrame_;
     int frameInc_;
     int frameRate_; //Milliseconds
-    long oldTime_;
+    unsigned long oldTime_;
 
 
 };

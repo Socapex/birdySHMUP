@@ -44,7 +44,7 @@ protected:
     int animationStart;
     int killPoints_;
     int shootDelay_;
-    int nextShot_;
+    unsigned int nextShot_;
 
 };
 

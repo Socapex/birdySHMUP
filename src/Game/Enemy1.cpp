@@ -16,7 +16,8 @@ Enemy1::Enemy1()
     
     life_ = 100;
     killPoints_ = 100;
-    shootDelay_ = 100;
+    shootDelay_ = nextShot_ = 2000;
+    nextShot_ += SDL_GetTicks();
     CEntity::onLoad(Path.Files["entity1Path"].c_str(), 64, 64, 8);
     deathExplosion_ = new CParticles("explosion3", x_, y_, 0,
                                      1000, 1, 1);

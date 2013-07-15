@@ -56,7 +56,6 @@ CApp::CApp()
     mainMenu1_.onLoad(Path.main1Path.c_str());
 
     gUI_ = new CGUI();
-    gUI_->getReady();
 }
 
 CApp::~CApp()

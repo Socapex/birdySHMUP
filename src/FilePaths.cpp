@@ -40,6 +40,9 @@ FilePaths::FilePaths()
     // MUSIC
     song1Path = "music/WelcomeToEurope.ogg";
 
+    // SFX
+    sfxMedExplosion = "sfx/MedExplosion.wav";
+
     // SPLASHSCREEN
     splash1Path = "img/Screens/SplashScreen/SuperSplash.png";
 
@@ -75,6 +78,8 @@ FilePaths::FilePaths()
 
     song1Path.insert(0, "birdyShmup.app/Contents/Resources/");
 
+    sfxMedExplosion.insert(0, "birdyShmup.app/Contents/Resources/");
+
     splash1Path.insert(0, "birdyShmup.app/Contents/Resources/");
 
     main1Path.insert(0, "birdyShmup.app/Contents/Resources/");
@@ -101,6 +106,8 @@ FilePaths::FilePaths()
     font1Path.insert(0, "../../");
 
     song1Path.insert(0, "../../");
+
+    sfxMedExplosion.insert(0, "../../");
 
     splash1Path.replace(0, std::string::npos, "../../img/Screens/SplashScreen/SuperSplash.png");
 

@@ -5,7 +5,11 @@ void CApp::onLoop()
 
     if (currentLevel_ == 1)
     {
-        if (level1_ == NULL) level1_ = new Level1();
+        if (level1_ == NULL)
+        {
+            level1_ = new Level1();
+            gUI_->getReady();
+        }
         level1_->onLoop(Player);
     }
 

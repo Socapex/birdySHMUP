@@ -41,6 +41,7 @@ public:
 
     // Music
     std::string song1Path;
+    std::string sfxMedExplosion;
 
     // Splash Screen
     std::string splash1Path;

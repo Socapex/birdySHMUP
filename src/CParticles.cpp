@@ -54,8 +54,8 @@ CParticles::CParticles(int R, int G, int B, int x, int y, int width, int height,
     x_ = x;
     y_ = y;
     play_ = false;
-    
-    
+
+
     for (int i = 0; i < quantity; ++i)
     {
         SDL_Rect rect;

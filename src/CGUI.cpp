@@ -34,9 +34,9 @@ CGUI::CGUI()
 	black.b = 0;
 	black.unused = 0;
 
-	white.r = 0;
-	white.g = 0;
-	white.b = 0;
+	white.r = 255;
+	white.g = 255;
+	white.b = 255;
 	white.unused = 0;
 
 

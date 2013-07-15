@@ -8,18 +8,24 @@
 
 #include "CEnemy.h"
 #include "CPlayer.h"
+#include "CSFX.h"
 
 CEnemy::CEnemy()
 {
     animationStart = 0;
     killPoints_ = 0;
     shootDelay_ = 0;
+
+    deathExplosion_ = NULL;
+    bullets_ = NULL;
+    deathSound_ = NULL;
 }
 
 CEnemy::~CEnemy()
 {
     delete deathExplosion_;
     delete bullets_;
+    delete deathSound_;
 }
 
 
@@ -47,6 +53,7 @@ void CEnemy::onLoop(CPlayer* player)
             setDead(true);
             player->setPlayerPoints(player->getPlayerPoints() + killPoints_);
             deathExplosion_->play(CEntity::x_, CEntity::y_);
+            deathSound_->play();
 
         }
     }

@@ -8,6 +8,7 @@
 
 #include "Enemy1.h"
 #include "../CBulletSpawner.h"
+#include "../CSFX.h"
 
 Enemy1::Enemy1()
 {
@@ -20,6 +21,7 @@ Enemy1::Enemy1()
     deathExplosion_ = new CParticles("explosion3", x_, y_, 0,
                                      1000, 1, 1);
     bullets_ = new CBulletSpawner("enemy1");
+    deathSound_ = new CSFX(Path.sfxMedExplosion.c_str());
 }
 
 Enemy1::~Enemy1()

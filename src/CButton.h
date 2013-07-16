@@ -17,7 +17,7 @@ public:
 	CButton();
 	~CButton();
 	bool onLoad(const char* file);
-	void onDraw(SDL_Surface* dest);
+	void onRender(SDL_Surface* dest);
 	void setX(int x);
 	void setY(int y);
 	int getX();

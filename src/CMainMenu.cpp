@@ -37,7 +37,7 @@ void CMainMenu::onRender(SDL_Surface* surfDisplay)
     onAnimate();
     CSurface::OnDraw(surfDisplay, surfMainMenu_, x_, y_);
     // ADD BUTTONS HERE
-    playButton_.onDraw(surfDisplay);
+    playButton_.onRender(surfDisplay);
 }
 
 void CMainMenu::onAnimate()

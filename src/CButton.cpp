@@ -26,7 +26,7 @@ bool CButton::onLoad(const char* file)
 	return true;
 }
 
-void CButton::onDraw(SDL_Surface* dest)
+void CButton::onRender(SDL_Surface* dest)
 {
 	CSurface::OnDraw(dest, surfButton_, x_, y_);
 }

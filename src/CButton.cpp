@@ -10,35 +10,53 @@
 
 CButton::CButton()
 {
-	rectButton_ = new SDL_Rect();
+	x_ = 0;
+	y_ = 0;
 }
 
 CButton::~CButton()
 {
-	delete rectButton_;
-	rectButton_ = NULL;
+	SDL_FreeSurface(surfButton_);
 }
 
-bool CButton::onLoad(std::string filePath)
+bool CButton::onLoad(const char* file)
 {
-	return ((surfButton_ = IMG_Load(filePath.c_str())) != NULL);
+	if ((surfButton_ = CSurface::onLoad(file)) == NULL) return false;
+
+	return true;
 }
 
-void CButton::onDraw(SDL_Surface* dest,int x, int y)
+void CButton::onDraw(SDL_Surface* dest)
 {
-	rectButton_->x = x;
-    rectButton_->y = y;
-    rectButton_->h = surfButton_->h;
-    rectButton_->w = surfButton_->w;
-	SDL_BlitSurface(surfButton_, NULL, dest, rectButton_);
+	CSurface::OnDraw(dest, surfButton_, x_, y_);
+}
+
+void CButton::setX(int x)
+{
+	x_ = x;
+}
+
+void CButton::setY(int y)
+{
+	y_ = y;
+}
+
+int CButton::getX()
+{
+	return x_;
+}
+
+int CButton::getY()
+{
+	return y_;
 }
 
 int CButton::getWidth()
 {
-	return surfButton_->h;
+	return surfButton_->w;
 }
 
 int CButton::getHeight()
 {
-	return surfButton_->w;
+	return surfButton_->h;
 }

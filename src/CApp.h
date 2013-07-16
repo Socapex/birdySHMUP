@@ -45,7 +45,6 @@ private:
 
     // Les Menu
     CSplashScreen splashScreen1_;
-
     CMainMenu mainMenu1_;
 
     int currentLevel_;

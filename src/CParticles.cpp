@@ -310,12 +310,12 @@ void CParticles::createAnimation(std::string type)
     {
         for (int i = 0; i < quantity_; ++i)
         {
-            speedX.push_back(static_cast<float>((rand() % (spread_ * 2)) - spread_));
+            speedX.push_back(static_cast<float>((rand() % ((int)spread_ * 2) - (int)spread_)));
         }
 
         for (int i = 0; i < quantity_; ++i)
         {
-            speedY.push_back(static_cast<float>((rand() % (spread_ * 2)) - spread_));
+            speedY.push_back(static_cast<float>((rand() % ((int)spread_ * 2) - (int)spread_)));
         }
     }
 }

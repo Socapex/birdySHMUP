@@ -41,6 +41,11 @@ void CButton::setY(int y)
 	y_ = y;
 }
 
+void CButton::setID(int iD)
+{
+	iD_ = iD;
+}
+
 int CButton::getX()
 {
 	return x_;
@@ -59,4 +64,9 @@ int CButton::getWidth()
 int CButton::getHeight()
 {
 	return surfButton_->h;
+}
+
+int CButton::getID()
+{
+	return iD_;
 }

@@ -34,6 +34,9 @@ public:
     void OnKeyDown(SDLKey sym, SDLMod mod, Uint16 unicode);
     void OnKeyUp(SDLKey sym, SDLMod mod, Uint16 unicode);
 
+    // Menus
+    CMainMenu* getMainMenu();
+
 private:
     SDL_Surface* surfDisplay_;
 

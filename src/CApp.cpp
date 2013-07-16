@@ -118,3 +118,9 @@ int main(int argc, char *argv[])
 
     return theApp.OnExecute();
 }
+
+
+CMainMenu* CApp::getMainMenu()
+{
+    return &mainMenu1_;
+}

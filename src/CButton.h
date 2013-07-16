@@ -20,14 +20,21 @@ public:
 	void onDraw(SDL_Surface* dest);
 	void setX(int x);
 	void setY(int y);
+	void setIsActive(bool active);
+	void setID(int iD);
 	int getX();
 	int getY();
 	int getWidth();
 	int getHeight();
+	bool getIsActive();
+	int getID();
+
 
 private:
 	SDL_Surface* surfButton_;
+	bool isActive_;
 	int x_;
 	int y_;
+	int iD_;
 };
 #endif /* defined(__birdyShmup__CButton__) */

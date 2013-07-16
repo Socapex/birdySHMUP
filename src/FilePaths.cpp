@@ -50,6 +50,9 @@ FilePaths::FilePaths()
     // MainMenu
     Files["main1Path"] = "img/Screens/MainMenu/MainMenu.png";
     Files["playButton1Path"] = "img/Screens/MainMenu/Buttons/PlayButton.png";
+    Files["playButton2Path"] = "img/Screens/MainMenu/Buttons/PlayButton_Active.png";
+    Files["exitButton1Path"] = "img/Screens/MainMenu/Buttons/ExitButton.png";
+    Files["exitButton2Path"] = "img/Screens/MainMenu/Buttons/ExitButton_Active.png";
 
 
     std::map<std::string, std::string>::iterator iter;

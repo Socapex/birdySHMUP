@@ -16,7 +16,7 @@ ifeq ($(UNAME), Darwin)
 	clang++ `sdl-config --cflags --libs` -lSDL_image -lSDL_ttf -lSDL_mixer -o $(EXEC) src/*.cpp -DMACTERMINAL
 endif
 ifeq ($(UNAME), Linux)
-	g++  src/*.cpp `sdl-config --cflags --libs` -lSDL_image -lSDL_ttf -lSDL_mixer -o $(EXEC)
+	g++  src/*.cpp src/Game/*.cpp `sdl-config --cflags --libs` -lSDL_image -lSDL_ttf -lSDL_mixer -o $(EXEC)
 endif
 
 clean:

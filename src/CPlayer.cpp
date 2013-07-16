@@ -25,16 +25,25 @@ CPlayer::CPlayer()
 
     playerPoints_ = 0;
 
-    // Pre-generate bullets
-    for (int i = 0; i < 100; ++i)
-    {
-        CBullet bullet;
-        bulletList_.push_back(bullet);
-    }
+    shootLastTime_ = SDL_GetTicks();
+
+    bullets1_ = NULL;
+    feuDuCul_ = NULL;
+    collisionExplosion_ = NULL;
+
+    bullets1_ = new CBulletSpawner("player");
+
+    feuDuCul_ = new CParticles(255, 255, 0, x_ + 32, y_ + 64, 5, 8, 100, 1000, 100,
+                                10, "fireworks", true);
+    collisionExplosion_ = new CParticles("explosion3", x_, y_, 100, 1000, 1, 10);
 
 }
 CPlayer::~CPlayer()
-{}
+{
+    if (bullets1_ != NULL) delete bullets1_;
+    if (feuDuCul_ != NULL) delete feuDuCul_;
+    if (collisionExplosion_ != NULL) delete collisionExplosion_;
+}
 
 
 
@@ -43,34 +52,6 @@ bool CPlayer::onLoad(const char* file, const int width, const int height,
                      const int maxFrames)
 {
     if (CEntity::onLoad(file, width, height, maxFrames) == false) return false;
-
-
-
-
-
-
-
-    // BULLETS
-
-    shootLastTime_ = SDL_GetTicks();
-
-    FilePaths Path;
-
-    for (int i = 0; i < bulletList_.size(); ++i)
-    {
-        bulletList_[i].onLoad(Path.bullet1Path.c_str(), 16, 16, 0);
-    }
-
-
-
-
-
-    // PARTICLES
-
-//    feuDuCul_ = new CParticles("explosion3", x_ + 32, y_ + 64, 10, 1, 1000,
-//                               10, "firefowrks", true);
-    feuDuCul2_ = new CParticles(255, 255, 0, x_ + 32, y_ + 64, 5, 8, 100, 1000, 100,
-                                10, "fireworks", true);
 
     return true;
 }
@@ -111,17 +92,9 @@ void CPlayer::shoot()
     if (shootLastTime_ + PLAYER_BULLET1_SHOOT_DELAY <= SDL_GetTicks())
     {
         shootLastTime_ = SDL_GetTicks();
-        for (int i = 0; i < bulletList_.size(); ++i)
-        {
-            if (bulletList_[i].getDead())
-            {
-                bulletList_[i].shoot(x_ + 20, y_);
-                bulletList_[i + 1].shoot(x_ + getWidth()
-                                         - bulletList_[i].getWidth() - 20,
-                                         y_);
-                break;
-            }
-        }
+        bullets1_->shoot(x_ + 20, y_);
+        bullets1_->shoot(x_ + getWidth() - bullets1_->getBulletWidth() - 20,
+                        y_);
     }
 }
 
@@ -142,7 +115,7 @@ void CPlayer::shoot()
 
 
 // FONCTIONS OVERLOADED
-void CPlayer::onLoop(const int vectorPosition, CPlayer* player)
+void CPlayer::onLoop(CPlayer* player)
 {
 
     if (checkLife())
@@ -153,9 +126,9 @@ void CPlayer::onLoop(const int vectorPosition, CPlayer* player)
 
         //feuDuCul_->setX(x_ + 32);
         //feuDuCul_->setY(y_ + 96);
-        feuDuCul2_->setX(x_ + 64);
-        feuDuCul2_->setY(y_ + 150);
-        feuDuCul2_->play(x_ + 32, y_ + 96);
+        feuDuCul_->setX(x_ + 64);
+        feuDuCul_->setY(y_ + 150);
+        feuDuCul_->play(x_ + 32, y_ + 96);
     }
     else
     {
@@ -168,19 +141,13 @@ void CPlayer::onLoop(const int vectorPosition, CPlayer* player)
 
 void CPlayer::onRender(SDL_Surface* surfDisplay)
 {
-    // Render bullets
-    for (int i = 0; i < bulletList_.size(); ++i)
-    {
-        if (!bulletList_[i].getDead()) bulletList_[i].onRender(surfDisplay);
-    }
+    bullets1_->onRender(surfDisplay);
+    //feuDuCul_->onRender(surfDisplay);
+    collisionExplosion_->onRender(surfDisplay);
 
     if (!getDead()) CEntity::onRender(surfDisplay);
 }
 
-void CPlayer::onCleanup()
-{
-    CEntity::onCleanup();
-}
 
 void CPlayer::onAnimate()
 {
@@ -197,9 +164,8 @@ bool CPlayer::onCollision(CEntity* Entity)
     if (Entity->getType() == ENTITY_TYPE_ENEMY1 && life_ > 0)
     {
         life_ -= (1 * CFPS::FPSControl.getSpeedFactor());
-        //CParticles explody(255, 255, 0, x_, y_, 5, 8, 1, 10, 100, rand() % 20 + 1);
-        CParticles* explody2 = new CParticles("explosion3", x_, y_, 100, 1000, 1, 10);
-        explody2->play(x_, y_);
+        
+        collisionExplosion_->play(x_, y_);
     }
 
     return true;

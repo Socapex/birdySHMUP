@@ -4,6 +4,230 @@
 		"selected_items":
 		[
 			[
+				"lSD",
+				"lSDL_mixer"
+			],
+			[
+				"sp",
+				"speedY	float"
+			],
+			[
+				"se",
+				"setY(const float y)	void"
+			],
+			[
+				"move",
+				"moveDown_	bool"
+			],
+			[
+				"SDL_Free",
+				"SDL_FreeSurface(SDL_Surface *surface)	void"
+			],
+			[
+				"O",
+				"OnLoad(const char *file)	SDL_Surface *"
+			],
+			[
+				"sur",
+				"surfBackground_	SDL_Surface *"
+			],
+			[
+				"SDL_S",
+				"SDL_Surface	struct"
+			],
+			[
+				"ma",
+				"maxSpeedY_	float"
+			],
+			[
+				"spee",
+				"speedY	float"
+			],
+			[
+				"mo",
+				"moveDown_	false &&"
+			],
+			[
+				"max",
+				"maxSpeedY_	float"
+			],
+			[
+				"mov",
+				"moveDown_	bool"
+			],
+			[
+				"acc",
+				"accelY	float"
+			],
+			[
+				"ENTITY_FLAG_",
+				"ENTITY_FLAG_NONE	enum <anonymous>"
+			],
+			[
+				"enti",
+				"entityA	CEntity*"
+			],
+			[
+				"ent",
+				"entityB	CEntity*"
+			],
+			[
+				"CE",
+				"CEntityCol	class"
+			],
+			[
+				"setmove",
+				"setMoveRight(const bool move)	void"
+			],
+			[
+				"set",
+				"setMoveLeft(const bool move)	void"
+			],
+			[
+				"play",
+				"player1_	CPlayer"
+			],
+			[
+				"ge",
+				"getY() const	int"
+			],
+			[
+				"pla",
+				"player1_	CPlayer"
+			],
+			[
+				"g",
+				"getX() const	int"
+			],
+			[
+				"pa",
+				"paths_	std::vector<std::string>"
+			],
+			[
+				"player",
+				"player1Path	std::string"
+			],
+			[
+				"CEnt",
+				"CEntity	class"
+			],
+			[
+				"On",
+				"OnLoop()	void"
+			],
+			[
+				"CEnti",
+				"CEntityCol	class"
+			],
+			[
+				"en",
+				"entityB	CEntity *"
+			],
+			[
+				"e",
+				"entityCol	CEntityCol"
+			],
+			[
+				"col",
+				"colHeight	int"
+			],
+			[
+				"new",
+				"newY	const int"
+			],
+			[
+				"ENTI",
+				"ENTITY_FLAG_MAPONLY	enum <anonymous>"
+			],
+			[
+				"TI",
+				"TILE_TYPE_BLOCK	enum <anonymous>"
+			],
+			[
+				"pos",
+				"posValidEntity(CEntity *entity, const int newX, const int newY)	bool"
+			],
+			[
+				"EN",
+				"ENTITY_FLAG_MAPONLY	enum <anonymous>"
+			],
+			[
+				"get",
+				"getTile(const int x, const int y)	CTile *"
+			],
+			[
+				"M",
+				"MAP_WIDTH	macro"
+			],
+			[
+				"map",
+				"mapHeight	int"
+			],
+			[
+				"MA",
+				"MAP_HEIGHT	macro"
+			],
+			[
+				"end",
+				"endX	int"
+			],
+			[
+				"sta",
+				"startY	int"
+			],
+			[
+				"T",
+				"TILE_TYPE_NORMAL	enum <anonymous>"
+			],
+			[
+				"top",
+				"top2	int"
+			],
+			[
+				"bo",
+				"bottom1	int"
+			],
+			[
+				"bottom",
+				"bottom2	int"
+			],
+			[
+				"w",
+				"width_	int"
+			],
+			[
+				"ne",
+				"newY	double"
+			],
+			[
+				"posV",
+				"posValid(const int newX, const int newY)	bool"
+			],
+			[
+				"curre",
+				"currentFrameRow	int"
+			],
+			[
+				"on",
+				"OnMove(const float moveX, const float moveY)	void"
+			],
+			[
+				"spe",
+				"speedY	float"
+			],
+			[
+				"ENT",
+				"ENTITY_FLAG_GRAVITY	enum <anonymous>"
+			],
+			[
+				"cur",
+				"currentFrameRow	int"
+			],
+			[
+				"Cen",
+				"CEntityCol	class"
+			],
+			[
 				"SDL_Get",
 				"SDL_GetTicks()	Uint32"
 			],
@@ -14,14 +238,6 @@
 			[
 				"SDL_Ena",
 				"SDL_EnableKeyRepeat(int delay, int interval)	int"
-			],
-			[
-				"g",
-				"getY() const	int"
-			],
-			[
-				"O",
-				"OnRender(SDL_Surface *Surf_Display, int cameraX, int cameraY)	void"
 			],
 			[
 				"CA",
@@ -40,10 +256,6 @@
 				"targetY_	int *"
 			],
 			[
-				"mo",
-				"moveY	const int"
-			],
-			[
 				"ta",
 				"targetY_	int *"
 			],
@@ -52,16 +264,8 @@
 				"y_	int"
 			],
 			[
-				"map",
-				"mapList	std::vector<CMap>"
-			],
-			[
 				"file",
 				"fileHandle	FILE*"
-			],
-			[
-				"ma",
-				"mapList	std::vector<CMap>"
 			],
 			[
 				"til",
@@ -76,10 +280,6 @@
 				"TILE_TYPE_NONE	enum <anonymous>"
 			],
 			[
-				"MA",
-				"MAP_WIDTH	macro"
-			],
-			[
 				"su",
 				"surfTileset_	SDL_Surface *"
 			],
@@ -92,36 +292,16 @@
 				"fileHandle	FILE*"
 			],
 			[
-				"T",
-				"TILE_TYPE_NONE	enum <anonymous>"
-			],
-			[
 				"CTI",
 				"CTile	class"
-			],
-			[
-				"en",
-				"entity1_	CEntity"
-			],
-			[
-				"se",
-				"setX(const float x)	void"
 			],
 			[
 				"OnL",
 				"OnLoad(char *file, int width, int height, int maxFrames)	bool"
 			],
 			[
-				"enti",
-				"entity2_	CEntity"
-			],
-			[
 				"Surf",
 				"Surf_Entity	SDL_Surface *"
-			],
-			[
-				"On",
-				"OnDraw(SDL_Surface *surfDest, SDL_Surface *surfSource, int x, int y, int x2, int y2, int w, int h)	bool"
 			],
 			[
 				"he",
@@ -138,10 +318,6 @@
 			[
 				"osc",
 				"oscillate_	bool"
-			],
-			[
-				"max",
-				"maxFrames_	int"
 			],
 			[
 				"fram",
@@ -220,16 +396,8 @@
 				"GRID_TYPE_O	enum <anonymous>"
 			],
 			[
-				"sur",
-				"surfDraw_	SDL_Surface *"
-			],
-			[
 				"surf",
 				"surfDisplay_	SDL_Surface *"
-			],
-			[
-				"w",
-				"winner_	int"
 			],
 			[
 				"gr",
@@ -346,179 +514,30 @@
 			[
 				"OnKe",
 				"OnKeyDown(SDLKey sym, SDLMod mod, Uint16 unicode)	void"
-			],
-			[
-				"SDL_A",
-				"SDL_APPMOUSEFOCUS	macro"
-			],
-			[
-				"OnIn",
-				"OnInputFocus()	void"
-			],
-			[
-				"SDL_APP",
-				"SDL_APPINPUTFOCUS	macro"
-			],
-			[
-				"OnM",
-				"OnMouseFocus()	void"
-			],
-			[
-				"x",
-				"x2	int"
-			],
-			[
-				"de",
-				"destRect	SDL_Rect"
-			],
-			[
-				"SDL_QU",
-				"SDL_QUIT	SDL_EventType"
-			],
-			[
-				"SDL_HW",
-				"SDL_HWSURFACE	macro"
-			],
-			[
-				"SDL_INIT",
-				"SDL_INIT_EVERYTHING	macro"
-			],
-			[
-				"OnE",
-				"OnEvent(SDL_Event *event)	void"
-			],
-			[
-				"SDL_Q",
-				"SDL_QUIT	SDL_EventType"
-			],
-			[
-				"SCR",
-				"SCREEN_BPP	const int"
-			],
-			[
-				"SDL_Free",
-				"SDL_FreeSurface(SDL_Surface *surface)	void"
-			],
-			[
-				"c",
-				"c_str() const	const _CharT *"
-			],
-			[
-				"get",
-				"getLastPosition() const	std::pair<int, int>"
-			],
-			[
-				"pa",
-				"pair_	std::pair<int, int>"
-			],
-			[
-				"tes",
-				"test	bool"
-			],
-			[
-				"test",
-				"testGetTurn()	void"
-			],
-			[
-				"lsd",
-				"lSDL_image"
-			],
-			[
-				"padd",
-				"padding-top"
-			],
-			[
-				"border-co",
-				"border-color"
-			],
-			[
-				"pad",
-				"padding-top"
-			],
-			[
-				"ba",
-				"background"
-			],
-			[
-				"back",
-				"background"
-			],
-			[
-				"marg",
-				"margin-left"
-			],
-			[
-				"margin",
-				"margin-bottom"
-			],
-			[
-				"min",
-				"min-width"
-			],
-			[
-				"background",
-				"background-image"
-			],
-			[
-				"bac",
-				"background-color"
-			],
-			[
-				"text",
-				"text-decoration"
-			],
-			[
-				"m",
-				"margin"
-			],
-			[
-				"mar",
-				"margin-right"
-			],
-			[
-				"te",
-				"text-decoration"
-			],
-			[
-				"border",
-				"border"
-			],
-			[
-				"backl",
-				"background-color"
-			],
-			[
-				"pus",
-				"pusherHeight"
-			],
-			[
-				"righ",
-				"rightTopHeight"
-			],
-			[
-				"matr",
-				"matrice2	Matrice<int>"
-			],
-			[
-				"ge",
-				"getPriorite() const	int"
-			],
-			[
-				"pri",
-				"priorite_	int"
-			],
-			[
-				"des",
-				"destinataire_	string"
-			],
-			[
-				"ex",
-				"expediteur_	string"
 			]
 		]
 	},
 	"buffers":
 	[
+<<<<<<< HEAD
+=======
+		{
+			"file": "src/CSurface.cpp",
+			"settings":
+			{
+				"buffer_size": 1421,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/CApp.cpp",
+			"settings":
+			{
+				"buffer_size": 583,
+				"line_ending": "Unix"
+			}
+		}
+>>>>>>> Plus de refacotring et cleanup de memory leaks. Classe CBulletSpawner.
 	],
 	"build_system": "Packages/C++/C++.sublime-build",
 	"command_palette":
@@ -572,9 +591,62 @@
 	},
 	"file_history":
 	[
+		"/Volumes/User/philippe_groarke/Documents/XCode/birdyShmup/src/CApp_OnRender.cpp",
 		"/Volumes/User/philippe_groarke/Documents/XCode/birdyShmup/src/CApp_OnEvent.cpp",
-		"/Volumes/User/philippe_groarke/Documents/XCode/socapexs-manaplus/.gitignore",
+		"/Volumes/User/philippe_groarke/Documents/XCode/birdyShmup/src/CEntity.cpp",
+		"/Volumes/User/philippe_groarke/Documents/XCode/birdyShmup/README.md",
+		"/Volumes/User/philippe_groarke/Documents/XCode/birdyShmup/src/CEntity.h",
+		"/Volumes/User/philippe_groarke/Documents/XCode/birdyShmup/src/CPlayer.cpp",
+		"/Volumes/User/philippe_groarke/Documents/XCode/birdyShmup/src/CPlayer.h",
+		"/Volumes/User/philippe_groarke/Documents/XCode/birdyShmup/src/CApp_OnInit.cpp",
+		"/Volumes/User/philippe_groarke/Documents/XCode/birdyShmup/Makefile",
+		"/Volumes/User/philippe_groarke/Documents/XCode/birdyShmup/src/CApp.h",
 		"/Volumes/User/philippe_groarke/Documents/XCode/birdyShmup/.gitignore",
+		"/Volumes/User/philippe_groarke/.bash_profile",
+		"/Volumes/AudioPlugins/Wordlists/Cities-Countries/GeoNames-Wordlist-v2.txt",
+		"/Volumes/User/philippe_groarke/Desktop/WiFiDiagnosticReport-20130702-1329/opendirectoryd.log",
+		"/Volumes/User/philippe_groarke/Downloads/Game_Demo_3/Level.cpp",
+		"/Volumes/User/philippe_groarke/Downloads/Game_Demo_3/EnemyFlight.cpp",
+		"/Volumes/User/philippe_groarke/Dropbox/Ming_Poly/LOG1000/TP5/Makefile",
+		"/Volumes/User/philippe_groarke/Dropbox/Ming_Poly/LOG1000/TP6/Makefile",
+		"/Volumes/User/philippe_groarke/Documents/XCode/birdyShmup/src/CApp_OnCleanup.cpp",
+		"/Volumes/User/philippe_groarke/Documents/XCode/birdyShmup/src/CApp_OnLoop.cpp",
+		"/Volumes/User/philippe_groarke/Documents/XCode/birdyShmup/src/CEntityCol.cpp",
+		"/Volumes/User/philippe_groarke/Downloads/sdl-collision 2/CEntity.h",
+		"/Volumes/User/philippe_groarke/Documents/XCode/birdyShmup/src/CArea.cpp",
+		"/Volumes/User/philippe_groarke/Downloads/sdl-collision 2/CEntity.cpp",
+		"/Volumes/User/philippe_groarke/Documents/XCode/birdyShmup/src/CMap.cpp",
+		"/Volumes/User/philippe_groarke/Downloads/sdl-collision 2/CTile.h",
+		"/Volumes/User/philippe_groarke/Downloads/sdl-collision 2/CTile.cpp",
+		"/Volumes/User/philippe_groarke/Downloads/sdl-collision 2/CMap.cpp",
+		"/Volumes/User/philippe_groarke/Downloads/sdl-collision 2/CArea.cpp",
+		"/Volumes/User/philippe_groarke/Documents/XCode/birdyShmup/src/CAnimation.h",
+		"/Volumes/User/philippe_groarke/Downloads/sdl-collision 2/CAnimation.cpp",
+		"/Volumes/User/philippe_groarke/Documents/XCode/birdyShmup/src/CAnimation.cpp",
+		"/Volumes/User/philippe_groarke/Downloads/sdl-collision 2/CPlayer.cpp",
+		"/Volumes/User/philippe_groarke/Downloads/sdl-collision 2/CApp_OnRender.cpp",
+		"/Volumes/User/philippe_groarke/Downloads/sdl-collision 2/CApp_OnLoop.cpp",
+		"/Volumes/User/philippe_groarke/Documents/XCode/birdyShmup/src/CSurface.cpp",
+		"/Volumes/User/philippe_groarke/Downloads/sdl-collision 2/Makefile",
+		"/Volumes/User/philippe_groarke/Downloads/sdl-collision 2/CApp_OnInit.cpp",
+		"/Volumes/User/philippe_groarke/Downloads/SDL Tutorial 8/CEntity.cpp",
+		"/Volumes/User/philippe_groarke/Downloads/SDL Tutorial 8/CApp_OnInit.cpp",
+		"/Volumes/User/philippe_groarke/Downloads/SDL Tutorial 8/CApp_OnCleanup.cpp",
+		"/Volumes/User/philippe_groarke/Downloads/SDL Tutorial 8/CPlayer.cpp",
+		"/Volumes/User/philippe_groarke/Downloads/SDL Tutorial 8/CSurface.cpp",
+		"/Volumes/User/philippe_groarke/Downloads/SDL Tutorial 8/CApp_OnRender.cpp",
+		"/Volumes/User/philippe_groarke/Downloads/SDL Tutorial 8/CApp_OnLoop.cpp",
+		"/Volumes/User/philippe_groarke/Downloads/SDL Tutorial 8/CApp.h",
+		"/Volumes/User/philippe_groarke/Documents/XCode/birdyShmup/src/CEvent.cpp",
+		"/Volumes/User/philippe_groarke/Documents/XCode/birdyShmup/src/CEvent.h",
+		"/Volumes/User/philippe_groarke/Documents/XCode/birdyShmup/src/CCamera.cpp",
+		"/Volumes/User/philippe_groarke/Documents/XCode/birdyShmup/src/CCamera.h",
+		"/Volumes/User/philippe_groarke/Downloads/SDL Tutorial 8/CCamera.h",
+		"/Volumes/User/philippe_groarke/Downloads/SDL Tutorial 8/CCamera.cpp",
+		"/Volumes/User/philippe_groarke/Documents/XCode/birdyShmup/src/CSurface.h",
+		"/Volumes/User/philippe_groarke/Documents/XCode/birdyShmup/src/CMap.h",
+		"/Volumes/User/philippe_groarke/Documents/XCode/birdyShmup/src/CArea.h",
+		"/Volumes/User/philippe_groarke/Documents/XCode/socapexs-manaplus/.gitignore",
 		"/Volumes/User/philippe_groarke/Documents/XCode/SDLTutorialAnimation/CApp.h",
 		"/Volumes/User/philippe_groarke/Documents/XCode/SDLTutorialAnimation/CMap.cpp",
 		"/Volumes/User/philippe_groarke/Documents/XCode/SDLTutorialAnimation/CArea.cpp",
@@ -583,7 +655,6 @@
 		"/Volumes/User/philippe_groarke/Documents/XCode/SDLTutorialAnimation/CApp_OnRender.cpp",
 		"/Volumes/User/philippe_groarke/Documents/XCode/SDLTutorialAnimation/src/Makefile",
 		"/Volumes/User/philippe_groarke/Documents/XCode/SDLTutorialAnimation/CApp_OnEvent.cpp",
-		"/Volumes/User/philippe_groarke/Documents/XCode/birdyShmup/README.md",
 		"/Volumes/User/philippe_groarke/Documents/XCode/SDLTutorialAnimation/CTile.cpp",
 		"/Volumes/User/philippe_groarke/Documents/XCode/SDLTutorialAnimation/CTile.h",
 		"/Volumes/User/philippe_groarke/Downloads/sdl_maps/CEvent.h",
@@ -647,59 +718,7 @@
 		"/Volumes/User/philippe_groarke/Dropbox/Ming_Poly/INF1010/TP3_Headers/entreprise.h",
 		"/Volumes/User/philippe_groarke/Dropbox/Ming_Poly/INF1010/TP5/Message.cpp",
 		"/Volumes/User/philippe_groarke/Dropbox/Ming_Poly/INF1010/TP5/Matrice.h",
-		"/Volumes/User/philippe_groarke/Dropbox/Ming_Poly/INF1010/TP5/Message.h",
-		"/Volumes/User/philippe_groarke/Dropbox/Ming_Poly/INF1010/TP5/FoncteursOrdinateurs.h",
-		"/Volumes/User/philippe_groarke/Dropbox/Ming_Poly/log1000-13/TP6/tictactoe.cpp",
-		"/Volumes/User/philippe_groarke/Downloads/ExempleTest/ExempleTest\\Compte.h",
-		"/Volumes/User/philippe_groarke/Downloads/ExempleTest/ExempleTest\\EmployeBidon.h",
-		"/Volumes/User/philippe_groarke/Downloads/ExempleTest/ExempleTest\\mainTest.cpp",
-		"/Volumes/User/philippe_groarke/Dropbox/Ming_Poly/LOG1000/TP6/Makefile",
-		"/Volumes/User/philippe_groarke/Documents/XCode/manasource/sourceoftales/scripts/npcs/village/rebelphilip.lua",
-		"/Volumes/User/philippe_groarke/.bash_profile",
-		"/Volumes/User/philippe_groarke/.bashrc",
-		"/Volumes/User/philippe_groarke/.bash_rc",
-		"/Volumes/User/philippe_groarke/.profile",
-		"/Applications/MAMP/htdocs/Joomla_3/configuration.php",
-		"/Applications/MAMP/htdocs/Joomla_3/templates/evolonline/OldWebsite/css/page.css",
-		"/Applications/MAMP/htdocs/Joomla_3/components/com_kunena/template/blue_eagle/initialize.php",
-		"/Applications/MAMP/htdocs/Joomla_3/configuration 2.php",
-		"/Applications/MAMP/logs/php_error.log",
-		"/Applications/MAMP/htdocs/Joomla_3/administrator/components/index.html",
-		"/Applications/MAMP/htdocs/Joomla_3/administrator/components/com_kunena/kunena.php",
-		"/Applications/MAMP/htdocs/etest.evolonline.org-web/htdocs/configuration.php",
-		"/Applications/MAMP/htdocs/Joomla_3/bin/keychain.php",
-		"/Applications/MAMP/htdocs/Joomla_3/administrator/components/com_chronoforums/chronoforums.php",
-		"/Applications/MAMP/htdocs/Joomla_3/templates/evolonline/css/template.css",
-		"/Applications/MAMP/htdocs/Joomla_3/administrator/components/com_chronoforums/extensions/chronoforums/styles/prosilver/theme/forums.css",
-		"/Applications/MAMP/htdocs/Joomla_3/templates/evolonline/js/main.js",
-		"/Applications/MAMP/htdocs/Joomla_3/administrator/components/com_chronoforums/config.php",
-		"/Applications/MAMP/htdocs/Joomla_3/components/com_chronoforums/chronoforums.php",
-		"/Applications/MAMP/htdocs/Joomla_3/components/com_chronoforums/views/board/metadata.xml",
-		"/Applications/MAMP/htdocs/Joomla_3/components/com_chronoforums/views/board/tmpl/default.xml",
-		"/Applications/MAMP/htdocs/Joomla_3/modules/mod_coalawebsociallinks/mod_coalawebsociallinks.xml",
-		"/Applications/MAMP/htdocs/Joomla_3/modules/mod_coalawebsociallinks/tmpl/default.php",
-		"/Volumes/User/philippe_groarke/Dropbox/Ming_Poly/INF1010/TP5/Ordinateur.cpp",
-		"/Volumes/User/philippe_groarke/Dropbox/Ming_Poly/INF1010/TP5/Reseau.h",
-		"/Volumes/BOOTCAMP/Users/Philippe/Documents/Visual Studio 2010/Orchestra/Orchestra/include/vlcVideoPlayer.h",
-		"/Volumes/BOOTCAMP/Users/Philippe/Documents/Visual Studio 2010/Orchestra/Orchestra/include/videoInterface.h",
-		"/Volumes/User/philippe_groarke/Dropbox/Ming_Poly/INF1010/TP4/individu.cpp",
-		"/Volumes/User/philippe_groarke/Dropbox/Ming_Poly/INF1010/TP4/individu.h",
-		"/Volumes/User/philippe_groarke/Dropbox/Ming_Poly/INF1010/test.cpp",
-		"/Volumes/User/philippe_groarke/Dropbox/Ming_Poly/INF1010/TP2/FichiersTP2/Triangle.h",
-		"/Volumes/User/philippe_groarke/Dropbox/Ming_Poly/INF1010/TP3/vinsetfromages (Philippe G's conflicted copy 2013-02-14).h",
-		"/Volumes/User/philippe_groarke/Downloads/libpololu-avr/src/PololuQTRSensors/PololuQTRSensors.cpp",
-		"/Volumes/User/philippe_groarke/Dropbox/Ming_Poly/LOG1000/TP5/Makefile",
-		"/Volumes/User/philippe_groarke/Documents/Poly/inf1995-1418/codeCommun/tp/projet/libs/Makefile",
-		"/Volumes/User/philippe_groarke/Documents/Poly/inf1995-1418/codeCommun/tp/projet/Makefile",
-		"/Volumes/User/philippe_groarke/Documents/Poly/inf1995-1418/codeCommun/tp/projet/main.cpp",
-		"/Volumes/User/philippe_groarke/Documents/XCode/Combini/main.cpp",
-		"/Volumes/User/philippe_groarke/Documents/Poly/inf1995-1418/codeCommun/tp/projet/libs/libPwm/libPwm.h",
-		"/Volumes/User/philippe_groarke/Documents/Poly/inf1995-1418/codeCommun/tp/projet/libs/libPwm/libPwm.cpp",
-		"/Volumes/User/philippe_groarke/Documents/Poly/inf1995-1418/codeCommun/tp/projet/libs/include.h",
-		"/Volumes/User/philippe_groarke/Documents/Poly/inf1995-1418/codeCommun/tp/projet/libs/libRoues/Makefile",
-		"/Applications/MAMP/htdocs/Joomla_3/templates/evolonline/language/en-GB/en-GB.tpl_evolonline.ini",
-		"/Applications/MAMP/htdocs/Joomla_3/templates/evolonline/html/modules.php",
-		"/Applications/MAMP/htdocs/Joomla_3/templates/evolonline/index.php"
+		"/Volumes/User/philippe_groarke/Dropbox/Ming_Poly/INF1010/TP5/Message.h"
 	],
 	"find":
 	{
@@ -718,6 +737,20 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"mont tremblan",
+			"wenceslas",
+			"CEntity",
+			"OnAnimate",
+			"onAnimate",
+			"OnAnimate",
+			"onAnimate",
+			"onanimate",
+			"col_x",
+			"onanimate",
+			"NewX",
+			"MoveX",
+			"MoveY",
+			"NewY",
 			"ManaPlus",
 			"\n",
 			"virtual ",
@@ -831,21 +864,7 @@
 			"shadow",
 			"navigation",
 			"header",
-			"color",
-			"top-navigation",
-			"p-n",
-			"top",
-			"top-navigation",
-			"bread",
-			"h4",
-			"page-header",
-			"padding-bottom: 8",
-			"padding-bottom: ",
-			"padding-bottom: 8px",
-			"padding-bottom\npadding-bottom",
-			"padding-bottom: 8px;\npadding-bottom",
-			"  padding-bottom: 8px;\npadding-bottom",
-			"  padding-bottom: 8px;\npadding-bottom:"
+			"color"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -910,6 +929,61 @@
 		{
 			"sheets":
 			[
+<<<<<<< HEAD
+=======
+				{
+					"buffer": 0,
+					"file": "src/CSurface.cpp",
+					"settings":
+					{
+						"buffer_size": 1421,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/CApp.cpp",
+					"settings":
+					{
+						"buffer_size": 583,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+>>>>>>> Plus de refacotring et cleanup de memory leaks. Classe CBulletSpawner.
 			]
 		}
 	],
@@ -919,7 +993,7 @@
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 33.0
 	},
 	"layout":
 	{

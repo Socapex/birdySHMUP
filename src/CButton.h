@@ -5,6 +5,8 @@
 //  Created by Benjamin Brodeur Mathieu on 2013-07-12.
 //  Copyright (c) 2013 Groarke and co. All rights reserved.
 //
+#ifndef __birdyShmup__CButton__
+#define __birdyShmup__CButton__
 
 #include <SDL.h>
 #include <SDL_image.h>
@@ -28,3 +30,4 @@ private:
 	int x_;
 	int y_;
 };
+#endif /* defined(__birdyShmup__CButton__) */

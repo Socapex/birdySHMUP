@@ -9,8 +9,6 @@
 #include "CParticles.h"
 #include "CEntity.h"
 
-std::vector<CParticles*> CParticles::particleList;
-
 CParticles::CParticles()
 {
 }
@@ -56,8 +54,8 @@ CParticles::CParticles(int R, int G, int B, int x, int y, int width, int height,
     x_ = x;
     y_ = y;
     play_ = false;
-    
-    
+
+
     for (int i = 0; i < quantity; ++i)
     {
         SDL_Rect rect;
@@ -69,8 +67,6 @@ CParticles::CParticles(int R, int G, int B, int x, int y, int width, int height,
     }
 
     createAnimation(animationType);
-
-    particleList.push_back(this);
 }
 
 CParticles::CParticles(std::string type, int x, int y, float emitSpeed,
@@ -79,29 +75,29 @@ CParticles::CParticles(std::string type, int x, int y, float emitSpeed,
                        bool follow)
 {
 
-    CEntity entity;
+    CEntity* entity = new CEntity();
 
     FilePaths Path;
 
     if (type == "explosion1")
     {
-        entity.onLoad(Path.explosion1Path.c_str(), 320, 300, 20);
+        entity->onLoad(Path.Files["explosion1Path"].c_str(), 320, 300, 20);
         
     }
 
     else if (type == "explosion2")
     {
-        entity.onLoad(Path.explosion2Path.c_str(), 256, 192, 64);
+        entity->onLoad(Path.Files["explosion2Path"].c_str(), 256, 192, 64);
     }
 
     else if (type == "explosion3")
     {
-        entity.onLoad(Path.explosion3Path.c_str(), 96, 96, 17);
+        entity->onLoad(Path.Files["explosion3Path"].c_str(), 96, 96, 17);
     }
 
     else if (type == "explosion4")
     {
-        entity.onLoad(Path.explosion4Path.c_str(), 64, 64, 25);
+        entity->onLoad(Path.Files["explosion4Path"].c_str(), 64, 64, 25);
     }
 
     quantity_ = quantity;
@@ -110,8 +106,8 @@ CParticles::CParticles(std::string type, int x, int y, float emitSpeed,
     spread_ = spread;
     startTime_ = SDL_GetTicks();
     lifeTime_ = lifeTime;
-    entity.setX(x);
-    entity.setY(y);
+    entity->setX(x);
+    entity->setY(y);
     x_ = x;
     y_ = y;
     play_ = false;
@@ -120,26 +116,49 @@ CParticles::CParticles(std::string type, int x, int y, float emitSpeed,
     {
         surfacesToDraw_.push_back(entity);
     }
-
-    CParticles::particleList.push_back(this);
-    
-
 }
 
 CParticles::~CParticles()
-{}
+{
+    for (int i = 0; i < surfacesToDraw_.size(); ++i)
+    {
+        delete surfacesToDraw_[i];
+    }
+    surfacesToDraw_.clear();
+
+    for (int i = 0; i < surfacesDrawing_.size(); ++i)
+    {
+        delete surfacesDrawing_[i].first;
+    }
+    surfacesDrawing_.clear();
+}
 
 
 void CParticles::play(const int x, const int y)
 {
     play_ = true;
+    startTime_ = SDL_GetTicks();
 
+    // Reset vectors
+    for (int i = 0; i < surfacesDrawing_.size(); ++i)
+    {
+        surfacesToDraw_.push_back(surfacesDrawing_.back().first);
+        surfacesDrawing_.pop_back();
+    }
+
+    for (int i = 0; i < rectanglesDrawing_.size(); ++i)
+    {
+        rectanglesToDraw_.push_back(rectanglesDrawing_.back().first);
+        rectanglesDrawing_.pop_back();
+    }
+
+    // Reset x and y
     if (!surfacesToDraw_.empty())
     {
         for (int i = 0; i < surfacesToDraw_.size(); ++i)
         {
-            surfacesToDraw_[i].setX(x);
-            surfacesToDraw_[i].setY(y);
+            surfacesToDraw_[i]->setX(x);
+            surfacesToDraw_[i]->setY(y);
         }
     }
 
@@ -233,7 +252,7 @@ void CParticles::onRender(SDL_Surface* surfDisplay)
             if (startTime_ + emitSpeed_ < SDL_GetTicks())
             {
                 startTime_ = SDL_GetTicks();
-                std::pair<CEntity, unsigned int> pair_(surfacesToDraw_.back(),
+                std::pair<CEntity*, unsigned int> pair_(surfacesToDraw_.back(),
                                                        startTime_);
                 surfacesDrawing_.push_back(pair_);
                 surfacesToDraw_.pop_back();
@@ -246,19 +265,32 @@ void CParticles::onRender(SDL_Surface* surfDisplay)
             {
                 if (surfacesDrawing_[i].second + lifeTime_ > SDL_GetTicks())
                 {
-                    CEntity entity = surfacesDrawing_[i].first;
+                    CEntity* entity = surfacesDrawing_[i].first;
 
                     if (follow_)
                     {
-                        entity.setX(x_ - (entity.getWidth() / 2));
-                        entity.setY(y_ - (entity.getHeight() / 2));
+                        entity->setX(x_ - (entity->getWidth() / 2));
+                        entity->setY(y_ - (entity->getHeight() / 2));
                     }
-                    entity.setX(entity.getX() + rand() % (spread_ * 2) - spread_);
-                    entity.setY(entity.getY() + rand() % (spread_ * 2) - spread_);
+                    entity->setX(entity->getX() + rand() % (spread_ * 2) - spread_);
+                    entity->setY(entity->getY() + rand() % (spread_ * 2) - spread_);
                     surfacesDrawing_[i].first = entity;
-                    surfacesDrawing_[i].first.onRender(surfDisplay);
+                    surfacesDrawing_[i].first->onRender(surfDisplay);
                 }
             }
+        }
+
+        // Done drawing?
+        if (surfacesToDraw_.empty() && !surfacesDrawing_.empty())
+        {
+            if (surfacesDrawing_.back().second + lifeTime_ < SDL_GetTicks())
+                play_ = false;
+        }
+
+        if (rectanglesToDraw_.empty() && !rectanglesDrawing_.empty())
+        {
+            if (rectanglesDrawing_.back().second + lifeTime_ < SDL_GetTicks())
+                play_ = false;
         }
     }
 }
@@ -296,7 +328,11 @@ void CParticles::createAnimation(std::string type)
 
 
 
-
+// GETTERS SETTERS
+bool CParticles::getPlaying() const
+{
+    return play_;
+}
 
 void CParticles::setX(const int x)
 {

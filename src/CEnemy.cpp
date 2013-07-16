@@ -8,19 +8,26 @@
 
 #include "CEnemy.h"
 #include "CPlayer.h"
+#include "CSFX.h"
 
 CEnemy::CEnemy()
 {
-    life_ = ENEMY1_LIFE;
-
     animationStart = 0;
+    killPoints_ = 0;
+    shootDelay_ = 0;
+    nextShot_ = 0;
 
-    deathExplosion_ = new CParticles("explosion3", x_, y_, 0,
-                                         1000, 1, 1);
+    deathExplosion_ = NULL;
+    bullets_ = NULL;
+    deathSound_ = NULL;
 }
 
 CEnemy::~CEnemy()
-{}
+{
+    if (deathExplosion_ != NULL) delete deathExplosion_;
+    if (bullets_ != NULL) delete bullets_;
+    if (deathSound_ != NULL) delete deathSound_;
+}
 
 
 
@@ -30,27 +37,31 @@ CEnemy::~CEnemy()
 
 // FUNCTION OVERLOAD
 
-bool CEnemy::onLoad(const char* file, const int width, const int height,
-                     const int maxFrames)
-{
-    if (CEntity::onLoad(file, width, height, maxFrames) == false) return false;
-
-    return true;
-}
-
-void CEnemy::onLoop(const int vectorPosition, CPlayer* player)
+void CEnemy::onLoop(CPlayer* player)
 {
     if (!getDead())
     {
         if (checkLife())
         {
-
+            if (nextShot_ < SDL_GetTicks())
+            {
+                // Continue to increment timer even when offscreen
+                nextShot_ += shootDelay_;
+                
+                    // inside screen?
+                    if (x_ >= 0 && (x_ - width_) < WWIDTH
+                        && y_ >= 0 && (y_ - height_) < WHEIGHT)
+                    {
+                        bullets_->shoot(x_, y_);
+                    }
+            }
         }
         else
         {
             setDead(true);
-            player->setPlayerPoints(player->getPlayerPoints() + 100);
+            player->setPlayerPoints(player->getPlayerPoints() + killPoints_);
             deathExplosion_->play(CEntity::x_, CEntity::y_);
+            deathSound_->play(SFX_AUDIO_CHANNEL_DEATH);
 
         }
     }
@@ -64,6 +75,8 @@ bool CEnemy::onCollision(CEntity *entity)
 void CEnemy::onRender(SDL_Surface *surfDisplay)
 {
     onAnimate();
+    bullets_->onRender(surfDisplay);
+    deathExplosion_->onRender(surfDisplay);
     CEntity::onRender(surfDisplay);
 }
 
@@ -87,4 +100,5 @@ int CEnemy::getAnimStart() const
 void CEnemy::setAnimStart(const int time)
 {
     animationStart = time;
+    nextShot_ += time;
 }

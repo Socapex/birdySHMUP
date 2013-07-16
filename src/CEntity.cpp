@@ -27,7 +27,13 @@ CEntity::CEntity()
 }
 
 CEntity::~CEntity()
-{}
+{
+    if (surfaceEntity_) SDL_FreeSurface(surfaceEntity_);
+
+    surfaceEntity_ = NULL;
+
+    delete animControl;
+}
 
 
 // FUNCTIONS
@@ -96,7 +102,7 @@ bool CEntity::onLoad(const char* file, const int width, const int height,
     return true;
 }
 
-void CEntity::onLoop(const int vectorPosition, CPlayer* player)
+void CEntity::onLoop(CPlayer* player)
 {
 
 }
@@ -113,15 +119,6 @@ void CEntity::onRender(SDL_Surface* surfDisplay)
                          (currentFrameRow + animControl->getCurrentFrame()) * height_,
                          width_, height_);
     }
-}
-
-void CEntity::onCleanup()
-{
-    if (surfaceEntity_) SDL_FreeSurface(surfaceEntity_);
-
-    surfaceEntity_ = NULL;
-
-    delete animControl;
 }
 
 void CEntity::onAnimate()

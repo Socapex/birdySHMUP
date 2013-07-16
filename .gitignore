@@ -73,7 +73,7 @@ packages/
 *.testsettings
 
 #executable
-Game
+/Game
 
 #mac crap
 .DS_Store

@@ -53,10 +53,10 @@ int CButton::getY()
 
 int CButton::getWidth()
 {
-	return surfButton_->h;
+	return surfButton_->w;
 }
 
 int CButton::getHeight()
 {
-	return surfButton_->w;
+	return surfButton_->h;
 }

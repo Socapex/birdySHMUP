@@ -16,24 +16,43 @@ CBackground::CBackground()
     y_ = 0;
 }
 
+CBackground::CBackground(const char* file)
+{
+	backgroundLevel_ = BACKGROUND_SCROLL_SPEED_LEVEL_1;
+
+    x_ = 0;
+    y_ = 0;
+
+
+    surfBackground_ = CSurface::onLoad(file);
+
+    // Centrer l'image pour le parallax
+    x_ = (WWIDTH / 2) - (surfBackground_->w / 2);
+    
+	// Savoir ou le player spawn au debut pour le parallax
+	tempX_ = CEntity::entityList[0]->getX();
+	tempY_ = CEntity::entityList[0]->getY();
+
+}
+
+
 CBackground::~CBackground()
 {
     SDL_FreeSurface(surfBackground_);
 }
 
-bool CBackground::onLoad(const char* file)
-{
-    if ((surfBackground_ = CSurface::onLoad(file)) == NULL) return false;
 
-    // Centrer l'image pour le parallax
-    x_ = (WWIDTH / 2) - (surfBackground_->w / 2);
 
-	// Savoir ou le player spawn au debut pour le parallax	
-	tempX_ = CEntity::entityList[0]->getX();
-	tempY_ = CEntity::entityList[0]->getY();
 
-    return true;
-}
+
+
+
+
+
+
+
+
+
 
 void CBackground::onRender(SDL_Surface* surfDisplay)
 {
@@ -62,22 +81,22 @@ void CBackground::onAnimate()
 	//Paralax en x
 	if(tempX_ < CEntity::entityList[0]->getX())
 	{
-		x_ -= (float)backgroundLevel_/4;
+		x_ -= (float)backgroundLevel_/4 * CFPS::FPSControl.getSpeedFactor();
 	}
 	else if(tempX_ > CEntity::entityList[0]->getX())
 	{
-		x_ += (float)backgroundLevel_/4;
+		x_ += (float)backgroundLevel_/4 * CFPS::FPSControl.getSpeedFactor();
 	}
 	tempX_ = CEntity::entityList[0]->getX();
 
 	//Parallax en y
 	if(tempY_ < CEntity::entityList[0]->getY())
 	{
-		y_ -= (float)backgroundLevel_/4;
+		y_ -= (float)backgroundLevel_/4 * CFPS::FPSControl.getSpeedFactor();
 	}
 	else if(tempY_ > CEntity::entityList[0]->getY())
 	{
-		y_ += (float)backgroundLevel_/4;
+		y_ += (float)backgroundLevel_/4 * CFPS::FPSControl.getSpeedFactor();
 	}
 	tempY_ = CEntity::entityList[0]->getY();
 

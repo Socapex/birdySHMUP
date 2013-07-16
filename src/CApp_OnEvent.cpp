@@ -7,41 +7,102 @@ void CApp::onEvent(SDL_Event* event)
 
 void CApp::OnKeyDown(SDLKey sym, SDLMod mod, Uint16 unicode)
 {
-    switch(sym)
+
+    if (currentLevel_ < 1)
     {
+        switch(sym)
+            {
+                case SDLK_SPACE:
+                {
+                    currentLevel_ = 1;
+                    break;
+                }
 
-        case SDLK_SPACE:
-        {
-            Player.setShooting(true);
-            break;
-        }
+                case SDLK_LEFT:
+                {
+                    //TODO previous button underlined
+                    break;
+                }
 
-        case SDLK_LEFT:
-        {
-            Player.setMoveLeft(true);
-            break;
-        }
+                case SDLK_RIGHT:
+                {
+                    //TODO next button underlined
+                    break;
+                }
 
-        case SDLK_RIGHT:
-        {
-            Player.setMoveRight(true);
-            break;
-        }
+                case SDLK_UP:
+                {
+                    //TODO previous button underlined
+                    break;
+                }
 
-        case SDLK_UP:
-        {
-            Player.setMoveUp(true);
-            break;
-        }
+                case SDLK_DOWN:
+                {
+                    //TODO next button underlined
+                    break;
+                }
 
-        case SDLK_DOWN:
-        {
-            Player.setMoveDown(true);
-            break;
-        }
+                case SDLK_RETURN:
+                {
+                    //TODO activate button
+                    break;
+                }
 
-        default: {}
+                case SDLK_ESCAPE:
+                {
+                    SDL_Quit();
+                    break;
+                }
+
+                default: {}
+            }
     }
+    else
+    {
+        switch(sym)
+            {
+
+                case SDLK_SPACE:
+                {
+                    Player->setShooting(true);
+                    currentLevel_ = 1;
+                    break;
+                }
+
+                case SDLK_LEFT:
+                {
+                    Player->setMoveLeft(true);
+                    break;
+                }
+
+                case SDLK_RIGHT:
+                {
+                    Player->setMoveRight(true);
+                    break;
+                }
+
+                case SDLK_UP:
+                {
+                    Player->setMoveUp(true);
+                    break;
+                }
+
+                case SDLK_DOWN:
+                {
+                    Player->setMoveDown(true);
+                    break;
+                }
+
+                case SDLK_ESCAPE:
+                {
+                    SDL_Quit();
+                    break;
+                }                
+
+                default: {}
+            }
+    }
+    
 }
 
 void CApp::OnKeyUp(SDLKey sym, SDLMod mod, Uint16 unicode)
@@ -51,48 +112,35 @@ void CApp::OnKeyUp(SDLKey sym, SDLMod mod, Uint16 unicode)
 
         case SDLK_SPACE:
         {
-            Player.setShooting(false);
+            Player->setShooting(false);
+            currentLevel_ = 1;
             break;
         }
 
         case SDLK_LEFT:
         {
-            Player.setMoveLeft(false);
+            Player->setMoveLeft(false);
             break;
         }
 
         case SDLK_RIGHT:
         {
-            Player.setMoveRight(false);
+            Player->setMoveRight(false);
             break;
         }
 
         case SDLK_UP:
         {
-            Player.setMoveUp(false);
+            Player->setMoveUp(false);
             break;
         }
 
         case SDLK_DOWN:
         {
-            Player.setMoveDown(false);
+            Player->setMoveDown(false);
             break;
         }
 
         default: {}
     }
 }
-
-
-
-
-
-
-
-
-
-// Exemples
-// case SDLK_UP:       CCamera::CameraControl.OnMove(0, 5); break;
-// case SDLK_DOWN:     CCamera::CameraControl.OnMove(0, -5); break;
-// case SDLK_LEFT:     CCamera::CameraControl.OnMove(5, 0); break;
-// case SDLK_RIGHT:    CCamera::CameraControl.OnMove(-5, 0); break;

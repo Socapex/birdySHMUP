@@ -9,34 +9,26 @@
 #include "Defines.h"
 #include "FilePaths.h"
 
-#include "CSurface.h"
+#include "Game/Level1.h"
 #include "CEvent.h"
-#include "CEntity.h"
 #include "CCamera.h"
 #include "CPlayer.h"
 #include "CFPS.h"
 #include "CGUI.h"
-#include "CParticles.h"
-#include "CBackground.h"
-#include "CEnemy.h"
-#include "CEnemySpawner.h"
-#include "CMusic.h"
 #include "CSplashScreen.h"
 #include "CMainMenu.h"
 
 class CApp : public CEvent {
 public:
     CApp();
+    ~CApp();
 
     int OnExecute();
 
-    bool initSDL();
-    bool onInit();
     void onEvent(SDL_Event* event);
     void onExit();
     void onLoop();
     void onRender();
-    void onCleanup();
 
     // BOUTONS
     void OnKeyDown(SDLKey sym, SDLMod mod, Uint16 unicode);
@@ -45,29 +37,19 @@ public:
 private:
     SDL_Surface* surfDisplay_;
 
-    CPlayer Player;
+    CPlayer* Player;
 
-    CEnemySpawner enemySpawner_;
+    CGUI* gUI_;
 
-    CBackground background1_;
-	CBackground parallax1_;
-    CBackground parallax2_;
-
-    CMusic music_;
+    Level1* level1_;
 
     // Les Menu
     CSplashScreen splashScreen1_;
-
     CMainMenu mainMenu1_;
 
-    //CAnimation Anim_Yoshi_;
-
-    //SDL_Surface* surfBackground_;
+    int currentLevel_;
 
     bool running_;
-
-    // EXEMPLES
-    //SDL_Surface* surfTest_;
 };
 
 #endif // CAPP_H

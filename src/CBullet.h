@@ -13,6 +13,8 @@
 
 #include "CEntity.h"
 
+class CSFX;
+
 class CBullet : public CEntity {
 public:
     CBullet();
@@ -20,16 +22,18 @@ public:
 
     void shoot(const int x, const int y);
 
-    bool onLoad(const char* file, const int width, const int height,
-                const int maxFrames);
-    bool onCollision(CEntity* entity);
-    void onRender(SDL_Surface* surfDisplay);
-    void onAnimate();
+    virtual bool onCollision(CEntity* entity);
+    virtual void onRender(SDL_Surface* surfDisplay);
 
-private:
+    CParticles* getDeathExplosion() const;
+    bool getPlaying() const;
+
+protected:
     CParticles* deathExplosion_;
+    CSFX* shootSFX_;
 
-    bool enemyBullet;
+    float damage_;
+    float speed_;
 
 };
 

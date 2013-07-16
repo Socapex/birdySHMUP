@@ -7,31 +7,40 @@
 //
 
 #include "CBullet.h"
+#include "CSFX.h"
 
 CBullet::CBullet()
 {
     x_ = 0;
     y_ = 0;
-    enemyBullet = false;
-    setDead(true);
+    damage_ = 0;
+    speed_ = 0;
+    CEntity::setDead(true);
 
-    deathExplosion_ = new CParticles(255, 255, 0, x_, y_, 2, 3, 0, 100,
-                                               10, 10, "fireworks");
+    deathExplosion_ = NULL;
+    shootSFX_ = NULL;
+
 }
 
 CBullet::~CBullet()
 {
-    
+    if (deathExplosion_ != NULL) delete deathExplosion_;
+    if (shootSFX_ != NULL) delete shootSFX_;
 }
+
+
+
+
+
+
 
 void CBullet::shoot(const int x, const int y)
 {
     x_ = x;
     y_ = y;
-    setDead(false);
+    CEntity::setDead(false);
+    shootSFX_->play(SFX_AUDIO_CHANNEL_LASER);
 }
-
-
 
 
 
@@ -41,50 +50,25 @@ void CBullet::shoot(const int x, const int y)
 
 // FUNCTION OVERLOAD
 
-bool CBullet::onLoad(const char* file, const int width, const int height,
-                     const int maxFrames)
-{
-    if (CEntity::onLoad(file, width, height, maxFrames) == false) return false;
-
-    return true;
-}
-
 bool CBullet::onCollision(CEntity* entity)
 {
+    // this bullet
+    setDead(true);
 
-    // TODO: Different collision checks for different bullet types
-    if (!enemyBullet)
-    {
-        if (entity->getType() == ENTITY_TYPE_ENEMY1 && entity->getLife() > 0)
-        {
-            setDead(true);
-            
-            deathExplosion_->play(x_, y_);
+    deathExplosion_->play(x_, y_);
 
-            // TODO: Checker le genre de bullet
-            entity->setLife(entity->getLife() - 10.0);
-        }
-    }
-
-
+    // TODO: Checker le genre de bullet
+    entity->setLife(entity->getLife() - damage_);
     return true;
 }
 
 void CBullet::onRender(SDL_Surface *surfDisplay)
 {
-    onAnimate();
+    checkCollision(x_, y_);
+    deathExplosion_->onRender(surfDisplay);
     CEntity::onRender(surfDisplay);
 }
 
-void CBullet::onAnimate()
-{
-    y_ -= BULLET_1_SPEED * CFPS::FPSControl.getSpeedFactor();
-
-    checkCollision(x_, y_);
-
-    if (y_ < 0) setDead(true);
-
-}
 
 
 
@@ -97,7 +81,13 @@ void CBullet::onAnimate()
 
 
 // GETTERS
+CParticles* CBullet::getDeathExplosion() const
+{
+    return deathExplosion_;
+}
 
-
-
+bool CBullet::getPlaying() const
+{
+    return deathExplosion_->getPlaying();
+}
 

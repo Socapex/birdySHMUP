@@ -39,6 +39,7 @@ private:
 
     SDL_Surface* points_;
     SDL_Surface* getReadySurface_;
+    SDL_Surface* fps_;
 
     TTF_Font* pointFont_;
     TTF_Font* getReadyFont_;

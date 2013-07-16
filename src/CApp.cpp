@@ -35,8 +35,8 @@ CApp::CApp()
     SDL_EnableKeyRepeat(1, SDL_DEFAULT_REPEAT_INTERVAL / 3);
 
     surfDisplay_ = NULL;
-    surfDisplay_ = SDL_SetVideoMode(WWIDTH, WHEIGHT, 32, SDL_HWSURFACE
-                                    | SDL_DOUBLEBUF);
+    surfDisplay_ = SDL_SetVideoMode(WWIDTH, WHEIGHT, 32, SDL_SWSURFACE
+                                    | SDL_DOUBLEBUF | SDL_ASYNCBLIT);
 
 
     level1_ = NULL;
@@ -99,6 +99,7 @@ int CApp::OnExecute()
         while(SDL_PollEvent(&event)) onEvent(&event);
         onLoop();
         onRender();
+        //SDL_Delay(1);
     }
 
     return 0;

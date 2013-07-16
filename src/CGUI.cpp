@@ -46,6 +46,7 @@ CGUI::CGUI()
 
 
     points_ = NULL;
+    fps_ = NULL;
     getReadySurface_ = NULL;
     pointFont_ = NULL;
     getReadyFont_ = NULL;
@@ -65,6 +66,7 @@ CGUI::CGUI()
 CGUI::~CGUI()
 {
     SDL_FreeSurface(points_);
+    SDL_FreeSurface(fps_);
     SDL_FreeSurface(getReadySurface_);
     
     TTF_CloseFont(pointFont_);
@@ -95,16 +97,16 @@ void CGUI::onLoop(CPlayer* player)
     // Check player life
     healthBar_.w = player->getLife() / PLAYER_LIFE * 100;
 
-    /******************* POUR BEN :D**********************/
-
+    // Get player points
     std::stringstream ss;
-
     ss << player->getPlayerPoints();
-
-
     pointText_ = ss.str();
-
     points_ = TTF_RenderText_Blended(pointFont_, pointText_.c_str(), white);
+
+    // Get fps
+    std::stringstream ssfps;
+    ssfps << "FPS: " << CFPS::FPSControl.getFPS();
+    fps_ = TTF_RenderText_Blended(pointFont_, ssfps.str().c_str(), white);
 
 }
 
@@ -115,8 +117,11 @@ void CGUI::onRender(SDL_Surface* surfDisplay)
     SDL_FillRect(surfDisplay, &healthBar_,
                  SDL_MapRGB(surfDisplay->format, 255, 255, 0));
 
-
+    // Points
     CSurface::OnDraw(surfDisplay, points_, WWIDTH / 2 - points_->w, 10);
+
+    // FPS
+    CSurface::OnDraw(surfDisplay, fps_, WWIDTH - fps_->w - 10, 10);
 
     if (getReadyPlaying)
     {
@@ -132,7 +137,7 @@ void CGUI::onRender(SDL_Surface* surfDisplay)
 
         CSurface::OnDraw(surfDisplay, getReadySurface_,
                          (WWIDTH / 2) - (getReadySurface_->w / 2),
-                         WHEIGHT / 3) - (getReadySurface_->h / 2);
+                         (WHEIGHT / 3) - (getReadySurface_->h / 2));
 
         if (SDL_GetTicks() > getReadyTime) getReadyPlaying = false;
         

@@ -134,6 +134,20 @@ CParticles::~CParticles()
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 void CParticles::play(const int x, const int y)
 {
     play_ = true;

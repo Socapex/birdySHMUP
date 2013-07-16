@@ -14,6 +14,7 @@
 #include "Defines.h"
 #include "CSurface.h"
 #include "CFPS.h"
+#include "CEntity.h"
 
 class CBackground {
 public:
@@ -32,8 +33,12 @@ private:
 
 	int backgroundLevel_;
 
-    int x_;
+    float x_;
     float y_;
+	
+	float tempX_; // Keep track of last player position
+	float tempY_; // Keep track of last player position
+	
 
 };
 

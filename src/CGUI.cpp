@@ -21,9 +21,25 @@ CGUI::CGUI()
     healthBar_.y = 12;
     healthBar_.w = 100;
     healthBar_.h = 10;
-
+	
+	//Louche, lorsqu'on initialise toute la structure en meme temps,
+	//VS n'aime pas ca... Comme au-dessus, je vais initialiser chaque
+	//champ un par un.
+	/*
     black = {0, 0, 0, 0};
     white = {255, 255, 255, 0};
+	*/
+
+	black.r = 0;
+	black.g = 0;
+	black.b = 0;
+	black.unused = 0;
+
+	white.r = 0;
+	white.g = 0;
+	white.b = 0;
+	white.unused = 0;
+
 
     getReadyPlaying = false;
     getReadyTime = 3500;

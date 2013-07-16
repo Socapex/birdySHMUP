@@ -49,10 +49,10 @@ bool CApp::onInit()
     // BACKGROUND
     if ((background1_.onLoad(Path.backgroundPath.c_str())) == false) return false;
 	if ((parallax1_.onLoad(Path.parallaxPath.c_str())) == false) return false;
-	else parallax1_.setBackgroundLevel(BACKGROUND_SCROLL_SPEED_LEVEL_4);
+	parallax1_.setBackgroundLevel(BACKGROUND_SCROLL_SPEED_LEVEL_4);
 
     if ((parallax2_.onLoad(Path.parallax2Path.c_str())) == false) return false;
-    parallax2_.setBackgroundLevel(BACKGROUND_SCROLL_SPEED_LEVEL_2);
+	parallax2_.setBackgroundLevel(BACKGROUND_SCROLL_SPEED_LEVEL_2);
 
     CGUI::gUI.onLoad();
     CGUI::gUI.getReady();

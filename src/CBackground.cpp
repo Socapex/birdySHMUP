@@ -28,6 +28,10 @@ bool CBackground::onLoad(const char* file)
     // Centrer l'image pour le parallax
     x_ = (WWIDTH / 2) - (surfBackground_->w / 2);
 
+	// Savoir ou le player spawn au debut pour le parallax	
+	tempX_ = CEntity::entityList[0]->getX();
+	tempY_ = CEntity::entityList[0]->getY();
+
     return true;
 }
 
@@ -52,7 +56,31 @@ void CBackground::onRender(SDL_Surface* surfDisplay)
 
 void CBackground::onAnimate()
 {
+	// Ajouter un facteur pour accelerer l'effet de deplacement en y
 	y_ += backgroundLevel_ * CFPS::FPSControl.getSpeedFactor();
+
+	//Paralax en x
+	if(tempX_ < CEntity::entityList[0]->getX())
+	{
+		x_ -= (float)backgroundLevel_/4;
+	}
+	else if(tempX_ > CEntity::entityList[0]->getX())
+	{
+		x_ += (float)backgroundLevel_/4;
+	}
+	tempX_ = CEntity::entityList[0]->getX();
+
+	//Parallax en y
+	if(tempY_ < CEntity::entityList[0]->getY())
+	{
+		y_ -= (float)backgroundLevel_/4;
+	}
+	else if(tempY_ > CEntity::entityList[0]->getY())
+	{
+		y_ += (float)backgroundLevel_/4;
+	}
+	tempY_ = CEntity::entityList[0]->getY();
+
 }
 
 void CBackground::setBackgroundLevel(int backgroundLevel)

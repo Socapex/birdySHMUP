@@ -82,25 +82,25 @@ FilePaths::FilePaths()
 
 #elif __WIN32__
 
-	player1Path.replace(0, std::string::npos, "../../img/cube.png");
+	player1Path.insert(0, "../../");
     
-    entity1Path.replace(0, std::string::npos, "../../img/yoshi.bmp");
-    entity2Path.replace(0, std::string::npos, "../../img/yoshi.bmp");
+    entity1Path.insert(0, "../../");
+    entity2Path.insert(0, "../../");
     
-    backgroundPath.replace(0, std::string::npos, "../../img/cloud-1.jpg");
-	parallaxPath.replace(0, std::string::npos, "../../img/parallax.png");
-    parallax2Path.replace(0, std::string::npos, "../../img/parallax.png");
+    backgroundPath.insert(0, "../../");
+	parallaxPath.insert(0, "../../");
+    parallax2Path.insert(0, "../../");
 
-    bullet1Path.replace(0, std::string::npos, "../../img/bullet.png");
+    bullet1Path.insert(0, "../../");
     
-	explosion1Path.replace(0, std::string::npos, "../../img/particles/explosion1.jpg");
-    explosion2Path.replace(0, std::string::npos, "../../img/particles/explosion2.png");
-    explosion3Path.replace(0, std::string::npos, "../../img/particles/explosion3.png");
-    explosion4Path.replace(0, std::string::npos, "../../img/particles/explosion4.png");
+	explosion1Path.insert(0, "../../");
+    explosion2Path.insert(0, "../../");
+    explosion3Path.insert(0, "../../");
+    explosion4Path.insert(0, "../../");
 
-    font1Path.replace(0, std::string::npos, "../../fonts/FixdStation.ttf");
+    font1Path.insert(0, "../../");
 
-    song1Path.replace(0, std::string::npos, "../../fonts/FixdStation.ttf");
+    song1Path.insert(0, "../../");
 
     splash1Path.replace(0, std::string::npos, "../../img/Screens/SplashScreen/SuperSplash.png");
 

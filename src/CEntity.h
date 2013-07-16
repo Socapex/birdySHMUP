@@ -20,7 +20,7 @@ public:
     CEntity();
     virtual ~CEntity();
 
-    bool collides(const int oX, const int oY, const int oW, const int oH);
+    bool collides(const float oX, const float oY, const float oW, const float oH);
     bool checkLife();
 
 
@@ -54,8 +54,8 @@ public:
 
 
 protected:
-    bool checkCollision(const int newX, const int newY);
-    bool checkEntityCollision(CEntity* entity, const int newX, const int newY);
+    bool checkCollision(const float newX, const float newY);
+    bool checkEntityCollision(CEntity* entity, const float newX, const float newY);
 
     CAnimation* animControl;
     SDL_Surface* surfaceEntity_;

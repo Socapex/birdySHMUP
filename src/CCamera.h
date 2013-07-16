@@ -13,12 +13,12 @@ public:
     ~CCamera();
 
     // SETTERS
-    void setPos(const int x, const int y);
+    void setPos(const float x, const float y);
     void setTarget(float* x, float* y);
 
     // GETTERS
-    int getX() const;
-    int getY() const;
+    float getX() const;
+    float getY() const;
 
     void OnMove(const int moveX, const int moveY);
 
@@ -26,8 +26,8 @@ public:
     int targetMode;
 
 private:
-    int x_;
-    int y_;
+    float x_;
+    float y_;
     float* targetX_;
     float* targetY_;
 

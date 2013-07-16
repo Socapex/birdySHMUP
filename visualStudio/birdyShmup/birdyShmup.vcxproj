@@ -13,13 +13,13 @@
   <ItemGroup>
     <ClCompile Include="..\..\src\CAnimation.cpp" />
     <ClCompile Include="..\..\src\CApp.cpp" />
-    <ClCompile Include="..\..\src\CApp_OnCleanup.cpp" />
     <ClCompile Include="..\..\src\CApp_OnEvent.cpp" />
-    <ClCompile Include="..\..\src\CApp_OnInit.cpp" />
     <ClCompile Include="..\..\src\CApp_OnLoop.cpp" />
     <ClCompile Include="..\..\src\CApp_OnRender.cpp" />
     <ClCompile Include="..\..\src\CBackground.cpp" />
     <ClCompile Include="..\..\src\CBullet.cpp" />
+    <ClCompile Include="..\..\src\CBulletSpawner.cpp" />
+    <ClCompile Include="..\..\src\CButton.cpp" />
     <ClCompile Include="..\..\src\CCamera.cpp" />
     <ClCompile Include="..\..\src\CEnemy.cpp" />
     <ClCompile Include="..\..\src\CEnemySpawner.cpp" />
@@ -28,17 +28,27 @@
     <ClCompile Include="..\..\src\CEvent.cpp" />
     <ClCompile Include="..\..\src\CFPS.cpp" />
     <ClCompile Include="..\..\src\CGUI.cpp" />
+    <ClCompile Include="..\..\src\CLevel.cpp" />
+    <ClCompile Include="..\..\src\CMainMenu.cpp" />
     <ClCompile Include="..\..\src\CMusic.cpp" />
     <ClCompile Include="..\..\src\CParticles.cpp" />
     <ClCompile Include="..\..\src\CPlayer.cpp" />
+    <ClCompile Include="..\..\src\CSFX.cpp" />
+    <ClCompile Include="..\..\src\CSplashScreen.cpp" />
     <ClCompile Include="..\..\src\CSurface.cpp" />
     <ClCompile Include="..\..\src\FilePaths.cpp" />
+    <ClCompile Include="..\..\src\Game\Enemy1.cpp" />
+    <ClCompile Include="..\..\src\Game\Enemy1Bullet.cpp" />
+    <ClCompile Include="..\..\src\Game\Level1.cpp" />
+    <ClCompile Include="..\..\src\Game\PlayerBullet1.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\CAnimation.h" />
     <ClInclude Include="..\..\src\CApp.h" />
     <ClInclude Include="..\..\src\CBackground.h" />
     <ClInclude Include="..\..\src\CBullet.h" />
+    <ClInclude Include="..\..\src\CBulletSpawner.h" />
+    <ClInclude Include="..\..\src\CButton.h" />
     <ClInclude Include="..\..\src\CCamera.h" />
     <ClInclude Include="..\..\src\CEnemy.h" />
     <ClInclude Include="..\..\src\CEnemySpawner.h" />
@@ -46,12 +56,20 @@
     <ClInclude Include="..\..\src\CEvent.h" />
     <ClInclude Include="..\..\src\CFPS.h" />
     <ClInclude Include="..\..\src\CGUI.h" />
+    <ClInclude Include="..\..\src\CLevel.h" />
+    <ClInclude Include="..\..\src\CMainMenu.h" />
     <ClInclude Include="..\..\src\CMusic.h" />
     <ClInclude Include="..\..\src\CParticles.h" />
     <ClInclude Include="..\..\src\CPlayer.h" />
+    <ClInclude Include="..\..\src\CSFX.h" />
+    <ClInclude Include="..\..\src\CSplashScreen.h" />
     <ClInclude Include="..\..\src\CSurface.h" />
     <ClInclude Include="..\..\src\Defines.h" />
     <ClInclude Include="..\..\src\FilePaths.h" />
+    <ClInclude Include="..\..\src\Game\Enemy1.h" />
+    <ClInclude Include="..\..\src\Game\Enemy1Bullet.h" />
+    <ClInclude Include="..\..\src\Game\Level1.h" />
+    <ClInclude Include="..\..\src\Game\PlayerBullet1.h" />
     <ClInclude Include="..\..\src\SDLMain.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClInclude>
@@ -92,7 +110,7 @@
   <PropertyGroup />
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>Level4</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>..\libs\SDL_image-1.2.12\include;..\libs\SDL-1.2.15\include;..\libs\SDL_ttf-2.0.11\include;..\libs\SDL_mixer-1.2.12\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>

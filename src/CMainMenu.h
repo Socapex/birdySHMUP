@@ -33,7 +33,7 @@ private:
     CButton playButton_;
     FilePaths filePath_;
 
-    int x_;
+    float x_;
     float y_;
 
 

@@ -24,8 +24,8 @@ CEnemySpawner::CEnemySpawner()
         CEnemy* entity1_ = new Enemy1();
 
         // Init offscreen
-        entity1_->setX(i * 75);
-        entity1_->setY(-200);
+        entity1_->setX(i * 75.0f);
+        entity1_->setY(-200.0);
         entity1_->setAnimStart(i*500);
         entity1_->setType(ENTITY_TYPE_ENEMY1);
         CEntity::entityList.push_back(entity1_);
@@ -41,7 +41,7 @@ CEnemySpawner::CEnemySpawner(const char* file)
 
 CEnemySpawner::~CEnemySpawner()
 {
-    for (int i = 0; i < CEntity::entityList.size(); ++i)
+    for (unsigned int i = 0; i < CEntity::entityList.size(); ++i)
     {
         if (!CEntity::entityList[i]) continue;
 
@@ -59,7 +59,7 @@ CEnemySpawner::~CEnemySpawner()
 void CEnemySpawner::onLoop(CPlayer* Player)
 {
     // ENTITIES
-    for (int i = 0; i < CEntity::entityList.size(); ++i)
+    for (unsigned int i = 0; i < CEntity::entityList.size(); ++i)
     {
         if (!CEntity::entityList[i]) continue;
 
@@ -72,7 +72,7 @@ void CEnemySpawner::onRender(SDL_Surface* surfDisplay_)
     enemyAnimator();
 
     // ENTITIES
-    for (int i = 0; i < CEntity::entityList.size(); ++i)
+    for (unsigned int i = 0; i < CEntity::entityList.size(); ++i)
     {
         if (!CEntity::entityList[i]) continue;
 
@@ -90,13 +90,13 @@ void CEnemySpawner::enemyAnimator()
         // TODO: Lire d'un fichier text somehow
         if (!Wave1.animationFinished)
         {
-            for (int i = 0; i < wave1Enemies_.size(); ++i)
+            for (unsigned int i = 0; i < wave1Enemies_.size(); ++i)
             {
                 if (Wave1.startTime + wave1Enemies_[i]->getAnimStart() <
                     SDL_GetTicks())
                 {
                     bool finished = animStraightLine(wave1Enemies_[i],
-                                                     i * 75, 200, 10);
+                                                     i * 75.0f, 200.0f, 10.0f);
 
                     if (i == wave1Enemies_.size() - 1) Wave1.animationFinished =
                                                         finished;
@@ -117,7 +117,7 @@ void CEnemySpawner::enemyAnimator()
     }
 }
 
-bool CEnemySpawner::animStraightLine(CEnemy* enemy, const int x, const int y,
+bool CEnemySpawner::animStraightLine(CEnemy* enemy, const float x, const float y,
                                      const float speed)
 {
     float deltaX = x - enemy->getX();

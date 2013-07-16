@@ -37,7 +37,7 @@ CParticles::CParticles(const CParticles& part)
 
 }
 
-CParticles::CParticles(int R, int G, int B, int x, int y, int width, int height,
+CParticles::CParticles(int R, int G, int B, float x, float y, int width, int height,
                        float emitSpeed, unsigned int lifeTime,
                        unsigned int quantity, unsigned int spread,
                        std::string animationType, bool follow)
@@ -56,11 +56,11 @@ CParticles::CParticles(int R, int G, int B, int x, int y, int width, int height,
     play_ = false;
 
 
-    for (int i = 0; i < quantity; ++i)
+    for (unsigned int i = 0; i < quantity; ++i)
     {
         SDL_Rect rect;
-        rect.x = x;
-        rect.y = y;
+        rect.x = static_cast<int>(x+0.5);
+        rect.y = static_cast<int>(y+0.5);
         rect.h = height;
         rect.w = width;
         rectanglesToDraw_.push_back(rect);
@@ -69,7 +69,7 @@ CParticles::CParticles(int R, int G, int B, int x, int y, int width, int height,
     createAnimation(animationType);
 }
 
-CParticles::CParticles(std::string type, int x, int y, float emitSpeed,
+CParticles::CParticles(std::string type, float x, float y, float emitSpeed,
                        unsigned int lifeTime, unsigned int quantity,
                        unsigned int spread, std::string animationType,
                        bool follow)
@@ -112,7 +112,7 @@ CParticles::CParticles(std::string type, int x, int y, float emitSpeed,
     y_ = y;
     play_ = false;
 
-    for (int i = 0; i < quantity; ++i)
+    for (unsigned int i = 0; i < quantity; ++i)
     {
         surfacesToDraw_.push_back(entity);
     }
@@ -120,13 +120,13 @@ CParticles::CParticles(std::string type, int x, int y, float emitSpeed,
 
 CParticles::~CParticles()
 {
-    for (int i = 0; i < surfacesToDraw_.size(); ++i)
+    for (unsigned int i = 0; i < surfacesToDraw_.size(); ++i)
     {
         delete surfacesToDraw_[i];
     }
     surfacesToDraw_.clear();
 
-    for (int i = 0; i < surfacesDrawing_.size(); ++i)
+    for (unsigned int i = 0; i < surfacesDrawing_.size(); ++i)
     {
         delete surfacesDrawing_[i].first;
     }
@@ -148,19 +148,23 @@ CParticles::~CParticles()
 
 
 
-void CParticles::play(const int x, const int y)
+
+
+
+
+void CParticles::play(const float x, const float y)
 {
     play_ = true;
     startTime_ = SDL_GetTicks();
 
     // Reset vectors
-    for (int i = 0; i < surfacesDrawing_.size(); ++i)
+    for (unsigned int i = 0; i < surfacesDrawing_.size(); ++i)
     {
         surfacesToDraw_.push_back(surfacesDrawing_.back().first);
         surfacesDrawing_.pop_back();
     }
 
-    for (int i = 0; i < rectanglesDrawing_.size(); ++i)
+    for (unsigned int i = 0; i < rectanglesDrawing_.size(); ++i)
     {
         rectanglesToDraw_.push_back(rectanglesDrawing_.back().first);
         rectanglesDrawing_.pop_back();
@@ -169,7 +173,7 @@ void CParticles::play(const int x, const int y)
     // Reset x and y
     if (!surfacesToDraw_.empty())
     {
-        for (int i = 0; i < surfacesToDraw_.size(); ++i)
+        for (unsigned int i = 0; i < surfacesToDraw_.size(); ++i)
         {
             surfacesToDraw_[i]->setX(x);
             surfacesToDraw_[i]->setY(y);
@@ -178,10 +182,10 @@ void CParticles::play(const int x, const int y)
 
     if (!rectanglesToDraw_.empty())
     {
-        for (int i = 0; i < rectanglesToDraw_.size(); ++i)
+        for (unsigned int i = 0; i < rectanglesToDraw_.size(); ++i)
         {
-            rectanglesToDraw_[i].x = x;
-            rectanglesToDraw_[i].y = y;
+            rectanglesToDraw_[i].x = static_cast<int>(x+0.5);
+            rectanglesToDraw_[i].y = static_cast<int>(y+0.5);
         }
     }
 
@@ -209,7 +213,7 @@ void CParticles::onRender(SDL_Surface* surfDisplay)
             // If emit speed = 0, draw them all at once (insta boom)
             if (emitSpeed_ == 0)
             {
-                for (int i = 0; i < rectanglesToDraw_.size(); ++i)
+                for (unsigned int i = 0; i < rectanglesToDraw_.size(); ++i)
                 {
                     startTime_ = SDL_GetTicks();
                     std::pair<SDL_Rect, unsigned int>
@@ -233,28 +237,28 @@ void CParticles::onRender(SDL_Surface* surfDisplay)
         //printf("vector size: %u\n", rectanglesDrawing_.size());
         if (!rectanglesDrawing_.empty())
         {
-            for (int i = 0; i < rectanglesDrawing_.size(); ++i)
+            for (unsigned int i = 0; i < rectanglesDrawing_.size(); ++i)
             {
                 if (rectanglesDrawing_[i].second + lifeTime_ > SDL_GetTicks())
                 {
                     if (follow_)
                     {
                         //Offset movement
-                        int lastX = x_ - rectanglesDrawing_[i].first.x + speedX[i];
-                        int lastY = y_ - rectanglesDrawing_[i].first.y + speedY[i];
+                        float lastX = x_ - rectanglesDrawing_[i].first.x + speedX[i];
+                        float lastY = y_ - rectanglesDrawing_[i].first.y + speedY[i];
 
                         //printf("firstx: %i\n", rectanglesDrawing_[i].first.x);
                         //printf("x: %i\n", x_);
                         //printf("lastx: %i\n", lastX);
 
-                        rectanglesDrawing_[i].first.x += lastX;
-                        rectanglesDrawing_[i].first.y += lastY;
+                        rectanglesDrawing_[i].first.x += static_cast<int>(lastX+0.5);
+                        rectanglesDrawing_[i].first.y += static_cast<int>(lastY+0.5);
                         //printf("addition: %i\n", rectanglesDrawing_[i].first.x);
 
                     }
                     // TODO: Implementer des animations cool
-                    rectanglesDrawing_[i].first.x += speedX[i];
-                    rectanglesDrawing_[i].first.y += speedY[i];
+                    rectanglesDrawing_[i].first.x += static_cast<int>(speedX[i]+0.5);
+                    rectanglesDrawing_[i].first.y += static_cast<int>(speedY[i]+0.5);
                     SDL_FillRect(surfDisplay, &rectanglesDrawing_[i].first,
                                  SDL_MapRGB(surfDisplay->format, R_, G_, B_));
                 }
@@ -275,7 +279,7 @@ void CParticles::onRender(SDL_Surface* surfDisplay)
 
         if (!surfacesDrawing_.empty())
         {
-            for (int i = 0; i < surfacesDrawing_.size(); ++i)
+            for (unsigned int i = 0; i < surfacesDrawing_.size(); ++i)
             {
                 if (surfacesDrawing_[i].second + lifeTime_ > SDL_GetTicks())
                 {
@@ -324,12 +328,12 @@ void CParticles::createAnimation(std::string type)
     {
         for (int i = 0; i < quantity_; ++i)
         {
-            speedX.push_back((rand() % ((int)spread_ * 2)) - (int)spread_);
+            speedX.push_back(static_cast<float>((rand() % ((int)spread_ * 2) - (int)spread_)));
         }
 
         for (int i = 0; i < quantity_; ++i)
         {
-            speedY.push_back((rand() % ((int)spread_ * 2)) - (int)spread_);
+            speedY.push_back(static_cast<float>((rand() % ((int)spread_ * 2) - (int)spread_)));
         }
     }
 }
@@ -348,14 +352,14 @@ bool CParticles::getPlaying() const
     return play_;
 }
 
-void CParticles::setX(const int x)
+void CParticles::setX(const float x)
 {
     x_ = x;
 
     // Si on dessine des CEntities
     //if (!surfacesToDraw_.empty() || !surfacesDrawing_.empty()) CEntity::setX(x);
 }
-void CParticles::setY(const int y)
+void CParticles::setY(const float y)
 {
     y_ = y;
 

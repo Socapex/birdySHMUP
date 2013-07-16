@@ -95,7 +95,7 @@ void CGUI::getReady()
 void CGUI::onLoop(CPlayer* player)
 {
     // Check player life
-    healthBar_.w = player->getLife() / PLAYER_LIFE * 100;
+    healthBar_.w = static_cast<int>(player->getLife() / PLAYER_LIFE * 100 + 0.5);
 
     // Get player points
     std::stringstream ss;
@@ -118,7 +118,7 @@ void CGUI::onRender(SDL_Surface* surfDisplay)
                  SDL_MapRGB(surfDisplay->format, 255, 255, 0));
 
     // Points
-    CSurface::OnDraw(surfDisplay, points_, WWIDTH / 2 - points_->w, 10);
+    CSurface::OnDraw(surfDisplay, points_, WWIDTH / 2.0f - points_->w, 10.0f);
 
     // FPS
     CSurface::OnDraw(surfDisplay, fps_, WWIDTH - fps_->w - 10, 10);
@@ -136,8 +136,8 @@ void CGUI::onRender(SDL_Surface* surfDisplay)
         if (getReadyCounter >= 64) getReadyCounter = 64;
 
         CSurface::OnDraw(surfDisplay, getReadySurface_,
-                         (WWIDTH / 2) - (getReadySurface_->w / 2),
-                         (WHEIGHT / 3) - (getReadySurface_->h / 2));
+                         (WWIDTH / 2) - (getReadySurface_->w / 2.0f),
+                         (WHEIGHT / 3) - (getReadySurface_->h / 2.0f));
 
         if (SDL_GetTicks() > getReadyTime) getReadyPlaying = false;
         

@@ -50,7 +50,7 @@ private:
     std::string pointText_;
 
     bool getReadyPlaying;
-    int getReadyTime;
+    unsigned int getReadyTime;
     int getReadyCounter;
 
     FilePaths Path;

@@ -20,7 +20,7 @@ public:
     CBullet();
     ~CBullet();
 
-    void shoot(const int x, const int y);
+    void shoot(const float x, const float y);
 
     virtual bool onCollision(CEntity* entity);
     virtual void onRender(SDL_Surface* surfDisplay);

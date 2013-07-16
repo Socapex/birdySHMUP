@@ -16,8 +16,8 @@ public:
     static CFPS FPSControl;
 
 private:
-    int oldTime;
-    int lastTime;
+    unsigned int oldTime;
+    unsigned int lastTime;
     float speedFactor;
     int numFrames;
     int frames;

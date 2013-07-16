@@ -22,27 +22,27 @@ SDL_Surface* CSurface::onLoad(const char* file)
     return surfReturn;
 }
 
-bool CSurface::OnDraw(SDL_Surface *surfDest, SDL_Surface *surfSource, int x, int y)
+bool CSurface::OnDraw(SDL_Surface *surfDest, SDL_Surface *surfSource, float x, float y)
 {
     if(surfDest == NULL || surfSource == NULL) return false;
 
     SDL_Rect destRect;
-    destRect.x = x;
-    destRect.y = y;
+    destRect.x = static_cast<int>(x+0.5);//plus 0.5 pour arrondir correctement
+    destRect.y = static_cast<int>(y+0.5);
 
     SDL_BlitSurface(surfSource, NULL, surfDest, &destRect);
 
     return true;
 }
 
-bool CSurface::OnDraw(SDL_Surface *surfDest, SDL_Surface *surfSource, int x,
-                        int y, int x2, int y2, int w, int h)
+bool CSurface::OnDraw(SDL_Surface *surfDest, SDL_Surface *surfSource, float x,
+                        float y, int x2, int y2, int w, int h)
 {
     if(surfDest == NULL || surfSource == NULL) return false;
 
     SDL_Rect destRect;
-    destRect.x = x;
-    destRect.y = y;
+    destRect.x = static_cast<int>(x+0.5);
+    destRect.y = static_cast<int>(y+0.5);
 
     SDL_Rect srcRect;
     srcRect.x = x2;

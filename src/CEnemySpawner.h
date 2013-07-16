@@ -31,7 +31,7 @@ public:
 
     void enemyAnimator();
 
-    bool animStraightLine(CEnemy* enemy, const int x, const int y,
+    bool animStraightLine(CEnemy* enemy, const float x, const float y,
                           const float speed);
     
 
@@ -39,7 +39,7 @@ private:
     std::vector<CEnemy*> wave1Enemies_;
 
     struct wave1 {
-        int startTime;
+        unsigned int startTime;
         bool animationStarted;
         bool animationFinished;
     } Wave1;

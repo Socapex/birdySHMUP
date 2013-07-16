@@ -32,6 +32,11 @@ public:
     void setPlayerPoints(const int points);
 
 private:
+    void updateAccel();
+    void updateSpeed();
+    bool isInScreenX(float newX);
+    bool isInScreenY(float newY);
+
     CParticles* feuDuCul_;
     CParticles* collisionExplosion_;
 
@@ -43,10 +48,10 @@ private:
     bool moveDown_;
     bool shooting_;
 
-    float speedX;
-    float speedY;
-    float accelX;
-    float accelY;
+    float speedX_;
+    float speedY_;
+    float accelX_;
+    float accelY_;
 
 
     float maxSpeedX_;

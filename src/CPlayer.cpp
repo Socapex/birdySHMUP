@@ -1,4 +1,4 @@
-#include "CPlayer.h"
+ #include "CPlayer.h"
 
 CPlayer::CPlayer()
 {
@@ -13,10 +13,10 @@ CPlayer::CPlayer()
     x_ = PLAYER_START_XPOSITION;
     y_ = PLAYER_START_YPOSITION;
 
-    speedX = 0;
-    speedY = 0;
-    accelX = 0;
-    accelY = 0;
+    speedX_ = 0;
+    speedY_ = 0;
+    accelX_ = 0;
+    accelY_ = 0;
 
     maxSpeedX_ = PLAYER_SPEED;
     maxSpeedY_ = PLAYER_SPEED;
@@ -33,9 +33,11 @@ CPlayer::CPlayer()
 
     bullets1_ = new CBulletSpawner("player");
 
-    feuDuCul_ = new CParticles(255, 255, 0, x_ + 32, y_ + 64, 5, 8, 100, 1000, 100,
+    feuDuCul_ = new CParticles(255, 255, 0, x_ + 32, y_ + 64,
+                               5, 8, 100, 1000, 100,
                                 10, "fireworks", true);
-    collisionExplosion_ = new CParticles("explosion3", x_, y_, 100, 1000, 1, 10);
+    collisionExplosion_ = new CParticles("explosion3", x_, y_,
+                                         100, 1000, 1, 10);
 
 }
 CPlayer::~CPlayer()
@@ -58,33 +60,72 @@ bool CPlayer::onLoad(const char* file, const int width, const int height,
 
 void CPlayer::movePlayer()
 {
-    if (getFlags() & ENTITY_FLAG_GRAVITY) accelY = 0.75f;
+    updateAccel();
+    updateSpeed();
 
-    // We're not moving
-    if (moveLeft_ == false && moveRight_ == false) speedX = 0;
+    float newX = x_ + speedX_ * CFPS::FPSControl.getSpeedFactor();
+    float newY = y_ + speedY_ * CFPS::FPSControl.getSpeedFactor();
 
-    if (moveUp_ == false && moveDown_ == false) speedY = 0;
+    checkCollision(newX, newY);
 
-    if (moveLeft_) speedX = -maxSpeedX_; //accelX = -0.5;
-    else if (moveRight_) speedX = maxSpeedX_; //accelX = 0.5;
-
-    if (moveUp_) speedY = -maxSpeedY_;
-    else if (moveDown_) speedY = maxSpeedY_;
-
-    // if (speedX > maxSpeedX_) speedX = maxSpeedX_;
-    // if (speedX < -maxSpeedX_) speedX = -maxSpeedX_;
-    // if (speedY > maxSpeedY_) speedY = maxSpeedY_;
-    // if (speedY < -maxSpeedY_) speedY = -maxSpeedY_;
-
-    speedX *= CFPS::FPSControl.getSpeedFactor();
-    speedY *= CFPS::FPSControl.getSpeedFactor();
-
-    checkCollision(x_ + speedX, y_ + speedY);
-
-    if (x_ + speedX > 0 && x_ + speedX + getWidth() < WWIDTH) x_ += speedX;
-    if (y_ + speedY > 0 && y_ + speedY + getHeight() < WHEIGHT) y_ += speedY;
+    if (isInScreenX(newX))
+        x_ = newX;
+    if (isInScreenY(newY))
+        y_ = newY;
 }
 
+void CPlayer::updateAccel()
+{
+    if(moveLeft_)
+        accelX_ = -5.0f;
+    else if(moveRight_)
+        accelX_ = 5.0f;
+    else
+        accelX_ = 0.0f;
+
+    if(moveUp_)
+        accelY_ = -5.0f;
+    else if(moveDown_)
+        accelY_ = 5.0f;
+    else
+        accelY_ = 0.0f;
+    
+    if (getFlags() & ENTITY_FLAG_GRAVITY)
+        accelY_ = 0.75f;
+}
+
+void CPlayer::updateSpeed()
+{
+    if (moveLeft_ == false && moveRight_ == false)
+        speedX_ = 0;
+    else
+        speedX_ += accelX_;
+
+    if (moveUp_ == false && moveDown_ == false)
+        speedY_ = 0;
+    else
+        speedY_ += accelY_;
+
+    if (speedX_ > maxSpeedX_)
+        speedX_ = maxSpeedX_;
+    else if (speedX_ < -maxSpeedX_)
+        speedX_ = -maxSpeedX_;
+
+    if (speedY_ > maxSpeedY_)
+        speedY_ = maxSpeedY_;
+    else if (speedY_ < -maxSpeedY_)
+        speedY_ = -maxSpeedY_;
+}
+
+bool CPlayer::isInScreenX(float newX)
+{
+   return newX > 0 && newX + getWidth() < WWIDTH;
+}
+
+bool CPlayer::isInScreenY(float newY)
+{
+    return newY > 0 && newY + getHeight() < WHEIGHT;
+}
 
 
 void CPlayer::shoot()
@@ -153,7 +194,7 @@ void CPlayer::onAnimate()
 {
     // ANIMATIONS DU JOUEUR
     // TODO: setMaxFrames dans onInit... ou ca A du sens ;)
-    if (speedX != 0) animControl->setMaxFrames(0);
+    if (speedX_ != 0) animControl->setMaxFrames(0);
     else animControl->setMaxFrames(0);
 
     CEntity::onAnimate();

@@ -3,7 +3,7 @@
 //  birdyShmup
 //
 //  Created by Philippe Groarke on 2013-07-08.
-//  Copyright (c) 2013 Groarke and co. All rights reserved.
+//  Copyright (c) 2013 Groarke and co. All rights dataerved.
 //
 
 #include <SDL.h>
@@ -14,42 +14,42 @@
 FilePaths::FilePaths()
 {
     // JOUEUR
-    Files["player1Path"] = "img/birdbody2.png";
+    Files["player1Path"] = "data/img/birdbody2.png";
 
     // ENEMIES
-    Files["entity1Path"] = "img/yoshi.png";
-    Files["entity2Path"] = "img/yoshi.bmp";
+    Files["entity1Path"] = "data/img/yoshi.png";
+    Files["entity2Path"] = "data/img/yoshi.bmp";
 
     // BACKGROUND & MISC
-    Files["backgroundPath"] = "img/cloud-2.jpg";
-	Files["parallaxPath"] = "img/parallaxTest.png";
-    Files["parallax2Path"] = "img/parallaxTest2.png";
+    Files["backgroundPath"] = "data/img/cloud-2.jpg";
+	Files["parallaxPath"] = "data/img/parallaxTest.png";
+    Files["parallax2Path"] = "data/img/parallaxTest2.png";
 
     // BULLETS
-    Files["bullet1Path"] = "img/bullet.png";
+    Files["bullet1Path"] = "data/img/bullet.png";
 
     // PARTICLES
-    Files["explosion1Path"] = "img/particles/explosion1.jpg";
-    Files["explosion2Path"] = "img/particles/explosion2.png";
-    Files["explosion3Path"] = "img/particles/explosion3.png";
-    Files["explosion4Path"] = "img/particles/explosion4.png";
+    Files["explosion1Path"] = "data/img/particles/explosion1.jpg";
+    Files["explosion2Path"] = "data/img/particles/explosion2.png";
+    Files["explosion3Path"] = "data/img/particles/explosion3.png";
+    Files["explosion4Path"] = "data/img/particles/explosion4.png";
 
     // FONTS
-    Files["font1Path"] = "fonts/FixdStation.ttf";
+    Files["font1Path"] = "data/fonts/FixdStation.ttf";
 
     // MUSIC
-    Files["song1Path"] = "music/WelcomeToEurope.ogg";
+    Files["song1Path"] = "data/music/WelcomeToEurope.ogg";
 
     // SFX
-    Files["sfxMedExplosion"] = "sfx/MedExplosion.wav";
-    Files["sfxLaser1"] = "sfx/Laser1.wav";
+    Files["sfxMedExplosion"] = "data/sfx/MedExplosion.wav";
+    Files["sfxLaser1"] = "data/sfx/Laser1.wav";
 
     // SPLASHSCREEN
-    Files["splash1Path"] = "img/Screens/SplashScreen/SuperSplash.png";
+    Files["splash1Path"] = "data/img/Screens/SplashScreen/SuperSplash.png";
 
     // MainMenu
-    Files["main1Path"] = "img/Screens/MainMenu/MainMenu.png";
-    Files["playButton1Path"] = "img/Screens/MainMenu/Buttons/PlayButton.png";
+    Files["main1Path"] = "data/img/Screens/MainMenu/MainMenu.png";
+    Files["playButton1Path"] = "data/img/Screens/MainMenu/Buttons/PlayButton.png";
 
 
     std::map<std::string, std::string>::iterator iter;

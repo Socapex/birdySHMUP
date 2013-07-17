@@ -24,7 +24,6 @@
 		2B068D02178AF8CC00663F72 /* FilePaths.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B068D00178AF8CC00663F72 /* FilePaths.cpp */; };
 		2B16D1E5178CCE8A00BB515A /* SDL_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B16D1E4178CCE8A00BB515A /* SDL_ttf.framework */; };
 		2B16D1E6178CCEBF00BB515A /* SDL_ttf.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2B16D1E4178CCE8A00BB515A /* SDL_ttf.framework */; };
-		2B16D1E8178CD7FC00BB515A /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 2B16D1E7178CD7FC00BB515A /* fonts */; };
 		2B27258B176FE2E20094AC8F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B27258A176FE2E20094AC8F /* Cocoa.framework */; };
 		2B272595176FE2E20094AC8F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2B272593176FE2E20094AC8F /* InfoPlist.strings */; };
 		2B27259B176FE2E20094AC8F /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2B272599176FE2E20094AC8F /* Credits.rtf */; };
@@ -35,19 +34,17 @@
 		2B3D10E01776AAF100D4DF86 /* CGUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B3D10DF1776AAF100D4DF86 /* CGUI.cpp */; };
 		2B3D10E31776C03100D4DF86 /* CParticles.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B3D10E11776C03100D4DF86 /* CParticles.cpp */; };
 		2B50D16E1780FE2200DA5159 /* CBullet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B50D16C1780FE2200DA5159 /* CBullet.cpp */; };
+		2B51899717973EF00032B326 /* data in Resources */ = {isa = PBXBuildFile; fileRef = 2B51899617973EF00032B326 /* data */; };
 		2B5E86BA178E2C2E003608E0 /* SDL_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B5E86B9178E2C2D003608E0 /* SDL_mixer.framework */; };
 		2B5E86BD178E2D38003608E0 /* CMusic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B5E86BB178E2D37003608E0 /* CMusic.cpp */; };
-		2B5E86BF178E332B003608E0 /* music in Resources */ = {isa = PBXBuildFile; fileRef = 2B5E86BE178E332A003608E0 /* music */; };
 		2B676DA71790BD53002F6AA8 /* Level1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B676DA51790BD53002F6AA8 /* Level1.cpp */; };
 		2B734397177178A700FCC983 /* SDL_image.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2B0688AA176FE5CE0026C1AB /* SDL_image.framework */; };
 		2B734398177178A700FCC983 /* SDL.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2B0688A8176FE5C10026C1AB /* SDL.framework */; };
-		2B84554617711ACF005DC982 /* img in Resources */ = {isa = PBXBuildFile; fileRef = 2B84554317711ACF005DC982 /* img */; };
 		2B86970B1773F33600A5A132 /* CEntityCol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B86970A1773F33600A5A132 /* CEntityCol.cpp */; };
 		2BBBDFD31793613A00306A96 /* CButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BBBDFCD1793613A00306A96 /* CButton.cpp */; };
 		2BBBDFD41793613A00306A96 /* CMainMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BBBDFCF1793613A00306A96 /* CMainMenu.cpp */; };
 		2BBBDFD51793613A00306A96 /* CSplashScreen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BBBDFD11793613A00306A96 /* CSplashScreen.cpp */; };
 		2BBBDFD8179369D800306A96 /* CSFX.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BBBDFD6179369D800306A96 /* CSFX.cpp */; };
-		2BBBDFDA17938F2300306A96 /* sfx in Resources */ = {isa = PBXBuildFile; fileRef = 2BBBDFD917938F2300306A96 /* sfx */; };
 		2BCA3DAD1780E00700CF3F22 /* CBackground.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BCA3DAB1780E00700CF3F22 /* CBackground.cpp */; };
 		2BE705D91792187400504F86 /* CBulletSpawner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BE705D71792187400504F86 /* CBulletSpawner.cpp */; };
 		2BE705DF17922C6200504F86 /* PlayerBullet1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BE705DE17922C6200504F86 /* PlayerBullet1.cpp */; };
@@ -98,7 +95,6 @@
 		2B068D00178AF8CC00663F72 /* FilePaths.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FilePaths.cpp; path = ../../src/FilePaths.cpp; sourceTree = "<group>"; };
 		2B068D01178AF8CC00663F72 /* FilePaths.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FilePaths.h; path = ../../src/FilePaths.h; sourceTree = "<group>"; };
 		2B16D1E4178CCE8A00BB515A /* SDL_ttf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL_ttf.framework; path = /Library/Frameworks/SDL_ttf.framework; sourceTree = "<absolute>"; };
-		2B16D1E7178CD7FC00BB515A /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = fonts; path = ../../fonts; sourceTree = "<group>"; };
 		2B272587176FE2E20094AC8F /* birdyShmup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = birdyShmup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B27258A176FE2E20094AC8F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		2B27258D176FE2E20094AC8F /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -121,13 +117,12 @@
 		2B3D10E21776C03100D4DF86 /* CParticles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CParticles.h; path = ../../src/CParticles.h; sourceTree = "<group>"; };
 		2B50D16C1780FE2200DA5159 /* CBullet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CBullet.cpp; path = ../../src/CBullet.cpp; sourceTree = "<group>"; };
 		2B50D16D1780FE2200DA5159 /* CBullet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CBullet.h; path = ../../src/CBullet.h; sourceTree = "<group>"; };
+		2B51899617973EF00032B326 /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = data; path = ../../data; sourceTree = "<group>"; };
 		2B5E86B9178E2C2D003608E0 /* SDL_mixer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL_mixer.framework; path = /Library/Frameworks/SDL_mixer.framework; sourceTree = "<absolute>"; };
 		2B5E86BB178E2D37003608E0 /* CMusic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CMusic.cpp; path = ../../src/CMusic.cpp; sourceTree = "<group>"; };
 		2B5E86BC178E2D38003608E0 /* CMusic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CMusic.h; path = ../../src/CMusic.h; sourceTree = "<group>"; };
-		2B5E86BE178E332A003608E0 /* music */ = {isa = PBXFileReference; lastKnownFileType = folder; name = music; path = ../../music; sourceTree = "<group>"; };
 		2B676DA51790BD53002F6AA8 /* Level1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Level1.cpp; sourceTree = "<group>"; };
 		2B676DA61790BD53002F6AA8 /* Level1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level1.h; sourceTree = "<group>"; };
-		2B84554317711ACF005DC982 /* img */ = {isa = PBXFileReference; lastKnownFileType = folder; name = img; path = ../../img; sourceTree = "<group>"; };
 		2B86970A1773F33600A5A132 /* CEntityCol.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CEntityCol.cpp; path = ../../src/CEntityCol.cpp; sourceTree = "<group>"; };
 		2BBBDFCD1793613A00306A96 /* CButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CButton.cpp; path = ../../src/CButton.cpp; sourceTree = "<group>"; };
 		2BBBDFCE1793613A00306A96 /* CButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CButton.h; path = ../../src/CButton.h; sourceTree = "<group>"; };
@@ -137,7 +132,6 @@
 		2BBBDFD21793613A00306A96 /* CSplashScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSplashScreen.h; path = ../../src/CSplashScreen.h; sourceTree = "<group>"; };
 		2BBBDFD6179369D800306A96 /* CSFX.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CSFX.cpp; path = ../../src/CSFX.cpp; sourceTree = "<group>"; };
 		2BBBDFD7179369D800306A96 /* CSFX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSFX.h; path = ../../src/CSFX.h; sourceTree = "<group>"; };
-		2BBBDFD917938F2300306A96 /* sfx */ = {isa = PBXFileReference; lastKnownFileType = folder; name = sfx; path = ../../sfx; sourceTree = "<group>"; };
 		2BCA3DAB1780E00700CF3F22 /* CBackground.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CBackground.cpp; path = ../../src/CBackground.cpp; sourceTree = "<group>"; };
 		2BCA3DAC1780E00700CF3F22 /* CBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CBackground.h; path = ../../src/CBackground.h; sourceTree = "<group>"; };
 		2BE705D71792187400504F86 /* CBulletSpawner.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CBulletSpawner.cpp; path = ../../src/CBulletSpawner.cpp; sourceTree = "<group>"; };
@@ -209,6 +203,7 @@
 		2B272590176FE2E20094AC8F /* birdyShmup */ = {
 			isa = PBXGroup;
 			children = (
+				2B51899617973EF00032B326 /* data */,
 				2B676DA41790BD53002F6AA8 /* Game */,
 				2B068896176FE5870026C1AB /* Defines.h */,
 				2B068D00178AF8CC00663F72 /* FilePaths.cpp */,
@@ -262,10 +257,6 @@
 				2B068897176FE5870026C1AB /* SDLMain.h */,
 				2B068898176FE5870026C1AB /* SDLMain.m */,
 				2B27259F176FE2E20094AC8F /* MainMenu.xib */,
-				2BBBDFD917938F2300306A96 /* sfx */,
-				2B84554317711ACF005DC982 /* img */,
-				2B5E86BE178E332A003608E0 /* music */,
-				2B16D1E7178CD7FC00BB515A /* fonts */,
 				2B272591176FE2E20094AC8F /* Supporting Files */,
 			);
 			path = birdyShmup;
@@ -353,10 +344,7 @@
 				2B272595176FE2E20094AC8F /* InfoPlist.strings in Resources */,
 				2B27259B176FE2E20094AC8F /* Credits.rtf in Resources */,
 				2B2725A1176FE2E20094AC8F /* MainMenu.xib in Resources */,
-				2B84554617711ACF005DC982 /* img in Resources */,
-				2B16D1E8178CD7FC00BB515A /* fonts in Resources */,
-				2B5E86BF178E332B003608E0 /* music in Resources */,
-				2BBBDFDA17938F2300306A96 /* sfx in Resources */,
+				2B51899717973EF00032B326 /* data in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

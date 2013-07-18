@@ -14,49 +14,48 @@ void CApp::OnKeyDown(SDLKey sym, SDLMod mod, Uint16 unicode)
             {
                 case SDLK_SPACE:
                 {
-                    currentLevel_ = 1;
                     break;
                 }
 
                 case SDLK_LEFT:
                 {
                     //TODO previous button underlined
-                    this->getMainMenu()->previousActiveButtonID();
+                    mainMenu1_.previousActiveButtonID();
                     break;
                 }
 
                 case SDLK_RIGHT:
                 {
                     //TODO next button underlined
-                    this->getMainMenu()->nextActiveButtonID();
+                    mainMenu1_.nextActiveButtonID();
                     break;
                 }
 
                 case SDLK_UP:
                 {
                     //TODO previous button underlined
-                    this->getMainMenu()->previousActiveButtonID();
+                    mainMenu1_.previousActiveButtonID();
                     break;
                 }
 
                 case SDLK_DOWN:
                 {
                     //TODO next button underlined
-                    this->getMainMenu()->nextActiveButtonID();
+                    mainMenu1_.nextActiveButtonID();
                     break;
                 }
 
                 case SDLK_RETURN:
                 {
                     //TODO activate button
-                    if(this->getMainMenu()->getActiveButtonID() == 0) currentLevel_ = 1;
-                    if(this->getMainMenu()->getActiveButtonID() == 1) SDL_Quit();
+                    if(mainMenu1_.getActiveButtonID() == 0) currentLevel_ = 1;
+                    if(mainMenu1_.getActiveButtonID() == 1) onExit();
                     break;
                 }
 
                 case SDLK_ESCAPE:
                 {
-                    SDL_Quit();
+                    currentLevel_ = 0;
                     break;
                 }
 

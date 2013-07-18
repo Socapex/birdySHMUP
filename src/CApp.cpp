@@ -40,7 +40,7 @@ CApp::CApp()
 
 
     level1_ = NULL;
-    currentLevel_ = 0;
+    currentLevel_ = -1;
 
     FilePaths Path;
 
@@ -117,10 +117,4 @@ int main(int argc, char *argv[])
     CApp theApp;
 
     return theApp.OnExecute();
-}
-
-
-CMainMenu* CApp::getMainMenu()
-{
-    return &mainMenu1_;
 }

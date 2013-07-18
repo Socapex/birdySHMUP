@@ -27,6 +27,7 @@ FilePaths::FilePaths()
 
     // BULLETS
     Files["bullet1Path"] = "img/bullet.png";
+    Files["laser1Path"] = "img/laser.png";
 
     // PARTICLES
     Files["explosion1Path"] = "img/particles/explosion1.jpg";

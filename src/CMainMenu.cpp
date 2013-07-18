@@ -63,17 +63,17 @@ void CMainMenu::onRender(SDL_Surface* surfDisplay)
             {
                 if( i != activeButtonID_)
                 {
-                    buttons_[i]->onDraw(surfDisplay);
+                    buttons_[i]->onRender(surfDisplay);
                 }
                 else
                 {
                     switch (activeButtonID_)
                     {
                         case 0: 
-                            playButtonActive_.onDraw(surfDisplay);
+                            playButtonActive_.onRender(surfDisplay);
                             break;
                         case 1:
-                            exitButtonActive_.onDraw(surfDisplay);
+                            exitButtonActive_.onRender(surfDisplay);
                             break;
                     }
                 }

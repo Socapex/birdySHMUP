@@ -13,6 +13,7 @@ CSplashScreen::CSplashScreen()
     x_ = 0;
     y_ = 0;
     alpha_ = 0;
+    isDone_ = false;
 }
 
 CSplashScreen::~CSplashScreen()
@@ -39,8 +40,17 @@ void CSplashScreen::onAnimate()
 {
     ++alpha_;
 
-    if (alpha_ < 256)
+    if (alpha_ < 400)
     {
         SDL_SetAlpha(surfSplashScreen_, SDL_SRCALPHA, 50);  
     }
+    else
+    {
+        isDone_ = true;
+    }
+}
+
+bool CSplashScreen::getIsDone()
+{
+    return isDone_;
 }

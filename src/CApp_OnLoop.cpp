@@ -2,6 +2,7 @@
 
 void CApp::onLoop()
 {
+    if(splashScreen1_.getIsDone() && currentLevel_ == -1) currentLevel_ = 0;
 
     if (currentLevel_ == 1)
     {

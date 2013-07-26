@@ -11,12 +11,14 @@
 
 #include <SDL.h>
 #include <SDL_image.h>
+#include <vector>
 
 #include "Defines.h"
 #include "CSurface.h"
 #include "CButton.h"
 #include "CFPS.h"
 #include "FilePaths.h"
+
 
 class CMainMenu {
 public:
@@ -26,17 +28,23 @@ public:
     bool onLoad(const char* file);
     void onRender(SDL_Surface* surfDisplay);
     void onAnimate();
+    int getActiveButtonID();
+    void previousActiveButtonID();
+    void nextActiveButtonID();
 
 private:
     
     SDL_Surface* surfMainMenu_;
+    int activeButtonID_;
     CButton playButton_;
+    CButton playButtonActive_;
+    CButton exitButton_;
+    CButton exitButtonActive_;
+    std::vector<CButton*> buttons_;
     FilePaths filePath_;
 
     float x_;
     float y_;
-
-
 };
 
 #endif /* defined(__birdyShmup__CMainMenu__) */

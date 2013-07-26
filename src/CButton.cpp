@@ -26,7 +26,7 @@ bool CButton::onLoad(const char* file)
 	return true;
 }
 
-void CButton::onDraw(SDL_Surface* dest)
+void CButton::onRender(SDL_Surface* dest)
 {
 	CSurface::OnDraw(dest, surfButton_, x_, y_);
 }
@@ -39,6 +39,11 @@ void CButton::setX(int x)
 void CButton::setY(int y)
 {
 	y_ = y;
+}
+
+void CButton::setID(int iD)
+{
+	iD_ = iD;
 }
 
 int CButton::getX()
@@ -59,4 +64,9 @@ int CButton::getWidth()
 int CButton::getHeight()
 {
 	return surfButton_->h;
+}
+
+int CButton::getID()
+{
+	return iD_;
 }

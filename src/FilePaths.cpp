@@ -27,6 +27,7 @@ FilePaths::FilePaths()
 
     // BULLETS
     Files["bullet1Path"] = "data/img/bullet.png";
+    Files["laser1Path"] = "data/img/laser.png";
 
     // PARTICLES
     Files["explosion1Path"] = "data/img/particles/explosion1.jpg";
@@ -50,6 +51,9 @@ FilePaths::FilePaths()
     // MainMenu
     Files["main1Path"] = "data/img/Screens/MainMenu/MainMenu.png";
     Files["playButton1Path"] = "data/img/Screens/MainMenu/Buttons/PlayButton.png";
+    Files["playButton2Path"] = "data/img/Screens/MainMenu/Buttons/PlayButton_Active.png";
+    Files["exitButton1Path"] = "data/img/Screens/MainMenu/Buttons/ExitButton.png";
+    Files["exitButton2Path"] = "data/img/Screens/MainMenu/Buttons/ExitButton_Active.png";
 
 
     std::map<std::string, std::string>::iterator iter;

@@ -23,10 +23,12 @@ public:
     bool onLoad(const char* file);
     void onRender(SDL_Surface* surfDisplay);
     void onAnimate();
+    bool getIsDone();
 
 private:
     
     SDL_Surface* surfSplashScreen_;
+    bool isDone_;
 
     float x_;
     float y_;

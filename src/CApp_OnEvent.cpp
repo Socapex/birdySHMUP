@@ -14,43 +14,48 @@ void CApp::OnKeyDown(SDLKey sym, SDLMod mod, Uint16 unicode)
             {
                 case SDLK_SPACE:
                 {
-                    currentLevel_ = 1;
                     break;
                 }
 
                 case SDLK_LEFT:
                 {
                     //TODO previous button underlined
+                    mainMenu1_.previousActiveButtonID();
                     break;
                 }
 
                 case SDLK_RIGHT:
                 {
                     //TODO next button underlined
+                    mainMenu1_.nextActiveButtonID();
                     break;
                 }
 
                 case SDLK_UP:
                 {
                     //TODO previous button underlined
+                    mainMenu1_.previousActiveButtonID();
                     break;
                 }
 
                 case SDLK_DOWN:
                 {
                     //TODO next button underlined
+                    mainMenu1_.nextActiveButtonID();
                     break;
                 }
 
                 case SDLK_RETURN:
                 {
                     //TODO activate button
+                    if(mainMenu1_.getActiveButtonID() == 0) currentLevel_ = 1;
+                    if(mainMenu1_.getActiveButtonID() == 1) onExit();
                     break;
                 }
 
                 case SDLK_ESCAPE:
                 {
-                    SDL_Quit();
+                    currentLevel_ = 0;
                     break;
                 }
 
@@ -65,7 +70,6 @@ void CApp::OnKeyDown(SDLKey sym, SDLMod mod, Uint16 unicode)
                 case SDLK_SPACE:
                 {
                     Player->setShooting(true);
-                    currentLevel_ = 1;
                     break;
                 }
 

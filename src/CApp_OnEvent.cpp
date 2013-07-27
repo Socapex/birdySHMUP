@@ -12,10 +12,10 @@ void CApp::OnKeyDown(SDLKey sym, SDLMod mod, Uint16 unicode)
     {
         switch(sym)
             {
-                case SDLK_SPACE:
-                {
-                    break;
-                }
+//                case SDLK_SPACE:
+//                {
+//                    break;
+//                }
 
                 case SDLK_LEFT:
                 {
@@ -59,7 +59,10 @@ void CApp::OnKeyDown(SDLKey sym, SDLMod mod, Uint16 unicode)
                     break;
                 }
 
-                default: {}
+                default:
+                {
+                    currentLevel_ = 0;
+                }
             }
     }
     else
@@ -111,40 +114,43 @@ void CApp::OnKeyDown(SDLKey sym, SDLMod mod, Uint16 unicode)
 
 void CApp::OnKeyUp(SDLKey sym, SDLMod mod, Uint16 unicode)
 {
-    switch(sym)
+    if (currentLevel_ >= 1)
     {
 
-        case SDLK_SPACE:
+        switch(sym)
         {
-            Player->setShooting(false);
-            currentLevel_ = 1;
-            break;
-        }
+            case SDLK_SPACE:
+            {
+                Player->setShooting(false);
+                currentLevel_ = 1;
+                break;
+            }
 
-        case SDLK_LEFT:
-        {
-            Player->setMoveLeft(false);
-            break;
-        }
+            case SDLK_LEFT:
+            {
+                Player->setMoveLeft(false);
+                break;
+            }
 
-        case SDLK_RIGHT:
-        {
-            Player->setMoveRight(false);
-            break;
-        }
+            case SDLK_RIGHT:
+            {
+                Player->setMoveRight(false);
+                break;
+            }
 
-        case SDLK_UP:
-        {
-            Player->setMoveUp(false);
-            break;
-        }
+            case SDLK_UP:
+            {
+                Player->setMoveUp(false);
+                break;
+            }
 
-        case SDLK_DOWN:
-        {
-            Player->setMoveDown(false);
-            break;
-        }
+            case SDLK_DOWN:
+            {
+                Player->setMoveDown(false);
+                break;
+            }
 
-        default: {}
+            default: {}
+        }
     }
 }

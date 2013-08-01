@@ -36,6 +36,7 @@ public:
 
 private:
     SDL_Rect healthBar_, healthBarBackground_;
+    std::vector<SDL_Rect> vLives_;
 
     SDL_Surface* points_;
     SDL_Surface* getReadySurface_;

@@ -30,6 +30,11 @@ public:
     void setMoveDown(const bool move);
     void setShooting(const bool shoot);
     void setPlayerPoints(const int points);
+    void setHealth(const float health);
+
+    void addLife(){life_++;}
+
+    const static unsigned int NB_STARTING_LIVES = 3;
 
 private:
     void updateAccel();

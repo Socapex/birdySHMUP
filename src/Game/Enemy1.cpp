@@ -14,7 +14,7 @@ Enemy1::Enemy1()
 {
     FilePaths Path;
     
-    life_ = 100;
+    health_ = 100;
     killPoints_ = 100;
     shootDelay_ = nextShot_ = 2000;
     nextShot_ += SDL_GetTicks();

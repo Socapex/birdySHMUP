@@ -34,8 +34,6 @@ public:
 
     void addLife(){life_++;}
 
-    const static unsigned int NB_STARTING_LIVES = 3;
-
 private:
     void updateAccel();
     void updateSpeed();

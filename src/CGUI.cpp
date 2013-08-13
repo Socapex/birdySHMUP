@@ -40,7 +40,7 @@ CGUI::CGUI()
     white.unused = 0;
 
      //initialisation des vies
-    unsigned int nbLives = CPlayer::NB_STARTING_LIVES;
+    unsigned int nbLives = NB_STARTING_LIVES;
     unsigned int livesSize = 10;
 
     for(unsigned int i = 0 ; i < nbLives; ++i)
@@ -110,7 +110,7 @@ void CGUI::onLoop(CPlayer* player)
         else
             while (playerLives > guiLives++)
                 vLives_.push_back(vLives_.front()); //toute les vies sont pareils, on peut
-        //donc pusher une déja dans le vector
+        //donc pusher une deja dans le vector
     }
 
     // Get player points
@@ -136,7 +136,8 @@ void CGUI::onRender(SDL_Surface* surfDisplay)
     //Vies
     for(unsigned int i = 0; i < vLives_.size(); ++i)
     {
-        SDL_FillRect(surfDisplay, &vLives_.at(i), SDL_MapRGB(surfDisplay->format, 255, 255, 0));
+        SDL_FillRect(surfDisplay, &vLives_.at(i), SDL_MapRGB(surfDisplay->format,
+                                                             255, 255, 0));
     }
 
     // Points

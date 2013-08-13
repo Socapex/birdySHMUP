@@ -177,6 +177,8 @@ void CPlayer::onLoop(CPlayer* player)
         // Player is dead
         setDead(true);
 
+        if (life_ > 0) --life_;
+
         // TODO: Player death
     }
 }

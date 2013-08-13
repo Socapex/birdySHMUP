@@ -48,8 +48,9 @@ void CApp::OnKeyDown(SDLKey sym, SDLMod mod, Uint16 unicode)
                 case SDLK_RETURN:
                 {
                     //TODO activate button
-                    if(mainMenu1_.getActiveButtonID() == 0) currentLevel_ = 1;
-                    if(mainMenu1_.getActiveButtonID() == 1) onExit();
+                    if(currentLevel_ == -1) currentLevel_ = 0;
+                    else if(mainMenu1_.getActiveButtonID() == 0) currentLevel_ = 1;
+                    else if(mainMenu1_.getActiveButtonID() == 1) onExit();
                     break;
                 }
 

@@ -27,7 +27,8 @@ FilePaths::FilePaths()
 
     // BULLETS
     Files["bullet1Path"] = "data/img/bullet.png";
-    Files["laser1Path"] = "data/img/laser.png";
+    Files["laser1Path"] = "data/conceptArt/bullets/blueBullet4-sparkly_small_cropped.png";
+    Files["blueBullet1"] = "data/conceptArt/bullets/blueBullet3_small.png";
 
     // PARTICLES
     Files["explosion1Path"] = "data/img/particles/explosion1.jpg";

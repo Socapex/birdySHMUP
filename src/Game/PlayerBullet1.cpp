@@ -16,7 +16,7 @@ PlayerBullet1::PlayerBullet1()
     
     FilePaths Path;
     
-    CEntity::onLoad(Path.Files["laser1Path"].c_str(), 16, 16, 0);
+    CEntity::onLoad(Path.Files["laser1Path"].c_str(), 21, 91, 0);
     
     deathExplosion_ = new CParticles(255, 255, 0, x_, y_, 2, 3, 0, 100,
                                      100, 10, "fireworks");

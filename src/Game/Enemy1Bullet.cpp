@@ -16,7 +16,7 @@ Enemy1Bullet::Enemy1Bullet()
 
     FilePaths Path;
 
-    CEntity::onLoad(Path.Files["blueBullet1"].c_str(), 64, 64, 0);
+    CEntity::onLoad(Path.Files["redBullet5"].c_str(), 15, 24, 0);
 
     deathExplosion_ = new CParticles(255, 255, 0, x_, y_, 2, 3, 0, 100,
                                      100, 10, "fireworks");

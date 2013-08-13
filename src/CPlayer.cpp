@@ -21,7 +21,8 @@ CPlayer::CPlayer()
     maxSpeedX_ = PLAYER_SPEED;
     maxSpeedY_ = PLAYER_SPEED;
 
-    life_ = PLAYER_LIFE;
+    health_ = maxHealth_ = PLAYER_LIFE;
+    life_ = NB_STARTING_LIVES;
 
     playerPoints_ = 0;
 
@@ -204,7 +205,7 @@ bool CPlayer::onCollision(CEntity* Entity)
 {
     if (Entity->getType() == ENTITY_TYPE_ENEMY1 && life_ > 0)
     {
-        life_ -= (1 * CFPS::FPSControl.getSpeedFactor());
+        health_ -= (1 * CFPS::FPSControl.getSpeedFactor());
         
         collisionExplosion_->play(x_, y_);
     }
@@ -266,4 +267,20 @@ void CPlayer::setShooting(const bool shoot)
 void CPlayer::setPlayerPoints(const int points)
 {
     playerPoints_ = points;
+}
+
+void CPlayer::setHealth(const float health)
+{
+    if(health > 0)
+        health_ = health;
+    else if (life_ > 1)
+    {
+        life_--;
+        health_ = maxHealth_;
+    }
+    else
+    {
+        health_ = 0;
+        life_ = 0;
+    }
 }

@@ -80,3 +80,7 @@ packages/
 xcode/birdyShmup.xcodeproj/xcuserdata
 xcode/birdyShmup.xcodeproj/project.xcworkspace/xcuserdata
 xcode/Release/*.dmg
+
+
+visualStudio/birdyShmup/Debug/*
+visualStudio\birdyShmup\Debug\*

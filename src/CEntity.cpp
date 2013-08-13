@@ -69,7 +69,7 @@ bool CEntity::collides(const float oX, const float oY, const float oW, const flo
 
 bool CEntity::checkLife()
 {
-    if (life_ <= 0)
+    if (health_ <= 0)
     {
         return false;
     }
@@ -231,7 +231,11 @@ void CEntity::setFlags(const int flags)
 {
     flags_ = flags;
 }
-void CEntity::setLife(const float life)
+void CEntity::setHealth(const float health)
+{
+    health_ = health;
+}
+void CEntity::setLife(const int life)
 {
     life_ = life;
 }
@@ -271,7 +275,11 @@ int CEntity::getFlags() const
 {
     return flags_;
 }
-float CEntity::getLife() const
+float CEntity::getHealth() const
+{
+    return health_;
+}
+int CEntity::getLife() const
 {
     return life_;
 }

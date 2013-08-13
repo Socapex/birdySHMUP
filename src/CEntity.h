@@ -41,7 +41,8 @@ public:
     void setType(const int type);
     void setDead(const bool dead);
     void setFlags(const int flags);
-    void setLife(const float life);
+    virtual void setHealth(const float health);
+    void setLife(const int life);
 
     float getX() const;
     float getY() const;
@@ -50,7 +51,8 @@ public:
     int getType() const;
     bool getDead() const;
     int getFlags() const;
-    float getLife() const;
+    float getHealth() const;
+    int getLife() const;
 
 
 protected:
@@ -66,7 +68,9 @@ protected:
     int width_;
     int height_;
 
-    float life_;
+    float health_;
+    float maxHealth_;
+    int life_;
 
     int currentFrameCol;
     int currentFrameRow;

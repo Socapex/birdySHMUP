@@ -58,7 +58,7 @@ bool CBullet::onCollision(CEntity* entity)
     deathExplosion_->play(x_, y_);
 
     // TODO: Checker le genre de bullet
-    entity->setLife(entity->getLife() - damage_);
+    entity->setHealth(entity->getHealth() - damage_);
     return true;
 }
 

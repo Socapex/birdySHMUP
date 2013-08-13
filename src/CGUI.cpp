@@ -20,24 +20,37 @@ CGUI::CGUI()
     healthBar_.y = 12;
     healthBar_.w = 100;
     healthBar_.h = 10;
-	
-	//Louche, lorsqu'on initialise toute la structure en meme temps,
-	//VS n'aime pas ca... Comme au-dessus, je vais initialiser chaque
-	//champ un par un.
-	/*
+    
+    //Louche, lorsqu'on initialise toute la structure en meme temps,
+    //VS n'aime pas ca... Comme au-dessus, je vais initialiser chaque
+    //champ un par un.
+    /*
     black = {0, 0, 0, 0};
     white = {255, 255, 255, 0};
-	*/
+    */
 
-	black.r = 0;
-	black.g = 0;
-	black.b = 0;
-	black.unused = 0;
+    black.r = 0;
+    black.g = 0;
+    black.b = 0;
+    black.unused = 0;
 
-	white.r = 255;
-	white.g = 255;
-	white.b = 255;
-	white.unused = 0;
+    white.r = 255;
+    white.g = 255;
+    white.b = 255;
+    white.unused = 0;
+
+     //initialisation des vies
+    unsigned int nbLives = CPlayer::NB_STARTING_LIVES;
+    unsigned int livesSize = 10;
+
+    for(unsigned int i = 0 ; i < nbLives; ++i)
+    {
+        SDL_Rect life;
+        life.h = life.w = livesSize;
+        life.x = 12 + 22*i;
+        life.y = 32;
+        vLives_.push_back(life);
+    }
 
 
     getReadyPlaying = false;
@@ -74,16 +87,6 @@ CGUI::~CGUI()
 }
 
 
-
-
-
-
-
-
-
-
-
-
 void CGUI::getReady()
 {
     getReadySurface_ = TTF_RenderText_Blended(getReadyFont_, "Get Ready!", white);
@@ -94,8 +97,21 @@ void CGUI::getReady()
 
 void CGUI::onLoop(CPlayer* player)
 {
+    // Check player health
+    healthBar_.w = static_cast<int>(player->getHealth() / PLAYER_LIFE * 100 + 0.5);
+
     // Check player life
-    healthBar_.w = static_cast<int>(player->getLife() / PLAYER_LIFE * 100 + 0.5);
+    int playerLives = player->getLife();
+    int guiLives = vLives_.size();
+    if (playerLives != guiLives)
+    {
+        if (playerLives < guiLives)
+            vLives_.pop_back();
+        else
+            while (playerLives > guiLives++)
+                vLives_.push_back(vLives_.front()); //toute les vies sont pareils, on peut
+        //donc pusher une déja dans le vector
+    }
 
     // Get player points
     std::stringstream ss;
@@ -117,11 +133,17 @@ void CGUI::onRender(SDL_Surface* surfDisplay)
     SDL_FillRect(surfDisplay, &healthBar_,
                  SDL_MapRGB(surfDisplay->format, 255, 255, 0));
 
+    //Vies
+    for(unsigned int i = 0; i < vLives_.size(); ++i)
+    {
+        SDL_FillRect(surfDisplay, &vLives_.at(i), SDL_MapRGB(surfDisplay->format, 255, 255, 0));
+    }
+
     // Points
     CSurface::OnDraw(surfDisplay, points_, WWIDTH / 2.0f - points_->w, 10.0f);
 
     // FPS
-    CSurface::OnDraw(surfDisplay, fps_, WWIDTH - fps_->w - 10, 10);
+    CSurface::OnDraw(surfDisplay, fps_, WWIDTH - fps_->w - 10.0f, 10.0f);
 
     if (getReadyPlaying)
     {

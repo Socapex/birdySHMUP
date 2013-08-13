@@ -17,6 +17,8 @@ CEnemy::CEnemy()
     shootDelay_ = 0;
     nextShot_ = 0;
 
+    life_ = 1;
+
     deathExplosion_ = NULL;
     bullets_ = NULL;
     deathSound_ = NULL;

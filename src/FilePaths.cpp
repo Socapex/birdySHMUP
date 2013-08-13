@@ -28,6 +28,13 @@ FilePaths::FilePaths()
     // BULLETS
     Files["bullet1Path"] = "data/img/bullet.png";
     Files["laser1Path"] = "data/img/laser.png";
+    Files["redBullet1"] = "data/conceptArt/bullets/redBullet1_small.png";
+    Files["redBullet5"] = "data/conceptArt/bullets/redBullet5_small.png";
+    Files["whiteBullet1"] = "data/conceptArt/bullets/whiteBullet1_big.png";
+    Files["whiteBullet2"] = "data/conceptArt/bullets/whiteBullet2_small.png";
+    Files["blueBullet4"] = "data/conceptArt/bullets/blueBullet4_small.png";
+    Files["blueBullet4-sparkly"] = "data/conceptArt/bullets/blueBullet4-sparkly_small.png";
+
 
     // PARTICLES
     Files["explosion1Path"] = "data/img/particles/explosion1.jpg";

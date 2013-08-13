@@ -105,7 +105,22 @@ void CApp::OnKeyDown(SDLKey sym, SDLMod mod, Uint16 unicode)
                 {
                     SDL_Quit();
                     break;
-                }                
+                }
+
+                case SDLK_0:
+                {
+                    Player->setCurrentBullet(0);
+                }
+
+                case SDLK_1:
+                {
+                    Player->setCurrentBullet(1);
+                }
+
+                case SDLK_2:
+                {
+                    Player->setCurrentBullet(2);
+                }
 
                 default: {}
             }

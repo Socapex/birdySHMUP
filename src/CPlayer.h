@@ -31,6 +31,7 @@ public:
     void setShooting(const bool shoot);
     void setPlayerPoints(const int points);
     void setHealth(const float health);
+    void setCurrentBullet(const int bull);
 
     void addLife(){life_++;}
 
@@ -61,6 +62,8 @@ private:
     float maxSpeedY_;
 
     unsigned int shootLastTime_;
+
+    unsigned int currentBullets_;
 
     int playerPoints_;
 

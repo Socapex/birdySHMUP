@@ -65,7 +65,7 @@ bool CBullet::onCollision(CEntity* entity)
 void CBullet::onRender(SDL_Surface *surfDisplay)
 {
     checkCollision(x_, y_);
-    deathExplosion_->onRender(surfDisplay);
+    //deathExplosion_->onRender(surfDisplay);
     CEntity::onRender(surfDisplay);
 }
 

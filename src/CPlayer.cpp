@@ -32,6 +32,7 @@ CPlayer::CPlayer()
     feuDuCul_ = NULL;
     collisionExplosion_ = NULL;
 
+    currentBullets_ = 0;
     bullets1_ = new CBulletSpawner("player");
 
     feuDuCul_ = new CParticles(255, 255, 0, x_ + 32, y_ + 64,
@@ -285,4 +286,9 @@ void CPlayer::setHealth(const float health)
         health_ = 0;
         life_ = 0;
     }
+}
+
+void CPlayer::setCurrentBullet(const int bull)
+{
+    currentBullets_ = bull;
 }

@@ -81,16 +81,16 @@ void CPlayer::movePlayer()
 void CPlayer::updateAccel()
 {
     if(moveLeft_)
-        accelX_ = -5.0f;
+        accelX_ = -20.0f;
     else if(moveRight_)
-        accelX_ = 5.0f;
+        accelX_ = 20.0f;
     else
         accelX_ = 0.0f;
 
     if(moveUp_)
-        accelY_ = -5.0f;
+        accelY_ = -20.0f;
     else if(moveDown_)
-        accelY_ = 5.0f;
+        accelY_ = 20.0f;
     else
         accelY_ = 0.0f;
     

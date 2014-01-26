@@ -33,7 +33,9 @@ CPlayer::CPlayer()
     collisionExplosion_ = NULL;
 
     currentBullets_ = 0;
-    bullets1_ = new CBulletSpawner("player");
+    bullets1_ = new CBulletSpawner("player1");
+    bullets2_ = new CBulletSpawner("player2");
+    bullets3_ = new CBulletSpawner("player3");
 
     feuDuCul_ = new CParticles(255, 255, 0, x_ + 32, y_ + 64,
                                5, 8, 100, 1000, 100,
@@ -132,13 +134,39 @@ bool CPlayer::isInScreenY(float newY)
 
 void CPlayer::shoot()
 {
-    if (shootLastTime_ + PLAYER_BULLET1_SHOOT_DELAY <= SDL_GetTicks())
+    if (currentBullets_ == 0)
     {
-        shootLastTime_ = SDL_GetTicks();
-        bullets1_->shoot(x_ + 20, y_);
-        bullets1_->shoot(x_ + getWidth() - bullets1_->getBulletWidth() - 20,
-                        y_);
+        if (shootLastTime_ + PLAYER_BULLET1_SHOOT_DELAY <= SDL_GetTicks())
+        {
+            shootLastTime_ = SDL_GetTicks();
+            bullets1_->shoot(x_ + 20, y_);
+            bullets1_->shoot(x_ + getWidth() - bullets1_->getBulletWidth() - 20,
+                             y_);
+        }
     }
+
+    else if (currentBullets_ == 1)
+    {
+        if (shootLastTime_ + PLAYER_BULLET2_SHOOT_DELAY <= SDL_GetTicks())
+        {
+            shootLastTime_ = SDL_GetTicks();
+            bullets2_->shoot(x_ - 130, y_);
+            //bullets2_->shoot(x_ + getWidth() - bullets1_->getBulletWidth() - 20,
+            //                 y_);
+        }
+    }
+
+    else if (currentBullets_ == 2)
+    {
+        if (shootLastTime_ + PLAYER_BULLET3_SHOOT_DELAY <= SDL_GetTicks())
+        {
+            shootLastTime_ = SDL_GetTicks();
+            bullets3_->shoot(x_ - 30, y_);
+            //bullets3_->shoot(x_ + getWidth() - bullets1_->getBulletWidth() - 20,
+            //                 y_);
+        }
+    }
+
 }
 
 
@@ -187,6 +215,9 @@ void CPlayer::onLoop(CPlayer* player)
 void CPlayer::onRender(SDL_Surface* surfDisplay)
 {
     bullets1_->onRender(surfDisplay);
+    bullets2_->onRender(surfDisplay);
+    bullets3_->onRender(surfDisplay);
+    
     //feuDuCul_->onRender(surfDisplay);
     collisionExplosion_->onRender(surfDisplay);
 

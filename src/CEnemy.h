@@ -12,6 +12,7 @@
 #include <SDL.h>
 
 #include "Defines.h"
+#include "FilePaths.h"
 
 #include "CEntity.h"
 //#include "CBulletSpawner.cpp"

@@ -14,6 +14,8 @@
 #include <cstring>
 
 #include "Game/PlayerBullet1.h"
+#include "Game/PlayerBullet2.h"
+#include "Game/PlayerBullet3.h"
 #include "Game/Enemy1Bullet.h"
 
 class CBulletSpawner {

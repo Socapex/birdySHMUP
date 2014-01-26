@@ -35,7 +35,9 @@ CBulletSpawner::CBulletSpawner(char* bulletType)
     for (int i = 0; i < 100; ++i)
     {
         CBullet* bullet;
-        if (std::strcmp(bulletType, "player") == 0) bullet = new PlayerBullet1;
+        if (std::strcmp(bulletType, "player1") == 0) bullet = new PlayerBullet1;
+        else if (std::strcmp(bulletType, "player2") == 0) bullet = new PlayerBullet2;
+        else if (std::strcmp(bulletType, "player3") == 0) bullet = new PlayerBullet3;
         else if (std::strcmp(bulletType, "enemy1") == 0) bullet = new Enemy1Bullet;
         bulletList_.push_back(bullet);
     }

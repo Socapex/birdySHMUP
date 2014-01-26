@@ -6,17 +6,17 @@
 //  Copyright (c) 2013 Groarke and co. All rights reserved.
 //
 
-#ifndef __birdyShmup__PlayerBullet1__
-#define __birdyShmup__PlayerBullet1__
+#ifndef __birdyShmup__PlayerBullet2__
+#define __birdyShmup__PlayerBullet2__
 
 #include "../FilePaths.h"
 
 #include "../CBullet.h"
 
-class PlayerBullet1 : public CBullet {
+class PlayerBullet2 : public CBullet {
 public:
-    PlayerBullet1();
-    ~PlayerBullet1();
+    PlayerBullet2();
+    ~PlayerBullet2();
 
     bool onCollision(CEntity* entity);
     void onRender(SDL_Surface* surfDisplay);    

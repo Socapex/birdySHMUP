@@ -1,4 +1,4 @@
-#include "CApp.h"
+ #include "CApp.h"
 
 void CApp::onEvent(SDL_Event* event)
 {
@@ -107,19 +107,22 @@ void CApp::OnKeyDown(SDLKey sym, SDLMod mod, Uint16 unicode)
                     break;
                 }
 
-                case SDLK_0:
-                {
-                    Player->setCurrentBullet(0);
-                }
-
                 case SDLK_1:
                 {
-                    Player->setCurrentBullet(1);
+                    Player->setCurrentBullet(0);
+                    break;
                 }
 
                 case SDLK_2:
                 {
+                    Player->setCurrentBullet(1);
+                    break;
+                }
+
+                case SDLK_3:
+                {
                     Player->setCurrentBullet(2);
+                    break;
                 }
 
                 default: {}

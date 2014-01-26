@@ -45,6 +45,8 @@ private:
     CParticles* collisionExplosion_;
 
     CBulletSpawner* bullets1_;
+    CBulletSpawner* bullets2_;
+    CBulletSpawner* bullets3_;
 
     bool moveLeft_;
     bool moveRight_;

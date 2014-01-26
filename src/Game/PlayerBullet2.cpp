@@ -6,17 +6,17 @@
 //  Copyright (c) 2013 Groarke and co. All rights reserved.
 //
 
-#include "PlayerBullet1.h"
+#include "PlayerBullet2.h"
 #include "../CSFX.h"
 
-PlayerBullet1::PlayerBullet1()
+PlayerBullet2::PlayerBullet2()
 {
     damage_ = 10.0;
     speed_ = 50.0;
     
     FilePaths Path;
     
-    CEntity::onLoad(Path.Files["laser1Path"].c_str(), 21, 91, 0);
+    CEntity::onLoad(Path.Files["whiteBullet1"].c_str(), 380, 280, 0);
     
     deathExplosion_ = new CParticles(255, 255, 0, x_, y_, 2, 3, 0, 100,
                                      100, 10, "fireworks");
@@ -24,12 +24,12 @@ PlayerBullet1::PlayerBullet1()
 
 }
 
-PlayerBullet1::~PlayerBullet1()
+PlayerBullet2::~PlayerBullet2()
 {
     
 }
 
-bool PlayerBullet1::onCollision(CEntity* entity)
+bool PlayerBullet2::onCollision(CEntity* entity)
 {
     if (entity->getType() == ENTITY_TYPE_ENEMY1 && entity->getLife() > 0)
     {
@@ -38,13 +38,13 @@ bool PlayerBullet1::onCollision(CEntity* entity)
     return true;
 }
 
-void PlayerBullet1::onRender(SDL_Surface *surfDisplay)
+void PlayerBullet2::onRender(SDL_Surface *surfDisplay)
 {
     onAnimate();
     CBullet::onRender(surfDisplay);
 }
 
-void PlayerBullet1::onAnimate()
+void PlayerBullet2::onAnimate()
 {
     y_ -= speed_ * CFPS::FPSControl.getSpeedFactor();
 
